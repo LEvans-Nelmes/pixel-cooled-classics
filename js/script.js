@@ -1,5 +1,6 @@
 
 // CARS
+const scaleFactor = 2;
 
 const carBeetle = {
     fileName:"Beetle",
@@ -57,7 +58,7 @@ const tyre18Normal = {
 var currentDisplay = {
     id:1,
     body:carBeetle,
-    baseColour:"#008000",
+    baseColour:"#ff7563",
     secondColour:"",
     twoTone:0,
     darkColour:-0.25,
@@ -65,11 +66,42 @@ var currentDisplay = {
     wheels:wheelBlackFechs,
     frontTyre:tyre16Normal,
     backTyre:tyre18Normal,
-    bodyDrop:2,
+    bodyDrop:4,
     rack:"BowRack",
     rackAccessory:"LongSurf",
 };
 
+//-----------------------------------------------
+// Functions for website setup
+//-----------------------------------------------
+
+
+Coloris({
+    el: '.coloris',
+    swatches: [
+      '#264653',
+      '#2a9d8f',
+      '#e9c46a',
+      '#f4a261',
+      '#e76f51',
+      '#d62828',
+      '#023e8a',
+      '#0077b6',
+      '#0096c7',
+      '#00b4d8',
+      '#48cae4'
+    ],
+    onChange: (color) => {
+        currentDisplay.baseColour = color
+        console.log('New color', color)
+        draw()
+    } 
+  });
+
+  Coloris.setInstance('.instance3', {
+    theme: 'polaroid',
+    //swatchesOnly: true
+  });
 
 function revealMessage() {
     document.getElementById("hiddenMessage").style.display = 'block';
@@ -111,14 +143,36 @@ window.onclick = function(event) {
     }
 }
 
+
+//-----------------------------------------------
+// Functions for building image
+//-----------------------------------------------
+
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+function rgbToHex(rgbArray) {
+    return "#" + (1 << 24 | rgbArray[0] << 16 | rgbArray[1] << 8 | rgbArray[2]).toString(16).slice(1);
+}
+
 function loadImageToArray(imageIn) {
  
     const hiddenCanvas = document.getElementById("hiddenCanvas").getContext("2d");
 
-    hiddenCanvas.clearRect(0,0,128,128);
+    hiddenCanvas.clearRect(0,0,128*scaleFactor,128*scaleFactor);
 
-    hiddenCanvas.drawImage(imageIn,0,0);
-    var imageData = hiddenCanvas.getImageData(0,0,128,128);
+    width = imageIn.width;
+    height = imageIn.height;
+
+    hiddenCanvas.imageSmoothingEnabled = false;
+    hiddenCanvas.drawImage(imageIn,0,0,scaleFactor*width,scaleFactor*height);
+    var imageData = hiddenCanvas.getImageData(0,0,128*scaleFactor,128*scaleFactor);
     var pixel = imageData.data
 
     var r=0, g=1, b=2,a=3;
@@ -143,28 +197,68 @@ function colourConvert(imageDataIn, oldRGB, newRGB) {
     var r=0, g=1, b=2,a=3;
     for (var p = 0; p<pixel.length; p+=4)
     {
-        if ( pixel[p+r] == oldRGB[0] )
-            {pixel[p+r] = newRGB[0];}
-        if ( pixel[p+g] == oldRGB[1] )
-            {pixel[p+g] = newRGB[1];}
-        if ( pixel[p+b] == oldRGB[2] )
-            {pixel[p+b] = newRGB[2];}
+        if ( pixel[p+r] == oldRGB[0] && pixel[p+g] == oldRGB[1] && pixel[p+b] == oldRGB[2])
+            {
+                pixel[p+r] = newRGB[0];
+                pixel[p+g] = newRGB[1];
+                pixel[p+b] = newRGB[2];
+            }
     }
 
     return imageDataOut
 
 }
 
-function drawImageFromData(imageName,x,y,hiddenContext,visibleContext) {
+function drawImageFromData(imageName,x,y,hiddenContext,visibleContext,colourConvertTo='blank',highlightRatio='blank',lowlightRatio='blank') {
 
     imageName.data = loadImageToArray(imageName);
 
-    imageName.data = colourConvert(imageName.data,[0,168,243],[0,0,0])
+    // if we have a colour to convert, we swap the shades:
+    if ( colourConvertTo !='blank' ) {
+
+        // base colour convert
+        imageName.data = colourConvert(
+            imageName.data,
+            [0,168,243],
+            [
+                hexToRgb(colourConvertTo).r,
+                hexToRgb(colourConvertTo).g,
+                hexToRgb(colourConvertTo).b
+            ]
+        );
+        
+        // highlight colour convert
+        if ( highlightRatio !='blank' ) {
+            imageName.data = colourConvert(
+                imageName.data,
+                [140,255,251],
+                [
+                    hexToRgb(colourConvertTo).r*(1+highlightRatio),
+                    hexToRgb(colourConvertTo).g*(1+highlightRatio),
+                    hexToRgb(colourConvertTo).b*(1+highlightRatio)
+                ]
+            );
+        };
+
+        // lowlight colour convert
+        if ( lowlightRatio !='blank' ) {
+            imageName.data = colourConvert(
+                imageName.data,
+                [63,72,204],
+                [
+                    hexToRgb(colourConvertTo).r*(1+lowlightRatio),
+                    hexToRgb(colourConvertTo).g*(1+lowlightRatio),
+                    hexToRgb(colourConvertTo).b*(1+lowlightRatio)
+                ]
+            );
+        };
+    }
 
 
-    hiddenContext.clearRect(0,0,128,128);
+    hiddenContext.clearRect(0,0,128*scaleFactor,128*scaleFactor);
     hiddenContext.putImageData(imageName.data,0,0);
-    visibleContext.drawImage(hiddenCanvas,x,y);
+    visibleContext.imageSmoothingEnabled = false;
+    visibleContext.drawImage(hiddenCanvas,x*scaleFactor,y*scaleFactor);
 
 }
 
@@ -174,6 +268,9 @@ function draw() {
     const visibleContext = visibleCanvas.getContext("2d");
     const hiddenCanvas = document.getElementById("hiddenCanvas");
     const hiddenContext = hiddenCanvas.getContext("2d")
+
+    visibleContext.imageSmoothingEnabled = false;
+    hiddenContext.imageSmoothingEnabled = false;
 
     const body = new Image(); 
     const frontWheel = new Image(); 
@@ -206,8 +303,9 @@ function draw() {
             imageCount +=1;
             if(imageCount == imagesToLoad.length){
 
-                visibleContext.clearRect(0,0,128,128);
-
+                visibleContext.clearRect(0,0,128*scaleFactor,128*scaleFactor);
+                visibleContext.imageSmoothingEnabled = false;
+                
                 drawImageFromData(arches,
                     currentDisplay.body.ArchPositionOver,
                     currentDisplay.body.ArchPositionDown+currentDisplay.bodyDrop,
@@ -229,13 +327,6 @@ function draw() {
                     visibleContext
                 );  
 
-                drawImageFromData(body,
-                    currentDisplay.body.CarPositionOver,
-                    currentDisplay.body.CarPositionDown+currentDisplay.bodyDrop,
-                    hiddenContext,
-                    visibleContext
-                );
-
                 drawImageFromData(frontWheel,
                     currentDisplay.body.FrontWheelOver - currentDisplay.wheels.size/2,
                     floorline - currentDisplay.wheels.size - (currentDisplay.frontTyre.size - currentDisplay.wheels.size)/2,
@@ -248,7 +339,18 @@ function draw() {
                     floorline - currentDisplay.wheels.size - (currentDisplay.backTyre.size - currentDisplay.wheels.size)/2,
                     hiddenContext,
                     visibleContext
-                );   
+                );  
+
+                drawImageFromData(body,
+                    currentDisplay.body.CarPositionOver,
+                    currentDisplay.body.CarPositionDown+currentDisplay.bodyDrop,
+                    hiddenContext,
+                    visibleContext,
+                    currentDisplay.baseColour,
+                    currentDisplay.lightColour,
+                    currentDisplay.darkColour
+                );
+                 
                 
             }
         }
