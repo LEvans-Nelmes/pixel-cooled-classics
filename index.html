@@ -3,9 +3,12 @@
 <html lang="en" ir="ltr">
     <head>
         <meta charset="utf-8">
+
         
         <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=devide-width,inital-scale=1.0">
+        <link rel="stylesheet" href="coloris.min.css"/>
+        <script src="coloris.min.js"></script>
     </head>
 
     <body>
@@ -17,31 +20,36 @@
                     <button type="button" onclick="revealMessage()">Click here!</button>
                     <p id="hiddenMessage" style="display:none">You smell!</p>    
                     <div class="row">
-                        <button class="choose-car">Choose Car</button>
+                        <button onclick="openCanvasURL()" class="save-car">Save Car</button>
                     </div>
-                    <div>
-                        <button type="button" onclick="draw()">Draw</button>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="#" class="BeetleButton">Beetle</a>
+                            <a href="#" class="T3_squarebackButton">Type3 Squareback</a>
+                            <a href="#">039</a>
+                            <a href="#">500</a>
+                            <a href="#">653</a>
+                            <a href="#">Brix</a>
+                            <a href="#">Twofer</a>
+                        </div>
+                    </div>
+                    <div> 
+                        <div class="example full">
+                            <p>Pick body colour</p>
+                            <input type="text" class="coloris instance3" value="#e6846b">
+                        </div>
                     </div>
                 </div>
-
-                
-                <canvas id="tutorial" width="150" height="150"></canvas>               
+            
+            <div>
+                <canvas id="mainCanvas" width="256" height="256"></canvas>
+                <canvas hidden id="hiddenCanvas" width="256" height="256"></canvas>               
                 <script src="js/script.js"></script>
-                
-                
             </div>
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="#">3 Cube</a>
-                  <a href="#">039</a>
-                  <a href="#">500</a>
-                  <a href="#">653</a>
-                  <a href="#">Bert</a>
-                  <a href="#">Brix</a>
-                  <a href="#">Twofer</a>
-                </div>
-            <div> 
+                
+
+            
 
         
 
