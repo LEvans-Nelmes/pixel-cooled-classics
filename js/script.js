@@ -58,7 +58,7 @@ const tyre18Normal = {
 var currentDisplay = {
     id:1,
     body:carBeetle,
-    baseColour:"#ff7563",
+    baseColour:"#e6846b",
     secondColour:"",
     twoTone:0,
     darkColour:-0.25,
