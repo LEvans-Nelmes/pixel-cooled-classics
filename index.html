@@ -14,26 +14,38 @@
     <body>
         <div class="container">
             <h2>pixel-cooled classics</h2>
-            <div class="wrapper">
+            <div class="wholeWrapper">
 
-                <div class="editor-pane">
-                    <button type="button" onclick="revealMessage()">Click here!</button>
-                    <p id="hiddenMessage" style="display:none">You smell!</p>    
-                    <div class="row">
-                        <button onclick="openCanvasURL()" class="save-car">Save Car</button>
-                    </div>
-                    <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <a href="#" class="BeetleButton">Beetle</a>
-                            <a href="#" class="T3_squarebackButton">Type3 Squareback</a>
-                            <a href="#">039</a>
-                            <a href="#">500</a>
-                            <a href="#">653</a>
-                            <a href="#">Brix</a>
-                            <a href="#">Twofer</a>
+                <div class="canvasWrapper">
+                    <canvas id="mainCanvas" width="256" height="256"></canvas>
+                    <canvas hidden id="hiddenCanvas" width="256" height="256"></canvas>               
+                    <script src="js/script.js"></script>
+                </div>
+
+                <div class="editorWrapper">  
+                    
+                    <div class="editorButtonContainer">
+                        <button onclick="bodyDropdownFunction()" 
+                            id=bodyDropdownButton 
+                            class="dropdownButton"
+                            >body choice
+                        </button>
+                        <div id="bodyDropdownList" class="dropdownContent">
+                            <a href="#" onclick="bodyChange(this)" id=carbuggle class="dropdownButon">buggle</a>
+                            <a href="#" onclick="bodyChange(this)" id=car3cube class="dropdownButon">3cube</a>
+                            <a href="#" onclick="bodyChange(this)" id=car039 class="dropdownButon">039</a>
+                            <a href="#" onclick="bodyChange(this)" id=car005 class="dropdownButon">005</a>
+                            <a href="#" onclick="bodyChange(this)" id=car653 class="dropdownButon">653</a>
+                            <a href="#" onclick="bodyChange(this)" id=carbrix class="dropdownButon">brix</a>
+                            <a href="#" onclick="bodyChange(this)" id=cartwofer class="dropdownButon">twofer</a>
                         </div>
                     </div>
+
+                    <button onclick="bodyHeightChange(this)" id=heightUp class="editorButton">height up</button>
+                    <button onclick="bodyHeightChange(this)" id=heightDown class="editorButton">height down</button>
+
+                    <button onclick="openCanvasURL()" class="editorButton">Save Car</button>
+
                     <div> 
                         <div class="example full">
                             <p>Pick body colour</p>
@@ -41,12 +53,9 @@
                         </div>
                     </div>
                 </div>
-            
-            <div>
-                <canvas id="mainCanvas" width="256" height="256"></canvas>
-                <canvas hidden id="hiddenCanvas" width="256" height="256"></canvas>               
-                <script src="js/script.js"></script>
             </div>
+            
+            
                 
 
             
