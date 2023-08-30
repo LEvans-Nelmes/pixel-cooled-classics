@@ -31,25 +31,47 @@
                             >body choice
                         </button>
                         <div id="bodyDropdownList" class="dropdownContent">
-                            <a href="#" onclick="bodyChange(this)" id=carbuggle class="dropdownButon">buggle</a>
-                            <a href="#" onclick="bodyChange(this)" id=car3cube class="dropdownButon">3cube</a>
-                            <a href="#" onclick="bodyChange(this)" id=car039 class="dropdownButon">039</a>
-                            <a href="#" onclick="bodyChange(this)" id=car005 class="dropdownButon">005</a>
-                            <a href="#" onclick="bodyChange(this)" id=car653 class="dropdownButon">653</a>
-                            <a href="#" onclick="bodyChange(this)" id=carbrix class="dropdownButon">brix</a>
-                            <a href="#" onclick="bodyChange(this)" id=cartwofer class="dropdownButon">twofer</a>
+                            <p>pick a body style:</p>
+                            <a href="#" onclick="bodyChange(this)" id=carbuggle class="dropdownButton">buggle</a>
+                            <a href="#" onclick="bodyChange(this)" id=car3cube class="dropdownButton">3cube</a>
+                            <a href="#" onclick="bodyChange(this)" id=car039 class="dropdownButton">039</a>
+                            <a href="#" onclick="bodyChange(this)" id=car005 class="dropdownButton">005</a>
+                            <a href="#" onclick="bodyChange(this)" id=car653 class="dropdownButton">653</a>
+                            <a href="#" onclick="bodyChange(this)" id=carbrix class="dropdownButton">brix</a>
+                            <a href="#" onclick="bodyChange(this)" id=cartwofer class="dropdownButton">twofer</a>
                         </div>
-                    </div>
 
-                    <button onclick="bodyHeightChange(this)" id=heightUp class="editorButton">height up</button>
-                    <button onclick="bodyHeightChange(this)" id=heightDown class="editorButton">height down</button>
+                        <p></p>
+                        
+                        <button onclick="wheelDropdownFunction()" 
+                            id=wheelDropdownButton 
+                            class="dropdownButton"
+                            >wheel choice
+                        </button>
+                        <div id="wheelDropdownList" class="dropdownContent">
+                            <p>size 8:</p>
+                            <a href="#" onclick="wheelChange(this)" id=wheelSteelChrome8 class="dropdownButton">chrome steels</a>
+                            <p>size 10:</p>
+                            <a href="#" onclick="wheelChange(this)" id=wheelSteelChrome10 class="dropdownButton">chrome steels</a>
+                            <p>size 12:</p>
+                            <a href="#" onclick="wheelChange(this)" id=wheelBlackFechs12 class="dropdownButton">black fechs</a>
+                            <a href="#" onclick="wheelChange(this)" id=wheelSteelChrome12 class="dropdownButton">chrome steels</a>
+                            <a href="#" onclick="wheelChange(this)" id=wheelSteelColour12 class="dropdownButton">coloured steels</a>
+                        </div>
+                    
+                        <p></p>
 
-                    <button onclick="openCanvasURL()" class="editorButton">Save Car</button>
+                        <a>Height</a>
+                        <button onclick="bodyHeightChange(this)" id=heightUp class="editorButton">^</button>
+                        <button onclick="bodyHeightChange(this)" id=heightDown class="editorButton">v</button>
+                        <p></p>
+                        <button onclick="openCanvasURL()" class="editorButton">Save Car</button>
 
-                    <div> 
-                        <div class="example full">
-                            <p>Pick body colour</p>
-                            <input type="text" class="coloris instance3" value="#e6846b">
+                        <div> 
+                            <div class="example full">
+                                <p>Pick body colour</p>
+                                <input type="text" class="coloris instance3" value="#e6846b">
+                            </div>
                         </div>
                     </div>
                 </div>
