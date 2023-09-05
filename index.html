@@ -31,26 +31,69 @@
                             >body choice
                         </button>
                         <div id="bodyDropdownList" class="dropdownContent">
-                            <a href="#" onclick="bodyChange(this)" id=carbuggle class="dropdownButon">buggle</a>
-                            <a href="#" onclick="bodyChange(this)" id=car3cube class="dropdownButon">3cube</a>
-                            <a href="#" onclick="bodyChange(this)" id=car039 class="dropdownButon">039</a>
-                            <a href="#" onclick="bodyChange(this)" id=car005 class="dropdownButon">005</a>
-                            <a href="#" onclick="bodyChange(this)" id=car653 class="dropdownButon">653</a>
-                            <a href="#" onclick="bodyChange(this)" id=carbrix class="dropdownButon">brix</a>
-                            <a href="#" onclick="bodyChange(this)" id=cartwofer class="dropdownButon">twofer</a>
+                            <p>pick a body style:</p>
+                            <a href="#" onclick="bodyChange(this)" id=carbuggle class="dropdownButton">buggle</a>
+                            <a href="#" onclick="bodyChange(this)" id=car3cube class="dropdownButton">3cube</a>
+                            <a href="#" onclick="bodyChange(this)" id=car039 class="dropdownButton">039</a>
+                            <a href="#" onclick="bodyChange(this)" id=car005 class="dropdownButton">005</a>
+                            <a href="#" onclick="bodyChange(this)" id=car653 class="dropdownButton">653</a>
+                            <a href="#" onclick="bodyChange(this)" id=carbrix class="dropdownButton">brix</a>
+                            <a href="#" onclick="bodyChange(this)" id=cartwofer class="dropdownButton">twofer</a>
                         </div>
-                    </div>
 
-                    <button onclick="bodyHeightChange(this)" id=heightUp class="editorButton">height up</button>
-                    <button onclick="bodyHeightChange(this)" id=heightDown class="editorButton">height down</button>
+                        <p></p>
+                        
+                        <button onclick="wheelDropdownFunction()" 
+                            id=wheelDropdownButton 
+                            class="dropdownButton"
+                            >wheel choice
+                        </button>
+                        <div id="wheelDropdownList" class="dropdownContent">
+                            <p>size 8:</p>
+                            <a href="#" onclick="wheelChange(this)" id=wheelChromeSteels8 class="dropdownButton">chrome steels</a>
+                            <p>size 10:</p>
+                            <a href="#" onclick="wheelChange(this)" id=wheelChromeSteels10 class="dropdownButton">chrome steels</a>
+                            <p>size 12:</p>
+                            <a href="#" onclick="wheelChange(this)" id=wheelBlackFechs12 class="dropdownButton">black fechs</a>
+                            <a href="#" onclick="wheelChange(this)" id=wheelChromeSteels12 class="dropdownButton">chrome steels</a>
+                            <a href="#" onclick="wheelChange(this)" id=wheelColouredSteels12 class="dropdownButton">coloured steels</a>
+                        </div>
+                    
+                        <p></p>
+                        
+                        <button onclick="tyreDropdownFunction()" 
+                            id=tyreDropdownButton 
+                            class="dropdownButton"
+                            >tyre choice
+                        </button>
+                        <div id="tyreDropdownList" class="dropdownContent">
+                            <p>front</p>
+                            <a href="#" onclick="tyreChange(this)" id=front14 class="dropdownButton">14 smooth</a>
+                            <a href="#" onclick="tyreChange(this)" id=front16 class="dropdownButton">16 smooth</a>
+                            <a href="#" onclick="tyreChange(this)" id=front18 class="dropdownButton">18 smooth</a>
+                            <p>back</p>
+                            <a href="#" onclick="tyreChange(this)" id=back14 class="dropdownButton">14 smooth</a>
+                            <a href="#" onclick="tyreChange(this)" id=back16 class="dropdownButton">16 smooth</a>
+                            <a href="#" onclick="tyreChange(this)" id=back18 class="dropdownButton">18 smooth</a>
+                        </div>
+                    
+                        <p></p>
 
-                    <button onclick="openCanvasURL()" class="editorButton">Save Car</button>
+                        <a>height</a>
+                        <button onclick="bodyHeightChange(this)" id=heightUp class="editorButton">^</button>
+                        <button onclick="bodyHeightChange(this)" id=heightDown class="editorButton">v</button>
+                        
+                        <p></p>
 
-                    <div> 
                         <div class="example full">
                             <p>Pick body colour</p>
                             <input type="text" class="coloris instance3" value="#e6846b">
                         </div>
+
+                        <p></p>
+                        
+                        <button onclick="openCanvasURL()" class="editorButton">Save Car</button>
+                        
                     </div>
                 </div>
             </div>
