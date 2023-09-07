@@ -17,8 +17,8 @@
             <div class="wholeWrapper">
 
                 <div class="canvasWrapper">
-                    <canvas id="mainCanvas" width="256" height="256"></canvas>
-                    <canvas hidden id="hiddenCanvas" width="256" height="256"></canvas>               
+                    <canvas id="mainCanvas" width="512" height="512"></canvas>
+                    <canvas hidden id="hiddenCanvas" width="512" height="512"></canvas>               
                     <script src="js/script.js"></script>
                 </div>
 
@@ -85,9 +85,13 @@
                         
                         <p></p>
 
-                        <div class="example full">
+                        <div id="bodyColourOption" class="colourOptions full">
                             <p>Pick body colour</p>
-                            <input type="text" class="coloris instance3" value="#e6846b">
+                            <input type="text" class="coloris bodyColour" value="#e6846b">
+                        </div>
+                        <div id="wheelColourOption" class="colourOptions full">
+                            <p>Pick wheel colour</p>
+                            <input type="text" class="coloris wheelColour" value="#404040">
                         </div>
 
                         <p></p>

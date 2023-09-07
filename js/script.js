@@ -1,6 +1,6 @@
 
 // CARS
-const scaleFactor = 2;
+const scaleFactor = 4;
 
 const carbuggle = {
     fileName:"buggle",
@@ -176,32 +176,47 @@ var currentDisplay = {
 //-----------------------------------------------
 
 
-Coloris({
-    el: '.coloris',
-    swatches: [
-      '#264653',
-      '#2a9d8f',
-      '#e9c46a',
-      '#f4a261',
-      '#e76f51',
-      '#d62828',
-      '#023e8a',
-      '#0077b6',
-      '#0096c7',
-      '#00b4d8',
-      '#48cae4'
-    ],
-    onChange: (color) => {
-        currentDisplay.baseColour = color
-        console.log('New color', color)
-        draw()
-    } 
-  });
+Coloris(
+    {
+        el: '.coloris',
+        theme: 'pill',
+        //swatchesOnly: true,
+        themeMode: 'dark',
+        alpha: false,
+        swatches: [
+            '#264653',
+            '#2a9d8f',
+            '#e9c46a',
+            '#f4a261',
+            '#e76f51',
+            '#d62828',
+            '#023e8a',
+            '#0077b6',
+            '#0096c7',
+            '#00b4d8',
+            '#48cae4'
+        ] 
+    }
+);
 
-  Coloris.setInstance('.instance3', {
-    theme: 'polaroid',
-    //swatchesOnly: true
-  });
+Coloris.setInstance('.bodyColour', 
+    {
+        onChange: (color) => {
+            currentDisplay.baseColour = color
+            console.log('New color', color)
+            draw()
+        }
+    }
+);
+Coloris.setInstance('.wheelColour', 
+    {
+        onChange: (color) => {
+            currentDisplay.wheelColour = color
+            console.log('New color', color)
+            draw()
+        }
+    }
+);
 
 function revealMessage() {
     document.getElementById("hiddenMessage").style.display = 'block';
@@ -229,8 +244,17 @@ function tyreDropdownFunction() {
     document.getElementById("tyreDropdownList").classList.toggle("show");
 }
 
+function wheelColourOptionShow() {
+    if (document.getElementById("wheelColourOption").classList.contains('hide')) {
+        document.getElementById("wheelColourOption").classList.remove('hide');
+    }
+}
 
-
+function wheelColourOptionHide() {
+    if (!document.getElementById("wheelColourOption").classList.contains('hide')) {
+        document.getElementById("wheelColourOption").classList.add('hide');
+    }
+}
 
   
 // Close the dropdown menu if the user clicks outside of it
@@ -446,8 +470,10 @@ function draw() {
 
     if (currentDisplay.wheels.customColour == 1) {
         wheelColourInput = currentDisplay.wheelColour
+        wheelColourOptionShow();
     } else {
         wheelColourInput = 'blank'
+        wheelColourOptionHide();
     }
     
     imagesToLoad.forEach(image =>{
@@ -519,6 +545,10 @@ function draw() {
 
     
 }
-draw();
+
+window.addEventListener("load", ()=>{
+    draw();
+});
+
 
 
