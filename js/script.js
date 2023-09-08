@@ -1,6 +1,6 @@
 
 // CARS
-const scaleFactor = 2;
+const scaleFactor = 4;
 
 const carbuggle = {
     fileName:"buggle",
@@ -161,9 +161,10 @@ var currentDisplay = {
     wheelColour:"#404040",
     secondColour:"",
     twoTone:0,
+    wheelColourMatch:0,
     darkColour:-0.25,
     lightColour:0.25,
-    wheels:wheelChromeSteels10,
+    wheels:wheelColouredSteels12,
     frontTyre:tyre16Normal,
     backTyre:tyre18Normal,
     bodyDrop:4,
@@ -176,32 +177,47 @@ var currentDisplay = {
 //-----------------------------------------------
 
 
-Coloris({
-    el: '.coloris',
-    swatches: [
-      '#264653',
-      '#2a9d8f',
-      '#e9c46a',
-      '#f4a261',
-      '#e76f51',
-      '#d62828',
-      '#023e8a',
-      '#0077b6',
-      '#0096c7',
-      '#00b4d8',
-      '#48cae4'
-    ],
-    onChange: (color) => {
-        currentDisplay.baseColour = color
-        console.log('New color', color)
-        draw()
-    } 
-  });
+Coloris(
+    {
+        el: '.coloris',
+        theme: 'pill',
+        //swatchesOnly: true,
+        themeMode: 'dark',
+        alpha: false,
+        swatches: [
+            '#264653',
+            '#2a9d8f',
+            '#e9c46a',
+            '#f4a261',
+            '#e76f51',
+            '#d62828',
+            '#023e8a',
+            '#0077b6',
+            '#0096c7',
+            '#00b4d8',
+            '#48cae4'
+        ] 
+    }
+);
 
-  Coloris.setInstance('.instance3', {
-    theme: 'polaroid',
-    //swatchesOnly: true
-  });
+Coloris.setInstance('.bodyColour', 
+    {
+        onChange: (color) => {
+            currentDisplay.baseColour = color
+            console.log('New color', color)
+            draw()
+        }
+    }
+);
+Coloris.setInstance('.wheelColour', 
+    {
+        onChange: (color) => {
+            currentDisplay.wheelColour = color
+            console.log('New color', color)
+            draw()
+        }
+    }
+);
 
 function revealMessage() {
     document.getElementById("hiddenMessage").style.display = 'block';
@@ -229,12 +245,66 @@ function tyreDropdownFunction() {
     document.getElementById("tyreDropdownList").classList.toggle("show");
 }
 
+function wheelColourOptionShow() {
+    if (document.getElementById("wheelColourOption").classList.contains('hide')) {
+        document.getElementById("wheelColourOption").classList.remove('hide');
+    }
+}
 
+function wheelColourOptionHide() {
+    if (!document.getElementById("wheelColourOption").classList.contains('hide')) {
+        document.getElementById("wheelColourOption").classList.add('hide');
+    }
+}
 
+function wheelColourControlShow() {
+    if (document.getElementById("wheelColourControl").classList.contains('hide')) {
+        document.getElementById("wheelColourControl").classList.remove('hide');
+    }
+}
 
+function wheelColourControlHide() {
+    if (!document.getElementById("wheelColourControl").classList.contains('hide')) {
+        document.getElementById("wheelColourControl").classList.add('hide');
+    }
+}
+
+function checkCheckbox() {
+    var checkbox = document.getElementById('wheelColourMatch');
+    if (checkbox.checked == true) {
+        currentDisplay.wheelColourMatch = 1
+        draw();
+    } else {
+        currentDisplay.wheelColourMatch = 0
+        draw();
+    }
+}
+
+function openTab(evt, tabName) {
+    // Declare all variables
+    var i, tabContent, tablinks;
+  
+    // Get all elements with class="tabContent" and hide them
+    tabContent = document.getElementsByClassName("tabContent");
+    for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
   
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
+    checkCheckbox();
+
     if (!event.target.matches('.dropdownButton')) {
         var dropdowns = document.getElementsByClassName("dropdownContent");
         var i;
@@ -445,9 +515,19 @@ function draw() {
     imagesToLoad.push(backTyre);
 
     if (currentDisplay.wheels.customColour == 1) {
-        wheelColourInput = currentDisplay.wheelColour
+        wheelColourOptionShow();
+
+        if (currentDisplay.wheelColourMatch == 0) {
+            wheelColourControlShow();
+            wheelColourInput = currentDisplay.wheelColour
+        } else {
+            wheelColourControlHide();
+            wheelColourInput = currentDisplay.baseColour;
+        }
+
     } else {
         wheelColourInput = 'blank'
+        wheelColourOptionHide();
     }
     
     imagesToLoad.forEach(image =>{
@@ -519,6 +599,11 @@ function draw() {
 
     
 }
-draw();
+
+window.addEventListener("load", ()=>{
+    openTab(event, 'body')
+    draw();
+});
+
 
 
