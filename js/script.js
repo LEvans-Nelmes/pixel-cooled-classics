@@ -212,7 +212,7 @@ Coloris.setInstance('.bodyColour',
     {
         onChange: (color) => {
             currentDisplay.baseColour = color
-            console.log('New color', color)
+            // console.log('New color', color)
             draw()
         }
     }
@@ -221,7 +221,7 @@ Coloris.setInstance('.wheelColour',
     {
         onChange: (color) => {
             currentDisplay.wheelColour = color
-            console.log('New color', color)
+            // console.log('New color', color)
             draw()
         }
     }
@@ -256,34 +256,42 @@ function encodeCurrentToURL() {
 
 function pickoutFromURL() {
 
-    var currentURL = window.location.href.split("?")[1];
+    
+    var currentURL = window.location.href;
 
-    carProperties = currentURL.split("|")
+    if ( currentURL.includes("?") ) {
 
-    console.log( carProperties[0])
+        propertiesFromURL = currentURL.split("?")[1];
 
-    currentDisplay.body = cars.find(x => x.name === carProperties[0].replace("car",""));
-    currentDisplay.baseColour = carProperties[1];
-    currentDisplay.wheelColour = carProperties[2]; 
-    currentDisplay.secondColour = carProperties[3]; 
-    currentDisplay.twoTone = carProperties[4]; 
-    currentDisplay.wheelColourMatch = carProperties[5]; 
-    currentDisplay.darkColour = Number(carProperties[6]);
-    currentDisplay.lightColour = Number(carProperties[7]); 
-    currentDisplay.wheels = wheels.find(x => x.name === carProperties[8].replace("wheel",""));
-    currentDisplay.frontTyre = tyres.find(x => x.name === carProperties[9].replace("tyre",""));
-    currentDisplay.backTyre = tyres.find(x => x.name === carProperties[10].replace("tyre",""));
-    currentDisplay.bodyDrop = Number(carProperties[11]); 
-    currentDisplay.rack = carProperties[12]; 
-    currentDisplay.rackAccessory =carProperties[13];
+        carProperties = propertiesFromURL.split("|")
 
-    console.log( cars);
-    console.log( cars.find(x => x.name === carProperties[0].replace("car","")) );
-    console.log(wheels.find(x => x.name === carProperties[8].replace("wheel","")) );
-    console.log(tyres.find(x => x.name === carProperties[9].replace("tyre","")) );
-    console.log(tyres.find(x => x.name === carProperties[10].replace("tyre","")) );
+        // console.log( carProperties[0])
 
-    console.log( currentDisplay);
+        currentDisplay.body = cars.find(x => x.name === carProperties[0].replace("car",""));
+        currentDisplay.baseColour = carProperties[1];
+        currentDisplay.wheelColour = carProperties[2]; 
+        currentDisplay.secondColour = carProperties[3]; 
+        currentDisplay.twoTone = carProperties[4]; 
+        currentDisplay.wheelColourMatch = carProperties[5]; 
+        currentDisplay.darkColour = Number(carProperties[6]);
+        currentDisplay.lightColour = Number(carProperties[7]); 
+        currentDisplay.wheels = wheels.find(x => x.name === carProperties[8].replace("wheel",""));
+        currentDisplay.frontTyre = tyres.find(x => x.name === carProperties[9].replace("tyre",""));
+        currentDisplay.backTyre = tyres.find(x => x.name === carProperties[10].replace("tyre",""));
+        currentDisplay.bodyDrop = Number(carProperties[11]); 
+        currentDisplay.rack = carProperties[12]; 
+        currentDisplay.rackAccessory =carProperties[13];
+
+        /*
+        console.log( cars);
+        console.log( cars.find(x => x.name === carProperties[0].replace("car","")) );
+        console.log(wheels.find(x => x.name === carProperties[8].replace("wheel","")) );
+        console.log(tyres.find(x => x.name === carProperties[9].replace("tyre","")) );
+        console.log(tyres.find(x => x.name === carProperties[10].replace("tyre","")) );
+
+        console.log( currentDisplay);
+        */
+    }
 
 
 }
