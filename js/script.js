@@ -3,7 +3,7 @@
 const scaleFactor = 4;
 
 const carbuggle = {
-    fileName:"buggle",
+    name:"buggle",
     CarPositionOver:11,
     CarPositionDown:59,
     ArchPositionOver:16,
@@ -17,7 +17,7 @@ const carbuggle = {
 };
 
 const car3cube = {
-    fileName:"3cube",
+    name:"3cube",
     CarPositionOver:11,
     CarPositionDown:62,
     ArchPositionOver:19,
@@ -31,7 +31,7 @@ const car3cube = {
 };
 
 const car039 = {
-    fileName:"039",
+    name:"039",
     CarPositionOver:4,
     CarPositionDown:60,
     ArchPositionOver:16,
@@ -45,7 +45,7 @@ const car039 = {
 };
 
 const car005 = {
-    fileName:"005",
+    name:"005",
     CarPositionOver:22,
     CarPositionDown:61,
     ArchPositionOver:26,
@@ -59,7 +59,7 @@ const car005 = {
 };
 
 const car653 = {
-    fileName:"653",
+    name:"653",
     CarPositionOver:8,
     CarPositionDown:63,
     ArchPositionOver:19,
@@ -73,7 +73,7 @@ const car653 = {
 };
 
 const carbrix = {
-    fileName:"brix",
+    name:"brix",
     CarPositionOver:9,
     CarPositionDown:55,
     ArchPositionOver:15,
@@ -87,7 +87,7 @@ const carbrix = {
 };
 
 const cartwofer = {
-    fileName:"twofer",
+    name:"twofer",
     CarPositionOver:12,
     CarPositionDown:55,
     ArchPositionOver:21,
@@ -99,6 +99,8 @@ const cartwofer = {
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAApCAIAAABWevs/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQ/SURBVGhD7Zo9T1RBFIbFSkNnyw8wJiaSWKjJomhikMJY2hLbjZ0WgIWFH40mNtsqjYW1BcRG1E2URBJNaPwBtHaIHb7Lezw7O1935n4sC8uTyd2Zu3PvzDz3zOws7MTazIcT+Wx9vi65NB68+yu5g+DF3VOSy+H81Y+S85EqzmvqYHWUJu4Rg7IqeA0Wi1Nlh1RTFdSg665AXPqUrEtriWnV6BNlf/LEPZ88I7kx5vbqhffzP5FZ3PnNM6Qg4uDu08JZKYwGDIH0KMutb6Lhj8vXOl+ZJwXibrWv4KjXTD47jePO0i6LITDB0dK1lV8qnXfg5S4z29OS+4/VosVG6zKOpgvUD90cuPXTUe8Z4ixrAJ0rtEbgDhFOcVaTLrgt3KnolPpwoc8mvb6UM/G6OymvAdAzyeUzanM8l/jYg+L4eWquiJG5MIbEIk6XRiVxnh4xxZzjlo2YuNKLAuACJIURoMpYFC76xC/O3fc2GkSJgaygfpaI3Pun4Bd3qfuNmeU/i0zIN9H8yOIuUxYecQw3bpc3H66/2gd5NaggDL3J2peZEe7FqtB0/dKYNiesfRzawNr0ZLkXXNw3WqTPEW6yQo/OvQ/rSyENXIKvRFLIJDIQ9ln3oYRLtm4z/OJq2YJl3SdeOTJxrOHVAppzb8se6h54QJxpDRmePIYwtCGUQWeLw9FVBpXeZ+5GuwY5jtYkis/xeMRZmJ0pF3HmHcyO6fnQ0HCeQdcX57Xm9slsEngbwEnep8SQ0kFD1edpaGLhqVtDs8QNfKoWWgO4kknKDtjKfJn6wY+XFFCZScrDBWPUBFlMoYFLbp9exM3duI/cy8dbOHKWAe/FKZj2E29SLjyHHHGAk2lgqsLd7MZbdKLcGFxqGVWcepvQmciiF1OcTNWJc99xDOkfDmidvR8maJQJzwBJi/J2mP4a12h0NEE8OhLBqHVdM5O8HaYvLkXz0cONNSZ5exDzUXm+q44VVqAx+pDk7TAirvbdQC3zaPig20xSDiPiWq1W+s7rGNATN/f5JguFWAuBmaRGNQ5RnGascWoH33LdVKO+Q4GI63a7zBBLgUqhI560cPVhrWUmnax9nNXJWkAHIn0wW5RvDvoHJfM9HTlPhpRZ8BcnvFWWO9THx1n6bA3dHyPH9kIKpdBPVbMzlDC/dmd65g0yIk5/I8K3FY4fmURrRH+tkyUO8GknuvOKM61FdhUpZnm5diYmzrJmkiUOlHOHDljdjWCJo3TTSG6fFe08QH/Me/bF7e3t4QVr3KOnwX8AluiB2TZJMUgXUFBCnPXUS1sjbv+V9dWLOIo4AHfYzTGvzM5v4liuE5G2SVYwxrGsgcbF9f4eF93HwV1D4pqjojWgnacmCwSZiLO2IyZV/g99IO6qWyPovNcaEHHIue46nQ6OC9v3WBxPJsM//BBxx4RYmXqNY7vdZpHsLO3+A0uV7aPLtkO2AAAAAElFTkSuQmCC',
     imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAALCAIAAACF5oa3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACgSURBVEhLY9xhu4sBG0h/lAplIYGZcrOhrOEFsIQCVv8jg+EXFkxQGgYIBgEQEKNmaAGUUCDee8MsIFByBKl+GwxZg+z4QHY8Ii0MxeilxM3IetHLBZLAUAw4rICiUBhYQMU4gJYLcBOJzOrILhiQ0oFaQQBxPCgUSA0CCKBiVFAOiHc5prOBehnl5eXhHAiDeIBmIhkmkAcotBc9IBgYAGbpPvfCmyjJAAAAAElFTkSuQmCC'
 };
+
+const cars = [ carbuggle, carbrix, car039, car005, car3cube, cartwofer,car653]
 
 // WHEELS
 
@@ -137,25 +139,31 @@ const wheelBlackFechs12 = {
     imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVChTbVGxDQMhDPRHaaK0rMAQFNmEDdggA6T+hg0YIkpLwRCsQBulzcERI0V/hTkfhw1me95e8sP1cZlM5H3/TCZy5sLtGCPTWuu+7yC09kpweO/HrhhjEFtrTFNK8J2YHMI5R7LlnLVLKYWVrLVU2LdXAgNA9CgVgH27CQygOjwdFMnXnSBpFxCtCqzXQdX6erMQwnod1L9eiKrMiXOYOi0AE0Jcwxxix/G3iHwB9KprWUzaXYAAAAAASUVORK5CYII='
 }
 
+const wheels = [ wheelChromeSteels8, wheelChromeSteels10, wheelChromeSteels12, wheelColouredSteels12, wheelBlackFechs12]
+
 // TYRES
 
 const tyre14Normal = {
+    name:"14Normal",
     size:14,
     imageTyre:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAIAAACQKrqGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABdSURBVChTY9xhu4sBBqq/VUJZMNDK1Q5lMTAwQWls6oAAWRCqFKs6CIBLgZTiUQcBEAWMxsbGED5BgHArQTCklCLHBx4AVAYylaBqiAKoA/Cohksh3IpVNUKQgQEAAEsZj9u24qUAAAAASUVORK5CYII='
 }
 
 const tyre16Normal = {
+    name:"16Normal",
     size:16,
     imageTyre:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABdSURBVDhPY9xhu4sBCVR/q4SyYKCVqx3KAgOEBkylyACujQlC4VcNBHAFIA0EVUMARBnUBuIBo7GxMZRJHCDZhmGhAS3m8QOgYrKcRKQlEGVQGwjqgSsgMXkzMAAA34Ec7yRy2h0AAAAASUVORK5CYII='
 }
 
 const tyre18Normal = {
+    name:"18Normal",
     size:18,
     imageTyre:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAIAAADZrBkAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABsSURBVDhPY9xhu4sBFVR/q4SyYKCVqx3KggEUbZgakAGyZiYoTUgPECArgGojqAcC4MpA2ojUAwEQxQhHkgQYjY2NoUxSAJm2DWttmOmNIABqocCRJFkIUQy1jUidcGUIRxLUiayArGzKwAAA7j4i85xta+wAAAAASUVORK5CYII='
 }
 
+const tyres = [tyre14Normal, tyre16Normal, tyre18Normal ]
+
 var currentDisplay = {
-    id:1,
     body:carbuggle,
     baseColour:"#e6846b",
     wheelColour:"#404040",
@@ -174,7 +182,7 @@ var currentDisplay = {
 
 //-----------------------------------------------
 // Functions for website setup
-//-----------------------------------------------
+//----------------------------------------------- 
 
 
 Coloris(
@@ -218,6 +226,91 @@ Coloris.setInstance('.wheelColour',
         }
     }
 );
+
+//-----------------------------------------------
+// Functions for URL fun
+//-----------------------------------------------
+
+
+function encodeCurrentToURL() {
+
+    let returnString = "?" + 
+    "car"+currentDisplay.body.name + "|" +
+    currentDisplay.baseColour +  "|" +
+    currentDisplay.wheelColour +  "|" +
+    currentDisplay.secondColour + "|" +
+    currentDisplay.twoTone + "|" +
+    currentDisplay.wheelColourMatch + "|" +
+    currentDisplay.darkColour + "|" +
+    currentDisplay.lightColour + "|" +
+    "wheel"+currentDisplay.wheels.name + "|" +
+    "tyre"+currentDisplay.frontTyre.name + "|" +
+    "tyre"+currentDisplay.backTyre.name + "|" +
+    currentDisplay.bodyDrop + "|" +
+    currentDisplay.rack + "|" +
+    currentDisplay.rackAccessory
+
+    return returnString;
+
+}
+
+function pickoutFromURL() {
+
+    var currentURL = window.location.href.split("?")[1];
+
+    carProperties = currentURL.split("|")
+
+    console.log( carProperties[0])
+
+    currentDisplay.body = cars.find(x => x.name === carProperties[0].replace("car",""));
+    currentDisplay.baseColour = carProperties[1];
+    currentDisplay.wheelColour = carProperties[2]; 
+    currentDisplay.secondColour = carProperties[3]; 
+    currentDisplay.twoTone = carProperties[4]; 
+    currentDisplay.wheelColourMatch = carProperties[5]; 
+    currentDisplay.darkColour = Number(carProperties[6]);
+    currentDisplay.lightColour = Number(carProperties[7]); 
+    currentDisplay.wheels = wheels.find(x => x.name === carProperties[8].replace("wheel",""));
+    currentDisplay.frontTyre = tyres.find(x => x.name === carProperties[9].replace("tyre",""));
+    currentDisplay.backTyre = tyres.find(x => x.name === carProperties[10].replace("tyre",""));
+    currentDisplay.bodyDrop = Number(carProperties[11]); 
+    currentDisplay.rack = carProperties[12]; 
+    currentDisplay.rackAccessory =carProperties[13];
+
+    console.log( cars);
+    console.log( cars.find(x => x.name === carProperties[0].replace("car","")) );
+    console.log(wheels.find(x => x.name === carProperties[8].replace("wheel","")) );
+    console.log(tyres.find(x => x.name === carProperties[9].replace("tyre","")) );
+    console.log(tyres.find(x => x.name === carProperties[10].replace("tyre","")) );
+
+    console.log( currentDisplay);
+
+
+}
+
+function startingValueSetter() {
+    document.getElementById("bodyColourControl").value = currentDisplay.baseColour;
+    document.getElementById("wheelColourControl").value = currentDisplay.wheelColour;
+    console.log(currentDisplay.baseColour);
+    console.log(document.getElementById("bodyColourControl").value);
+    document.querySelector('.bodyColour').dispatchEvent(new Event('input', { bubbles: true }));
+    document.querySelector('.wheelColour').dispatchEvent(new Event('input', { bubbles: true }));
+}
+
+function addToURL() {
+    //this function just adds to the end of the URL
+
+    //const url = new URL(window.location.href);
+    //url.searchParams.set('param1', 'val1');
+    //url.searchParams.delete('param2');
+    window.history.replaceState(null, null, encodeCurrentToURL())
+
+}
+
+
+
+
+
 
 function revealMessage() {
     document.getElementById("hiddenMessage").style.display = 'block';
@@ -529,6 +622,8 @@ function draw() {
         wheelColourInput = 'blank'
         wheelColourOptionHide();
     }
+
+    addToURL();
     
     imagesToLoad.forEach(image =>{
         image.onload = ()=>{ 
@@ -602,6 +697,8 @@ function draw() {
 
 window.addEventListener("load", ()=>{
     openTab(event, 'body')
+    pickoutFromURL();
+    startingValueSetter();
     draw();
 });
 
