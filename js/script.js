@@ -6,6 +6,8 @@ const carbuggle = {
     name:"buggle",
     CarPositionOver:11,
     CarPositionDown:59,
+    SecondaryPositionOver: 50,
+    SecondaryPositionDown: 50,
     ArchPositionOver:16,
     ArchPositionDown:82,
     FrontWheelOver:30,
@@ -13,7 +15,8 @@ const carbuggle = {
     RoofRefOver:59,
     RoofRefDown:55,
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAjCAIAAAARyBMdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASmSURBVGhDzZo9aBRBFMcvh4X5qBQrwdYmoKCiwiWiIMbCSiRNChtJYRkbo0UEYxBMKRJsbC1FIVELNXegFoJCQOyCIAiCVY7Y6f/2Pz5eZr9mdvYjf5b1zezMm5nfvJmb3Ti0NvGqtfu0sX7WWEm68fSPsZQeTO81VqTxyTfGqkW7hWMiuERe7gJZelh7+J451al5jkIQY5aRu4th6FILJasL0oY5EqKmcObJN2O1Wu+uHtZJLTzCnRBP9j5EebYmfhw11n+xfBU0m+cIiIB199Z2f37b5OZpaXQf7kAJLoCYUXH03vDtxWFCF1URmE1yFIg3+78xYHeOkKB02fukMJNQ6YHZNv/WLkB8fvELIZosH3nVQmGrPOYPl2zN4WqMY/1C5FrBC5RT10+XQrMZjtL1YsEYIqDsHvxsEpFKCcwGOLLTWNRMQr6bY6DQFlBqmuEom4lH9Pvt6jH8Rpt0IVm/wl6KT1sgymo5YvfhhS7KhXz8vPR6vU6nw2IhQiwby1/oBn+4qRCU5Zx7QMpYecJqwoEOBoIRHF9OvoZdYF2jysfOKYwcDovtCfDAnlxaPQI/zKQKHDCD4lHCzaQdxFMxlyRCkpm+0jGIlxYkeZmsTElh/bYDcBKYMAoEZpF4zAaHxWKsSBm7mF5TIis00sTRoq0Cu6TVQ4hO4BO/fuIQSfeo9OCYhi/eLawUY8WEwSfi85KwRtMZbVlynCE9N+4onTgiyKUTIRSs2aZBZQwysUWWF47ZjHL7rKszLHxR5nDkNuEIMXcwmqOvdNQLO3LMbtdRGl8cJe5sJe11PoujhCEd6ZMz5EskkKMl6VJZDvU8wWcaShiJ4ZnKUUMkQTilO5FXIKCuV/lcsWO+HIVXfDiUDhc6txpKDMlkjoT4d3oMRxOcVPRensGC3RLoUZ4RHzXOkRAzhqPJinM2BGPr1yzuiyNLg8c7lcBRQ0QSx13c3REITT1CZJYLkQIXd44aYm5nhJ34Z/U0lDZHDTFO0JouYyVFn9UJ5riP2UW+PgHCgugyHJkqb45zrT2EGCeYdgKwPjizsEZZBUdIBumr3OFot5yAuYVx2MdfjOEe52i/FyYGPFpFkxnHqPjXZtwdd9UaBBAYAtlBLsNh9IkQBMsLG/fvbF359NNk7ZTNkfV1MLJV2hmy2o6jbEqMJhgyogLDQXhK9bEDKzS0BhwvrJ9ngsKiljrw5dIqlYhS51SkjCbwyJrLtIN0XLLIZI2vTj2joV+RSa/NzySz36/hjseoIx9C0Anx5Sjf8mUpd7Y4qe4QKV2eTQAlEMEGMV4IO6Bsdzodnm+QpXuT27M06batkCzsM1uMl4qcwy09oxVpaPPr5eihEQC2CXEzEnMh1iwluKxBihEuuuJdBqlltVWsaQsCWyEuil/1h7rdblRgIH4fpkIgWl/YSmRXQNgfZVkUG1T8vxHov5FxQZvzI3fJmZmZ6NFAK4ceG8tf8fOXsWqX1Y3CwUGUWvqPdP35bXPugYUrhJ0ldFrwxVdc/Qqcy/gEkBgvJO33mbJkTSBQnlg+ZxJ1aWT/I9zRNCGG7FS5qokjFPjX6mKSHb9SiK1W6x/6jEwfee8XAgAAAABJRU5ErkJggg==',
-    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGEAAAAOCAIAAACwxuV7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC5SURBVFhH7ZaNCYAgEEa1QXKSxolmihaJxmmSBMX0VPw5oVN6BF2gct/LSH4uF4uz3auuXPb50FVX1MWJOootZ+hLEybOpO8uyRUlOWOIgIwTcJQfvgtN+DjQUWls4pqaxAl/a0UQ14THcTR82hx8Ca+jX1AMLoTQJQKy54DqF28ngo6K0poO6DvK6RAINVMS5+wklDVV9AY0KbD/tTF2kAEMlo/ywu4jie/+K3FNOlGL2BMbOBocxh45DFe1h+5b2gAAAABJRU5ErkJggg=='
+    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGEAAAAOCAIAAACwxuV7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC5SURBVFhH7ZaNCYAgEEa1QXKSxolmihaJxmmSBMX0VPw5oVN6BF2gct/LSH4uF4uz3auuXPb50FVX1MWJOootZ+hLEybOpO8uyRUlOWOIgIwTcJQfvgtN+DjQUWls4pqaxAl/a0UQ14THcTR82hx8Ca+jX1AMLoTQJQKy54DqF28ngo6K0poO6DvK6RAINVMS5+wklDVV9AY0KbD/tTF2kAEMlo/ywu4jie/+K3FNOlGL2BMbOBocxh45DFe1h+5b2gAAAABJRU5ErkJggg==',
+    imageSecondary:''
 };
 
 const car3cube = {
@@ -76,6 +79,8 @@ const carbrix = {
     name:"brix",
     CarPositionOver:9,
     CarPositionDown:55,
+    SecondaryPositionOver: 15,
+    SecondaryPositionDown: 55,
     ArchPositionOver:15,
     ArchPositionDown:85,
     FrontWheelOver:35,
@@ -83,7 +88,8 @@ const carbrix = {
     RoofRefOver:34,
     RoofRefDown:52,
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAnCAIAAACKWVELAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP3SURBVGhD7Zo/aBRBFMb3YqEkqYJp7EUEweIstFCjjVoIgoXa2YiF2GkRrOMV2qYINlqI2gkWBhv/NFGIhSCI2NgLKcRIOv28793kZWZubnYys5dL/HFs3uzNvnnz7Zs/t5vW4vFXVYOcvXGMxv1Lew6deE07QK36tSp/fndKrKqKiSRMuo46DsOtZ2tiRYDelqsfWRnVxPIRr2+KjlCwVv9HGi10QNbaOnYmpsTakcyuroi1kXo6mgmoLryrOotPPvz69uoBGO17MzxDPt5+I5bzVRh9IQlfzvreOq4rAzrizcoaOlLEcHBz4x2xqurO71mxuiA4PWdRR3jTl2wGNGfdg2TPriuxer1wpYzVESKi579+XGcxIUQEd2X5vdYR3nKJSNDE5PRCltujpbz8/BoN8PTCAxwX55dYNIzJ3yAUkXbenm9ZdDeh3bcezE13rzJYRzMnZk+fLY41nPf3QNHdrgzQkSKWGIMjAaZCrpBAErKXkhaD89GM6CzQG45crPOiF4fNg7x5cuSoFKpKsrELimaYkpCO7ojG7IvPzklM3VN3ltRS9tWxxIg200qJZCxEICU1fh2NiCwWAsMQ2S2FTaNd5fIMJ9irSUFNkYBnzMLt2T9qEZGM3XMb+LNr7O7uORi1YuXk5c6M3mnbwKvCdYjenJKYqwxaL4JMdH1amD25raMWkR02CxYwSe62atGveeqo1dT+LcJ9INbluMS9VUWhlBt0NBNnuVBcHbMzFB3982OTcYw6HDTr+aiTkUaAZKG3Xz4CpKStI0WMjCNGcZeh6JgWagxoa11Hk4wge5Nm0f/ZWtu39xFtovcDk9MLYo0a518eFh07E1PmHkJHfEE7Oy/OfUpwXmvhTmvCS0y7ZF1HHCll84MuLw00YYEWZb1uuOHtR+g5RTlwA8UafdCX2dUV0VGPhf+5mYA/Hwvly3ZKQwvPOgN0ekYyUCPtMMF/PEWdu6A5jGvR8czpmzjOfHjMCGJCoXAx1dw6Rbsa6dzsk7zE73jA4vySrSOOCGJgKFpE2i4BD0PXESJimymFPmATGqmmrSNoHVzGMUZHVHBf43rRP5bIcHVEhX7/XmKhf54EgA6yziAT+WExDOLAMVJEEF8zC7lEBKgZHv4GyUc+2eYvXOSz+9NKZ3itUIj14hz+2Vsryshx1K9vuJzJGKhQ96Za/xfGsJlJBGfgs9Vut+VEF/2wwHtj6aKujsAaI+ywFPIRcJsWeb+hDW/mIcvceMfWEQx87pIgItgKOmaJHPCW6IdVjeooVgQxErMztcgYufUG8N/8aL3249vqQLcb0LEQZXUUszzDlTJNxEiG87ynMb5/uYgPjKIiVlX1F1YFoL+x2Bo5AAAAAElFTkSuQmCC',
-    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGMAAAALCAIAAADk/qT1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACuSURBVEhLY9xhu4uBOJD+KBXKwgtmys2GsgYNoIrLmaA0IUCkZUBAvEr6AGq5nKiQGmyeJx5Q0eXEpimSwNANWTyAcEiNqASFRwtN0tSwBEzAUByWmYXqANRKICakiKz7kY0a2OYCGS7BHw6g3Ac0CL9ZxPt5wEMH4lvyIgyPSqAUgZYn0EoyPI8ncigJSjzGYoK//xmYGcmxDtMWiCEktNFJAuQFMRUBlR3AwAAAFedN7djBmFkAAAAASUVORK5CYII='
+    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGMAAAALCAIAAADk/qT1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACuSURBVEhLY9xhu4uBOJD+KBXKwgtmys2GsgYNoIrLmaA0IUCkZUBAvEr6AGq5nKiQGmyeJx5Q0eXEpimSwNANWTyAcEiNqASFRwtN0tSwBEzAUByWmYXqANRKICakiKz7kY0a2OYCGS7BHw6g3Ac0CL9ZxPt5wEMH4lvyIgyPSqAUgZYn0EoyPI8ncigJSjzGYoK//xmYGcmxDtMWiCEktNFJAuQFMRUBlR3AwAAAFedN7djBmFkAAAAASUVORK5CYII=',
+    imageSecondary:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGcAAAAVCAIAAADUyWdkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHYSURBVFhH5ZehTgQxEIb3TpHgeAkMCRoBF9wZNBaPxfAEGCweyxNwwRAwGCSGl8CRIJnLPxnmOt3Zdq/lsrefublu2+n8O512J4vjp6Ya88sjGLfnOwcnz7Adsvpndf54PWWraVJW4pOqmvYqXD38sJUAxVavf2Jn6sZWjHQ1u1UjvbKiHTRaVkfEDtVudvfYGiXX319sreKpJoUjF7wxnaGz+8+Xi30yFndvaAHaRfDIx67NH47+0T5OmBRINOM6VMuKRENjda2Bar1ni6KjXXPmtqkQhRVuyr8G2pvrLMWOLSsZQRPSy4CBlt44M0Rrely1MZczm3f2/tCaa22FcFvR6aaFI2y6RVSjRBubZIBKGM4xTXTzhqqV3ZuoO3KAliXIiPVxLmiBr0iujTPRAmx10y0rqpXdm1IOaiRaJRI/qv5Uq31uFt9QQsGZo5/bgjzlWy4kK5hoiMRWNOdmRGCU3wfYr+OUUYJVh7LMzhkgN96lapAM4elDRNLVfwNEmzOoprWzh5TgrxgEw2lIpaOmDQjHqlVybFUrzkZUm9Km+E+vQwcbYjKbv+O/Q29Zty/XCEq3pWqJXml9bOWwEdX6LTUF8sWqcUMh9EEc3GacRwPi7PHwF4J3CETOmkh5AAAAAElFTkSuQmCC'
 };
 
 const cartwofer = {
@@ -164,11 +170,11 @@ const tyre18Normal = {
 const tyres = [tyre14Normal, tyre16Normal, tyre18Normal ]
 
 var currentDisplay = {
-    body:carbuggle,
+    body:carbrix,
     baseColour:"#e6846b",
     wheelColour:"#404040",
-    secondColour:"",
-    twoTone:0,
+    secondColour:"#f1f1d0",
+    secondaryOption:1,
     wheelColourMatch:0,
     darkColour:-0.25,
     lightColour:0.25,
@@ -597,6 +603,7 @@ function draw() {
     const arches = new Image();
     const frontTyre = new Image(); 
     const backTyre = new Image(); 
+    const secondary = new Image();
 
     var imagesToLoad = [];
     var imageCount = 0;
@@ -614,6 +621,8 @@ function draw() {
     imagesToLoad.push(frontTyre);
     backTyre.src = currentDisplay.backTyre.imageTyre
     imagesToLoad.push(backTyre);
+    secondary.src = currentDisplay.body.imageSecondary
+    imagesToLoad.push(secondary);
 
     if (currentDisplay.wheels.customColour == 1) {
         wheelColourOptionShow();
@@ -691,6 +700,21 @@ function draw() {
                     currentDisplay.lightColour,
                     currentDisplay.darkColour
                 );
+                
+                if (currentDisplay.secondaryOption) {
+                    console.log("image second draw");
+                    drawImageFromData(secondary,
+                        currentDisplay.body.SecondaryPositionOver,
+                        currentDisplay.body.SecondaryPositionDown+currentDisplay.bodyDrop,
+                        hiddenContext,
+                        visibleContext,
+                        currentDisplay.secondColour,
+                        currentDisplay.lightColour,
+                        currentDisplay.darkColour
+                    );                    
+                }
+
+
                  
                 
             }
