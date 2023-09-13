@@ -15,8 +15,7 @@ const carbuggle = {
     RoofRefOver:59,
     RoofRefDown:55,
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAjCAIAAAARyBMdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASmSURBVGhDzZo9aBRBFMcvh4X5qBQrwdYmoKCiwiWiIMbCSiRNChtJYRkbo0UEYxBMKRJsbC1FIVELNXegFoJCQOyCIAiCVY7Y6f/2Pz5eZr9mdvYjf5b1zezMm5nfvJmb3Ti0NvGqtfu0sX7WWEm68fSPsZQeTO81VqTxyTfGqkW7hWMiuERe7gJZelh7+J451al5jkIQY5aRu4th6FILJasL0oY5EqKmcObJN2O1Wu+uHtZJLTzCnRBP9j5EebYmfhw11n+xfBU0m+cIiIB199Z2f37b5OZpaXQf7kAJLoCYUXH03vDtxWFCF1URmE1yFIg3+78xYHeOkKB02fukMJNQ6YHZNv/WLkB8fvELIZosH3nVQmGrPOYPl2zN4WqMY/1C5FrBC5RT10+XQrMZjtL1YsEYIqDsHvxsEpFKCcwGOLLTWNRMQr6bY6DQFlBqmuEom4lH9Pvt6jH8Rpt0IVm/wl6KT1sgymo5YvfhhS7KhXz8vPR6vU6nw2IhQiwby1/oBn+4qRCU5Zx7QMpYecJqwoEOBoIRHF9OvoZdYF2jysfOKYwcDovtCfDAnlxaPQI/zKQKHDCD4lHCzaQdxFMxlyRCkpm+0jGIlxYkeZmsTElh/bYDcBKYMAoEZpF4zAaHxWKsSBm7mF5TIis00sTRoq0Cu6TVQ4hO4BO/fuIQSfeo9OCYhi/eLawUY8WEwSfi85KwRtMZbVlynCE9N+4onTgiyKUTIRSs2aZBZQwysUWWF47ZjHL7rKszLHxR5nDkNuEIMXcwmqOvdNQLO3LMbtdRGl8cJe5sJe11PoujhCEd6ZMz5EskkKMl6VJZDvU8wWcaShiJ4ZnKUUMkQTilO5FXIKCuV/lcsWO+HIVXfDiUDhc6txpKDMlkjoT4d3oMRxOcVPRensGC3RLoUZ4RHzXOkRAzhqPJinM2BGPr1yzuiyNLg8c7lcBRQ0QSx13c3REITT1CZJYLkQIXd44aYm5nhJ34Z/U0lDZHDTFO0JouYyVFn9UJ5riP2UW+PgHCgugyHJkqb45zrT2EGCeYdgKwPjizsEZZBUdIBumr3OFot5yAuYVx2MdfjOEe52i/FyYGPFpFkxnHqPjXZtwdd9UaBBAYAtlBLsNh9IkQBMsLG/fvbF359NNk7ZTNkfV1MLJV2hmy2o6jbEqMJhgyogLDQXhK9bEDKzS0BhwvrJ9ngsKiljrw5dIqlYhS51SkjCbwyJrLtIN0XLLIZI2vTj2joV+RSa/NzySz36/hjseoIx9C0Anx5Sjf8mUpd7Y4qe4QKV2eTQAlEMEGMV4IO6Bsdzodnm+QpXuT27M06batkCzsM1uMl4qcwy09oxVpaPPr5eihEQC2CXEzEnMh1iwluKxBihEuuuJdBqlltVWsaQsCWyEuil/1h7rdblRgIH4fpkIgWl/YSmRXQNgfZVkUG1T8vxHov5FxQZvzI3fJmZmZ6NFAK4ceG8tf8fOXsWqX1Y3CwUGUWvqPdP35bXPugYUrhJ0ldFrwxVdc/Qqcy/gEkBgvJO33mbJkTSBQnlg+ZxJ1aWT/I9zRNCGG7FS5qokjFPjX6mKSHb9SiK1W6x/6jEwfee8XAgAAAABJRU5ErkJggg==',
-    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGEAAAAOCAIAAACwxuV7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC5SURBVFhH7ZaNCYAgEEa1QXKSxolmihaJxmmSBMX0VPw5oVN6BF2gct/LSH4uF4uz3auuXPb50FVX1MWJOootZ+hLEybOpO8uyRUlOWOIgIwTcJQfvgtN+DjQUWls4pqaxAl/a0UQ14THcTR82hx8Ca+jX1AMLoTQJQKy54DqF28ngo6K0poO6DvK6RAINVMS5+wklDVV9AY0KbD/tTF2kAEMlo/ywu4jie/+K3FNOlGL2BMbOBocxh45DFe1h+5b2gAAAABJRU5ErkJggg==',
-    imageSecondary:''
+    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGEAAAAOCAIAAACwxuV7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC5SURBVFhH7ZaNCYAgEEa1QXKSxolmihaJxmmSBMX0VPw5oVN6BF2gct/LSH4uF4uz3auuXPb50FVX1MWJOootZ+hLEybOpO8uyRUlOWOIgIwTcJQfvgtN+DjQUWls4pqaxAl/a0UQ14THcTR82hx8Ca+jX1AMLoTQJQKy54DqF28ngo6K0poO6DvK6RAINVMS5+wklDVV9AY0KbD/tTF2kAEMlo/ywu4jie/+K3FNOlGL2BMbOBocxh45DFe1h+5b2gAAAABJRU5ErkJggg=='
 };
 
 const car3cube = {
@@ -79,8 +78,6 @@ const carbrix = {
     name:"brix",
     CarPositionOver:9,
     CarPositionDown:55,
-    SecondaryPositionOver: 15,
-    SecondaryPositionDown: 55,
     ArchPositionOver:15,
     ArchPositionDown:85,
     FrontWheelOver:35,
@@ -89,6 +86,8 @@ const carbrix = {
     RoofRefDown:52,
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAnCAIAAACKWVELAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP3SURBVGhD7Zo/aBRBFMb3YqEkqYJp7EUEweIstFCjjVoIgoXa2YiF2GkRrOMV2qYINlqI2gkWBhv/NFGIhSCI2NgLKcRIOv28793kZWZubnYys5dL/HFs3uzNvnnz7Zs/t5vW4vFXVYOcvXGMxv1Lew6deE07QK36tSp/fndKrKqKiSRMuo46DsOtZ2tiRYDelqsfWRnVxPIRr2+KjlCwVv9HGi10QNbaOnYmpsTakcyuroi1kXo6mgmoLryrOotPPvz69uoBGO17MzxDPt5+I5bzVRh9IQlfzvreOq4rAzrizcoaOlLEcHBz4x2xqurO71mxuiA4PWdRR3jTl2wGNGfdg2TPriuxer1wpYzVESKi579+XGcxIUQEd2X5vdYR3nKJSNDE5PRCltujpbz8/BoN8PTCAxwX55dYNIzJ3yAUkXbenm9ZdDeh3bcezE13rzJYRzMnZk+fLY41nPf3QNHdrgzQkSKWGIMjAaZCrpBAErKXkhaD89GM6CzQG45crPOiF4fNg7x5cuSoFKpKsrELimaYkpCO7ojG7IvPzklM3VN3ltRS9tWxxIg200qJZCxEICU1fh2NiCwWAsMQ2S2FTaNd5fIMJ9irSUFNkYBnzMLt2T9qEZGM3XMb+LNr7O7uORi1YuXk5c6M3mnbwKvCdYjenJKYqwxaL4JMdH1amD25raMWkR02CxYwSe62atGveeqo1dT+LcJ9INbluMS9VUWhlBt0NBNnuVBcHbMzFB3982OTcYw6HDTr+aiTkUaAZKG3Xz4CpKStI0WMjCNGcZeh6JgWagxoa11Hk4wge5Nm0f/ZWtu39xFtovcDk9MLYo0a518eFh07E1PmHkJHfEE7Oy/OfUpwXmvhTmvCS0y7ZF1HHCll84MuLw00YYEWZb1uuOHtR+g5RTlwA8UafdCX2dUV0VGPhf+5mYA/Hwvly3ZKQwvPOgN0ekYyUCPtMMF/PEWdu6A5jGvR8czpmzjOfHjMCGJCoXAx1dw6Rbsa6dzsk7zE73jA4vySrSOOCGJgKFpE2i4BD0PXESJimymFPmATGqmmrSNoHVzGMUZHVHBf43rRP5bIcHVEhX7/XmKhf54EgA6yziAT+WExDOLAMVJEEF8zC7lEBKgZHv4GyUc+2eYvXOSz+9NKZ3itUIj14hz+2Vsryshx1K9vuJzJGKhQ96Za/xfGsJlJBGfgs9Vut+VEF/2wwHtj6aKujsAaI+ywFPIRcJsWeb+hDW/mIcvceMfWEQx87pIgItgKOmaJHPCW6IdVjeooVgQxErMztcgYufUG8N/8aL3249vqQLcb0LEQZXUUszzDlTJNxEiG87ynMb5/uYgPjKIiVlX1F1YFoL+x2Bo5AAAAAElFTkSuQmCC',
     imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGMAAAALCAIAAADk/qT1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACuSURBVEhLY9xhu4uBOJD+KBXKwgtmys2GsgYNoIrLmaA0IUCkZUBAvEr6AGq5nKiQGmyeJx5Q0eXEpimSwNANWTyAcEiNqASFRwtN0tSwBEzAUByWmYXqANRKICakiKz7kY0a2OYCGS7BHw6g3Ac0CL9ZxPt5wEMH4lvyIgyPSqAUgZYn0EoyPI8ncigJSjzGYoK//xmYGcmxDtMWiCEktNFJAuQFMRUBlR3AwAAAFedN7djBmFkAAAAASUVORK5CYII=',
+    SecondaryPositionOver: 15,
+    SecondaryPositionDown: 55,
     imageSecondary:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGcAAAAVCAIAAADUyWdkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHYSURBVFhH5ZehTgQxEIb3TpHgeAkMCRoBF9wZNBaPxfAEGCweyxNwwRAwGCSGl8CRIJnLPxnmOt3Zdq/lsrefublu2+n8O512J4vjp6Ya88sjGLfnOwcnz7Adsvpndf54PWWraVJW4pOqmvYqXD38sJUAxVavf2Jn6sZWjHQ1u1UjvbKiHTRaVkfEDtVudvfYGiXX319sreKpJoUjF7wxnaGz+8+Xi30yFndvaAHaRfDIx67NH47+0T5OmBRINOM6VMuKRENjda2Bar1ni6KjXXPmtqkQhRVuyr8G2pvrLMWOLSsZQRPSy4CBlt44M0Rrely1MZczm3f2/tCaa22FcFvR6aaFI2y6RVSjRBubZIBKGM4xTXTzhqqV3ZuoO3KAliXIiPVxLmiBr0iujTPRAmx10y0rqpXdm1IOaiRaJRI/qv5Uq31uFt9QQsGZo5/bgjzlWy4kK5hoiMRWNOdmRGCU3wfYr+OUUYJVh7LMzhkgN96lapAM4elDRNLVfwNEmzOoprWzh5TgrxgEw2lIpaOmDQjHqlVybFUrzkZUm9Km+E+vQwcbYjKbv+O/Q29Zty/XCEq3pWqJXml9bOWwEdX6LTUF8sWqcUMh9EEc3GacRwPi7PHwF4J3CETOmkh5AAAAAElFTkSuQmCC'
 };
 
@@ -103,7 +102,10 @@ const cartwofer = {
     RoofRefOver:30,
     RoofRefDown:53,
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAApCAIAAABWevs/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQ/SURBVGhD7Zo9T1RBFIbFSkNnyw8wJiaSWKjJomhikMJY2hLbjZ0WgIWFH40mNtsqjYW1BcRG1E2URBJNaPwBtHaIHb7Lezw7O1935n4sC8uTyd2Zu3PvzDz3zOws7MTazIcT+Wx9vi65NB68+yu5g+DF3VOSy+H81Y+S85EqzmvqYHWUJu4Rg7IqeA0Wi1Nlh1RTFdSg665AXPqUrEtriWnV6BNlf/LEPZ88I7kx5vbqhffzP5FZ3PnNM6Qg4uDu08JZKYwGDIH0KMutb6Lhj8vXOl+ZJwXibrWv4KjXTD47jePO0i6LITDB0dK1lV8qnXfg5S4z29OS+4/VosVG6zKOpgvUD90cuPXTUe8Z4ixrAJ0rtEbgDhFOcVaTLrgt3KnolPpwoc8mvb6UM/G6OymvAdAzyeUzanM8l/jYg+L4eWquiJG5MIbEIk6XRiVxnh4xxZzjlo2YuNKLAuACJIURoMpYFC76xC/O3fc2GkSJgaygfpaI3Pun4Bd3qfuNmeU/i0zIN9H8yOIuUxYecQw3bpc3H66/2gd5NaggDL3J2peZEe7FqtB0/dKYNiesfRzawNr0ZLkXXNw3WqTPEW6yQo/OvQ/rSyENXIKvRFLIJDIQ9ln3oYRLtm4z/OJq2YJl3SdeOTJxrOHVAppzb8se6h54QJxpDRmePIYwtCGUQWeLw9FVBpXeZ+5GuwY5jtYkis/xeMRZmJ0pF3HmHcyO6fnQ0HCeQdcX57Xm9slsEngbwEnep8SQ0kFD1edpaGLhqVtDs8QNfKoWWgO4kknKDtjKfJn6wY+XFFCZScrDBWPUBFlMoYFLbp9exM3duI/cy8dbOHKWAe/FKZj2E29SLjyHHHGAk2lgqsLd7MZbdKLcGFxqGVWcepvQmciiF1OcTNWJc99xDOkfDmidvR8maJQJzwBJi/J2mP4a12h0NEE8OhLBqHVdM5O8HaYvLkXz0cONNSZ5exDzUXm+q44VVqAx+pDk7TAirvbdQC3zaPig20xSDiPiWq1W+s7rGNATN/f5JguFWAuBmaRGNQ5RnGascWoH33LdVKO+Q4GI63a7zBBLgUqhI560cPVhrWUmnax9nNXJWkAHIn0wW5RvDvoHJfM9HTlPhpRZ8BcnvFWWO9THx1n6bA3dHyPH9kIKpdBPVbMzlDC/dmd65g0yIk5/I8K3FY4fmURrRH+tkyUO8GknuvOKM61FdhUpZnm5diYmzrJmkiUOlHOHDljdjWCJo3TTSG6fFe08QH/Me/bF7e3t4QVr3KOnwX8AluiB2TZJMUgXUFBCnPXUS1sjbv+V9dWLOIo4AHfYzTGvzM5v4liuE5G2SVYwxrGsgcbF9f4eF93HwV1D4pqjojWgnacmCwSZiLO2IyZV/g99IO6qWyPovNcaEHHIue46nQ6OC9v3WBxPJsM//BBxx4RYmXqNY7vdZpHsLO3+A0uV7aPLtkO2AAAAAElFTkSuQmCC',
-    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAALCAIAAACF5oa3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACgSURBVEhLY9xhu4sBG0h/lAplIYGZcrOhrOEFsIQCVv8jg+EXFkxQGgYIBgEQEKNmaAGUUCDee8MsIFByBKl+GwxZg+z4QHY8Ii0MxeilxM3IetHLBZLAUAw4rICiUBhYQMU4gJYLcBOJzOrILhiQ0oFaQQBxPCgUSA0CCKBiVFAOiHc5prOBehnl5eXhHAiDeIBmIhkmkAcotBc9IBgYAGbpPvfCmyjJAAAAAElFTkSuQmCC'
+    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAALCAIAAACF5oa3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACgSURBVEhLY9xhu4sBG0h/lAplIYGZcrOhrOEFsIQCVv8jg+EXFkxQGgYIBgEQEKNmaAGUUCDee8MsIFByBKl+GwxZg+z4QHY8Ii0MxeilxM3IetHLBZLAUAw4rICiUBhYQMU4gJYLcBOJzOrILhiQ0oFaQQBxPCgUSA0CCKBiVFAOiHc5prOBehnl5eXhHAiDeIBmIhkmkAcotBc9IBgYAGbpPvfCmyjJAAAAAElFTkSuQmCC',
+    SecondaryPositionOver: 14,
+    SecondaryPositionDown: 55,
+    imageSecondary: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAbCAIAAAAF9L0XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHnSURBVGhD7ZihTgQxEIb3UCQ4XgJDgkYAwYFAY/FYDE+AweKRoBFczhAwaBIML4EhJEj+5W/met1uO+0u7HHXT9y1l9nu9mtntjAa70yqFF6f9k1Lx9ntl2kNweXxqmmlsLn7YFqzxGV57QyrIJuwO0zKCXCshWSJpn+qpgtizfbVKkufbn2pzEiZX11FPk9c1sXaumktMUf3W3eHL2icf77zl9adBV+PJxumMx9wqfW7KTXeRrY5Lh9fPbPdKuvgdBufEqcEyYvR967fRHR4BN7FJhzP4mDPPzVej7iWW6zwyyHPFECGy5qA6AgMgFy7G0AqCC/Rx2dAxZiOrKhfFpAJZDBv+ZtK29w9srh1paoVBP/OslNpmZFMZNcvK68iElzbJYV7p8tcBJYtV5b+LDoUvUw+D1dWl9fHYhAoQTOyuK14bG2egDQ4V0UH+eP4bGhweijFuKg1fAl6k1G//zEOTg9tS9Qch/GmowOX4M8R00kkMBE+M7aL/TwswTDjyurliJQ0Tjg4kBTOlHoBt2sOyyfEAdjIsk2h8RNTMHALQ+JUFj5tTeVQ2qQu8MWUEvM2LKY01LJQ1ZiW0FRMBahloXThbVo0RRlVNx/IwWJKQ72zej+tLCq1rOj/GwvEvA0LcarqG4bzA1CXSphhAAAAAElFTkSuQmCC'
 };
 
 const cars = [ carbuggle, carbrix, car039, car005, car3cube, cartwofer,car653]
@@ -173,7 +175,7 @@ var currentDisplay = {
     body:carbrix,
     baseColour:"#e6846b",
     wheelColour:"#404040",
-    secondColour:"#f1f1d0",
+    secondaryColour:"#f1f1d0",
     secondaryOption:1,
     wheelColourMatch:0,
     darkColour:-0.25,
@@ -223,6 +225,15 @@ Coloris.setInstance('.bodyColour',
         }
     }
 );
+Coloris.setInstance('.secondaryColour', 
+    {
+        onChange: (color) => {
+            currentDisplay.secondaryColour = color
+            // console.log('New color', color)
+            draw()
+        }
+    }
+);
 Coloris.setInstance('.wheelColour', 
     {
         onChange: (color) => {
@@ -244,8 +255,8 @@ function encodeCurrentToURL() {
     "car"+currentDisplay.body.name + "|" +
     currentDisplay.baseColour +  "|" +
     currentDisplay.wheelColour +  "|" +
-    currentDisplay.secondColour + "|" +
-    currentDisplay.twoTone + "|" +
+    currentDisplay.secondaryColour + "|" +
+    currentDisplay.secondaryOption + "|" +
     currentDisplay.wheelColourMatch + "|" +
     currentDisplay.darkColour + "|" +
     currentDisplay.lightColour + "|" +
@@ -276,8 +287,8 @@ function pickoutFromURL() {
         currentDisplay.body = cars.find(x => x.name === carProperties[0].replace("car",""));
         currentDisplay.baseColour = carProperties[1];
         currentDisplay.wheelColour = carProperties[2]; 
-        currentDisplay.secondColour = carProperties[3]; 
-        currentDisplay.twoTone = carProperties[4]; 
+        currentDisplay.secondaryColour = carProperties[3]; 
+        currentDisplay.secondaryOption = carProperties[4]; 
         currentDisplay.wheelColourMatch = carProperties[5]; 
         currentDisplay.darkColour = Number(carProperties[6]);
         currentDisplay.lightColour = Number(carProperties[7]); 
@@ -304,10 +315,22 @@ function pickoutFromURL() {
 
 function startingValueSetter() {
     document.getElementById("bodyColourControl").value = currentDisplay.baseColour;
+    document.getElementById("secondaryColourControl").value = currentDisplay.secondaryColour;
     document.getElementById("wheelColourControl").value = currentDisplay.wheelColour;
-    console.log(currentDisplay.baseColour);
-    console.log(document.getElementById("bodyColourControl").value);
+
+    if (currentDisplay.secondaryOption == 1) {
+         document.getElementById("secondaryColourChoice").checked = true
+    } else {
+         document.getElementById("secondaryColourChoice").checked = false
+    }
+    if (currentDisplay.wheelColourMatch == 1) {
+        document.getElementById("wheelColourMatch").checked = true
+   } else {
+        document.getElementById("wheelColourMatch").checked = false
+   }
+
     document.querySelector('.bodyColour').dispatchEvent(new Event('input', { bubbles: true }));
+    document.querySelector('.secondaryColour').dispatchEvent(new Event('input', { bubbles: true }));
     document.querySelector('.wheelColour').dispatchEvent(new Event('input', { bubbles: true }));
 }
 
@@ -323,7 +346,9 @@ function addToURL() {
 
 
 
-
+//-----------------------------------------------
+// Functions for buttons
+//-----------------------------------------------
 
 
 function revealMessage() {
@@ -352,39 +377,52 @@ function tyreDropdownFunction() {
     document.getElementById("tyreDropdownList").classList.toggle("show");
 }
 
-function wheelColourOptionShow() {
-    if (document.getElementById("wheelColourOption").classList.contains('hide')) {
-        document.getElementById("wheelColourOption").classList.remove('hide');
+function showByElementID(elementID) {
+    if (document.getElementById(elementID).classList.contains('hide')) {
+        document.getElementById(elementID).classList.remove('hide');
     }
 }
 
-function wheelColourOptionHide() {
-    if (!document.getElementById("wheelColourOption").classList.contains('hide')) {
-        document.getElementById("wheelColourOption").classList.add('hide');
-    }
-}
-
-function wheelColourControlShow() {
-    if (document.getElementById("wheelColourControl").classList.contains('hide')) {
-        document.getElementById("wheelColourControl").classList.remove('hide');
-    }
-}
-
-function wheelColourControlHide() {
-    if (!document.getElementById("wheelColourControl").classList.contains('hide')) {
-        document.getElementById("wheelColourControl").classList.add('hide');
+function hideByElementID(elementID) {
+    if (!document.getElementById(elementID).classList.contains('hide')) {
+        document.getElementById(elementID).classList.add('hide');
     }
 }
 
 function checkCheckbox() {
-    var checkbox = document.getElementById('wheelColourMatch');
-    if (checkbox.checked == true) {
+    var wheelColourCheckbox = document.getElementById('wheelColourMatch');
+    if (wheelColourCheckbox.checked == true) {
         currentDisplay.wheelColourMatch = 1
         draw();
     } else {
         currentDisplay.wheelColourMatch = 0
         draw();
     }
+
+    var secondaryColourCheckbox = document.getElementById('secondaryColourChoice');
+    if (secondaryColourCheckbox.checked == true) {
+        currentDisplay.secondaryOption = 1
+        showByElementID("secondaryColourControl");
+        draw();
+    } else {
+        currentDisplay.secondaryOption = 0
+        hideByElementID("secondaryColourControl");
+        draw();
+    }
+
+    
+}
+
+function checkForSecondaryColourOption() {
+
+    if ("imageSecondary" in currentDisplay.body) {
+        showByElementID("secondaryColourOption");
+        console.log("show second colour");
+    } else {
+        hideByElementID("secondaryColourOption");
+        console.log("hide second colour");
+    }
+
 }
 
 function openTab(evt, tabName) {
@@ -422,15 +460,12 @@ window.onclick = function(event) {
         }
         }
     }
-    // if (event.target.matches('.buggleButton')) {
-    //     currentDisplay.body = carbuggle
-    //     draw()
-    // }
-    // if (event.target.matches('.3cubeButton')) {
-    //     currentDisplay.body = car3cube
-    //     draw()
-    // }
+
 }
+
+//-----------------------------------------------
+// Functions for changing properties
+//-----------------------------------------------
 
 function bodyChange(element) {
     if (element.id == "carbuggle" ) {currentDisplay.body = carbuggle};
@@ -441,6 +476,7 @@ function bodyChange(element) {
     if (element.id == "carbrix" ) {currentDisplay.body = carbrix};
     if (element.id == "cartwofer" ) {currentDisplay.body = cartwofer};
     if (element.id == "car005" ) {currentDisplay.body = car005};
+    checkForSecondaryColourOption();
     draw();
 }
 
@@ -621,23 +657,25 @@ function draw() {
     imagesToLoad.push(frontTyre);
     backTyre.src = currentDisplay.backTyre.imageTyre
     imagesToLoad.push(backTyre);
-    secondary.src = currentDisplay.body.imageSecondary
-    imagesToLoad.push(secondary);
+    if ( "imageSecondary" in currentDisplay.body ) {
+        secondary.src = currentDisplay.body.imageSecondary
+        imagesToLoad.push(secondary);
+    }
 
     if (currentDisplay.wheels.customColour == 1) {
-        wheelColourOptionShow();
+        showByElementID("wheelColourOption");
 
         if (currentDisplay.wheelColourMatch == 0) {
-            wheelColourControlShow();
+            showByElementID("wheelColourControl");
             wheelColourInput = currentDisplay.wheelColour
         } else {
-            wheelColourControlHide();
+            hideByElementID("wheelColourControl");
             wheelColourInput = currentDisplay.baseColour;
         }
 
     } else {
         wheelColourInput = 'blank'
-        wheelColourOptionHide();
+        hideByElementID("wheelColourOption");
     }
 
     addToURL();
@@ -701,14 +739,14 @@ function draw() {
                     currentDisplay.darkColour
                 );
                 
-                if (currentDisplay.secondaryOption) {
-                    console.log("image second draw");
+                if (currentDisplay.secondaryOption && "imageSecondary" in currentDisplay.body) {  // and secondary exists //
+                    //console.log("image second draw");
                     drawImageFromData(secondary,
                         currentDisplay.body.SecondaryPositionOver,
                         currentDisplay.body.SecondaryPositionDown+currentDisplay.bodyDrop,
                         hiddenContext,
                         visibleContext,
-                        currentDisplay.secondColour,
+                        currentDisplay.secondaryColour,
                         currentDisplay.lightColour,
                         currentDisplay.darkColour
                     );                    
@@ -731,6 +769,8 @@ window.addEventListener("load", ()=>{
     openTab(event, 'body')
     pickoutFromURL();
     startingValueSetter();
+    checkForSecondaryColourOption();
+    checkCheckbox();
     draw();
 });
 
