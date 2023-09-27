@@ -181,7 +181,14 @@ const wheelChromeSteels8 = {
     name:"ChromeSteels8",
     size:8,
     customColour:0,
-    imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABZSURBVBhXY9xhu4uBgYG7jRNIQsDXqu9AkgWIgaJTp04FC4JAdls2UI7x8OHDQNHs7GyIKEQFkAvSAQHImoCACUrDAFwrVAJuAoQLBCBXoVueDbYcu3MZGAAVHCWCRJ4sZQAAAABJRU5ErkJggg=='
+    imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABySURBVBhXY9xhu4uBgWGB9DwgmZ2dDSS/Vn0HkiAJoOjy5cuBHCA4cuQIkATKMf+x+g0RBQo9evQILMvA5szKBGFBFELA1KlTgSQTxFw0YGNjA9KBqRwIQJZzt3EiCwGt3Gm3G+pciBzQBCAJFGVgYAAAGpMwO1vCOtkAAAAASUVORK5CYII='
+}
+
+const wheelColouredSteels8 = {
+    name:"ColouredSteels8",
+    size:8,
+    customColour:1,
+    imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB3SURBVBhXY9xhu4uBgaGdWwhIHkxQB5I7ph4HkgxACXuPM/9h4PDhwwwrPgMFGYGiB7YbA1UcOXIEpBAMbJ8aMEFYyKJTp04FkkwQc9FATzgHSAemciAAucoj2/Kw9AW4kMnyxTp2+6HOBcoBSaAJQBIoysDAAAAY4zWItvspcwAAAABJRU5ErkJggg=='
 }
 
 const wheelChromeSteels10 = {
@@ -189,6 +196,13 @@ const wheelChromeSteels10 = {
     size:10,
     customColour:0,
     imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAIAAAACUFjqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACKSURBVChTZZDBDQIhEEVZshdjS+zRWAM10IEF0AE12ILZo6GljUd88Mmo8SX7w/zPwCzLY9vd4Pq8oLVW9Li9hudWvnM+oTHG4XRSTiibvOoQwn2QUg9KKfKX1hp9BBQ6GRRjzm6wzMDxcv8zMbvtMqEJoP8Yk3/HZJToZ3LbDsq0/nkWm2A+i3NvNt9Dk4FSjU0AAAAASUVORK5CYII='
+}
+
+const wheelColouredSteels10 = {
+    name:"ColouredSteels10",
+    size:10,
+    customColour:1,
+    imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAIAAAACUFjqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACiSURBVChTY9xhu4sBDNq5hSAMIKj8+g7CYAFiiERL9XewCAjYPrUEkjumHgdJAwFQzsbGBsI+cuTIYekLJ20sGKYyMNh7nDl8+PB/GICwgWRERETP/99MEB0QANQHJ7Ozs4EkQhoiCgdTpwKNhkkD5eB2IwMmoB9snxoAWci6gVpNli/WsdsP1Q10J8Q0IAmRg4gjguXKIUcIAwiA+kAUAwMALC5O3lrm+Y8AAAAASUVORK5CYII='
 }
 
 const wheelChromeSteels12 = {
@@ -212,7 +226,28 @@ const wheelBlackFechs12 = {
     imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVChTbVGxDQMhDPRHaaK0rMAQFNmEDdggA6T+hg0YIkpLwRCsQBulzcERI0V/hTkfhw1me95e8sP1cZlM5H3/TCZy5sLtGCPTWuu+7yC09kpweO/HrhhjEFtrTFNK8J2YHMI5R7LlnLVLKYWVrLVU2LdXAgNA9CgVgH27CQygOjwdFMnXnSBpFxCtCqzXQdX6erMQwnod1L9eiKrMiXOYOi0AE0Jcwxxix/G3iHwB9KprWUzaXYAAAAAASUVORK5CYII='
 }
 
-const wheels = [ wheelChromeSteels8, wheelChromeSteels10, wheelChromeSteels12, wheelColouredSteels12, wheelBlackFechs12];
+const wheelDetFechs12 = {
+    name:"DetFechs12",
+    size:12,
+    customColour:0,
+    imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADJSURBVChTjZG7DYNAEETXlhPLRbgISJBwHwR0QELsAhyT0AESLVhOQaIIEgogtRzid8zxSSx5Ang7t6xmj8Pz9rJFl8fZk9n7/vFkdtJLx2VZquz7vigKwLcyqWma66JpmvYlTMPRNf5QFEWe6E2ShAEIoNw7QRBQukkkaNsWqOt6/tCyLMNB4zhSuuBQmqYM52zucRt0XSdGWybcOI7FjByGQeyk7RQCWJdCcrbtiBWGoVjK83x1/I3rMkk2m05VVfHUZf7xW8y+03d/fthLFToAAAAASUVORK5CYII='
+}
+
+const wheelHobs12 = {
+    name:"Hobs12",
+    size:12,
+    customColour:0,
+    imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC+SURBVChTjZHRDcIwDERdxA9iCLpGpLBHKzEJA3SSSF0B8ZtIXSNLID7LSy4tfHKi5hyffW7aPa5P23CeTo2Zve7vxswO+qPM71ZBStSJqkWksnLnnPceUvVFCm+TADUU4pCccwhBqcUYLxXDMKzrStyJzhF0PEhlMY5jbfxiWRbmHWF470Y75nkmppSIbSc6iCqIMLXve/pLzj3hCLTH71paCEGxA61jA4NlJBQ7Lpft9MLUZA040b3/8VnMPj5Vbi/zVt9cAAAAAElFTkSuQmCC'
+}
+
+const wheelSpaces12 = {
+    name:"Spaces12",
+    size:12,
+    customColour:0,
+    imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC6SURBVChTjZHBDcIwDEVdxAUxRLJGpLBHI2WDbsAA3aAbdAjENZG6RpdAHMtrHVK4IP7BfXa+bMttbpe7vHXuT4VEHtdnIZGjfvTZe2+tBeZ5zn0G1LqacMQYgXEcnXNAzrlW8B0gFc90KsmWFkIppWVZNFaRqtq2Ja6d2GMYhhACTFSggqZpgvdxP9TQjVXYtBS+RbOu64Q74TPG6HhiBYoAhn2cjq/6TNc7cQnuAdRNkVb0mH/8FpEXjA50AiSSUpQAAAAASUVORK5CYII='
+}
+
+const wheels = [ wheelChromeSteels8, wheelColouredSteels8, wheelChromeSteels10,wheelColouredSteels10, wheelChromeSteels12, wheelColouredSteels12, wheelBlackFechs12, wheelDetFechs12, wheelHobs12, wheelSpaces12];
 
 // TYRES
 
@@ -234,7 +269,25 @@ const tyre18Normal = {
     imageTyre:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAIAAADZrBkAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABsSURBVDhPY9xhu4sBFVR/q4SyYKCVqx3KggEUbZgakAGyZiYoTUgPECArgGojqAcC4MpA2ojUAwEQxQhHkgQYjY2NoUxSAJm2DWttmOmNIABqocCRJFkIUQy1jUidcGUIRxLUiayArGzKwAAA7j4i85xta+wAAAAASUVORK5CYII='
 }
 
-const tyres = [tyre14Normal, tyre16Normal, tyre18Normal ];
+const tyre14White = {
+    name:"14NWhite",
+    size:14,
+    imageTyre:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAIAAACQKrqGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVChTtZIxDoAgDEWLo9cpqwczzsYrGc/AeVzxk1+QxUYHXwKF5LUpKWGfDqks52ynyjpudhK5VXopJV5BjBF7s02F10s9SDAbqqpmFwjQAgISnkoSdjJg+R6gUNSX/Keyawd7Vj8PB2ilKoJTuI3g+2CJ911ELvkyUhtFjVbrAAAAAElFTkSuQmCC'
+}
+
+const tyre16White = {
+    name:"16White",
+    size:16,
+    imageTyre:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB/SURBVDhPY9xhu4sBCVR/q4SyYKCVqx3KAgMWKA1TeubMGQgXDkxMTIAkXBsThMKlGggggnCbQRrwqIYAZD1QG/CohgCEAmNj4/9EA6BiqA3Eg+GggQGYNIgMKKAyoGKoDZD4xwPgCkAaIOkEjx7k5AS1AY8eZNVAQGLyZmAAALiFgO/KfRlxAAAAAElFTkSuQmCC'
+}
+
+const tyre18White = {
+    name:"18White",
+    size:18,
+    imageTyre:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAIAAADZrBkAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACCSURBVDhPY9xhu4sBFVR/q4SyYKCVqx3KggEUbRANZ86cgXDhwMTEBEgia0ZoA+rB1IAMgJrhOpkgFEE9QABUgHA/0DZjY+P/RAOgYqAWqG0kA5KsggCgFjJtG87a6BtvIG3AlAZJrAQBPFlCbSNGJ3JSpjjjwAEimcMAsgYQYGAAAIbZvbcI8ovDAAAAAElFTkSuQmCC'
+}
+
+const tyres = [tyre14Normal, tyre16Normal, tyre18Normal, tyre14White , tyre16White, tyre18White];
 
 
 
@@ -610,6 +663,13 @@ function tyreChange(element) {
     if (element.id == "back14" ) {currentDisplay.backTyre = tyre14Normal};
     if (element.id == "back16" ) {currentDisplay.backTyre = tyre16Normal};
     if (element.id == "back18" ) {currentDisplay.backTyre = tyre18Normal};
+
+    if (element.id == "front14White" ) {currentDisplay.frontTyre = tyre14White};
+    if (element.id == "front16White" ) {currentDisplay.frontTyre = tyre16White};
+    if (element.id == "front18White" ) {currentDisplay.frontTyre = tyre18White};
+    if (element.id == "back14White" ) {currentDisplay.backTyre = tyre14White};
+    if (element.id == "back16White" ) {currentDisplay.backTyre = tyre16White};
+    if (element.id == "back18White" ) {currentDisplay.backTyre = tyre18White};
     draw();
 }
 
