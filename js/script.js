@@ -1,8 +1,66 @@
 
-// CARS
+
 const scaleFactor = 4;
 
-const carbuggle = {
+// RACKS
+
+const rackShort = {
+    name:"Short",
+    width:23,
+    imageRack:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAGCAIAAACnwpLJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB5SURBVChTY9xhu4uBgcH9kOuRI0eADDRgY2MDJLFKAQFQdqfdbiADZArQCAgHK+Bu4/xa9R3KwQAQvYyHDx/+tn0ykM/lmYuVgUwCBd1aV+6qDkdTRpRb4C7HBBCXMgFZuLwNAUBF+BUAARPQMCgTB8CvAOhM7jZOAOxhQ9+JB06QAAAAAElFTkSuQmCC'
+}
+
+const racks = [rackShort];
+
+// RACK ITEMS
+
+const rackItemLongboard = {
+    name:"Longboard",
+    overAddition:-34,
+    downAddition:-4,
+    imageRackItem:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAHCAIAAAD7z+a2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABrSURBVDhPY9xhu4sBBi4cTgSSBrbzIdzhDZigNMzbyIzhDVDiHAjg3h72MY/ucyCgiudd17+BsqgHdgeKQFnUADjjHAJK33RDWUMBkBQ0CJ/TIpYGFUALF8a/b5ZBmcQB6iY5KgLSYo6BAQCcbiXr3+nkYAAAAABJRU5ErkJggg=='
+}
+
+const rackItemShortboard = {
+    name:"Shortboard",
+    overAddition:-14,
+    downAddition:-2,
+    imageRackItem:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAECAIAAAB6GUoNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABCSURBVChTY9xhu4uB7uDC4UQgaWA7H8Il3xGu699AWaSA3YEiyC6AsHE6gjw7SALdIqVAEugaxr9vlkGEBgwwMAAAADYWlcQikcUAAAAASUVORK5CYII='
+}
+
+const rackItemLuggage = {
+    name:"Luggage",
+    overAddition:5,
+    downAddition:-13,
+    imageRackItem:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAPCAIAAACwQdIgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVChTY9xhu4sBDB7/KQeSvx89hXBZ5aSBpCxLJ4TLBKEgioDgq7sYBEG4cHGoOjjg3vkKgqB8GGDsTtKBMvECkHk3r0F1wxlAgCaIbi8uwJhiAXUyfsDyy9MPSP2+fQ9IsqoqgQWhAFkQai+EA5HQfXgCzobrRLgPWSmm8YyRMU5QJl7AOE2aKH8wrgzxfXv8pLClOVQAA0BkUcIPKARlobKBAGQelIkhh7CEgQEAylFJV4j9aPgAAAAASUVORK5CYII='
+}
+
+const rackItemRedWagon = {
+    name:"RedWagon",
+    overAddition:1,
+    downAddition:-12,
+    imageRackItem:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAOCAIAAABPZMCZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAChSURBVDhPY9xhu4sBBjwOuyFziQFMUJoszUCA0E8egOonz3IgoIb9ZFsOBJTazwjEHQzSEA4QpMhwQlkYYM6T71AWEgDpBzr+wuFEZJ3Cj28DybeyqkAGhIRwwZJQADTOwHY+KP0A/Y/sBOIBVD+QBTTC2NgYyGjlagdL4QPV3yqBJEQlNPyAms+AAUQODwAqQFZJcfjDYx7ZVfgBQiUDAwDhI0YMlPv7EAAAAABJRU5ErkJggg=='
+}
+
+const rackItemRoadBike = {
+    name:"RoadBike",
+    overAddition:-1,
+    downAddition:-14,
+    imageRackItem:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAQCAIAAABlb+OGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADVSURBVDhPnZPBDcIwEAQT+NEFNVjiR2GIN6IHuuCHKIEmKAKJHxKL1lqbOHe2M48kdtbjyyUZb/v70M/xfThtznEwx8+LEAd+VDHgJ8EYQmCIy6oLHuvn7rONA5tVPDcYu0h9gBe1cLaKSraa8/fe6PUfU3tfXxccc1feySVeBJwk7FCn/nbBYlV7ydTLWpwFgBWx2DKJWwjM1IsFLXZgqYHZh0a7pa7017drnvac6fdQJoTU3EnXvBDd3wMUtKjGUipSvdYTWeR/AclnlnsJXSTtMQxfb+KPk6vtjV8AAAAASUVORK5CYII='
+}
+
+const rackItemTree = {
+    name:"Tree",
+    overAddition:-4,
+    downAddition:-12,
+    imageRackItem:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAARCAIAAADGwLIbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGRSURBVEhLtZU9TsNQEITtVJyBgpIyShGJKhUVN+AYdDkDEgUH4ABIXAAhcYNUlJQUnIEKMfZn1uP1jxxkRtbLvP2d7HtOyufdS1Fjv7qGgNvvx4bVkDdZlsWq+ayxXW8bZrJEnjZ38P9DRweQGgSpvUSEOJRhjO1S6Og4vB3oKoIlIXozoQWltDrGjn9MkyDRkuLj+bOy9p4KVFF1evtsBueUAtx77KUeuB9CNIjSQXABDwDy8sScZiLrUAkvTVdWSGoMIsyVaatrNPNdq86l3D3cv75r83nyMd0Jl8ek+MEt6/RJVfOQiJvLcz2nX2dYAyrRMBPBVsS9cLqGnRSMnFS89gnl1cWmofU8IErzrhSCVO5f9MNqcwfEEAC07c+m875wlqTFimsCLsJTJop4CpryPcXnmcohjRUE94rAwwRcMrpdRj0YOan8PycHEWklRvBt8D6Ba/VcYey2tvOINGqxZYUEF9h6D/eC8Ko3j/jgJRU684jSqYfQt4zBI8e+fR8Dv+tC1PJCeOeXPgJF8QNL+CxETAoReAAAAABJRU5ErkJggg=='
+}
+
+const rackItems = [rackItemLongboard, rackItemShortboard, rackItemLuggage, rackItemRedWagon, rackItemRoadBike, rackItemTree];
+
+// CARS
+
+const bodybuggle = {
     name:"buggle",
     CarPositionOver:11,
     CarPositionDown:59,
@@ -14,11 +72,12 @@ const carbuggle = {
     BackWheelOver:99,
     RoofRefOver:59,
     RoofRefDown:55,
+    RackOptions:[rackShort],
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAjCAIAAAARyBMdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASmSURBVGhDzZo9aBRBFMcvh4X5qBQrwdYmoKCiwiWiIMbCSiRNChtJYRkbo0UEYxBMKRJsbC1FIVELNXegFoJCQOyCIAiCVY7Y6f/2Pz5eZr9mdvYjf5b1zezMm5nfvJmb3Ti0NvGqtfu0sX7WWEm68fSPsZQeTO81VqTxyTfGqkW7hWMiuERe7gJZelh7+J451al5jkIQY5aRu4th6FILJasL0oY5EqKmcObJN2O1Wu+uHtZJLTzCnRBP9j5EebYmfhw11n+xfBU0m+cIiIB199Z2f37b5OZpaXQf7kAJLoCYUXH03vDtxWFCF1URmE1yFIg3+78xYHeOkKB02fukMJNQ6YHZNv/WLkB8fvELIZosH3nVQmGrPOYPl2zN4WqMY/1C5FrBC5RT10+XQrMZjtL1YsEYIqDsHvxsEpFKCcwGOLLTWNRMQr6bY6DQFlBqmuEom4lH9Pvt6jH8Rpt0IVm/wl6KT1sgymo5YvfhhS7KhXz8vPR6vU6nw2IhQiwby1/oBn+4qRCU5Zx7QMpYecJqwoEOBoIRHF9OvoZdYF2jysfOKYwcDovtCfDAnlxaPQI/zKQKHDCD4lHCzaQdxFMxlyRCkpm+0jGIlxYkeZmsTElh/bYDcBKYMAoEZpF4zAaHxWKsSBm7mF5TIis00sTRoq0Cu6TVQ4hO4BO/fuIQSfeo9OCYhi/eLawUY8WEwSfi85KwRtMZbVlynCE9N+4onTgiyKUTIRSs2aZBZQwysUWWF47ZjHL7rKszLHxR5nDkNuEIMXcwmqOvdNQLO3LMbtdRGl8cJe5sJe11PoujhCEd6ZMz5EskkKMl6VJZDvU8wWcaShiJ4ZnKUUMkQTilO5FXIKCuV/lcsWO+HIVXfDiUDhc6txpKDMlkjoT4d3oMRxOcVPRensGC3RLoUZ4RHzXOkRAzhqPJinM2BGPr1yzuiyNLg8c7lcBRQ0QSx13c3REITT1CZJYLkQIXd44aYm5nhJ34Z/U0lDZHDTFO0JouYyVFn9UJ5riP2UW+PgHCgugyHJkqb45zrT2EGCeYdgKwPjizsEZZBUdIBumr3OFot5yAuYVx2MdfjOEe52i/FyYGPFpFkxnHqPjXZtwdd9UaBBAYAtlBLsNh9IkQBMsLG/fvbF359NNk7ZTNkfV1MLJV2hmy2o6jbEqMJhgyogLDQXhK9bEDKzS0BhwvrJ9ngsKiljrw5dIqlYhS51SkjCbwyJrLtIN0XLLIZI2vTj2joV+RSa/NzySz36/hjseoIx9C0Anx5Sjf8mUpd7Y4qe4QKV2eTQAlEMEGMV4IO6Bsdzodnm+QpXuT27M06batkCzsM1uMl4qcwy09oxVpaPPr5eihEQC2CXEzEnMh1iwluKxBihEuuuJdBqlltVWsaQsCWyEuil/1h7rdblRgIH4fpkIgWl/YSmRXQNgfZVkUG1T8vxHov5FxQZvzI3fJmZmZ6NFAK4ceG8tf8fOXsWqX1Y3CwUGUWvqPdP35bXPugYUrhJ0ldFrwxVdc/Qqcy/gEkBgvJO33mbJkTSBQnlg+ZxJ1aWT/I9zRNCGG7FS5qokjFPjX6mKSHb9SiK1W6x/6jEwfee8XAgAAAABJRU5ErkJggg==',
     imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGEAAAAOCAIAAACwxuV7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC5SURBVFhH7ZaNCYAgEEa1QXKSxolmihaJxmmSBMX0VPw5oVN6BF2gct/LSH4uF4uz3auuXPb50FVX1MWJOootZ+hLEybOpO8uyRUlOWOIgIwTcJQfvgtN+DjQUWls4pqaxAl/a0UQ14THcTR82hx8Ca+jX1AMLoTQJQKy54DqF28ngo6K0poO6DvK6RAINVMS5+wklDVV9AY0KbD/tTF2kAEMlo/ywu4jie/+K3FNOlGL2BMbOBocxh45DFe1h+5b2gAAAABJRU5ErkJggg=='
 };
 
-const car3cube = {
+const body3cube = {
     name:"3cube",
     CarPositionOver:11,
     CarPositionDown:62,
@@ -26,13 +85,14 @@ const car3cube = {
     ArchPositionDown:83,
     FrontWheelOver:30,
     BackWheelOver:94,
-    RoofRefOver:67,
+    RoofRefOver:61,
     RoofRefDown:58,
+    RackOptions:[rackShort],
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAgCAIAAACXXGGzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPkSURBVGhD7Zm9axRBGIf3rAzpbP0DRBAMaKFwFz9A4hViaWsvdmlMLKM2WsnV2lpbJFHwIwaCoKAgiH+A2InNEQvh/MXf8N6b2fncvd3bwofl8u7ezOzMs/O1l97W4EXRAb7sXDJRDqvPfpuoNg9vHDVRUZxafm2iZObsUfTN0Eh96DTL5tw8Lt5feN8/h6Bs8MLTbyY6zNubJ0zkITdjOD1sPh9+vjP+yYth5uMREsdr+1dvnWdLAnVFShMVxd17C2Lk3fFPDFAOAx8oITcjbzr4vhStnjAHj5SIAB63RntyGgUp0YXRf+EiMQsRlVkZkYsqUzweMX/bQkvklXSy3GmqZUQueIf9B4vHzCU/rXq0JKIz/rucTQUvHNfoXzxNRG4UVdmeR0uizFPtUPmZIaPMrQHa8AiDIpHIPGVd7zLhLtm4R5oSWbJGVwBFWUE6dfJyljQnHpr1aL2lUOLG+lRrm3B3jSkyVyVqy1ko0CUb9Ahr2KNgw4F64+C0SHjFnMRgYhyySkiZOHglQDkZNk8p2SUNk7FL+lT2au4fxY5+PxXkXcUay9c2T5vIBXM5h7+Mr/K31tAL1yf8LdFpdJWc28mIx5StkyZlaes4zuenQRvLq7/tUWY0vFri0+kleicNSkhPj8TsBVbXAJyh+v3+7u4uBrizQwnl7CSr5hprAKH8ydez268em3PtkQZ9NegCtBDo8mG5AtqIoviA5RPXoxetZwyV+KRN43Fl58qj4g/6IDP/JwrMDreuI1gaPMHn1CPGC9ZBxD6VyGkiF282z5ioKFAUA+s9DGMTA9OcxJBCNFkFOksAViHViHgUiZyP0vFVjiPCnHSDctM47UrMQHB2C7dHbJHCnbEyM/eISaoLkzhHJ1Qe8gi4xQm0GTmtZSuwpgtNeKwzj+u1KKX+PugRcDtpewTlcsWg818W4QfQEY+ir9yEaAdyYnmcvhf6fvWlRNze938fZMSBZFJ014BE1t/ZBKm/OU+gnNh4XLl8GwdjnYixz6CGj6EFlbmTIyWaEz/pXcGZxnjEZrJ38oP0bZbIDBSUgqh03mkuoCacBFNI6Qq+b6fjGu+M5UTpEomkb0ilXiWisA5ZTdBdQQ5+BXRMpPCDdQabR55wC8mY5HoE+qcNdHDce1brDCRyUEfL1A2u2QQnG+vm91NuNreXX/Ymkwkiaxd6cfgRnxVqQPTSP0OPQqBMbRBUa0LYo0jUHPRH/k4pjEajH79WEVT2CCyVjOsg4rTEaMn1u4IPbXO8tj/dP2pYSqc8VmAm9XdSLtntsT6oh7P/twYm+joec2nKI4gOjUZpU2JRFH8BSmCT1otiw74AAAAASUVORK5CYII=',
     imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAANCAIAAACitD4nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACtSURBVEhL5ZbRDYAgDAXBQWQSxzHOZFzEOI6TiKaJCERKS6Tq/cgHwdeDJtVzt6iAYe1h5TC2E6zeQFjCfX5fRFSBi3Ad5PwNfA+Sp1gwe2rByX+KwFco2QWGaH4QkVubQBdZkcLNl9b4FZ6LXQTtekU9Cn4Y1osQ5YKAm/8LrVHkPrQxBpYkJIwVZUTYgYp5UF0XpcLHR2wX/J8eM5JVPDIVV0T11khKQSVUagNLAUgZR14g5gAAAABJRU5ErkJggg=='
 };
 
-const car039 = {
+const body039 = {
     name:"039",
     CarPositionOver:4,
     CarPositionDown:60,
@@ -42,11 +102,12 @@ const car039 = {
     BackWheelOver:94,
     RoofRefOver:0,
     RoofRefDown:0,
+    RackOptions:[],
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAiCAIAAAD00eEqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATlSURBVGhDzZk9aBRBGIbPVGqsJIJYqE0UMaCioAHjD1hoIYgWNilECCnSBFT8LSzUCFoEJIXYWByohTYWRgv/ENTCQhBE0kjAymBl1NJ3710/v5uZnZvdub3dh2Uz+zc788x3szOTJbMjzxr15tPr/WmqndMP/qQpL7Mzb9NU1dTadf+1Ze9370IiUKvN3rtfsD+/+IOH1VJf1xCN/ci3rdhTWQyvTmzEvlr1NXVN0ZeuJntoEtd+TVP9K9NUOxRNKtRdR9da9M/v49PT04sXfreuBDE+P5amGo2BgQE8PjMzkx43GveP3GGi99L70r+1wRDdOpcbKGYCopk48e0kNqYJgz3rp1AG9Yprp+jwuGZEU/TCwgL2zWZzcnLy6vKp5PI/Lv46z8TIts3TB9KQD+ymYqiRa/0x3H5jX+tcGpjFXEM0Ev5nZzc2RTcotWOpi2un6MHBwYmJifDOWrsOb6TTi+ew37Bm9aPRBzxDuh7p1ffXByeGscGyLZqJXEhPDUZHR6W78HCz/zoTR5vHmSDo0Lvbp1cc17CM8GGVbh5fijkLXVM0ghpzmaE9L5JbA9BmEddwDfVGZ20gj6xYdRt7PTq0kUjXGFHPhvn6+RgPwe216cinAtfwm6ZaSAUOP9mC/b0duySi6ZrpEOMiDqI5zsMIb93ZIR3sWcC1iGaRPN6d0jXiWkSDslw7FzE8U22WHrofH/qoK4lgT1PtdJy1d/QVia1bxzLRokFu10ZUAn8j56otzWZ5FO+ByyMoWHmuia67s9/Q+FxjbCCzZJ4RCocbcD4rD+IqQptpECjL0wxZRRUCW06DPPVTfAWL7Rm0ZLqWaUUZoZFVf1Yg18+/DJUh6PfiFTgs6Jqi5btEihXacFFSzfVvuXBwIBN+n0HhciKTLN0O13paEWlKHi9JsYAaFvsdsGDSVOLagLfh2ZCKZP13ooNrDzqUbGJ6HkMHyNVU9uM2OkNPRfzqDfheXnLqdrsOFO3pmzCkt3WHWCC55PrJajmt2FkRmS4axrPKJi+SGwzjba6R+5WLyQKC4VrnIkX0iCYsa0yAR4Ki8u1S5p/fxz+ceanP+Gth63aKFj+nLg8xQZ4+v5WmWvxfD2G+GHjgk4iHs8IBoHwdRYOQe8pDhy2AZXs1vGMJ5QYZhtpaAM0YooExF0niWlqP2POf4eHkmbm5Oez9yws2yLzC0AaQLpZ1UIeHgh3dwAhw5inq1m96KLVedzZpA8xu+sbnx3CHbLzspNjCG5AQM2KtB9hvzCsahNxsxBNMQjE3noHntjVVtIZTNyMa5A1qgILqsvZMN16EzQigyLfrCW0B+jhzh2VsPOVEdMdgfKlKgpaRoGVZ5GMHAnIFNen4iFEp+tRK4Tnpr401XBv2dwWCWtC9NotVRieuKyzhrF3zhgKuAXttFBufR91Zy0t5aeebdzwExn+Fkj5EJOJu2Ximi+gy8ZAbT8ZgZKULH7JyHYi0kPFV1MZwyVjY0KTja4a2Xi/X8H8lMXENujIgyWobnTPucQY19rhULKiJhDYPAcsTmKc5l8HeNtIV18Be+3aSJVRjD5b9SPcY71qTK7c210B0y/9YSbxooP8f2DOMj1Ck65jHTdfANtIV0aCLrmVQYeP5WcSYisfhWtBquqLb/g32mPq6LpVSvVfr1E2j8Redeuth7p+uNwAAAABJRU5ErkJggg==',
     imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAAAPCAIAAADmlz9WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC9SURBVFhH7ZcBDkAwDEXHQewkjiPOJC4ijuMkxopgaqqhGi8Si2zJ/uu2TNLkrQlRdgW0dlRZDa0vEAyCRwhLQYx4PuEFT4FE2Eo51TEj3EtMkKMIKbxH4o04LnV+mMi5HXVbSdHB/dIuUgiVd0MIo+SjbaXQSgutCZCisuBkFJ4pBDZrgkGKnFXGNROelaJs9w1S/gPF4zz4J7HWwrd7vH7BZSmtT5EKv60/hvMwq4B/H94dJFM0knE1YWN6EIJJE4BQ3SAAAAAASUVORK5CYII='
 };
 
-const car005 = {
+const body005 = {
     name:"005",
     CarPositionOver:22,
     CarPositionDown:61,
@@ -56,11 +117,12 @@ const car005 = {
     BackWheelOver:89,
     RoofRefOver:57,
     RoofRefDown:57,
+    RackOptions:[rackShort],
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAAAhCAIAAADI5hvkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOWSURBVGhD3ZkxaBRBFIbvUnkmhQgWkkI7FQKmVPQUbdTCysKUwVbsAiEmYOMZhbRX2GhKLawsDDaih4idQkDstAh2YhO19N/7h3fvZmZnZ/bmtvDjuLybm5mdb97M7t6mvdN93WqE3XeXTKRYef7XRK3W1s0DJlLoCoB1Fi684ccJmbq862z5CBAr+8oi1xRMV372Qefj+TOMRezi9lcGFm+XT+CdYi+vfR6WeWA1MPkUTFFezEV7MP+JwUavw4CIj1A2QcTyB/WmYFryMO/uLcpKhvb+3T/8ymJz9jDe6QNnEUO8tv+TsQWaWPOFA9XwnzF/s0JzjJ7mO/0PLPcCQ7ysVKNJmTlw6+NA3hNqmPzyYo7kwCFsXpss/pnlLXNTGkEgz2V4/a/ePms+RJBTvswc5SYKgn1r7eRKtL8E8f7Z5L3m67/XGJSd7TTIm5y9Y0Dn7J/aOG6qfx55MZePMrIk4M9OKnevt/NU/wzy2txat72DmyZKJ+bsNXfksYl8VPZQ5zrv7ZRJg/yx1QWWfH+0y4CEz3+SKHbC4Pqr0yy0wLHw7p1uwL0jmyhw/U+WD0wnjifmQMu7m5kCLiIv6LZlrYBuiCasGfavlndtvSNgHr59ucGPgPIydLeVNSMBMZektqjs9a+Qp3nMsGQRIvnHT71gjKMmKWVHBuD198tLtlOHzikA3K6RzfmDp9/v4/3Hr5VhWYG7n+shO8I673jkA9kWN5faA2VyrJ5zaRORB9p/TJ63YtbvUAyOQRjWj6xMKg/hTUAS7JmTS3+uMt50jcl7z+STj2ASkmbTAiMXebxr/zH5yFN6Y+iFOjl6CoDIF3d4XO34Tr+KWv8jMH/fXWJcZJ73p/yssZZckzOSmnkZauUgHy6dZLDYfTpa9lYzdOd9iohrWAOzEC+PmiYaEnOJpb9fHt2hC5i7Dxj4vM17gLy7NBIc1DvIcIZEvtjzVy7fGRYWcCJxM+R9tIJCvLgirE3RPF5zwBEGhrd6b+7c4BmC9mAwwJ+NXgd5o7m3Rwv9yFXImPzKrsrMBeYfgbUEeJ0no9/zNI8EB25+kQuV5oD5D5jjajfDK979dfOYKSbtZcjamZBw2mPMCarp8SCWf5aMrvPin2SexdMll7kGrWS0kKUvMMteF8Xj+udKvosWSIKtjh7a4mt7/gnLQVvf26finvb0+AIJLCNGLzXz2nZ575aJhmSQb5Iaa76UVusfNNmDNC5cKp4AAAAASUVORK5CYII=',
     imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAAAJCAIAAADvgKZUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB3SURBVEhLY9xhu4sBCaQ/SoWyYGCm3Gwoa9AAgo5E+ApTKTIYPH7D5U5kFzJBKPxeAgKCCugD8DgDWQrqK2LAgHuM+KAH+WrAnUsMINKREGVMw8lLcEBCChxCAL1khwA8YTMghSGpcYXdV0CAyyD6+4rkIGZgAAApATGhpCrNRQAAAABJRU5ErkJggg=='
 };
 
-const car653 = {
+const body653 = {
     name:"653",
     CarPositionOver:8,
     CarPositionDown:63,
@@ -70,11 +132,12 @@ const car653 = {
     BackWheelOver:92,
     RoofRefOver:60,
     RoofRefDown:59,
+    RackOptions:[rackShort],
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG8AAAAfCAIAAABmhQT2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPISURBVGhD1Zk/axRBGMZzgYB6gmhh4wdQQTBdFHKKgsQUYpmUFnZip6DR0j8Bba21NLWFpwjBuwMVxD9goR/A1sojNqJP7hlfXmdmZ2d3Z/c2P4ZlZtmdfec378xuLp1+7+VM+zh/5aSpKR6u7DK1OI6d2jS1pmijze693e8WT1zb+GXaxbG8N6a1pTZxdIX2D37ozs2ahkPv+7ypKRrW2jqbUDle22KFgoaHPuHIkwGwOfBK4pUb2VVp2mVTVAKxEzl42u8/emPaE2RKCDpEbziJeh1OMxdO81gqcaw+YPQAvzpnAU6i4HHUmpC22NQqiaWgCuIUeSoG63DaCpuWyi+DM0U/hkj4LjyCQpH4NTmdvk1XJY4Lo7f6ZCooNOwUATCGEnSm+BbiYLS1pcE5HEejkZy0XAfAlfioivwGwsXydtJbyu27xu/rS4eR6UW/qKaZmxgPNzIWqqxC5Af/nvV9pjYBMWAaWC48P86Tp598Q29Fk7SJ3PTGhFi5zVEBor9zy+QghqfzBeSmp841YN3uoi/OAiEhQ1GJT9LENrMm080ahPhs+bNpTGDoXsJ2YtSUA0Jx5KpHJddpSZv3uwdMrQgBXwIHkIvuikMl1gwVxRthfJLm2Jx7sP/jwvbMM0rZVjTe3SpXiky4F2+f1YmcKsGVG07SkE28FvB6xd5s2v9IMlSGldZaYHossp4b0G2Ztf6EJZk2qbKOLQkRM8dTqYRELh3vOiW5or3BeOXKU1yhIZudjZ+mkRTaTKVSv6CKzn1AsRueNkuhsTZjEjNrUQQShNS3xiv26ZVr9Smj9gr127Q+3yzQ483xD9PwgTd+eNGlVQlERMKetVyvU4wx3yZ/WPTazPWo8TpFDwmXuYaDxwaaNZGSVmECeWCxvnoEx/neYzaBbRMqRTzPCIVUElcoOokPtxABmxxRZPDhhWVNyXL/4o2nXyVDbZtY4/jLP4lKwt99hfpsAgh1bZaLXDu1DALvEOD0v189ls5eXXx1GX8vu/eXJmFXJSinEuAuRs4j9LFADgp2QpY/K3tZUEcibttE+rB0jr6//nv1xeaAvbCwXi6mHY13yHid6IKPSBbUx2tbneFwaC6cgLM4cg/Cu4I2QRWb1qrxLpNU6P6rJ4FELh4AzugmkKfMwig2Sha0mcDwKCqTDN56/I4DElhQD4zFfgthNkxNecT9FXOTFYlGeq4DPdqKuQm0EBLo0/O96d4Pktj0ktCsmzXVbRbCYxNY468YE3uTn9brRv6307BK4LcJtNDqYYXTsyaatjkz8xc3tYYajxI5OwAAAABJRU5ErkJggg==',
     imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAOCAIAAAAkIEyJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACtSURBVEhLY9xhu4sBA6Q/SoWysIGZcrOhrGEE0AMCfxAgg2EWHCgBQXwoQMCgCgsiHY/LzYiAIDUUIGAwhAUZLsd0NhOUHrKAvPjD1AUNCPKMG9IAzcuUpoiBDUEq2j7kswa1wIgOCOQENdJTBDAsIAgUEFTMafQE1HI2sCoFIlA7gnITB6Q1gdXZRLoEohdZMaO8vDyUSaJ/Bkk6olYcYO90DU6AGfRUS4kMDABz4EOrPJVmjQAAAABJRU5ErkJggg=='
 };
 
-const carbrix = {
+const bodybrix = {
     name:"brix",
     CarPositionOver:9,
     CarPositionDown:55,
@@ -82,8 +145,9 @@ const carbrix = {
     ArchPositionDown:85,
     FrontWheelOver:35,
     BackWheelOver:97,
-    RoofRefOver:34,
+    RoofRefOver:31,
     RoofRefDown:52,
+    RackOptions:[rackShort],
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAnCAIAAACKWVELAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP3SURBVGhD7Zo/aBRBFMb3YqEkqYJp7EUEweIstFCjjVoIgoXa2YiF2GkRrOMV2qYINlqI2gkWBhv/NFGIhSCI2NgLKcRIOv28793kZWZubnYys5dL/HFs3uzNvnnz7Zs/t5vW4vFXVYOcvXGMxv1Lew6deE07QK36tSp/fndKrKqKiSRMuo46DsOtZ2tiRYDelqsfWRnVxPIRr2+KjlCwVv9HGi10QNbaOnYmpsTakcyuroi1kXo6mgmoLryrOotPPvz69uoBGO17MzxDPt5+I5bzVRh9IQlfzvreOq4rAzrizcoaOlLEcHBz4x2xqurO71mxuiA4PWdRR3jTl2wGNGfdg2TPriuxer1wpYzVESKi579+XGcxIUQEd2X5vdYR3nKJSNDE5PRCltujpbz8/BoN8PTCAxwX55dYNIzJ3yAUkXbenm9ZdDeh3bcezE13rzJYRzMnZk+fLY41nPf3QNHdrgzQkSKWGIMjAaZCrpBAErKXkhaD89GM6CzQG45crPOiF4fNg7x5cuSoFKpKsrELimaYkpCO7ojG7IvPzklM3VN3ltRS9tWxxIg200qJZCxEICU1fh2NiCwWAsMQ2S2FTaNd5fIMJ9irSUFNkYBnzMLt2T9qEZGM3XMb+LNr7O7uORi1YuXk5c6M3mnbwKvCdYjenJKYqwxaL4JMdH1amD25raMWkR02CxYwSe62atGveeqo1dT+LcJ9INbluMS9VUWhlBt0NBNnuVBcHbMzFB3982OTcYw6HDTr+aiTkUaAZKG3Xz4CpKStI0WMjCNGcZeh6JgWagxoa11Hk4wge5Nm0f/ZWtu39xFtovcDk9MLYo0a518eFh07E1PmHkJHfEE7Oy/OfUpwXmvhTmvCS0y7ZF1HHCll84MuLw00YYEWZb1uuOHtR+g5RTlwA8UafdCX2dUV0VGPhf+5mYA/Hwvly3ZKQwvPOgN0ekYyUCPtMMF/PEWdu6A5jGvR8czpmzjOfHjMCGJCoXAx1dw6Rbsa6dzsk7zE73jA4vySrSOOCGJgKFpE2i4BD0PXESJimymFPmATGqmmrSNoHVzGMUZHVHBf43rRP5bIcHVEhX7/XmKhf54EgA6yziAT+WExDOLAMVJEEF8zC7lEBKgZHv4GyUc+2eYvXOSz+9NKZ3itUIj14hz+2Vsryshx1K9vuJzJGKhQ96Za/xfGsJlJBGfgs9Vut+VEF/2wwHtj6aKujsAaI+ywFPIRcJsWeb+hDW/mIcvceMfWEQx87pIgItgKOmaJHPCW6IdVjeooVgQxErMztcgYufUG8N/8aL3249vqQLcb0LEQZXUUszzDlTJNxEiG87ynMb5/uYgPjKIiVlX1F1YFoL+x2Bo5AAAAAElFTkSuQmCC',
     imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGMAAAALCAIAAADk/qT1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACuSURBVEhLY9xhu4uBOJD+KBXKwgtmys2GsgYNoIrLmaA0IUCkZUBAvEr6AGq5nKiQGmyeJx5Q0eXEpimSwNANWTyAcEiNqASFRwtN0tSwBEzAUByWmYXqANRKICakiKz7kY0a2OYCGS7BHw6g3Ac0CL9ZxPt5wEMH4lvyIgyPSqAUgZYn0EoyPI8ncigJSjzGYoK//xmYGcmxDtMWiCEktNFJAuQFMRUBlR3AwAAAFedN7djBmFkAAAAASUVORK5CYII=',
     SecondaryPositionOver: 15,
@@ -91,7 +155,7 @@ const carbrix = {
     imageSecondary:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGcAAAAVCAIAAADUyWdkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHYSURBVFhH5ZehTgQxEIb3TpHgeAkMCRoBF9wZNBaPxfAEGCweyxNwwRAwGCSGl8CRIJnLPxnmOt3Zdq/lsrefublu2+n8O512J4vjp6Ya88sjGLfnOwcnz7Adsvpndf54PWWraVJW4pOqmvYqXD38sJUAxVavf2Jn6sZWjHQ1u1UjvbKiHTRaVkfEDtVudvfYGiXX319sreKpJoUjF7wxnaGz+8+Xi30yFndvaAHaRfDIx67NH47+0T5OmBRINOM6VMuKRENjda2Bar1ni6KjXXPmtqkQhRVuyr8G2pvrLMWOLSsZQRPSy4CBlt44M0Rrely1MZczm3f2/tCaa22FcFvR6aaFI2y6RVSjRBubZIBKGM4xTXTzhqqV3ZuoO3KAliXIiPVxLmiBr0iujTPRAmx10y0rqpXdm1IOaiRaJRI/qv5Uq31uFt9QQsGZo5/bgjzlWy4kK5hoiMRWNOdmRGCU3wfYr+OUUYJVh7LMzhkgN96lapAM4elDRNLVfwNEmzOoprWzh5TgrxgEw2lIpaOmDQjHqlVybFUrzkZUm9Km+E+vQwcbYjKbv+O/Q29Zty/XCEq3pWqJXml9bOWwEdX6LTUF8sWqcUMh9EEc3GacRwPi7PHwF4J3CETOmkh5AAAAAElFTkSuQmCC'
 };
 
-const cartwofer = {
+const bodytwofer = {
     name:"twofer",
     CarPositionOver:12,
     CarPositionDown:55,
@@ -99,8 +163,9 @@ const cartwofer = {
     ArchPositionDown:85,
     FrontWheelOver:33,
     BackWheelOver:94,
-    RoofRefOver:30,
-    RoofRefDown:53,
+    RoofRefOver:29,
+    RoofRefDown:51,
+    RackOptions:[rackShort],
     imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAApCAIAAABWevs/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQ/SURBVGhD7Zo9T1RBFIbFSkNnyw8wJiaSWKjJomhikMJY2hLbjZ0WgIWFH40mNtsqjYW1BcRG1E2URBJNaPwBtHaIHb7Lezw7O1935n4sC8uTyd2Zu3PvzDz3zOws7MTazIcT+Wx9vi65NB68+yu5g+DF3VOSy+H81Y+S85EqzmvqYHWUJu4Rg7IqeA0Wi1Nlh1RTFdSg665AXPqUrEtriWnV6BNlf/LEPZ88I7kx5vbqhffzP5FZ3PnNM6Qg4uDu08JZKYwGDIH0KMutb6Lhj8vXOl+ZJwXibrWv4KjXTD47jePO0i6LITDB0dK1lV8qnXfg5S4z29OS+4/VosVG6zKOpgvUD90cuPXTUe8Z4ixrAJ0rtEbgDhFOcVaTLrgt3KnolPpwoc8mvb6UM/G6OymvAdAzyeUzanM8l/jYg+L4eWquiJG5MIbEIk6XRiVxnh4xxZzjlo2YuNKLAuACJIURoMpYFC76xC/O3fc2GkSJgaygfpaI3Pun4Bd3qfuNmeU/i0zIN9H8yOIuUxYecQw3bpc3H66/2gd5NaggDL3J2peZEe7FqtB0/dKYNiesfRzawNr0ZLkXXNw3WqTPEW6yQo/OvQ/rSyENXIKvRFLIJDIQ9ln3oYRLtm4z/OJq2YJl3SdeOTJxrOHVAppzb8se6h54QJxpDRmePIYwtCGUQWeLw9FVBpXeZ+5GuwY5jtYkis/xeMRZmJ0pF3HmHcyO6fnQ0HCeQdcX57Xm9slsEngbwEnep8SQ0kFD1edpaGLhqVtDs8QNfKoWWgO4kknKDtjKfJn6wY+XFFCZScrDBWPUBFlMoYFLbp9exM3duI/cy8dbOHKWAe/FKZj2E29SLjyHHHGAk2lgqsLd7MZbdKLcGFxqGVWcepvQmciiF1OcTNWJc99xDOkfDmidvR8maJQJzwBJi/J2mP4a12h0NEE8OhLBqHVdM5O8HaYvLkXz0cONNSZ5exDzUXm+q44VVqAx+pDk7TAirvbdQC3zaPig20xSDiPiWq1W+s7rGNATN/f5JguFWAuBmaRGNQ5RnGascWoH33LdVKO+Q4GI63a7zBBLgUqhI560cPVhrWUmnax9nNXJWkAHIn0wW5RvDvoHJfM9HTlPhpRZ8BcnvFWWO9THx1n6bA3dHyPH9kIKpdBPVbMzlDC/dmd65g0yIk5/I8K3FY4fmURrRH+tkyUO8GknuvOKM61FdhUpZnm5diYmzrJmkiUOlHOHDljdjWCJo3TTSG6fFe08QH/Me/bF7e3t4QVr3KOnwX8AluiB2TZJMUgXUFBCnPXUS1sjbv+V9dWLOIo4AHfYzTGvzM5v4liuE5G2SVYwxrGsgcbF9f4eF93HwV1D4pqjojWgnacmCwSZiLO2IyZV/g99IO6qWyPovNcaEHHIue46nQ6OC9v3WBxPJsM//BBxx4RYmXqNY7vdZpHsLO3+A0uV7aPLtkO2AAAAAElFTkSuQmCC',
     imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFcAAAALCAIAAACF5oa3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACgSURBVEhLY9xhu4sBG0h/lAplIYGZcrOhrOEFsIQCVv8jg+EXFkxQGgYIBgEQEKNmaAGUUCDee8MsIFByBKl+GwxZg+z4QHY8Ii0MxeilxM3IetHLBZLAUAw4rICiUBhYQMU4gJYLcBOJzOrILhiQ0oFaQQBxPCgUSA0CCKBiVFAOiHc5prOBehnl5eXhHAiDeIBmIhkmkAcotBc9IBgYAGbpPvfCmyjJAAAAAElFTkSuQmCC',
     SecondaryPositionOver: 14,
@@ -108,7 +173,7 @@ const cartwofer = {
     imageSecondary: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAbCAIAAAAF9L0XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHnSURBVGhD7ZihTgQxEIb3UCQ4XgJDgkYAwYFAY/FYDE+AweKRoBFczhAwaBIML4EhJEj+5W/met1uO+0u7HHXT9y1l9nu9mtntjAa70yqFF6f9k1Lx9ntl2kNweXxqmmlsLn7YFqzxGV57QyrIJuwO0zKCXCshWSJpn+qpgtizfbVKkufbn2pzEiZX11FPk9c1sXaumktMUf3W3eHL2icf77zl9adBV+PJxumMx9wqfW7KTXeRrY5Lh9fPbPdKuvgdBufEqcEyYvR967fRHR4BN7FJhzP4mDPPzVej7iWW6zwyyHPFECGy5qA6AgMgFy7G0AqCC/Rx2dAxZiOrKhfFpAJZDBv+ZtK29w9srh1paoVBP/OslNpmZFMZNcvK68iElzbJYV7p8tcBJYtV5b+LDoUvUw+D1dWl9fHYhAoQTOyuK14bG2egDQ4V0UH+eP4bGhweijFuKg1fAl6k1G//zEOTg9tS9Qch/GmowOX4M8R00kkMBE+M7aL/TwswTDjyurliJQ0Tjg4kBTOlHoBt2sOyyfEAdjIsk2h8RNTMHALQ+JUFj5tTeVQ2qQu8MWUEvM2LKY01LJQ1ZiW0FRMBahloXThbVo0RRlVNx/IwWJKQ72zej+tLCq1rOj/GwvEvA0LcarqG4bzA1CXSphhAAAAAElFTkSuQmCC'
 };
 
-const cars = [ carbuggle, carbrix, car039, car005, car3cube, cartwofer,car653]
+const bodies = [ bodybuggle, bodybrix, body039, body005, body3cube, bodytwofer,body653];
 
 // WHEELS
 
@@ -147,7 +212,7 @@ const wheelBlackFechs12 = {
     imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACxSURBVChTbVGxDQMhDPRHaaK0rMAQFNmEDdggA6T+hg0YIkpLwRCsQBulzcERI0V/hTkfhw1me95e8sP1cZlM5H3/TCZy5sLtGCPTWuu+7yC09kpweO/HrhhjEFtrTFNK8J2YHMI5R7LlnLVLKYWVrLVU2LdXAgNA9CgVgH27CQygOjwdFMnXnSBpFxCtCqzXQdX6erMQwnod1L9eiKrMiXOYOi0AE0Jcwxxix/G3iHwB9KprWUzaXYAAAAAASUVORK5CYII='
 }
 
-const wheels = [ wheelChromeSteels8, wheelChromeSteels10, wheelChromeSteels12, wheelColouredSteels12, wheelBlackFechs12]
+const wheels = [ wheelChromeSteels8, wheelChromeSteels10, wheelChromeSteels12, wheelColouredSteels12, wheelBlackFechs12];
 
 // TYRES
 
@@ -169,10 +234,12 @@ const tyre18Normal = {
     imageTyre:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAIAAADZrBkAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABsSURBVDhPY9xhu4sBFVR/q4SyYKCVqx3KggEUbZgakAGyZiYoTUgPECArgGojqAcC4MpA2ojUAwEQxQhHkgQYjY2NoUxSAJm2DWttmOmNIABqocCRJFkIUQy1jUidcGUIRxLUiayArGzKwAAA7j4i85xta+wAAAAASUVORK5CYII='
 }
 
-const tyres = [tyre14Normal, tyre16Normal, tyre18Normal ]
+const tyres = [tyre14Normal, tyre16Normal, tyre18Normal ];
+
+
 
 var currentDisplay = {
-    body:carbrix,
+    body:bodybrix,
     baseColour:"#e6846b",
     wheelColour:"#404040",
     secondaryColour:"#f1f1d0",
@@ -184,8 +251,8 @@ var currentDisplay = {
     frontTyre:tyre16Normal,
     backTyre:tyre18Normal,
     bodyDrop:4,
-    rack:"BowRack",
-    rackAccessory:"LongSurf",
+    rack:rackShort,
+    rackItem:rackItemLongboard,
 };
 
 //-----------------------------------------------
@@ -220,7 +287,6 @@ Coloris.setInstance('.bodyColour',
     {
         onChange: (color) => {
             currentDisplay.baseColour = color
-            // console.log('New color', color)
             draw()
         }
     }
@@ -229,7 +295,6 @@ Coloris.setInstance('.secondaryColour',
     {
         onChange: (color) => {
             currentDisplay.secondaryColour = color
-            // console.log('New color', color)
             draw()
         }
     }
@@ -238,11 +303,24 @@ Coloris.setInstance('.wheelColour',
     {
         onChange: (color) => {
             currentDisplay.wheelColour = color
-            // console.log('New color', color)
             draw()
         }
     }
 );
+
+function emptyCombo(selectEl) {
+    selectEl.length = 0;
+    return selectEl;
+};
+  
+function populateCombo(selectEl, items) {
+    return appendChildren(selectEl, items.map(item => new Option(item, item)));
+};
+  
+function appendChildren(el, children) {
+    children.forEach(child => el.appendChild(child));
+    return el;
+};
 
 //-----------------------------------------------
 // Functions for URL fun
@@ -252,7 +330,7 @@ Coloris.setInstance('.wheelColour',
 function encodeCurrentToURL() {
 
     let returnString = "?" + 
-    "car"+currentDisplay.body.name + "|" +
+    "body"+currentDisplay.body.name + "|" +
     currentDisplay.baseColour +  "|" +
     currentDisplay.wheelColour +  "|" +
     currentDisplay.secondaryColour + "|" +
@@ -263,9 +341,19 @@ function encodeCurrentToURL() {
     "wheel"+currentDisplay.wheels.name + "|" +
     "tyre"+currentDisplay.frontTyre.name + "|" +
     "tyre"+currentDisplay.backTyre.name + "|" +
-    currentDisplay.bodyDrop + "|" +
-    currentDisplay.rack + "|" +
-    currentDisplay.rackAccessory
+    currentDisplay.bodyDrop + "|";
+
+    if ( currentDisplay.rack != "") {
+        returnString = returnString + "rack"+currentDisplay.rack.name + "|"
+    } else {
+        returnString = returnString + "|"
+    };
+
+    if ( currentDisplay.rackItem != "") {
+        returnString = returnString + "rackItem"+currentDisplay.rackItem.name 
+    } else {
+        returnString = returnString
+    };
 
     return returnString;
 
@@ -280,34 +368,32 @@ function pickoutFromURL() {
 
         propertiesFromURL = currentURL.split("?")[1];
 
-        carProperties = propertiesFromURL.split("|")
+        properties = propertiesFromURL.split("|")
 
-        // console.log( carProperties[0])
+        currentDisplay.body = bodies.find(x => x.name === properties[0].replace("body",""));
+        currentDisplay.baseColour = properties[1];
+        currentDisplay.wheelColour = properties[2]; 
+        currentDisplay.secondaryColour = properties[3]; 
+        currentDisplay.secondaryOption = properties[4]; 
+        currentDisplay.wheelColourMatch = properties[5]; 
+        currentDisplay.darkColour = Number(properties[6]);
+        currentDisplay.lightColour = Number(properties[7]); 
+        currentDisplay.wheels = wheels.find(x => x.name === properties[8].replace("wheel",""));
+        currentDisplay.frontTyre = tyres.find(x => x.name === properties[9].replace("tyre",""));
+        currentDisplay.backTyre = tyres.find(x => x.name === properties[10].replace("tyre",""));
+        currentDisplay.bodyDrop = Number(properties[11]); 
+        if ( properties[12] == "" ) {
+            currentDisplay.rack = ""
+        } else {
+            currentDisplay.rack = racks.find(x => x.name === properties[12].replace("rack",""))
+        };
+        if ( properties[13] == "" ) {
+            currentDisplay.rackItem = ""
+        } else {
+            currentDisplay.rackItem = rackItems.find(x => x.name === properties[13].replace("rackItem",""))
+        };
+        
 
-        currentDisplay.body = cars.find(x => x.name === carProperties[0].replace("car",""));
-        currentDisplay.baseColour = carProperties[1];
-        currentDisplay.wheelColour = carProperties[2]; 
-        currentDisplay.secondaryColour = carProperties[3]; 
-        currentDisplay.secondaryOption = carProperties[4]; 
-        currentDisplay.wheelColourMatch = carProperties[5]; 
-        currentDisplay.darkColour = Number(carProperties[6]);
-        currentDisplay.lightColour = Number(carProperties[7]); 
-        currentDisplay.wheels = wheels.find(x => x.name === carProperties[8].replace("wheel",""));
-        currentDisplay.frontTyre = tyres.find(x => x.name === carProperties[9].replace("tyre",""));
-        currentDisplay.backTyre = tyres.find(x => x.name === carProperties[10].replace("tyre",""));
-        currentDisplay.bodyDrop = Number(carProperties[11]); 
-        currentDisplay.rack = carProperties[12]; 
-        currentDisplay.rackAccessory =carProperties[13];
-
-        /*
-        console.log( cars);
-        console.log( cars.find(x => x.name === carProperties[0].replace("car","")) );
-        console.log(wheels.find(x => x.name === carProperties[8].replace("wheel","")) );
-        console.log(tyres.find(x => x.name === carProperties[9].replace("tyre","")) );
-        console.log(tyres.find(x => x.name === carProperties[10].replace("tyre","")) );
-
-        console.log( currentDisplay);
-        */
     }
 
 
@@ -377,6 +463,14 @@ function tyreDropdownFunction() {
     document.getElementById("tyreDropdownList").classList.toggle("show");
 }
 
+function rackDropdownFunction() {
+    document.getElementById("rackDropdownList").classList.toggle("show");
+}
+
+function rackItemDropdownFunction() {
+    document.getElementById("rackItemDropdownList").classList.toggle("show");
+}
+
 function showByElementID(elementID) {
     if (document.getElementById(elementID).classList.contains('hide')) {
         document.getElementById(elementID).classList.remove('hide');
@@ -408,19 +502,15 @@ function checkCheckbox() {
         currentDisplay.secondaryOption = 0
         hideByElementID("secondaryColourControl");
         draw();
-    }
-
-    
+    } 
 }
 
 function checkForSecondaryColourOption() {
 
     if ("imageSecondary" in currentDisplay.body) {
         showByElementID("secondaryColourOption");
-        console.log("show second colour");
     } else {
         hideByElementID("secondaryColourOption");
-        console.log("hide second colour");
     }
 
 }
@@ -466,17 +556,39 @@ window.onclick = function(event) {
 //-----------------------------------------------
 // Functions for changing properties
 //-----------------------------------------------
+function setupRackOptions () {
+    // Always has a none option
+    outputHTML =  `<a href="#" onclick="rackChange(this)" id=none class="dropdownButton">none</a> `;
+
+    if ( 
+        currentDisplay.rack == "" || 
+        !(currentDisplay.body.RackOptions.includes(currentDisplay.rack))||
+        currentDisplay.body.RackOptions.length == 0
+    ) { 
+        hideByElementID("rackItemDropdownButton") 
+    } else {
+        showByElementID("rackItemDropdownButton")
+    };
+
+    for (rackEl of currentDisplay.body.RackOptions) {
+        console.log(rackEl.name)
+        text = `<a href="#" onclick="rackChange(this)" id=rack` + rackEl.name + ` class="dropdownButton">`+(rackEl.name).toLowerCase() +`</a>`
+        outputHTML = outputHTML + text
+    };
+
+
+    
+    // <a href="#" onclick="rackChange(this)" id=rackShort class="dropdownButton">short</a>
+
+    document.getElementById("rackDropdownList").innerHTML = outputHTML
+
+};
 
 function bodyChange(element) {
-    if (element.id == "carbuggle" ) {currentDisplay.body = carbuggle};
-    if (element.id == "car3cube" ) {currentDisplay.body = car3cube};
-    
-    if (element.id == "car039" ) {currentDisplay.body = car039};
-    if (element.id == "car653" ) {currentDisplay.body = car653};
-    if (element.id == "carbrix" ) {currentDisplay.body = carbrix};
-    if (element.id == "cartwofer" ) {currentDisplay.body = cartwofer};
-    if (element.id == "car005" ) {currentDisplay.body = car005};
+    currentDisplay.body = bodies.find(x => x.name === (element.id).replace("body",""));
     checkForSecondaryColourOption();
+    setupRackOptions ();
+
     draw();
 }
 
@@ -487,11 +599,7 @@ function bodyHeightChange(element) {
 }
 
 function wheelChange(element) {
-    if (element.id == "wheelChromeSteels8") {currentDisplay.wheels = wheelChromeSteels8};
-    if (element.id == "wheelChromeSteels10") {currentDisplay.wheels = wheelChromeSteels10};
-    if (element.id == "wheelChromeSteels12") {currentDisplay.wheels = wheelChromeSteels12};
-    if (element.id == "wheelColouredSteels12") {currentDisplay.wheels = wheelColouredSteels12};
-    if (element.id == "wheelBlackFechs12") {currentDisplay.wheels = wheelBlackFechs12}
+    currentDisplay.wheels = wheels.find(x => x.name === (element.id).replace("wheel",""));
     draw();
 }
 
@@ -503,6 +611,24 @@ function tyreChange(element) {
     if (element.id == "back16" ) {currentDisplay.backTyre = tyre16Normal};
     if (element.id == "back18" ) {currentDisplay.backTyre = tyre18Normal};
     draw();
+}
+
+function rackChange(element) {
+    if (element.id == "none" ) {
+        currentDisplay.rack = '';
+        hideByElementID("rackItemDropdownButton");
+    } else {
+        currentDisplay.rack = racks.find(x => x.name === (element.id).replace("rack",""));
+        showByElementID("rackItemDropdownButton");
+    }
+}
+
+function rackItemChange(element) {
+    if (element.id == "none" ) {
+        currentDisplay.rackItem = '';
+    } else {
+        currentDisplay.rackItem = rackItems.find(x => x.name === (element.id).replace("rackItem",""));
+    }
 }
 
 //-----------------------------------------------
@@ -640,9 +766,16 @@ function draw() {
     const frontTyre = new Image(); 
     const backTyre = new Image(); 
     const secondary = new Image();
+    const rack = new Image();
+    const rackItem = new Image();
 
     var imagesToLoad = [];
     var imageCount = 0;
+
+    var rackCheck = ( currentDisplay.rack != "" && currentDisplay.body.RackOptions.includes(currentDisplay.rack));
+    var rackItemCheck = ( currentDisplay.rackItem != ""  && rackCheck);
+    console.log(rackCheck);
+    console.log(rackItemCheck);
 
 
     body.src = currentDisplay.body.imageBody
@@ -660,7 +793,16 @@ function draw() {
     if ( "imageSecondary" in currentDisplay.body ) {
         secondary.src = currentDisplay.body.imageSecondary
         imagesToLoad.push(secondary);
-    }
+    };
+
+    if ( rackCheck ) {
+        rack.src =  currentDisplay.rack.imageRack
+        imagesToLoad.push(rack);
+    };
+    if ( rackItemCheck ) {
+        rackItem.src =  currentDisplay.rackItem.imageRackItem
+        imagesToLoad.push(rackItem);
+    };
 
     if (currentDisplay.wheels.customColour == 1) {
         showByElementID("wheelColourOption");
@@ -739,8 +881,7 @@ function draw() {
                     currentDisplay.darkColour
                 );
                 
-                if (currentDisplay.secondaryOption && "imageSecondary" in currentDisplay.body) {  // and secondary exists //
-                    //console.log("image second draw");
+                if (currentDisplay.secondaryOption && "imageSecondary" in currentDisplay.body) { 
                     drawImageFromData(secondary,
                         currentDisplay.body.SecondaryPositionOver,
                         currentDisplay.body.SecondaryPositionDown+currentDisplay.bodyDrop,
@@ -750,11 +891,32 @@ function draw() {
                         currentDisplay.lightColour,
                         currentDisplay.darkColour
                     );                    
-                }
+                };
 
+                if ( rackItemCheck ) {
+                    drawImageFromData(rackItem,
+                        currentDisplay.body.RoofRefOver + currentDisplay.rackItem.overAddition,
+                        currentDisplay.body.RoofRefDown + currentDisplay.bodyDrop + currentDisplay.rackItem.downAddition,
+                        hiddenContext,
+                        visibleContext,
+                        wheelColourInput,
+                        currentDisplay.lightColour,
+                        currentDisplay.darkColour
+                    );  
+                };
 
-                 
-                
+                if ( rackCheck ) {
+                    drawImageFromData(rack,
+                        currentDisplay.body.RoofRefOver,
+                        currentDisplay.body.RoofRefDown+currentDisplay.bodyDrop,
+                        hiddenContext,
+                        visibleContext,
+                        wheelColourInput,
+                        currentDisplay.lightColour,
+                        currentDisplay.darkColour
+                    ); 
+                };
+            
             }
         }
 
@@ -770,6 +932,7 @@ window.addEventListener("load", ()=>{
     pickoutFromURL();
     startingValueSetter();
     checkForSecondaryColourOption();
+    setupRackOptions ();
     checkCheckbox();
     draw();
 });

@@ -44,13 +44,13 @@
                             </button>
                             <div id="bodyDropdownList" class="dropdownContent">
                                 <p>pick a body style:</p>
-                                <a href="#" onclick="bodyChange(this)" id=carbuggle class="dropdownButton">buggle</a>
-                                <a href="#" onclick="bodyChange(this)" id=car3cube class="dropdownButton">3cube</a>
-                                <a href="#" onclick="bodyChange(this)" id=car039 class="dropdownButton">039</a>
-                                <a href="#" onclick="bodyChange(this)" id=car005 class="dropdownButton">005</a>
-                                <a href="#" onclick="bodyChange(this)" id=car653 class="dropdownButton">653</a>
-                                <a href="#" onclick="bodyChange(this)" id=carbrix class="dropdownButton">brix</a>
-                                <a href="#" onclick="bodyChange(this)" id=cartwofer class="dropdownButton">twofer</a>
+                                <a href="#" onclick="bodyChange(this)" id=bodybuggle class="dropdownButton">buggle</a>
+                                <a href="#" onclick="bodyChange(this)" id=body3cube class="dropdownButton">3cube</a>
+                                <a href="#" onclick="bodyChange(this)" id=body039 class="dropdownButton">039</a>
+                                <a href="#" onclick="bodyChange(this)" id=body005 class="dropdownButton">005</a>
+                                <a href="#" onclick="bodyChange(this)" id=body653 class="dropdownButton">653</a>
+                                <a href="#" onclick="bodyChange(this)" id=bodybrix class="dropdownButton">brix</a>
+                                <a href="#" onclick="bodyChange(this)" id=bodytwofer class="dropdownButton">twofer</a>
                             </div>
 
                             <p></p>
@@ -125,9 +125,41 @@
                         <!-- NEW TAB - ACC -->
                         <div id="accessories" class="tabContent">
                             <h3>accessories</h3>
+
+                            <button onclick="rackDropdownFunction()" 
+                                id=rackDropdownButton 
+                                class="dropdownButton"
+                                >rack choice
+                            </button>
+                            <div id="rackDropdownList" class="dropdownContent">
+                                <a href="#" onclick="rackChange(this)" id=none class="dropdownButton">none</a>
+                                <a href="#" onclick="rackChange(this)" id=rackShort class="dropdownButton">short</a>
+                                <!-- <a href="#" onclick="rackChange(this)" id=midRack class="dropdownButton">mid</a> -->
+                                <!-- <a href="#" onclick="rackChange(this)" id=longRack class="dropdownButton">long</a> -->
+                            </div>
+
+                            <p></p>
+
+                            <button onclick="rackItemDropdownFunction()" 
+                                id=rackItemDropdownButton 
+                                class="dropdownButton"
+                                >rack item choice
+                            </button>
+                            <div id="rackItemDropdownList" class="dropdownContent">
+                                <a href="#" onclick="rackItemChange(this)" id=none class="dropdownButton">none</a>
+                                <a href="#" onclick="rackItemChange(this)" id=rackItemLongboard class="dropdownButton">longboard</a>
+                                <a href="#" onclick="rackItemChange(this)" id=rackItemShortboard class="dropdownButton">shortboard</a>
+                                <a href="#" onclick="rackItemChange(this)" id=rackItemLuggage class="dropdownButton">luggage</a>
+                                <a href="#" onclick="rackItemChange(this)" id=rackItemRedWagon class="dropdownButton">red wagon</a>
+                                <a href="#" onclick="rackItemChange(this)" id=rackItemRoadBike class="dropdownButton">road bike</a>
+                                <a href="#" onclick="rackItemChange(this)" id=rackItemTree class="dropdownButton">tree</a>
+                            </div>
+
+
+
                         </div>
                         
-                        <button onclick="openCanvasURL()" class="editorButton">Save Car</button>
+                        <button onclick="openCanvasURL()" class="editorButton">export</button>
                         
                     </div>
                 </div>
