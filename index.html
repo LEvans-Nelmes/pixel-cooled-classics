@@ -14,7 +14,13 @@
 
     <body>
         <div class="container">
-            <h2>pixel-cooled classics</h2>
+            <h2>
+                <!-- <a href="index.html"> -->
+                <a href="/"></a>
+                <img style='display:block; width:249px;height:27px;' id='logo'
+                    src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPkAAAAbCAYAAAC+wykZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVHhe7djRasMwDIXhrO//zlsN6dCNWp3KjtvD/8EolMiWOoREfo6e3/Nz6J412yfnNsuuGq+81+n/uKWW2/kJwBRNDpjrNvlYOR5/AJ7b0i9McsAcTQ6YG2tDfOOXydaL7G2h+hax8nyWp5qbqnNvpP4OUafGFflElXMyldw+uUY1dkUtL3NgkgPmaHLA3FgB1BWis37Mio0652fU2NV5qrG78qlQY1fcdWX+0ax8pOeZ5IA5mhwwN0Z9ZfRvWTPu4vOZTs7R6roq+cyKjd9n1LuiyjMZNVbNJ6PGqrlFlbviM5UaMy9zYJID5mhywNwY6ZVVobNmrIituDK2U8uK2MqZmU4+FWpsp8Yr84zUnDt3Zf7PZJID5mhywNxYDeKqkMlWiFnrR+X5LE81N1Xn3kj9HaJOjSvyiSrnZCq5dWqMsjMzs+6KOrW8nT+THDBHkwPmxkivrBAAvhSTHDBHkwPmaHLAHE0OmKPJAWvH8QfOXXo0hDC9DQAAAABJRU5ErkJggg==' />
+                </a>
+            </h2>
             <div class="wholeWrapper">
 
                 <div class="canvasWrapper">
@@ -145,6 +151,7 @@
                             <div id="rackDropdownList" class="dropdownContent">
                                 <a href="#" onclick="rackChange(this)" id=none class="dropdownButton">none</a>
                                 <a href="#" onclick="rackChange(this)" id=rackShort class="dropdownButton">short</a>
+                                <a href="#" onclick="rackChange(this)" id=rackLong class="dropdownButton">long</a>
                                 <!-- <a href="#" onclick="rackChange(this)" id=midRack class="dropdownButton">mid</a> -->
                                 <!-- <a href="#" onclick="rackChange(this)" id=longRack class="dropdownButton">long</a> -->
                             </div>
@@ -165,6 +172,11 @@
                                 <a href="#" onclick="rackItemChange(this)" id=rackItemRoadBike class="dropdownButton">road bike</a>
                                 <a href="#" onclick="rackItemChange(this)" id=rackItemTree class="dropdownButton">tree</a>
                             </div>
+
+                            <p></p>
+                            <a>item Position</a>
+                            <button onclick="rackItemPosChange(this)" id=itemLeft class="editorButton"><</button>
+                            <button onclick="rackItemPosChange(this)" id=itemRight class="editorButton">></button>
 
 
 
