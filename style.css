@@ -75,6 +75,7 @@ body{
     color: black;
     padding: 10px;
     font-size: 12px;
+    /* min-width: 150px; */
     border: none;
     cursor: pointer;
   }
@@ -97,25 +98,39 @@ body{
     background-color: #f1f1f1;
     font-size: 14px;
     padding: 5px;
-    min-width: 160px;
+    min-width: 10px;
+    max-width: 300px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    /* display: flex; */
+    flex-wrap: wrap;
   }
-  
+
   /* Links inside the dropdown */
   .dropdownContent a {
     color: black;
     padding: 10px 12px;
     text-decoration: none;
     display: block;
+    /* display: flex;
+    flex-wrap: wrap; */
   }
+  
+  /* Text inside the dropdown */
+  .dropdownContent p {
+    display: block;
+    width: 100%;
+
+    /* display: flex;
+    flex-wrap: wrap; */
+  } 
   
   /* Change color of dropdown links on hover */
   .dropdownContent a:hover {background-color: #ddd;}
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .hide {display:none;}
-  .show {display:block;}
+  .show {display:flex;}
 
 
   /* Style the tab */

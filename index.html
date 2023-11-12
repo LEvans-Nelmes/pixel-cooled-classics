@@ -16,7 +16,7 @@
         <div class="container">
             <h2>
                 <!-- <a href="index.html"> -->
-                <a href="/">
+                <a href="https://levans-nelmes.github.io/pixel-cooled-classics/">
                 <img style='display:block; width:249px;height:27px;' id='logo'
                     src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPkAAAAbCAYAAAC+wykZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVHhe7djRasMwDIXhrO//zlsN6dCNWp3KjtvD/8EolMiWOoREfo6e3/Nz6J412yfnNsuuGq+81+n/uKWW2/kJwBRNDpjrNvlYOR5/AJ7b0i9McsAcTQ6YG2tDfOOXydaL7G2h+hax8nyWp5qbqnNvpP4OUafGFflElXMyldw+uUY1dkUtL3NgkgPmaHLA3FgB1BWis37Mio0652fU2NV5qrG78qlQY1fcdWX+0ax8pOeZ5IA5mhwwN0Z9ZfRvWTPu4vOZTs7R6roq+cyKjd9n1LuiyjMZNVbNJ6PGqrlFlbviM5UaMy9zYJID5mhywNwY6ZVVobNmrIituDK2U8uK2MqZmU4+FWpsp8Yr84zUnDt3Zf7PZJID5mhywNxYDeKqkMlWiFnrR+X5LE81N1Xn3kj9HaJOjSvyiSrnZCq5dWqMsjMzs+6KOrW8nT+THDBHkwPmxkivrBAAvhSTHDBHkwPmaHLAHE0OmKPJAWvH8QfOXXo0hDC9DQAAAABJRU5ErkJggg==' />
                 </a>
@@ -25,7 +25,8 @@
 
                 <div class="canvasWrapper">
                     <canvas id="mainCanvas" width="512" height="512"></canvas>
-                    <canvas hidden id="hiddenCanvas" width="512" height="512"></canvas>               
+                    <canvas hidden id="hiddenCanvas" width="512" height="512"></canvas> 
+                    <canvas hidden id="hiddenButtonCanvas" width="512" height="512"></canvas>        
                     <script src="js/script.js"></script>
                 </div>
 
@@ -67,12 +68,15 @@
                                 >wheel choice
                             </button>
                             <div id="wheelDropdownList" class="dropdownContent">
+
                                 <p>size 8:</p>
                                 <a href="#" onclick="wheelChange(this)" id=wheelChromeSteels8 class="dropdownButton">chrome steels</a>
                                 <a href="#" onclick="wheelChange(this)" id=wheelColouredSteels8 class="dropdownButton">coloured steels</a>
+                            
                                 <p>size 10:</p>
                                 <a href="#" onclick="wheelChange(this)" id=wheelChromeSteels10 class="dropdownButton">chrome steels</a>
                                 <a href="#" onclick="wheelChange(this)" id=wheelColouredSteels10 class="dropdownButton">coloured steels</a>
+                            
                                 <p>size 12:</p>
                                 <a href="#" onclick="wheelChange(this)" id=wheelBlackFechs12 class="dropdownButton">black fechs</a>
                                 <a href="#" onclick="wheelChange(this)" id=wheelDetFechs12 class="dropdownButton">detailed fechs</a>
@@ -80,16 +84,17 @@
                                 <a href="#" onclick="wheelChange(this)" id=wheelSpaces12 class="dropdownButton">detailed spaces</a>
                                 <a href="#" onclick="wheelChange(this)" id=wheelChromeSteels12 class="dropdownButton">chrome steels</a>
                                 <a href="#" onclick="wheelChange(this)" id=wheelColouredSteels12 class="dropdownButton">coloured steels</a>
+
                             </div>
                         
                             <p></p>
                             
-                            <button onclick="tyreDropdownFunction()" 
-                                id=tyreDropdownButton 
+                            <button onclick="frontTyreDropdownFunction()" 
+                                id=frontTyreDropdownButton 
                                 class="dropdownButton"
-                                >tyre choice
+                                >front tyre choice
                             </button>
-                            <div id="tyreDropdownList" class="dropdownContent">
+                            <div id="frontTyreDropdownList" class="dropdownContent">
                                 <p>front</p>
                                 <a href="#" onclick="tyreChange(this)" id=front14 class="dropdownButton">14 smooth</a>
                                 <a href="#" onclick="tyreChange(this)" id=front16 class="dropdownButton">16 smooth</a>
@@ -97,6 +102,16 @@
                                 <a href="#" onclick="tyreChange(this)" id=front14White class="dropdownButton">14 white</a>
                                 <a href="#" onclick="tyreChange(this)" id=front16White class="dropdownButton">16 white</a>
                                 <a href="#" onclick="tyreChange(this)" id=front18White class="dropdownButton">18 white</a>
+                            </div>
+                        
+                            <p></p>
+                            
+                            <button onclick="backTyreDropdownFunction()" 
+                                id=backTyreDropdownButton 
+                                class="dropdownButton"
+                                >back tyre choice
+                            </button>
+                            <div id="backTyreDropdownList" class="dropdownContent">
                                 <p>back</p>
                                 <a href="#" onclick="tyreChange(this)" id=back14 class="dropdownButton">14 smooth</a>
                                 <a href="#" onclick="tyreChange(this)" id=back16 class="dropdownButton">16 smooth</a>
