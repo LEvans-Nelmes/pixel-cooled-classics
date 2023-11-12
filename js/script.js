@@ -637,7 +637,17 @@ window.onclick = function(event) {
         }
     } else { 
         // alert("Button clicked, id "+event.target.id+", text"+event.target.innerHTML) 
-        console.log(event);
+        // console.log(event);
+        var dropdowns = document.getElementsByClassName("dropdownContent");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            // console.log(event.target.id.replace('Button','List'));
+            // console.log(openDropdown.id);
+            if (   (openDropdown.classList.contains('show')) && !(event.target.id.replace('Button','List') == openDropdown.id) ) {
+                openDropdown.classList.remove('show');
+            }
+        }
     };
 
 }
