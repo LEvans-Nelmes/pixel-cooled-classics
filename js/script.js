@@ -1,6 +1,6 @@
 
 
-const globalScaleFactor = 4;
+const globalScaleFactor = 2;
 
 // RACKS
 
