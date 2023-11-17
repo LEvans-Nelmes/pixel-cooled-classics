@@ -1,6 +1,10 @@
 
 
-const globalScaleFactor = 2;
+const globalScaleFactor = 4;
+
+const logo = {
+    imageLogo:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPkAAAAbCAYAAAC+wykZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVHhe7djRasMwDIXhrO//zlsN6dCNWp3KjtvD/8EolMiWOoREfo6e3/Nz6J412yfnNsuuGq+81+n/uKWW2/kJwBRNDpjrNvlYOR5/AJ7b0i9McsAcTQ6YG2tDfOOXydaL7G2h+hax8nyWp5qbqnNvpP4OUafGFflElXMyldw+uUY1dkUtL3NgkgPmaHLA3FgB1BWis37Mio0652fU2NV5qrG78qlQY1fcdWX+0ax8pOeZ5IA5mhwwN0Z9ZfRvWTPu4vOZTs7R6roq+cyKjd9n1LuiyjMZNVbNJ6PGqrlFlbviM5UaMy9zYJID5mhywNwY6ZVVobNmrIituDK2U8uK2MqZmU4+FWpsp8Yr84zUnDt3Zf7PZJID5mhywNxYDeKqkMlWiFnrR+X5LE81N1Xn3kj9HaJOjSvyiSrnZCq5dWqMsjMzs+6KOrW8nT+THDBHkwPmxkivrBAAvhSTHDBHkwPmaHLAHE0OmKPJAWvH8QfOXXo0hDC9DQAAAABJRU5ErkJggg=='
+};
 
 // RACKS
 
@@ -254,6 +258,13 @@ const wheelDetFechs12 = {
     imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADJSURBVChTjZG7DYNAEETXlhPLRbgISJBwHwR0QELsAhyT0AESLVhOQaIIEgogtRzid8zxSSx5Ang7t6xmj8Pz9rJFl8fZk9n7/vFkdtJLx2VZquz7vigKwLcyqWma66JpmvYlTMPRNf5QFEWe6E2ShAEIoNw7QRBQukkkaNsWqOt6/tCyLMNB4zhSuuBQmqYM52zucRt0XSdGWybcOI7FjByGQeyk7RQCWJdCcrbtiBWGoVjK83x1/I3rMkk2m05VVfHUZf7xW8y+03d/fthLFToAAAAASUVORK5CYII='
 }
 
+const wheelBlackCross12 = {
+    name:"BlackCross12",
+    size:12,
+    customColour:0,
+    imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC+SURBVChTbZGxEcIwDEWVHA1HmxU8RAo28QZuXDMAtZts4CE42hQZwiuk5Wh54TuG4/iF8iV9S99OdzvfbcfpeqzM7HF5VmZ20EftaZqUllJSShBJt0kovPckwzA45yRa1xWSc0bXwxpo0BZRRejmedaWZVmIDCNKNI4jMYSweeI0W1RS9dscsRpXAvCLoqVCFQGtiDE2rtWgxzynm1PdTqBI6/d2OoquzRDqi+sx2dUmYZ/4ecx3ccP/32L2Ahr2YyVKNa1hAAAAAElFTkSuQmCC'
+}
+
 const wheelHobs12 = {
     name:"Hobs12",
     size:12,
@@ -268,7 +279,7 @@ const wheelSpaces12 = {
     imageWheel:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC6SURBVChTjZHBDcIwDEVdxAUxRLJGpLBHI2WDbsAA3aAbdAjENZG6RpdAHMtrHVK4IP7BfXa+bMttbpe7vHXuT4VEHtdnIZGjfvTZe2+tBeZ5zn0G1LqacMQYgXEcnXNAzrlW8B0gFc90KsmWFkIppWVZNFaRqtq2Ja6d2GMYhhACTFSggqZpgvdxP9TQjVXYtBS+RbOu64Q74TPG6HhiBYoAhn2cjq/6TNc7cQnuAdRNkVb0mH/8FpEXjA50AiSSUpQAAAAASUVORK5CYII='
 }
 
-const wheels = [ wheelChromeSteels8, wheelColouredSteels8, wheelChromeSteels10,wheelColouredSteels10, wheelChromeSteels12, wheelColouredSteels12, wheelBlackFechs12, wheelDetFechs12, wheelHobs12, wheelSpaces12];
+const wheels = [ wheelChromeSteels8, wheelColouredSteels8, wheelChromeSteels10,wheelColouredSteels10, wheelChromeSteels12, wheelColouredSteels12, wheelBlackFechs12, wheelDetFechs12, wheelBlackCross12, wheelHobs12, wheelSpaces12];
 
 // TYRES
 
@@ -668,8 +679,8 @@ function setupBodyOptions () {
     // var wheel = new Image(); 
 
     for (bodyEl of bodies) {
-        console.log("body loop");
-        console.log(bodyEl);
+        // console.log("body loop");
+        // console.log(bodyEl);
 
         bodyEl.image = new Image();
         bodyEl.imageArchesOption = new Image();
@@ -679,8 +690,8 @@ function setupBodyOptions () {
 
         bodyEl.image.src = bodyEl.imageBody;
         bodyEl.imageArchesOption.src = bodyEl.imageArches;
-        console.log(bodyEl.image.src);
-        console.log(bodyEl.imageArchesOption.src);
+        // console.log(bodyEl.image.src);
+        // console.log(bodyEl.imageArchesOption.src);
 
         bodiesToLoad.push(bodyEl.image);
         bodiesToLoad.push(bodyEl.imageArchesOption);
@@ -694,13 +705,13 @@ function setupBodyOptions () {
     bodiesToLoad.forEach(image =>{
         image.onload = ()=>{ 
             bodiesCount +=1;
-            console.log(bodiesCount);
-            console.log(bodiesToLoad.length);
+            // console.log(bodiesCount);
+            // console.log(bodiesToLoad.length);
             if(bodiesCount == bodiesToLoad.length){
 
                 for (bodyEl of bodyData) {
 
-                    console.log(bodyData);
+                    // console.log(bodyData);
 
                     setupButtonCanvas = document.createElement("canvas");
                     setupButtonContext = setupButtonCanvas.getContext("2d");
@@ -717,14 +728,14 @@ function setupBodyOptions () {
                     hiddenButtonCanvas.height = scaleFactor*50;
 
         
-                    console.log(bodyEl.name+ " loaded");
-                    console.log(bodyEl.image.src);
+                    // console.log(bodyEl.name+ " loaded");
+                    // console.log(bodyEl.image.src);
                 
 
                     bodyEl.data = setupImageFromData(bodyEl.image,bodyColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
                     bodyEl.dataArches = setupImageFromData(bodyEl.imageArchesOption,bodyColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
                     //bodyEl.data = loadImageToArray(wheel, canvasWidth=128,canvasHeight=128, scaleFactor);
-                    console.log(bodyEl.data);
+                    // console.log(bodyEl.data);
 
                     setupButtonContext.clearRect(0,0,512,512);
                     setupButtonContext.putImageData(bodyEl.data,0,0);
@@ -745,8 +756,8 @@ function setupBodyOptions () {
                     hiddenButtonContext.drawImage(setupButtonCanvas,archOver,archDown);
 
                     imageBase64 = hiddenButtonCanvas.toDataURL();
-                    console.log("bodies");
-                    console.log(imageBase64);
+                    // console.log("bodies");
+                    // console.log(imageBase64);
 
                     text = (
                         `<a href="#" onclick="bodyChange(this)" id=body` + bodyEl.name + ` class="dropdownButton">
@@ -1066,8 +1077,10 @@ function bodyHeightChange(element) {
 }
 
 function rackItemPosChange(element) {
+    if (element.id == "itemLeft10" ) {currentDisplay.rackItemOver = currentDisplay.rackItemOver - 10};
     if (element.id == "itemLeft" ) {currentDisplay.rackItemOver--};
     if (element.id == "itemRight" ) {currentDisplay.rackItemOver++};
+    if (element.id == "itemRight10" ) {currentDisplay.rackItemOver = currentDisplay.rackItemOver + 10};
     draw();
 }
 
@@ -1260,6 +1273,7 @@ function draw() {
     const secondary = new Image();
     const rack = new Image();
     const rackItem = new Image();
+    const logoImage = new Image();
 
     var imagesToLoad = [];
     var imageCount = 0;
@@ -1282,6 +1296,11 @@ function draw() {
     imagesToLoad.push(frontTyre);
     backTyre.src = currentDisplay.backTyre.imageTyre
     imagesToLoad.push(backTyre);
+    
+    logoImage.src = logo.imageLogo;
+    console.log(logoImage);
+    imagesToLoad.push(logoImage);
+
     if ( "imageSecondary" in currentDisplay.body ) {
         secondary.src = currentDisplay.body.imageSecondary
         imagesToLoad.push(secondary);
@@ -1408,6 +1427,16 @@ function draw() {
                         currentDisplay.darkColour
                     ); 
                 };
+
+                // draw the logo on:
+
+                // hiddenContext.clearRect(0,0,128*scaleFactor,canvasHeight*scaleFactor);
+                // hiddenContext.putImageData(imageName.data,0,0);
+                // visibleContext.imageSmoothingEnabled = false;
+                console.log(logoImage);
+                visibleContext.drawImage(logoImage,globalScaleFactor*60,globalScaleFactor*102);
+
+                
             
             }
         }
