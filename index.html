@@ -15,8 +15,8 @@
     <body>
         <div class="container">
             <h2>
-                <a href="index.html">
-                <!-- <a href="https://levans-nelmes.github.io/pixel-cooled-classics/"> -->
+                <!-- <a href="index.html"> -->
+                <a href="https://levans-nelmes.github.io/pixel-cooled-classics/">
                 <img style='display:block; width:249px;height:27px;' id='logo'
                     src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPkAAAAbCAYAAAC+wykZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVHhe7djRasMwDIXhrO//zlsN6dCNWp3KjtvD/8EolMiWOoREfo6e3/Nz6J412yfnNsuuGq+81+n/uKWW2/kJwBRNDpjrNvlYOR5/AJ7b0i9McsAcTQ6YG2tDfOOXydaL7G2h+hax8nyWp5qbqnNvpP4OUafGFflElXMyldw+uUY1dkUtL3NgkgPmaHLA3FgB1BWis37Mio0652fU2NV5qrG78qlQY1fcdWX+0ax8pOeZ5IA5mhwwN0Z9ZfRvWTPu4vOZTs7R6roq+cyKjd9n1LuiyjMZNVbNJ6PGqrlFlbviM5UaMy9zYJID5mhywNwY6ZVVobNmrIituDK2U8uK2MqZmU4+FWpsp8Yr84zUnDt3Zf7PZJID5mhywNxYDeKqkMlWiFnrR+X5LE81N1Xn3kj9HaJOjSvyiSrnZCq5dWqMsjMzs+6KOrW8nT+THDBHkwPmxkivrBAAvhSTHDBHkwPmaHLAHE0OmKPJAWvH8QfOXXo0hDC9DQAAAABJRU5ErkJggg==' />
                 </a>
@@ -24,9 +24,9 @@
             <div class="wholeWrapper">
 
                 <div class="canvasWrapper">
-                    <canvas id="mainCanvas" width="256" height="256"></canvas>
-                    <canvas hidden id="hiddenCanvas" width="256" height="256"></canvas> 
-                    <canvas hidden id="hiddenButtonCanvas" width="256" height="256"></canvas>        
+                    <canvas id="mainCanvas" width="512" height="512"></canvas>
+                    <canvas hidden id="hiddenCanvas" width="512" height="512"></canvas> 
+                    <canvas hidden id="hiddenButtonCanvas" width="512" height="512"></canvas>        
                     <script src="js/script.js"></script>
                 </div>
 
@@ -190,8 +190,10 @@
 
                             <p></p>
                             <a>item Position</a>
+                            <button onclick="rackItemPosChange(this)" id=itemLeft10 class="editorButton"><<</button>
                             <button onclick="rackItemPosChange(this)" id=itemLeft class="editorButton"><</button>
                             <button onclick="rackItemPosChange(this)" id=itemRight class="editorButton">></button>
+                            <button onclick="rackItemPosChange(this)" id=itemRight10 class="editorButton">>></button>
 
 
 
