@@ -80,6 +80,7 @@ const rackItems = [rackItemLongboard, rackItemShortboard, rackItemLuggage, rackI
 
 const bodybuggle = {
     name:"buggle",
+    family:"buggle",
     size:128,
     CarPositionOver:11,
     CarPositionDown:59,
@@ -98,6 +99,7 @@ const bodybuggle = {
 
 const body3cube = {
     name:"3cube",
+    family:"variable",
     size:128,
     CarPositionOver:11,
     CarPositionDown:62,
@@ -114,6 +116,7 @@ const body3cube = {
 
 const body039 = {
     name:"039",
+    family:"039",
     size:128,
     CarPositionOver:4,
     CarPositionDown:60,
@@ -130,6 +133,7 @@ const body039 = {
 
 const body005 = {
     name:"005",
+    family:"005",
     size:128,
     CarPositionOver:22,
     CarPositionDown:61,
@@ -146,6 +150,7 @@ const body005 = {
 
 const body653 = {
     name:"653",
+    family:"653",
     size:128,
     CarPositionOver:8,
     CarPositionDown:63,
@@ -162,6 +167,7 @@ const body653 = {
 
 const bodybrix = {
     name:"brix",
+    family:"brix",
     size:128,
     CarPositionOver:9,
     CarPositionDown:55,
@@ -179,8 +185,29 @@ const bodybrix = {
     imageSecondary:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGcAAAAVCAIAAADUyWdkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHYSURBVFhH5ZehTgQxEIb3TpHgeAkMCRoBF9wZNBaPxfAEGCweyxNwwRAwGCSGl8CRIJnLPxnmOt3Zdq/lsrefublu2+n8O512J4vjp6Ya88sjGLfnOwcnz7Adsvpndf54PWWraVJW4pOqmvYqXD38sJUAxVavf2Jn6sZWjHQ1u1UjvbKiHTRaVkfEDtVudvfYGiXX319sreKpJoUjF7wxnaGz+8+Xi30yFndvaAHaRfDIx67NH47+0T5OmBRINOM6VMuKRENjda2Bar1ni6KjXXPmtqkQhRVuyr8G2pvrLMWOLSsZQRPSy4CBlt44M0Rrely1MZczm3f2/tCaa22FcFvR6aaFI2y6RVSjRBubZIBKGM4xTXTzhqqV3ZuoO3KAliXIiPVxLmiBr0iujTPRAmx10y0rqpXdm1IOaiRaJRI/qv5Uq31uFt9QQsGZo5/bgjzlWy4kK5hoiMRWNOdmRGCU3wfYr+OUUYJVh7LMzhkgN96lapAM4elDRNLVfwNEmzOoprWzh5TgrxgEw2lIpaOmDQjHqlVybFUrzkZUm9Km+E+vQwcbYjKbv+O/Q29Zty/XCEq3pWqJXml9bOWwEdX6LTUF8sWqcUMh9EEc3GacRwPi7PHwF4J3CETOmkh5AAAAAElFTkSuQmCC'
 };
 
+const bodybrixP = {
+    name:"brixP",
+    family:"brix",
+    size:bodybrix.size,
+    CarPositionOver:bodybrix.CarPositionOver,
+    CarPositionDown:bodybrix.CarPositionDown,
+    ArchPositionOver:bodybrix.ArchPositionOver,
+    ArchPositionDown:bodybrix.ArchPositionDown,
+    FrontWheelOver:bodybrix.FrontWheelOver,
+    BackWheelOver:bodybrix.BackWheelOver,
+    RoofRefOver:bodybrix.RoofRefOver,
+    RoofRefDown:bodybrix.RoofRefDown,
+    RackOptions:bodybrix.RackOptions,
+    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAnCAIAAACKWVELAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOvSURBVGhD7Zo/aBRBFIf3YqEYq6CNvYggWJyFFmq0UQtBsFA7G7EQOy2CdbxC2xRio4WonWBhsPFPE4VYCIKIjb2QQoyk05/3e5m8zM7OvR129twkH8fm7WZuduabN7tze9ebP/aqaJEz148yuHdxx8HjrxlHqFW+VuHP705KVBSWlsRJ96jb4bj5bEUiA+htvvLGwigmUQi73xSPMFir/51Gi45ore1xMDkl0aZkZnlJovXU8+guQHXhqOosPvHw69sr+2WnO6Ajways4ZES+3enuRtkdudAoqK4/XtGoiEfb73R16wOedRdZi/KKq0eIRE9//XjGne1LyPQennxvd2jvjARy0U5x/Bcen5VoqJ4ev4BtvNzC9x1mDxSIgJ4hEEYacFjGsFqy0MSJDJOI1NytEdOZ7SPEhF3zmMjuKwMpuSE/K2gLHHT8m2V4B1ihEcAiRI1AWvLlzX52KfALjPMEfPoiuoZnTapNwCYzpKQqympVVZ6zDGj3cWxc8lIJBuHyKFVwh6dRO5uQSQbh/CIe8gQuF9riUjG4bF1/Nk2cWf7LALMcR6xgOUCtvmujHqRn0Da2sgtgHyPWiI7rE/w5PARBljBMKiiqkv0qG1GOmDx4r0db8k3VEGocp1Hd+HM15Syx8YZi8fw9bHNdnQdTpq1fNTJyCBCsuiNl48AKel7pERjOyzGy4zFY1pTLeBcax5dMoLGT+lu+j97K3t3P2JM9Hpg1577EnWNcy8PicfB5JQbQ3jEPxg3zouznxIqr3XjTjtFEMt5yZpHbKmy/UnXLC2cwgNnlPt1yyfeeMSeU+QDAyhR90FfZpaXxKOeC1u5mUA4HzPly0ZKQ4/AfQbo9DQy0pGuMKF+O1krL4PTYV6Lx9OnbmA7/eExW2BpCsVZipXLZO2qsXK3TgpiX/GA+bkF3yO2aMTIpmiJjMtEahi7R0jEMlN2KsAi1GjT9wh6BxaxtXhEgfLXuEH0hyUyXo8oUPXzEg/98SQCPMh9BpnIF3fjoB3YGiUCe8lGaEoiQMn49HdIPvLJNj/hIp/LH610htdqCvF+5If62VuvlcZ5VNU3vJ3JGClQd1C934Wx2cwkgiOos9fv9+XAEP2wIDiwrKKuR+DNEXZYdpojUm1ay6umNmpzD1lmdw58j2Dkc5cEieB/8NhIywGHRD+satWjRAYsitmZWjTYcu8bwH/XR+9rP35bHel2Cx4zkdejhPkZr8o0iUbG87ynNb5/uYAXgqwSi6L4C3tdgcNo3PPiAAAAAElFTkSuQmCC',
+    imageArches:bodybrix.imageArches,
+    SecondaryPositionOver: bodybrix.SecondaryPositionOver,
+    SecondaryPositionDown: bodybrix.SecondaryPositionDown,
+    imageSecondary:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGcAAAAVCAIAAADUyWdkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGvSURBVFhH7ZixTgMxDECvnZDY+AkWJGYGqNi6MLOys7LwBSys7Kx8ARULgoWFkYWfYENixJUt4+Z8jnMkd8rBU6X62twleXWcwGx1+NAUY3l+gMH16dbe0SPGBkntkxq/PR9T1DSekdh4rclemYu7L4ocwNzKtXc2hmYUafhtxq2Br6TZVo3UakiMWLva3qHoT3L5+UHRJpY1Lhyp4C8mM3Rx+/50tksX9QATUTMuYm1180IXicC9stZUZE1OGWfRFjen9xawNnsrA1LvhcEFL/rCBH4Mioqh1nQ917Ccda1qJ3IbKZRr6mOdxo0tLppundZ+qQwYy1oWWBwW92DpKCs0i7LJoJaa0FreowbWnXIZMRiYcYySa/+JBkhNmG7ykw1redcmF7XaE63Nj7W8a3OS8B/jtIeisoyJhvlcrqLBacA4OkQxTifGY/kIsraGynB68nF8SFH/4SHp6gmtSXf9hssEt8MtA281KI6sFeq4bS07o1ibw1IastfawQUxWyxf8dqgt9bp5RoA6ba25uwVxkdRCqNY6zdUD9AXWaMPMiE34uA0Y3xVESf3+99i1PwUgFcPWgAAAABJRU5ErkJggg=='
+};
+
 const bodytwofer = {
     name:"twofer",
+    family:"twofer",
     size:128,
     CarPositionOver:12,
     CarPositionDown:55,
@@ -198,7 +225,7 @@ const bodytwofer = {
     imageSecondary: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAbCAIAAAAF9L0XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHnSURBVGhD7ZihTgQxEIb3UCQ4XgJDgkYAwYFAY/FYDE+AweKRoBFczhAwaBIML4EhJEj+5W/met1uO+0u7HHXT9y1l9nu9mtntjAa70yqFF6f9k1Lx9ntl2kNweXxqmmlsLn7YFqzxGV57QyrIJuwO0zKCXCshWSJpn+qpgtizfbVKkufbn2pzEiZX11FPk9c1sXaumktMUf3W3eHL2icf77zl9adBV+PJxumMx9wqfW7KTXeRrY5Lh9fPbPdKuvgdBufEqcEyYvR967fRHR4BN7FJhzP4mDPPzVej7iWW6zwyyHPFECGy5qA6AgMgFy7G0AqCC/Rx2dAxZiOrKhfFpAJZDBv+ZtK29w9srh1paoVBP/OslNpmZFMZNcvK68iElzbJYV7p8tcBJYtV5b+LDoUvUw+D1dWl9fHYhAoQTOyuK14bG2egDQ4V0UH+eP4bGhweijFuKg1fAl6k1G//zEOTg9tS9Qch/GmowOX4M8R00kkMBE+M7aL/TwswTDjyurliJQ0Tjg4kBTOlHoBt2sOyyfEAdjIsk2h8RNTMHALQ+JUFj5tTeVQ2qQu8MWUEvM2LKY01LJQ1ZiW0FRMBahloXThbVo0RRlVNx/IwWJKQ72zej+tLCq1rOj/GwvEvA0LcarqG4bzA1CXSphhAAAAAElFTkSuQmCC'
 };
 
-const bodies = [ bodybuggle, bodybrix, body039, body005, body3cube, bodytwofer,body653];
+const bodies = [ bodybuggle, bodybrix,bodybrixP, body039, body005, body3cube, bodytwofer,body653];
 
 // WHEELS
 
@@ -349,10 +376,14 @@ var currentDisplay = {
 Coloris(
     {
         el: '.coloris',
-        theme: 'pill',
+        theme: 'polaroid',
+        // theme: 'pill',
         //swatchesOnly: true,
         themeMode: 'dark',
         alpha: false,
+        focusInput: false,
+        closeButton: true,
+        // parent: '.tab',
         swatches: [
             '#264653',
             '#2a9d8f',
@@ -632,10 +663,23 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
   }
+
+function closeDropdowns() {
+    var dropdowns = document.getElementsByClassName("dropdownContent");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+        }
+    }
+
+}
   
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
     checkCheckbox();
+    // console.log(event.target);
 
     if (!event.target.matches('.dropdownButton') && !event.target.matches('.dropdownButtonImage')) {
         var dropdowns = document.getElementsByClassName("dropdownContent");
@@ -648,15 +692,15 @@ window.onclick = function(event) {
         }
     } else { 
         // alert("Button clicked, id "+event.target.id+", text"+event.target.innerHTML) 
-        // console.log(event);
         var dropdowns = document.getElementsByClassName("dropdownContent");
         var i;
+
         for (i = 0; i < dropdowns.length; i++) {
             var openDropdown = dropdowns[i];
-            // console.log(event.target.id.replace('Button','List'));
-            // console.log(openDropdown.id);
+            
             if (   (openDropdown.classList.contains('show')) && !(event.target.id.replace('Button','List') == openDropdown.id) ) {
-                openDropdown.classList.remove('show');
+                // this is commented out so that it doesnt close the dropdown menu when selecting an option
+                // openDropdown.classList.remove('show');
             }
         }
     };
@@ -667,9 +711,20 @@ window.onclick = function(event) {
 // Functions for changing properties
 //-----------------------------------------------
 
+function closeButtonHTML () {
+    return `<a href="#" onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a> <p></p>`
+}
+
 function setupBodyOptions () {
 
     var outputHTML = ``;
+    var family1Options = ``;
+    var family2Options = ``;
+    var family3Options = ``;
+    var family4Options = ``;
+    var family5Options = ``;
+    var family6Options = ``;
+    var family7Options = ``;
     var scaleFactor = 0.5;
 
     var bodiesToLoad = [];
@@ -679,8 +734,6 @@ function setupBodyOptions () {
     // var wheel = new Image(); 
 
     for (bodyEl of bodies) {
-        // console.log("body loop");
-        // console.log(bodyEl);
 
         bodyEl.image = new Image();
         bodyEl.imageArchesOption = new Image();
@@ -690,13 +743,10 @@ function setupBodyOptions () {
 
         bodyEl.image.src = bodyEl.imageBody;
         bodyEl.imageArchesOption.src = bodyEl.imageArches;
-        // console.log(bodyEl.image.src);
-        // console.log(bodyEl.imageArchesOption.src);
 
         bodiesToLoad.push(bodyEl.image);
         bodiesToLoad.push(bodyEl.imageArchesOption);
         bodyData.push(bodyEl);
-        // console.log(wheelsToLoad.length);
     };
 
 
@@ -705,13 +755,10 @@ function setupBodyOptions () {
     bodiesToLoad.forEach(image =>{
         image.onload = ()=>{ 
             bodiesCount +=1;
-            // console.log(bodiesCount);
-            // console.log(bodiesToLoad.length);
             if(bodiesCount == bodiesToLoad.length){
 
                 for (bodyEl of bodyData) {
 
-                    // console.log(bodyData);
 
                     setupButtonCanvas = document.createElement("canvas");
                     setupButtonContext = setupButtonCanvas.getContext("2d");
@@ -728,14 +775,10 @@ function setupBodyOptions () {
                     hiddenButtonCanvas.height = scaleFactor*50;
 
         
-                    // console.log(bodyEl.name+ " loaded");
-                    // console.log(bodyEl.image.src);
-                
 
                     bodyEl.data = setupImageFromData(bodyEl.image,bodyColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
                     bodyEl.dataArches = setupImageFromData(bodyEl.imageArchesOption,bodyColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
                     //bodyEl.data = loadImageToArray(wheel, canvasWidth=128,canvasHeight=128, scaleFactor);
-                    // console.log(bodyEl.data);
 
                     setupButtonContext.clearRect(0,0,512,512);
                     setupButtonContext.putImageData(bodyEl.data,0,0);
@@ -756,8 +799,6 @@ function setupBodyOptions () {
                     hiddenButtonContext.drawImage(setupButtonCanvas,archOver,archDown);
 
                     imageBase64 = hiddenButtonCanvas.toDataURL();
-                    // console.log("bodies");
-                    // console.log(imageBase64);
 
                     text = (
                         `<a href="#" onclick="bodyChange(this)" id=body` + bodyEl.name + ` class="dropdownButton">
@@ -766,22 +807,42 @@ function setupBodyOptions () {
                         +`</a>`
                     );
 
-                    outputHTML = outputHTML + text
+                    // outputHTML = outputHTML + text
                     
-                    // if (bodyEl.size == 8) {
-                    //     size8Options = size8Options + text
-                    // } 
-                    // if (bodyEl.size == 10) {
-                    //     size10Options = size10Options + text
-                    // } 
-                    // if (bodyEl.size == 12) {
-                    //     size12Options = size12Options + text
-                    // }                     
+                    if (bodyEl.family == "buggle") {
+                        family1Options = family1Options + text
+                    } 
+                    if (bodyEl.family == "variable") {
+                        family2Options = family2Options + text
+                    } 
+                    if (bodyEl.family == "twofer") {
+                        family3Options = family3Options + text
+                    }    
+                    if (bodyEl.family == "brix") {
+                        family4Options = family4Options + text
+                    }
+                    if (bodyEl.family == "653") {
+                        family5Options = family5Options + text
+                    }
+                    if (bodyEl.family == "039") {
+                        family6Options = family6Options + text
+                    } 
+                    if (bodyEl.family == "005") {
+                        family7Options = family7Options + text
+                    }                    
                 };
 
-                // outputHTML = outputHTML + `<p>size 8:</p>`  + size8Options;
-                // outputHTML = outputHTML + `<p>size 10:</p>` + size10Options;
-                // outputHTML = outputHTML + `<p>size 12:</p>` + size12Options;
+                outputHTML = outputHTML + `<p></p>` + family1Options;
+                outputHTML = outputHTML + `<p></p>` + family2Options;
+                outputHTML = outputHTML + `<p></p>` + family3Options;
+                outputHTML = outputHTML + `<p></p>` + family4Options;
+                outputHTML = outputHTML + `<p></p>` + family5Options;
+                outputHTML = outputHTML + `<p></p>` + family6Options;
+                outputHTML = outputHTML + `<p></p>` + family7Options;
+
+                closeButtonText = closeButtonHTML();
+
+                outputHTML = closeButtonText + outputHTML
 
                 document.getElementById("bodyDropdownList").innerHTML = outputHTML;
 
@@ -805,13 +866,9 @@ function setupWheelOptions () {
     // var wheel = new Image(); 
 
     for (wheelEl of wheels) {
-        // console.log("wheel loop");
-        // console.log(wheelEl);
 
         wheelEl.image = new Image();
 
-        // console.log("wheel loop");
-        // console.log(wheelEl);
         
 
         if (currentDisplay.wheels.customColour == 1) {
@@ -835,11 +892,9 @@ function setupWheelOptions () {
         
 
         wheelEl.image.src = wheelEl.imageWheel;
-        // console.log(wheelEl.image.src);
 
         wheelsToLoad.push(wheelEl.image);
         wheelData.push(wheelEl);
-        // console.log(wheelsToLoad.length);
     };
 
 
@@ -848,13 +903,10 @@ function setupWheelOptions () {
     wheelsToLoad.forEach(image =>{
         image.onload = ()=>{ 
             wheelsCount +=1;
-            // console.log(wheelsCount);
-            // console.log(wheelsToLoad.length);
             if(wheelsCount == wheelsToLoad.length){
 
                 for (wheelEl of wheelData) {
 
-                    // console.log(wheelData);
                     
                     hiddenButtonCanvas = document.createElement("canvas");
                     hiddenButtonContext = hiddenButtonCanvas.getContext("2d");
@@ -863,20 +915,15 @@ function setupWheelOptions () {
                     hiddenButtonCanvas.height = scaleFactor*wheelEl.size
 
         
-                    // console.log(wheelEl.name+ " loaded");
-                    // console.log(wheelEl.image.src);
                 
 
                     wheelEl.data = setupImageFromData(wheelEl.image,wheelColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
                     //wheelEl.data = loadImageToArray(wheel, canvasWidth=128,canvasHeight=128, scaleFactor);
-                    // console.log(wheelEl.data);
 
                     hiddenButtonContext.clearRect(0,0,512,512);
                     hiddenButtonContext.putImageData(wheelEl.data,0,0);
 
                     imageBase64 = hiddenButtonCanvas.toDataURL();
-                    // console.log("wheels");
-                    // console.log(imageBase64);
 
                     text = (
                         `<a href="#" onclick="wheelChange(this)" id=wheel` + wheelEl.name + ` class="dropdownButton">
@@ -904,6 +951,8 @@ function setupWheelOptions () {
                 outputHTML = outputHTML + `<p>size 10:</p>` + size10Options;
                 outputHTML = outputHTML + `<p>size 12:</p>` + size12Options;
 
+                outputHTML = closeButtonHTML() + outputHTML
+
                 document.getElementById("wheelDropdownList").innerHTML = outputHTML;
 
             };
@@ -929,20 +978,14 @@ function setupTyreOptions () {
     // var tyre = new Image(); 
 
     for (tyreEl of tyres) {
-        // console.log("tyre loop");
-        // console.log(tyreEl);
 
         tyreEl.image = new Image();
 
-        // console.log("tyre loop");
-        // console.log(tyreEl);
         
         tyreEl.image.src = tyreEl.imageTyre;
-        // console.log(tyreEl.image.src);
 
         tyresToLoad.push(tyreEl.image);
         tyreData.push(tyreEl);
-        // console.log(tyresToLoad.length);
     };
 
 
@@ -951,13 +994,10 @@ function setupTyreOptions () {
     tyresToLoad.forEach(image =>{
         image.onload = ()=>{ 
             tyresCount +=1;
-            // console.log(tyresCount);
-            // console.log(tyresToLoad.length);
             if(tyresCount == tyresToLoad.length){
 
                 for (tyreEl of tyreData) {
 
-                    // console.log(tyreData);
                     
                     hiddenButtonCanvas = document.createElement("canvas");
                     hiddenButtonContext = hiddenButtonCanvas.getContext("2d");
@@ -966,20 +1006,15 @@ function setupTyreOptions () {
                     hiddenButtonCanvas.height = scaleFactor*tyreEl.size
 
         
-                    // console.log(tyreEl.name+ " loaded");
-                    // console.log(tyreEl.image.src);
                 
 
                     tyreEl.data = setupImageFromData(tyreEl.image,'blank',currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
                     //tyreEl.data = loadImageToArray(tyre, canvasWidth=128,canvasHeight=128, scaleFactor);
-                    // console.log(tyreEl.data);
 
                     hiddenButtonContext.clearRect(0,0,512,512);
                     hiddenButtonContext.putImageData(tyreEl.data,0,0);
 
                     imageBase64 = hiddenButtonCanvas.toDataURL();
-                    // console.log("tyres");
-                    // console.log(imageBase64);
 
                     frontText = (
                         `<a href="#" onclick="tyreChange(this)" id=front` + tyreEl.name + ` class="dropdownButton">
@@ -1019,9 +1054,11 @@ function setupTyreOptions () {
                 );
 
                 frontHTML   = ( `<p> size 14 </p>`  + frontSize14Options + `<p> size 16 </p>`  + frontSize16Options + `<p> size 18 </p>`  + frontSize18Options );
-                backHTML    = ( `<p> size 14 </p>`  +  backSize14Options + `<p> size 16 </p>`  +  backSize16Options + `<p> size 18 </p>`  + backSize18Options)
+                backHTML    = ( `<p> size 14 </p>`  +  backSize14Options + `<p> size 16 </p>`  +  backSize16Options + `<p> size 18 </p>`  + backSize18Options);
 
-                // console.log(outputHTML);
+                frontHTML = closeButtonHTML() + frontHTML;
+                backHTML = closeButtonHTML() + backHTML;
+
                 // document.getElementById("tyreDropdownList").innerHTML = outputHTML;
                 document.getElementById("frontTyreDropdownList").innerHTML = frontHTML;
                 document.getElementById("backTyreDropdownList").innerHTML = backHTML;
@@ -1049,7 +1086,6 @@ function setupRackOptions () {
     };
 
     for (rackEl of currentDisplay.body.RackOptions) {
-        // console.log(rackEl.name)
         text = `<a href="#" onclick="rackChange(this)" id=rack` + rackEl.name + ` class="dropdownButton">`+(rackEl.name).toLowerCase() +`</a>`
         outputHTML = outputHTML + text
     };
@@ -1143,7 +1179,6 @@ function rgbToHex(rgbArray) {
 
 function loadImageToArray(imageIn,canvasWidth=128,canvasHeight=128,scaleFactor=globalScaleFactor) {
  
-    // console.log(scaleFactor);
     const hiddenCanvas = document.getElementById("hiddenCanvas").getContext("2d");
 
     hiddenCanvas.clearRect(0,0,canvasWidth*scaleFactor,canvasHeight*scaleFactor);
@@ -1153,7 +1188,6 @@ function loadImageToArray(imageIn,canvasWidth=128,canvasHeight=128,scaleFactor=g
 
     hiddenCanvas.imageSmoothingEnabled = false;
     hiddenCanvas.drawImage(imageIn,0,0,scaleFactor*width,scaleFactor*height);
-    // console.log(canvasWidth*scaleFactor);
     var imageData = hiddenCanvas.getImageData(0,0,canvasWidth*scaleFactor,canvasHeight*scaleFactor);
     var pixel = imageData.data
 
@@ -1280,8 +1314,6 @@ function draw() {
 
     var rackCheck = ( currentDisplay.rack != "" && currentDisplay.body.RackOptions.includes(currentDisplay.rack));
     var rackItemCheck = ( currentDisplay.rackItem != ""  && rackCheck);
-    // console.log(rackCheck);
-    // console.log(rackItemCheck);
 
 
     body.src = currentDisplay.body.imageBody
@@ -1298,7 +1330,6 @@ function draw() {
     imagesToLoad.push(backTyre);
     
     logoImage.src = logo.imageLogo;
-    console.log(logoImage);
     imagesToLoad.push(logoImage);
 
     if ( "imageSecondary" in currentDisplay.body ) {
@@ -1433,7 +1464,6 @@ function draw() {
                 // hiddenContext.clearRect(0,0,128*scaleFactor,canvasHeight*scaleFactor);
                 // hiddenContext.putImageData(imageName.data,0,0);
                 // visibleContext.imageSmoothingEnabled = false;
-                console.log(logoImage);
                 visibleContext.drawImage(logoImage,globalScaleFactor*60,globalScaleFactor*102);
 
                 
