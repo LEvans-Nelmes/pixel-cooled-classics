@@ -32,7 +32,8 @@
 
                 <div class="editorWrapper"> 
 
-                    <div class="editorButtonContainer">
+                    <div id="editorButtons" class="editorButtonContainer" width="512px">
+                        <!-- &nbsp -->
 
                         <div class="tab">
                             <button class="tablinks" onclick="openTab(event, 'body')">body</button>
@@ -126,6 +127,9 @@
                             <a>height</a>
                             <button onclick="bodyHeightChange(this)" id=heightUp class="editorButton">^</button>
                             <button onclick="bodyHeightChange(this)" id=heightDown class="editorButton">v</button>
+
+                            <p></p>
+                            <button onclick="openCanvasURL()" class="editorButton">export</button>
                         </div>
                           
 
@@ -136,7 +140,7 @@
 
                             <div id="bodyColourOption" class="colourOptions full">
                                 <p>pick body colour</p>
-                                <input id="bodyColourControl" type="text" class="coloris bodyColour" >
+                                <input id="bodyColourControl" class="coloris bodyColour" >
                             </div>
 
                             <div id="secondaryColourOption" class="colourOptions full">
@@ -152,6 +156,9 @@
                                     <label for="wheelColourMatch">match wheels to body?</label><br>
                                 <input id="wheelColourControl" type="text" class="coloris wheelColour" >
                             </div>
+
+                            <p></p>
+                            <button onclick="openCanvasURL()" class="editorButton">export</button>
                         </div>
     
                         <!-- NEW TAB - ACC -->
@@ -179,6 +186,8 @@
                                 >rack item choice
                             </button>
                             <div id="rackItemDropdownList" class="dropdownContent">
+                                <a href="#" onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a>
+                                <p></p>
                                 <a href="#" onclick="rackItemChange(this)" id=none class="dropdownButton">none</a>
                                 <a href="#" onclick="rackItemChange(this)" id=rackItemLongboard class="dropdownButton">longboard</a>
                                 <a href="#" onclick="rackItemChange(this)" id=rackItemShortboard class="dropdownButton">shortboard</a>
@@ -195,11 +204,13 @@
                             <button onclick="rackItemPosChange(this)" id=itemRight class="editorButton">></button>
                             <button onclick="rackItemPosChange(this)" id=itemRight10 class="editorButton">>></button>
 
+                            <p></p>
+                            <button onclick="openCanvasURL()" class="editorButton">export</button>
 
 
                         </div>
                         
-                        <button onclick="openCanvasURL()" class="editorButton">export</button>
+                        
                         
                     </div>
                 </div>

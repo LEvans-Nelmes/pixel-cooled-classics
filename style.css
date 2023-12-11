@@ -10,7 +10,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height: 95vh;
     /* background: #cedfff; */
     background: #edc7b7;
     /* position:fixed;  */
@@ -35,6 +35,7 @@ canvas{width:100%; height:100%;}
 
 .container .wholeWrapper {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   flex-basis: auto;
   /* flex-shrink: 0; */
@@ -48,6 +49,10 @@ canvas{width:100%; height:100%;}
   border-color: #123c69 ;
 }
 
+.canvasWrapper {
+  /* flex-grow: 1; commented out so doesnt get too big  */
+}
+
 .canvasWrapper , .editorWrapper{
     margin: 10px;
     font-size: 12px;
@@ -56,9 +61,17 @@ canvas{width:100%; height:100%;}
     border-width: 1px;
 }
 
+.editorWrapper {
+  /* width: 100%; */
+  flex-grow: 1;
+  max-width: 512px;
+  max-height:100%;
+}
+
 .editorButtonContainer {
   padding: 5px;
   border: 10px;
+  height:100%;
 }
 
 .colourOptions {
@@ -75,6 +88,27 @@ canvas{width:100%; height:100%;}
   
 }
 
+.clr-field {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  
+}
+
+.coloris {
+  width:100%;
+}
+
+.closeButton {
+  background-color: #b85151;
+  color: rgb(255, 255, 255);
+  width:100%;
+  text-align: center;
+}
+  .closeButton:hover {
+    background-color: #440a0a;
+  }
+
 
 /* Dropdown Button */
 .dropdownButton {
@@ -86,31 +120,42 @@ canvas{width:100%; height:100%;}
     border: none;
     cursor: pointer;
   }
-  
+
   /* Dropdown button on hover & focus */
   .dropdownButton:hover {
     background-color: #ddd;
+  }
+
+  .tabContent {
+    position: relative;
+    width:100%;
+    height:calc(100% - 48px);
   }
   
   /* The container <div> - needed to position the dropdown content */
   .dropdown {
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
+    width: 100%;
   }
   
   /* Dropdown Content (Hidden by Default) */
   .dropdownContent {
     display: none;
     position: absolute;
+    top:0;
+    width:100%;
     background-color: #f1f1f1;
     font-size: 14px;
     padding: 5px;
     min-width: 10px;
-    max-width: 300px;
+    max-width: 100%;
+    max-height: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     /* display: flex; */
     flex-wrap: wrap;
+    overflow: auto;
   }
 
   /* Links inside the dropdown */
