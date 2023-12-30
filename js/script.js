@@ -3,7 +3,14 @@
 const globalScaleFactor = 4;
 
 const logo = {
-    imageLogo:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPkAAAAbCAYAAAC+wykZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVHhe7djRasMwDIXhrO//zlsN6dCNWp3KjtvD/8EolMiWOoREfo6e3/Nz6J412yfnNsuuGq+81+n/uKWW2/kJwBRNDpjrNvlYOR5/AJ7b0i9McsAcTQ6YG2tDfOOXydaL7G2h+hax8nyWp5qbqnNvpP4OUafGFflElXMyldw+uUY1dkUtL3NgkgPmaHLA3FgB1BWis37Mio0652fU2NV5qrG78qlQY1fcdWX+0ax8pOeZ5IA5mhwwN0Z9ZfRvWTPu4vOZTs7R6roq+cyKjd9n1LuiyjMZNVbNJ6PGqrlFlbviM5UaMy9zYJID5mhywNwY6ZVVobNmrIituDK2U8uK2MqZmU4+FWpsp8Yr84zUnDt3Zf7PZJID5mhywNxYDeKqkMlWiFnrR+X5LE81N1Xn3kj9HaJOjSvyiSrnZCq5dWqMsjMzs+6KOrW8nT+THDBHkwPmxkivrBAAvhSTHDBHkwPmaHLAHE0OmKPJAWvH8QfOXXo0hDC9DQAAAABJRU5ErkJggg=='
+    imageLogo:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPkAAAAbCAYAAAC+wykZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVHhe7djRasMwDIXhrO//zlsN6dCNWp3KjtvD/8EolMiWOoREfo6e3/Nz6J412yfnNsuuGq+81+n/uKWW2/kJwBRNDpjrNvlYOR5/AJ7b0i9McsAcTQ6YG2tDfOOXydaL7G2h+hax8nyWp5qbqnNvpP4OUafGFflElXMyldw+uUY1dkUtL3NgkgPmaHLA3FgB1BWis37Mio0652fU2NV5qrG78qlQY1fcdWX+0ax8pOeZ5IA5mhwwN0Z9ZfRvWTPu4vOZTs7R6roq+cyKjd9n1LuiyjMZNVbNJ6PGqrlFlbviM5UaMy9zYJID5mhywNwY6ZVVobNmrIituDK2U8uK2MqZmU4+FWpsp8Yr84zUnDt3Zf7PZJID5mhywNxYDeKqkMlWiFnrR+X5LE81N1Xn3kj9HaJOjSvyiSrnZCq5dWqMsjMzs+6KOrW8nT+THDBHkwPmxkivrBAAvhSTHDBHkwPmaHLAHE0OmKPJAWvH8QfOXXo0hDC9DQAAAABJRU5ErkJggg==',
+    imageLogoBlk:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAJCAYAAABOpxCRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADQSURBVEhL7ZNRDoMwDEPZ7n/nTR41cq2khK6ffRJreXE6KHAkfNr4hJmejOpaldyK6yqt8W6j82rj5qS0H9hM7DoPwrk/Ec94PcJzUV/kyNM8yOqRp1PvLqoRnv+cF3QEIweiOnF31+eumlfcjTKVfpDlu/PsM1fwiqPJX3W4kV9F9j8z+LXx3u5cRpetbCaCbFLgcDiZn2XVerwPX4tO7y9yGV0WPzwI5+qAZ6IeJ8p5NsqQUd490Zpm6LWm5yBzRGucX/VrsvmPyme+KXEcX8+nfqRxyfOLAAAAAElFTkSuQmCC',
+    imageLogoBlk5:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZ8AAAAtCAYAAABxl2ZeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHZSURBVHhe7drBbiJBDARQNv//z5uMxGGl+OCNnZoGvXfhEnB3gVQaOX8eGX+fr/9KzT6FDO7zLtm/4j387ve9RaYfz1cAiFE+AMQpHwDilA8AcRZ/ORav9/EPB/fxu6fkyQeAOOUDQJzyASBO+QAQdy3+qoVgV3dx2F06bi8nJ5/XzWU7g22Je1S2v7dKIvuT7luZzO2aZCD7/RknZfrju3nyASBO+QAQp3wAiFM+AMRdS6Xt5VViQXbXjErifF3bM07PZXvGu9x3YnvGSWd+xfwqd9139fM8+QAQp3wAiFM+AMQpHwDirmXRZIn0FouvL9XndSWyqpye8+S+d82o/q5r+8yVyXu7tmds37dre8Z2BpXJmav3TrLv+vHdPPkAEKd8AIhTPgDEKR8A4q4l0GQplVh8nTRj4hVnJDI9acbkLF2J+05sz0hk/4q5VLazSpy569tZPPkAEKd8AIhTPgDEKR8A4q7lU7WU6uour+5akE0+r5vLdgbbEveobH9vlUT2J923MpnbNckgkX2le5auu85cSWT66/l58gEgTvkAEKd8AIhTPgDEXUugyfIKAP6bJx8A4pQPAHHKB4A45QNAnPIBIE75ABCnfACIUz4AxCkfAMIej08k/X5RCrIrdQAAAABJRU5ErkJggg==',
+    imageLogoWht:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAJCAYAAABOpxCRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD4SURBVEhL7ZPLFoMwCAVt//+f21w65JCnHO3SWRgYCNZUjxmfAmGaK3tWZGdl+rKzdmRnvFkbXgXCh0L2PN46dQdX/4noRMwVC9IltG33oaazKKX7BeWhjp7OEqjB+SpMFkjbXruAx1knPI7O6V3MPd45X8XORXq369nVIu76Wp9PP/OIXnFt6l91ObHypLdh3HCfKzCq/jbNRG3dir739DDV6JtQhpwgraBvP7jDuL8cJKOaWajm+VDDM8+g9deri0PdXFydmCsWpEOvY00F0iEXqOksKxRIDZSBaqBkNV+FSZjlgtRATWfEWNSiBQ+3Of3MH7IcxxdQQPp+No6haAAAAABJRU5ErkJggg==',
+    imageLogoWht5:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZ8AAAAtCAYAAABxl2ZeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIKSURBVHhe7dy7riIxEARQuP//z3sJ0EYVlLatZpg9J4HA/bCTlmXE87Hgz8v761/Pl/fX/4Iz+Jy7nP037uMuZ38ldznTn/cnAKwxfABYZ/gAsM7wAWCdh78lHl4/5y5n/437uMvZc56bDwDrDB8A1hk+AKwzfABY90wPgq324bB9dGzXtSb5UmwyydfGTmzsI5nsbaPnSWzS5kvaGsmkbmtyBim27XlSt9XWSE7vI0k1Ur7TvZzOl7j5ALDO8AFgneEDwDrDB4B18QcHk8emFHuXGkkbO6nROl1jkq+NvVKNdl1ypRoTp2tcqecr9TLR1jjdy+l8bj4ArDN8AFhn+ACwzvABYN3lf3CQbORrtXXbntte2ti0rjXJ18ZeqUZa10r5kraXZBLbOl1jki/Ftk7XaPMlp2ukfCm2XTeRaiSprpsPAOsMHwDWGT4ArDN8AFjnHw5eJrGtb6wxydfGXqlGu25iUuPq/SVtvkndSWzrSjVOr9uQenHzAWCd4QPAOsMHgHWGDwDr4g8OWu3jVaqRYtt1rUm+FJtM8rWxExv7SCZ72+h5Epu0+ZK2RjKp25qcQYpte27rJm0vrU/1nKQap/tL+drYJOVz8wFgneEDwDrDB4B1hg8A60b/cAAA/8LNB4B1hg8A6wwfANYZPgCsM3wAWGf4ALDO8AFgneEDwDrDB4Blj8cvacT4Wo+okn0AAAAASUVORK5CYII=',
+    imageLogoWhtPlate:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFsAAAAPCAYAAACLKbN4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF7SURBVFhH7ZgxbsMwDEVtAwE65DjZO+cEuUiOkUN0TOYuXXOEjDlHOxTo4OY7+i7DULIky1P1AMPUF0nLlCBHaRvBof/pnZnN/vTtrHQOuxdn5TPn+TGkjnHfrsYaDwaLvPRA/yOcHBS9G6wbtdDLIOvaYVVPFbrfrZ0VT06Mj9hcMX4lxpWaY6jv8bMfV3aI9vTlrArIrcdTsTFrvAhtPaPaR/dbaD8rztJIqj/w9Vs6NalrzeojbEsNvL5dn4sNMHO4dIDUcOcM07ZiJNJPtxkXyjXlbxHqp27lor+lEZ075Au61A8jkjCpBFpIL4XvOTnosfHdpjQfU75Re7YEiZhUAg2XxqfnUiof30Pnoibfz9J8hHxbfCWdPaAfAjgw3olsM07HaCw/oPMCK1fIH0idyBgrF2Af8fkAK4cvnmDPNoutHSvzwMHmfXu5/c4ucESuxDEe1+sJchm4qs8fm7/jel3hZUE9WWjy8K+f3L+xoVfmgxV9t5rmF6YSSRdFYxCaAAAAAElFTkSuQmCC',
+    imageLogoBlkPlate:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFsAAAAPCAYAAACLKbN4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVFhH7ZgxUsMwEEUdVzQ5ByUNPS0U1KTkEDkGh6AMNQW06WkoOUcauqAv6zvLsitbioFh8JvxeP139S2tPXacRSO4uHzZp7Bne3uaopC/f0vRAZknVh2x6kvwvI/1LaFofatl3+MYsMnXT2fYDbJ+eE9Rx93NSdxrnTCf45ixOTzf78Caa3/+0PS+2Wj0T07sv4ALEPsamt2OavRqmYICasZ4jPUaUzfFvAo80Nd4x292+zZpeTa7FMxEKvvxtdm4atwIY31FdY3OW+g6a5ylkdJ64OUtnZrUtWblCI+FhrsbL9XWfIvjymGTJkBq2PMKM7bGSGSdPua4nNdQvUUuT93yYr2lEe2dqw2Me4xIYEJTCbScPhXeeWrQc+PahjSPgdrY7KJfITCiqQQaNo2n1zKVH9ehvajJ9VmaR6Z2ERKfP2T0SQAnxj2Rxxynx2isOqB9geWVqwdSJ3KM5QWYI14NsDy88Qk8s2Oz+9+CQBrNTAL6+3j1WvHMnqmm+27Xd/fMZPCu3j6fd5/raDYT4C80nXP1+O01cH5oNDg0m4iXZe6frZnxoMld1DQfXusJBcV4isQAAAAASUVORK5CYII='
+
 };
 
 // RACKS
@@ -1329,7 +1336,7 @@ function draw() {
     backTyre.src = currentDisplay.backTyre.imageTyre
     imagesToLoad.push(backTyre);
     
-    logoImage.src = logo.imageLogo;
+    logoImage.src = logo.imageLogoWhtPlate;
     imagesToLoad.push(logoImage);
 
     if ( "imageSecondary" in currentDisplay.body ) {
@@ -1464,7 +1471,17 @@ function draw() {
                 // hiddenContext.clearRect(0,0,128*scaleFactor,canvasHeight*scaleFactor);
                 // hiddenContext.putImageData(imageName.data,0,0);
                 // visibleContext.imageSmoothingEnabled = false;
-                visibleContext.drawImage(logoImage,globalScaleFactor*60,globalScaleFactor*102);
+                // visibleContext.drawImage(logoImage,globalScaleFactor*12,globalScaleFactor*104);
+                
+                drawImageFromData(logoImage,
+                    18.5,
+                    105,
+                    hiddenContext,
+                    visibleContext,
+                    currentDisplay.baseColour,
+                    currentDisplay.lightColour,
+                    currentDisplay.darkColour
+                );
 
                 
             
