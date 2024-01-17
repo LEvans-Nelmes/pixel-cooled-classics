@@ -243,6 +243,23 @@ const bodybrixP = {
     imageSecondary:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGcAAAAVCAIAAADUyWdkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGvSURBVFhH7ZixTgMxDECvnZDY+AkWJGYGqNi6MLOys7LwBSys7Kx8ARULgoWFkYWfYENixJUt4+Z8jnMkd8rBU6X62twleXWcwGx1+NAUY3l+gMH16dbe0SPGBkntkxq/PR9T1DSekdh4rclemYu7L4ocwNzKtXc2hmYUafhtxq2Br6TZVo3UakiMWLva3qHoT3L5+UHRJpY1Lhyp4C8mM3Rx+/50tksX9QATUTMuYm1180IXicC9stZUZE1OGWfRFjen9xawNnsrA1LvhcEFL/rCBH4Mioqh1nQ917Ccda1qJ3IbKZRr6mOdxo0tLppundZ+qQwYy1oWWBwW92DpKCs0i7LJoJaa0FreowbWnXIZMRiYcYySa/+JBkhNmG7ykw1redcmF7XaE63Nj7W8a3OS8B/jtIeisoyJhvlcrqLBacA4OkQxTifGY/kIsraGynB68nF8SFH/4SHp6gmtSXf9hssEt8MtA281KI6sFeq4bS07o1ibw1IastfawQUxWyxf8dqgt9bp5RoA6ba25uwVxkdRCqNY6zdUD9AXWaMPMiE34uA0Y3xVESf3+99i1PwUgFcPWgAAAABJRU5ErkJggg=='
 };
 
+const bodybigun = {
+    name:"bigun",
+    family:"bigun",
+    size:128,
+    CarPositionOver:12,
+    CarPositionDown:58,
+    ArchPositionOver:25,
+    ArchPositionDown:86,
+    FrontWheelOver:36,
+    BackWheelOver:94,
+    RoofRefOver:34,
+    RoofRefDown:55,
+    RackOptions:[rackShort, rackMed, rackLong],
+    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGcAAAAlCAIAAADQs2DJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARbSURBVGhD3Zq/TxRBFMcPKxErWv8ANTGRxEJNDkQTBAprLO2NCYWNaClioZWx1sbC2gLQxB9wiZJooomNf4CtHcHC5PzufYfH8GZ2dnZu9uD4ZHO8XWbezHzfm52Zg5G1ybetVOZuX6bxZOE4DXD39V9jNYDdUBbOTX0wVh3qqSYygYEplYW6cofVjFKNYiXHua6mlQ3lClJlQ2XaVas29mh08veEubG48vKXsSL4dOs0jcpakSVRrFYHFNIKCbu6t/3HWLtUqAbJtpd2YKyMjfOJas+LO3nRrZiKJCapE9wqvK14s3jt+Wdj7RKlGmYoaoqCAVCGRrvdxufT1j98oisyvM1T34tft1qVrspgE1vtS163Qrx/6TMQt7DpGeK68zSkmsgUr5oCVdgP3mJsyWIp6PnN/A+MLZdb+oTBDkMvGExJJdwx89NBScaHh43k6ekF473Y+UIb6YaQ4FNCblOqWl6Y87kSrTmkh4gHrhur53lrb7mAX7VcidacTLbnvK3IZGS60VZLh0c1kSwL3gwfCuxcU4Rm6M+NqyrRZjdmjHUIQDw48RtCco2Bhxq9xwVaNUk0GPi0i/ZD3tf2YECiSbfVjNmnGjTC0gu9cMmOAa82PsEWrNPpqPdiGFWYkciC7TmjWyCe5aXmMmLv16AalUJyerMDOyOcrtSWUs5b7m5bhQi421GBeyUvrh+CfvLVIzuGMryHQuJ2G7gtopgsFHuq2ZLxCaF88lCpqQqXoZxUEijvhjPeLYkcgrcPPJP6VUMFiUBZnIE3SiRQKyPsqrnJStnQmG4e1VghPGyv00CVhobXnGo29mCp2r7VAJ1ACQw+MH4UEC8sKRcfHj3coRnVJNEqEY3C5aEsXvy4ugsnzaPeUsDLjt4wovdrkdpVAj9Yth4sj07PfzOPWi3c4sLzXK0cFOa9Fp9rw07aq5CTAxLxsKTfa8bKyrDPRxejWtOJ1lA8Etwi0VCrz/4UqsmZvKFVPHA06YfkFMYwa43UbahQDadLe6XLC5os+75leClU47Gc933C5LcvJNrRW2eKNZTfGWBDgEHGpK53aqhp2NBkF9gHNDqYhgjC//jmmYnJF2Y1oGS0w9ALDhbqwrHWvli4UQaQwt78AIVq8n034hbWDl4QXmhk7svBvsZ2FRmSeChZc4mGkSrJ7CAVM3T22p3COvsVn+FJysFHptLK2Li4CrttjrJolS1QKn9t4fgrztA91QCEq1St1uwT4Q5QtfgO22G2gXai5t7ZYP39s+mtV7h6zz3JScriFkZqpVUPE/ZZSzKAwl6HKgFBoRp2uR9XL/AeYrOQEi5tzKrTeYXzhlaoKxlxhcOtPJG/2I10u11awP5+QnLV9pLQD/lnpAB1J6/oxe2Ot3qaasB+q+Dz4f0d/qePsD71rlBNtriLi4s0XJZPrBirPjHCZSdNMiIdhmQ0BCrYWw02ZsJngz7/FD+3ed1YA4TfgPWJ92+G20s7/wFPnbwy2CezcAAAAABJRU5ErkJggg==',
+    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAAAKCAIAAACok55WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC6SURBVEhLY9xhu4sBCXgcdoOycAA09UMUMEFpMCDoZyAgRs3gByjeHjkAkchJisbBkNSJdzCma4dqbJMUSZiKyfT2wOZwr6PuUBbRwOuoB5QFBtBEDvcGwdRLvEraAc8j7v///4dyiAPs7GwbzbZAOUBvQ2kwINInA+tzYLwB/QzxNjEOQE6YcPXo9TaRAGLWgHgbaDUzM/Pfv3+Jtx3Z5xBAprcHCkA8wMnDvd5wPUSESAD3Oci/DAwAqkdHvFJ+9SkAAAAASUVORK5CYII=',
+    };
+
 const bodytwofer = {
     name:"twofer",
     family:"twofer",
@@ -363,7 +380,7 @@ const bodytwoferP = {
     imageSecondary:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAbCAIAAAAF9L0XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHFSURBVGhD7ZivTgQxEIf3UCQ4XgJDgkYAwYFAY/FYDE+AweKRoBFcMAQMmgTDS2AICZLf3kx6vV47nXb3OJb2y+Uyt+n+6XfT6dyNxjsPTQpvz/sc6Ti7/eZoGVwer3KUwubuI0ezxGV57SxXQTayO0zKGeBYk2QZTQNV0wVjzfYVlKVfbn2pzFgyC/0W6Xnisi7W1jkqmKP7rbvDVwTnXx90JJhZ8PV0ssEfhkkoVTX5aM7F4PHVC8VBWQen23g345Rg8eLqe9fvQxcNyFdcVp4pAr6QvUmyjFy5bNkZ8Tvfh+NrZXLQA56Go3Syp4HHEl48aPGE5u6RRfugqWoVgz+z5OVQDpTOxoZfVpecx7ldlvDfhIq4K0vfixaIKyv0G7IchBI0I4vSitpWSrxUzFm4pf2ig8OFpjDtszBP1BraBL2LUV/IUpug1PEAp+DnCH9IRJgISXH6RCrBMOPK6qXTS7qOPFjIytTWVwNuN39ZekL0pSzLNoVgMqbCUApD4lQW3m1NtSmdpy3w1ZQS3g2rKQ2tLFQ1WpbQVE0JtLJQurCbVk1RRs3NJ9ZgNaWhzazeu5X/Sisr7x/RAuHdsBKnaX4AhoT+lMFGyoUAAAAASUVORK5CYII='
 };
 
-const bodies = [ bodybuggle, body3cube, bodykeegle, bodytwofer, bodytwofer13, bodytwofer15, bodytwofer21, bodytwofer23, bodytwoferP, bodybrix, bodybrixP, body039, body005, body653];
+const bodies = [ bodybuggle, body3cube, bodykeegle, bodytwofer, bodytwofer13, bodytwofer15, bodytwofer21, bodytwofer23, bodytwoferP, bodybigun, bodybrix, bodybrixP, body039, body005, body653];
 
 // WHEELS
 
@@ -852,7 +869,7 @@ window.onclick = function(event) {
 //-----------------------------------------------
 
 function closeButtonHTML () {
-    return `<a href="#" onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a> <p></p>`
+    return `<a onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a> <p></p>`
 }
 
 function logoChange(element) {
@@ -896,6 +913,8 @@ function setupBodyOptions () {
     var family5Options = ``;
     var family6Options = ``;
     var family7Options = ``;
+    var family8Options = ``;
+    var family9Options = ``;
     var scaleFactor = 0.5;
 
     var bodiesToLoad = [];
@@ -972,7 +991,7 @@ function setupBodyOptions () {
                     imageBase64 = hiddenButtonCanvas.toDataURL();
 
                     text = (
-                        `<a href="#" onclick="bodyChange(this)" id=body` + bodyEl.name + ` class="dropdownButton">
+                        `<a onclick="bodyChange(this)" id=body` + bodyEl.name + ` class="dropdownButton">
                         <img style='display:block; width:`+scaleFactor*bodyEl.size+`px;height:`+scaleFactor*50+`px;'
                         src=`+imageBase64+` class="dropdownButtonImage">`
                         +`</a>`
@@ -992,18 +1011,21 @@ function setupBodyOptions () {
                     if (bodyEl.family == "twofer") {
                         family4Options = family4Options + text
                     }
-                    if (bodyEl.family == "brix") {
+                    if (bodyEl.family == "bigun") {
                         family5Options = family5Options + text
                     }
-                    if (bodyEl.family == "653") {
+                    if (bodyEl.family == "brix") {
                         family6Options = family6Options + text
+                    }
+                    if (bodyEl.family == "653") {
+                        family7Options = family7Options + text
                     } 
                     if (bodyEl.family == "039") {
-                        family7Options = family7Options + text
+                        family8Options = family8Options + text
                     }       
                     if (bodyEl.family == "005") {
-                        family7Options = family7Options + text
-                    }                  
+                        family9Options = family9Options + text
+                    }              
                 };
 
                 outputHTML = outputHTML + `<p></p>` + family1Options;
@@ -1013,6 +1035,8 @@ function setupBodyOptions () {
                 outputHTML = outputHTML + `<p></p>` + family5Options;
                 outputHTML = outputHTML + `<p></p>` + family6Options;
                 outputHTML = outputHTML + `<p></p>` + family7Options;
+                outputHTML = outputHTML + `<p></p>` + family8Options;
+                outputHTML = outputHTML + `<p></p>` + family9Options;
 
                 closeButtonText = closeButtonHTML();
 
@@ -1100,7 +1124,7 @@ function setupWheelOptions () {
                     imageBase64 = hiddenButtonCanvas.toDataURL();
 
                     text = (
-                        `<a href="#" onclick="wheelChange(this)" id=wheel` + wheelEl.name + ` class="dropdownButton">
+                        `<a onclick="wheelChange(this)" id=wheel` + wheelEl.name + ` class="dropdownButton">
                         <img style='display:block; width:`+scaleFactor*wheelEl.size+`px;height:`+scaleFactor*wheelEl.size+`px;'
                         src=`+imageBase64+`>`
                         +`</a>`
@@ -1191,14 +1215,14 @@ function setupTyreOptions () {
                     imageBase64 = hiddenButtonCanvas.toDataURL();
 
                     frontText = (
-                        `<a href="#" onclick="tyreChange(this)" id=front` + tyreEl.name + ` class="dropdownButton">
+                        `<a onclick="tyreChange(this)" id=front` + tyreEl.name + ` class="dropdownButton">
                         <img style='display:block; width:`+scaleFactor*tyreEl.size+`px;height:`+scaleFactor*tyreEl.size+`px;'
                         src=`+imageBase64+`>`
                         +`</a>`
                     );
 
                     backText = (
-                        `<a href="#" onclick="tyreChange(this)" id=back` + tyreEl.name + ` class="dropdownButton">
+                        `<a onclick="tyreChange(this)" id=back` + tyreEl.name + ` class="dropdownButton">
                         <img style='display:block; width:`+scaleFactor*tyreEl.size+`px;height:`+scaleFactor*tyreEl.size+`px;'
                         src=`+imageBase64+`>`
                         +`</a>`
@@ -1247,7 +1271,7 @@ function setupTyreOptions () {
 
 function setupRackOptions () {
     // Always has a none option
-    outputHTML =  `<a href="#" onclick="rackChange(this)" id=none class="dropdownButton">none</a> `;
+    outputHTML =  `<a onclick="rackChange(this)" id=none class="dropdownButton">none</a> `;
 
     if ( 
         currentDisplay.rack == "" || 
@@ -1260,7 +1284,7 @@ function setupRackOptions () {
     };
 
     for (rackEl of currentDisplay.body.RackOptions) {
-        text = `<a href="#" onclick="rackChange(this)" id=rack` + rackEl.name + ` class="dropdownButton">`+(rackEl.name).toLowerCase() +`</a>`
+        text = `<a onclick="rackChange(this)" id=rack` + rackEl.name + ` class="dropdownButton">`+(rackEl.name).toLowerCase() +`</a>`
         outputHTML = outputHTML + text
     };
 
@@ -1504,7 +1528,6 @@ function draw() {
     imagesToLoad.push(backTyre);
     
     // logoImage.src = logo.imageLogoWhtPlate;
-    // console.log(currentDisplay.logo)
     logoImage.src =  currentDisplay.logo.image;
     imagesToLoad.push(logoImage);
 
