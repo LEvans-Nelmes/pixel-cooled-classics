@@ -10,7 +10,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 95vh;
+    height: 90%;
     /* background: #cedfff; */
     background: #edc7b7;
     /* position:fixed;  */
@@ -26,7 +26,7 @@ canvas{width:100%; height:100%;}
     border-radius:10px;
     padding:10px;
     /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); */
-    min-height: 
+    /* min-height:  */
 }
 
 .container h2{
@@ -188,7 +188,7 @@ canvas{width:100%; height:100%;}
   .show {display:flex;}
 
   /* For marking buttons to not be used */
-  .noClick {background-color: #777;}
+  .noClick {background-color: #ccc;}
 
 
   /* Style the tab */
