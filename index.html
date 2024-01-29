@@ -44,6 +44,7 @@
                             <button class="tablinks" onclick="openTab(event, 'body')">body</button>
                             <button class="tablinks" onclick="openTab(event, 'paint')">paint</button>
                             <button class="tablinks" onclick="openTab(event, 'accessories')">accessories</button>
+                            <button class="tablinks" onclick="openTab(event, 'shop')">shop</button>
                         </div> 
 
 
@@ -210,12 +211,35 @@
                             <button onclick="rackItemPosChange(this)" id=itemRight10 class="editorButton">>></button>
 
                             <p></p>
-                            <a>logo</a>
-                            <button onclick="logoChange(this)" id=logoButtonLight class="editorButton">light</button>
-                            <button onclick="logoChange(this)" id=logoButtonDark class="editorButton">dark</button>
+                            <button onclick="logoDropdownFunction()" 
+                                id=logoDropdownButton 
+                                class="dropdownButton"
+                                >logo choice
+                            </button>
+                            <div id="logoDropdownList" class="dropdownContent">
+                                <a onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a>
+                                <p></p>
+                                <a onclick="logoChange(this)" id=logoButtonWht class="dropdownButton">white</a>
+                                <a onclick="logoChange(this)" id=logoButtonBlk class="dropdownButton">black</a>
+                                <a onclick="logoChange(this)" id=logoButtonWhtPlate class="dropdownButton">white plate</a>
+                                <a onclick="logoChange(this)" id=logoButtonBlkPlate class="dropdownButton">black plate</a>
+                            </div>
 
                             <p></p>
                             <button onclick="openCanvasURL()" class="editorButton">export</button>
+
+
+                        </div>
+
+                        <div id="shop" class="tabContent">
+                            <h3>shop</h3>
+
+                            <button onclick="teemillShopAPI()" 
+                                id=rackDropdownButton 
+                                class="dropdownButton"
+                                >tshirt
+                            </button>
+                            
 
 
                         </div>
