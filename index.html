@@ -163,6 +163,11 @@
                                 <input id="wheelColourControl" type="button" class="coloris wheelColour" >
                             </div>
 
+                            <div id="backgroundColourOption" class="colourOptions full">
+                                <p>pick background colour</p>
+                                <input id="backgroundColourControl" type="button" class="coloris backgroundColour" >
+                            </div>
+
                             <p></p>
                             <button onclick="openCanvasURL()" class="editorButton">export</button>
                         </div>
@@ -170,6 +175,17 @@
                         <!-- NEW TAB - ACC -->
                         <div id="accessories" class="tabContent">
                             <h3>accessories</h3>
+
+                            <button onclick="roofDropdownFunction()" 
+                                id=roofDropdownButton 
+                                class="dropdownButton"
+                                >roof choice
+                            </button>
+                            <div id="roofDropdownList" class="dropdownContent">
+                                <a onclick="roofChange(this)" id=none class="dropdownButton">none</a>
+                            </div>
+
+                            <p></p>
 
                             <button onclick="rackDropdownFunction()" 
                                 id=rackDropdownButton 
@@ -183,6 +199,12 @@
                                 <!-- <a onclick="rackChange(this)" id=midRack class="dropdownButton">mid</a> -->
                                 <!-- <a onclick="rackChange(this)" id=longRack class="dropdownButton">long</a> -->
                             </div>
+
+                            <button onclick="rackPosChange(this)" id=itemLeft10 class="editorButton"><<</button>
+                            <button onclick="rackPosChange(this)" id=itemLeft class="editorButton"><</button>
+                            <button onclick="rackPosChange(this)" id=itemCentre class="editorButton">0</button>
+                            <button onclick="rackPosChange(this)" id=itemRight class="editorButton">></button>
+                            <button onclick="rackPosChange(this)" id=itemRight10 class="editorButton">>></button>
 
                             <p></p>
 
@@ -203,10 +225,9 @@
                                 <a onclick="rackItemChange(this)" id=rackItemTree class="dropdownButton">tree</a>
                             </div>
 
-                            <p></p>
-                            <a>item Position</a>
                             <button onclick="rackItemPosChange(this)" id=itemLeft10 class="editorButton"><<</button>
                             <button onclick="rackItemPosChange(this)" id=itemLeft class="editorButton"><</button>
+                            <button onclick="rackItemPosChange(this)" id=itemCentre class="editorButton">0</button>
                             <button onclick="rackItemPosChange(this)" id=itemRight class="editorButton">></button>
                             <button onclick="rackItemPosChange(this)" id=itemRight10 class="editorButton">>></button>
 
@@ -223,6 +244,20 @@
                                 <a onclick="logoChange(this)" id=logoButtonBlk class="dropdownButton">black</a>
                                 <a onclick="logoChange(this)" id=logoButtonWhtPlate class="dropdownButton">white plate</a>
                                 <a onclick="logoChange(this)" id=logoButtonBlkPlate class="dropdownButton">black plate</a>
+                            </div>
+
+                            <p></p>
+                            <button onclick="backgroundDropdownFunction()" 
+                                id=backgroundDropdownButton 
+                                class="dropdownButton"
+                                >background choice
+                            </button>
+                            <div id="backgroundDropdownList" class="dropdownContent">
+                                <a onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a>
+                                <p></p>
+                                <a onclick="backgroundChange(this)" id=none class="dropdownButton">none</a>
+                                <a onclick="backgroundChange(this)" id=backgroundButtonSquare class="dropdownButton">square</a>
+                                <a onclick="backgroundChange(this)" id=backgroundButtonCircle class="dropdownButton">circle</a>
                             </div>
 
                             <p></p>
