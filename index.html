@@ -30,8 +30,8 @@
 
                 <div class="canvasWrapper">
                     <canvas id="mainCanvas" width="512" height="512"></canvas>
-                    <canvas hidden id="hiddenCanvas" width="512" height="512"></canvas> 
-                    <canvas hidden id="hiddenButtonCanvas" width="512" height="512"></canvas>        
+                    <!-- <canvas hidden id="outputCanvas" width="512" height="512"></canvas>  -->
+                    <!-- <canvas hidden id="hiddenButtonCanvas" width="512" height="512"></canvas>         -->
                     <script src="js/script.js"></script>
                 </div>
 
@@ -134,8 +134,6 @@
                             <button onclick="bodyHeightChange(this)" id=heightUp class="editorButton">^</button>
                             <button onclick="bodyHeightChange(this)" id=heightDown class="editorButton">v</button>
 
-                            <p></p>
-                            <button onclick="openCanvasURL()" class="editorButton">export</button>
                         </div>
                           
 
@@ -168,8 +166,7 @@
                                 <input id="backgroundColourControl" type="button" class="coloris backgroundColour" >
                             </div>
 
-                            <p></p>
-                            <button onclick="openCanvasURL()" class="editorButton">export</button>
+                            
                         </div>
     
                         <!-- NEW TAB - ACC -->
@@ -260,9 +257,6 @@
                                 <a onclick="backgroundChange(this)" id=backgroundButtonCircle class="dropdownButton">circle</a>
                             </div>
 
-                            <p></p>
-                            <button onclick="openCanvasURL()" class="editorButton">export</button>
-
 
                         </div>
 
@@ -274,6 +268,24 @@
                                 class="dropdownButton"
                                 >tshirt
                             </button>
+
+                            <h3>download</h3>
+                            <!-- <button onclick="openCanvasURL(4)" class="editorButton">export</button>
+                            <p></p> -->
+                            <button onclick="exportDropdownFunction()" 
+                                id=exportDropdownButton 
+                                class="dropdownButton"
+                                >output options
+                            </button>
+                            <div id="exportDropdownList" class="dropdownContent">
+                                <a onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a>
+                                <p></p>
+                                <a onclick="exportImage(this)" id=4|square class="dropdownButton">x4-square</a>
+                                <a onclick="exportImage(this)" id=4|chest class="dropdownButton">x4-chest</a>
+                                <p></p>
+                                <a onclick="exportImage(this)" id=8|square class="dropdownButton">x8-square</a>
+                                <a onclick="exportImage(this)" id=8|chest class="dropdownButton">x8-chest</a>
+                            </div>
                             
 
 
