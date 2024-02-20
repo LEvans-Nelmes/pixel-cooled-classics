@@ -1,6 +1,6 @@
 
-
-const globalScaleFactor = 4;
+const drawingPixels = 128
+const mainCanvasScaleFactor = document.getElementById("mainCanvas").width / drawingPixels;
 
 const logoWhtPlate = {
     name:"logoWhtPlate",
@@ -828,7 +828,7 @@ Coloris.setInstance('.bodyColour',
             currentDisplay.baseColour = color
             setupBodyOptions();
             setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, currentDisplay.baseColour );
-            draw();
+            drawToMainCanvas();
         }
     }
 );
@@ -836,7 +836,7 @@ Coloris.setInstance('.secondaryColour',
     {
         onChange: (color) => {
             currentDisplay.secondaryColour = color
-            draw()
+            drawToMainCanvas()
         }
     }
 );
@@ -845,7 +845,7 @@ Coloris.setInstance('.wheelColour',
         onChange: (color) => {
             currentDisplay.wheelColour = color;
             setupWheelOptions();
-            draw();
+            drawToMainCanvas();
         }
     }
 );
@@ -867,7 +867,7 @@ Coloris.setInstance('.backgroundColour',
         onChange: (color) => {
             currentDisplay.backgroundColour = color;
             setupGeneralOptions ( backgrounds , "backgroundDropdownList" , 0.3, "backgroundChange" , "", true, currentDisplay.backgroundColour );
-            draw();
+            drawToMainCanvas();
         }
     }
 );
@@ -982,7 +982,12 @@ function pickoutFromURL() {
         };
         currentDisplay.rackItemOver = Number(properties[16]);
         currentDisplay.logo = logos.find(x => x.name === properties[17]);
-        currentDisplay.background = backgrounds.find(x => x.name === properties[18]);
+        if ( properties[18] == "" ) {
+            currentDisplay.background = ""
+        } else {
+            currentDisplay.background = backgrounds.find(x => x.name === properties[18])
+        };
+        ;
         currentDisplay.backgroundColour = properties[19];
         
 
@@ -1031,16 +1036,34 @@ function addToURL() {
 //-----------------------------------------------
 
 
-function revealMessage() {
-    document.getElementById("hiddenMessage").style.display = 'block';
-}
+// function revealMessage() {
+//     document.getElementById("hiddenMessage").style.display = 'block';
+// }
 
-function openCanvasURL() {
-    const visibleCanvas = document.getElementById("mainCanvas")
-    pngUrl = visibleCanvas.toDataURL();
-    console.log(pngUrl)
+function openCanvasURL( outputCanvas ) {
+    // const visibleCanvas = document.getElementById("mainCanvas")
+
+    // const outputCanvas = document.getElementById("outputCanvas");
+    // const outputCanvas = document.createElement("canvas");
+    // outputCanvas.width = scaleFactor*drawingPixels; 
+    // outputCanvas.height = scaleFactor*drawingPixels;
+    // console.log(outputCanvas.height);
+
+    // outputContext = outputCanvas.getContext("2d");
+
+    // console.log(outputContext);
+
+    // const message = await draw( outputCanvas );
+
+    // if (shape == "chest") {
+    //     //do stuff
+    // };
+
+    pngUrl = outputCanvas.toDataURL();
+    console.log(pngUrl);
     // window.open(pngUrl, '_blank');
-    visibleCanvas.toBlob((blob) => window.open(URL.createObjectURL(blob), '_blank'));
+    outputCanvas.toBlob((blob) => window.open(URL.createObjectURL(blob), '_blank'));
+
 }
 
 /* When the user clicks on the button,
@@ -1083,6 +1106,11 @@ function backgroundDropdownFunction() {
     document.getElementById("backgroundDropdownList").classList.toggle("show");
 }
 
+function exportDropdownFunction() {
+    document.getElementById("exportDropdownList").classList.toggle("show");
+}
+
+
 function showByElementID(elementID) {
     if (document.getElementById(elementID).classList.contains('hide')) {
         document.getElementById(elementID).classList.remove('hide');
@@ -1099,22 +1127,23 @@ function checkCheckbox() {
     var wheelColourCheckbox = document.getElementById('wheelColourMatch');
     if (wheelColourCheckbox.checked == true) {
         currentDisplay.wheelColourMatch = 1
-        draw();
+        // drawToMainCanvas();
     } else {
         currentDisplay.wheelColourMatch = 0
-        draw();
+        // drawToMainCanvas();
     }
 
     var secondaryColourCheckbox = document.getElementById('secondaryColourChoice');
     if (secondaryColourCheckbox.checked == true) {
         currentDisplay.secondaryOption = 1
         showByElementID("secondaryColourControl");
-        draw();
+        // drawToMainCanvas();
     } else {
         currentDisplay.secondaryOption = 0
         hideByElementID("secondaryColourControl");
-        draw();
+        // drawToMainCanvas();
     } 
+    drawToMainCanvas();
 }
 
 function checkForSecondaryColourOption() {
@@ -1684,13 +1713,13 @@ function bodyChange(element) {
     setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, currentDisplay.secondaryColour);
     // setupRackOptions ();
 
-    draw();
+    drawToMainCanvas();
 }
 
 function bodyHeightChange(element) {
     if (element.id == "heightUp" ) {currentDisplay.bodyDrop--};
     if (element.id == "heightDown" ) {currentDisplay.bodyDrop++};
-    draw();
+    drawToMainCanvas();
 }
 
 function rackPosChange(element) {
@@ -1699,7 +1728,7 @@ function rackPosChange(element) {
     if (element.id == "itemCentre" ) {currentDisplay.rackOver = 0};
     if (element.id == "itemRight" ) {currentDisplay.rackOver++};
     if (element.id == "itemRight10" ) {currentDisplay.rackOver = currentDisplay.rackOver + 10};
-    draw();
+    drawToMainCanvas();
 }
 
 function rackItemPosChange(element) {
@@ -1708,12 +1737,12 @@ function rackItemPosChange(element) {
     if (element.id == "itemCentre" ) {currentDisplay.rackItemOver = 0};
     if (element.id == "itemRight" ) {currentDisplay.rackItemOver++};
     if (element.id == "itemRight10" ) {currentDisplay.rackItemOver = currentDisplay.rackItemOver + 10};
-    draw();
+    drawToMainCanvas();
 }
 
 function wheelChange(element) {
     currentDisplay.wheels = wheels.find(x => x.name === (element.id).replace("wheel",""));
-    draw();
+    drawToMainCanvas();
 }
 
 function tyreChange(element) {
@@ -1730,7 +1759,7 @@ function tyreChange(element) {
     if (element.id == "back14White" ) {currentDisplay.backTyre = tyre14White};
     if (element.id == "back16White" ) {currentDisplay.backTyre = tyre16White};
     if (element.id == "back18White" ) {currentDisplay.backTyre = tyre18White};
-    draw();
+    drawToMainCanvas();
 }
 
 function roofChange(element) {
@@ -1767,11 +1796,26 @@ function logoChange(element) {
 
 function backgroundChange(element) {
 
+    console.log(element.id);
     if (element.id == "none" ) {
         currentDisplay.background = '';
     } else {
         currentDisplay.background = backgrounds.find(x => x.name === (element.id).replace("Button",""));
     }
+}
+
+async function exportImage(element) {
+
+    idSplit = (element.id).split("|");
+
+    scaleFactor = idSplit[0]*1;
+    shape = idSplit[1];
+
+    canvasToExport = await drawToTempCanvas(scaleFactor, shape );
+
+    console.log(canvasToExport);
+    openCanvasURL(canvasToExport);
+    
 }
 
 //-----------------------------------------------
@@ -1791,18 +1835,25 @@ function rgbToHex(rgbArray) {
     return "#" + (1 << 24 | rgbArray[0] << 16 | rgbArray[1] << 8 | rgbArray[2]).toString(16).slice(1);
 }
 
-function loadImageToArray(imageIn,canvasWidth=128,canvasHeight=128,scaleFactor=globalScaleFactor) {
- 
-    const hiddenCanvas = document.getElementById("hiddenCanvas").getContext("2d");
+function loadImageToArray(imageIn,canvasWidth,canvasHeight,scaleFactor) {
 
-    hiddenCanvas.clearRect(0,0,canvasWidth*scaleFactor,canvasHeight*scaleFactor);
+    const hiddenCanvas = document.createElement("canvas");
+
+    hiddenCanvas.width = canvasWidth*scaleFactor; 
+    hiddenCanvas.height = canvasHeight*scaleFactor;
+
+    hiddenContext = hiddenCanvas.getContext("2d");
+
+    // const hiddenCanvas = document.getElementById("hiddenCanvas").getContext("2d");
+
+    hiddenContext.clearRect(0,0,canvasWidth*scaleFactor,canvasHeight*scaleFactor);
 
     width = imageIn.width;
     height = imageIn.height;
 
-    hiddenCanvas.imageSmoothingEnabled = false;
-    hiddenCanvas.drawImage(imageIn,0,0,scaleFactor*width,scaleFactor*height);
-    var imageData = hiddenCanvas.getImageData(0,0,canvasWidth*scaleFactor,canvasHeight*scaleFactor);
+    hiddenContext.imageSmoothingEnabled = false;
+    hiddenContext.drawImage(imageIn,0,0,scaleFactor*width,scaleFactor*height);
+    var imageData = hiddenContext.getImageData(0,0,canvasWidth*scaleFactor,canvasHeight*scaleFactor);
     var pixel = imageData.data
 
     var r=0, g=1, b=2,a=3;
@@ -1839,8 +1890,9 @@ function colourConvert(imageDataIn, oldRGB, newRGB) {
 
 }
 
-function setupImageFromData(imageName,colourConvertTo='blank',highlightRatio='blank',lowlightRatio='blank',scaleFactor = globalScaleFactor) {
-    imageName.data = loadImageToArray(imageName, canvasWidth=128,canvasHeight=128, scaleFactor=scaleFactor);
+function setupImageFromData(imageName,colourConvertTo='blank',highlightRatio='blank',lowlightRatio='blank',scaleFactor) {
+
+    imageName.data = loadImageToArray(imageName, drawingPixels, drawingPixels, scaleFactor);
 
     // if we have a colour to convert, we swap the shades:
     if ( colourConvertTo !='blank' ) {
@@ -1888,270 +1940,331 @@ function setupImageFromData(imageName,colourConvertTo='blank',highlightRatio='bl
 }
 
 function drawImageFromData(
-    imageName,x,y,hiddenContext,visibleContext,
-    colourConvertTo='blank',highlightRatio='blank',lowlightRatio='blank',
-    canvasWidth=128,canvasHeight=128,scaleFactor=globalScaleFactor
+    imageName,x,y,hiddenCanvas,visibleContext,
+    colourConvertTo='blank',highlightRatio='blank',lowlightRatio='blank'
     ) {
 
-    imageName.data = setupImageFromData(imageName,colourConvertTo,highlightRatio,lowlightRatio);
+        scaleFactor = hiddenCanvas.width / drawingPixels;
+        imageName.data = setupImageFromData(imageName,colourConvertTo,highlightRatio,lowlightRatio, scaleFactor);
     
-    hiddenContext.clearRect(0,0,canvasWidth*scaleFactor,canvasHeight*scaleFactor);
-    hiddenContext.putImageData(imageName.data,0,0);
-    visibleContext.imageSmoothingEnabled = false;
-    visibleContext.drawImage(hiddenCanvas,x*scaleFactor,y*scaleFactor);
+        hiddenContext = hiddenCanvas.getContext("2d");
+
+        hiddenContext.clearRect(0,0,hiddenCanvas.width,hiddenCanvas.height);
+        hiddenContext.putImageData(imageName.data,0,0);
+        visibleContext.imageSmoothingEnabled = false;
+        visibleContext.drawImage(hiddenCanvas,x*scaleFactor,y*scaleFactor);
 
 }
 
-function draw() {
-    const floorline = 85;
-    const visibleCanvas = document.getElementById("mainCanvas")
-    const visibleContext = visibleCanvas.getContext("2d");
-    const hiddenCanvas = document.getElementById("hiddenCanvas");
-    const hiddenContext = hiddenCanvas.getContext("2d");
+function draw( drawToCanvas ) {
 
-    visibleContext.imageSmoothingEnabled = false;
-    hiddenContext.imageSmoothingEnabled = false;
+    return new Promise((resolve) => {
 
-    const body = new Image(); 
-    const frontWheel = new Image(); 
-    const backWheel = new Image(); 
-    const arches = new Image();
-    const frontTyre = new Image(); 
-    const backTyre = new Image(); 
-    const secondary = new Image();
-    const roof = new Image();
-    const rack = new Image();
-    const rackItem = new Image();
-    const logoImage = new Image();
-    const backgroundImage = new Image();
+        const floorline = 85;
+        // const drawToCanvas = document.getElementById("mainCanvas")
+        const visibleContext = drawToCanvas.getContext("2d");
 
-    var imagesToLoad = [];
-    var imageCount = 0;
+        const hiddenCanvas = document.createElement("canvas");
+        hiddenCanvas.width = drawToCanvas.width; 
+        hiddenCanvas.height = drawToCanvas.height;
 
-    var roofCheck = ( currentDisplay.roof != "" && currentDisplay.body.RoofOptions.includes(currentDisplay.roof));
-    var rackCheck = ( currentDisplay.rack != "" && currentDisplay.body.RackOptions.includes(currentDisplay.rack));
-    var rackItemCheck = ( currentDisplay.rackItem != ""  && rackCheck);
-    var backgroundCheck = ( currentDisplay.background != "" )
+        // const hiddenCanvas = document.getElementById("hiddenCanvas");
+        const hiddenContext = hiddenCanvas.getContext("2d");
+
+        visibleContext.imageSmoothingEnabled = false;
+        hiddenContext.imageSmoothingEnabled = false;
+
+        const body = new Image(); 
+        const frontWheel = new Image(); 
+        const backWheel = new Image(); 
+        const arches = new Image();
+        const frontTyre = new Image(); 
+        const backTyre = new Image(); 
+        const secondary = new Image();
+        const roof = new Image();
+        const rack = new Image();
+        const rackItem = new Image();
+        const logoImage = new Image();
+        const backgroundImage = new Image();
+
+        var imagesToLoad = [];
+        var imageCount = 0;
+
+        var roofCheck = ( currentDisplay.roof != "" && currentDisplay.body.RoofOptions.includes(currentDisplay.roof));
+        var rackCheck = ( currentDisplay.rack != "" && currentDisplay.body.RackOptions.includes(currentDisplay.rack));
+        var rackItemCheck = ( currentDisplay.rackItem != ""  && rackCheck);
+        var backgroundCheck = ( currentDisplay.background != "" );
 
 
-    body.src = currentDisplay.body.imageBody
-    imagesToLoad.push(body);
-    frontWheel.src = currentDisplay.wheels.imageWheel
-    imagesToLoad.push(frontWheel);
-    backWheel.src = frontWheel.src
-    imagesToLoad.push(backWheel);
-    arches.src = currentDisplay.body.imageArches
-    imagesToLoad.push(arches);
-    frontTyre.src = currentDisplay.frontTyre.imageTyre
-    imagesToLoad.push(frontTyre);
-    backTyre.src = currentDisplay.backTyre.imageTyre
-    imagesToLoad.push(backTyre);
-    
-    // logoImage.src = logo.imageLogoWhtPlate;
-    logoImage.src =  currentDisplay.logo.image;
-    imagesToLoad.push(logoImage);
+        body.src = currentDisplay.body.imageBody
+        imagesToLoad.push(body);
+        frontWheel.src = currentDisplay.wheels.imageWheel
+        imagesToLoad.push(frontWheel);
+        backWheel.src = frontWheel.src
+        imagesToLoad.push(backWheel);
+        arches.src = currentDisplay.body.imageArches
+        imagesToLoad.push(arches);
+        frontTyre.src = currentDisplay.frontTyre.imageTyre
+        imagesToLoad.push(frontTyre);
+        backTyre.src = currentDisplay.backTyre.imageTyre
+        imagesToLoad.push(backTyre);
+        
+        // logoImage.src = logo.imageLogoWhtPlate;
+        logoImage.src =  currentDisplay.logo.image;
+        imagesToLoad.push(logoImage);
 
-    if ( "imageSecondary" in currentDisplay.body ) {
-        secondary.src = currentDisplay.body.imageSecondary
-        imagesToLoad.push(secondary);
-    };
+        if ( "imageSecondary" in currentDisplay.body ) {
+            secondary.src = currentDisplay.body.imageSecondary
+            imagesToLoad.push(secondary);
+        };
 
-    if ( roofCheck ) {
-        roof.src =  currentDisplay.roof.image
-        imagesToLoad.push(roof);
-    };
+        if ( roofCheck ) {
+            roof.src =  currentDisplay.roof.image
+            imagesToLoad.push(roof);
+        };
 
-    if ( rackCheck ) {
-        rack.src =  currentDisplay.rack.image
-        imagesToLoad.push(rack);
-    };
-    if ( rackItemCheck ) {
-        rackItem.src =  currentDisplay.rackItem.image
-        imagesToLoad.push(rackItem);
-    };
+        if ( rackCheck ) {
+            rack.src =  currentDisplay.rack.image
+            imagesToLoad.push(rack);
+        };
+        if ( rackItemCheck ) {
+            rackItem.src =  currentDisplay.rackItem.image
+            imagesToLoad.push(rackItem);
+        };
 
-    if (backgroundCheck) {
-        backgroundImage.src =  currentDisplay.background.image;
-        imagesToLoad.push(backgroundImage);
-    }
-
-    if (currentDisplay.wheels.customColour == 1) {
-        showByElementID("wheelColourOption");
-
-        if (currentDisplay.wheelColourMatch == 0) {
-            showByElementID("wheelColourControl");
-            wheelColourInput = currentDisplay.wheelColour
-        } else {
-            hideByElementID("wheelColourControl");
-            wheelColourInput = currentDisplay.baseColour;
+        if (backgroundCheck) {
+            backgroundImage.src =  currentDisplay.background.image;
+            imagesToLoad.push(backgroundImage);
         }
 
-    } else {
-        wheelColourInput = 'blank'
-        hideByElementID("wheelColourOption");
-    }
+        if (currentDisplay.wheels.customColour == 1) {
+            showByElementID("wheelColourOption");
 
-    addToURL();
-    
-    imagesToLoad.forEach(image =>{
-        image.onload = ()=>{ 
-            imageCount +=1;
-            if(imageCount == imagesToLoad.length){
+            if (currentDisplay.wheelColourMatch == 0) {
+                showByElementID("wheelColourControl");
+                wheelColourInput = currentDisplay.wheelColour
+            } else {
+                hideByElementID("wheelColourControl");
+                wheelColourInput = currentDisplay.baseColour;
+            }
 
-                visibleContext.clearRect(0,0,128*globalScaleFactor,128*globalScaleFactor);
-                visibleContext.imageSmoothingEnabled = false;
+        } else {
+            wheelColourInput = 'blank'
+            hideByElementID("wheelColourOption");
+        }
 
-                if ( backgroundCheck ) {
-                    drawImageFromData(backgroundImage,
-                        0,
-                        0,
-                        hiddenContext,
+        addToURL();
+        
+        imagesToLoad.forEach(image =>{
+            image.onload = ()=>{ 
+                imageCount +=1;
+                if(imageCount == imagesToLoad.length){
+
+                    visibleContext.clearRect(0,0,drawToCanvas.width,drawToCanvas.height);
+                    visibleContext.imageSmoothingEnabled = false;
+
+                    if ( backgroundCheck ) {
+                        drawImageFromData(backgroundImage,
+                            0,
+                            0,
+                            hiddenCanvas,
+                            visibleContext,
+                            currentDisplay.backgroundColour,
+                            currentDisplay.lightColour,
+                            currentDisplay.darkColour
+                        );
+                    }
+                    
+                    drawImageFromData(arches,
+                        currentDisplay.body.ArchPositionOver,
+                        currentDisplay.body.ArchPositionDown+currentDisplay.bodyDrop,
+                        hiddenCanvas,
+                        visibleContext
+                    );
+
+                    drawImageFromData(frontTyre,
+                        currentDisplay.body.FrontWheelOver - currentDisplay.frontTyre.size/2,
+                        floorline - currentDisplay.frontTyre.size,
+                        hiddenCanvas,
+                        visibleContext
+                    );
+
+                    drawImageFromData(backTyre,
+                        currentDisplay.body.BackWheelOver - currentDisplay.backTyre.size/2 ,
+                        floorline - currentDisplay.backTyre.size,
+                        hiddenCanvas,
+                        visibleContext
+                    ); 
+                    
+                    drawImageFromData(frontWheel,
+                        currentDisplay.body.FrontWheelOver - currentDisplay.wheels.size/2,
+                        floorline - currentDisplay.wheels.size - (currentDisplay.frontTyre.size - currentDisplay.wheels.size)/2,
+                        hiddenCanvas,
                         visibleContext,
-                        currentDisplay.backgroundColour,
+                        wheelColourInput,
                         currentDisplay.lightColour,
                         currentDisplay.darkColour
                     );
+
+                    drawImageFromData(backWheel,
+                        currentDisplay.body.BackWheelOver - currentDisplay.wheels.size/2 ,
+                        floorline - currentDisplay.wheels.size - (currentDisplay.backTyre.size - currentDisplay.wheels.size)/2,
+                        hiddenCanvas,
+                        visibleContext,
+                        wheelColourInput,
+                        currentDisplay.lightColour,
+                        currentDisplay.darkColour
+                    );  
+
+                    drawImageFromData(body,
+                        currentDisplay.body.CarPositionOver,
+                        currentDisplay.body.CarPositionDown+currentDisplay.bodyDrop,
+                        hiddenCanvas,
+                        visibleContext,
+                        currentDisplay.baseColour,
+                        currentDisplay.lightColour,
+                        currentDisplay.darkColour
+                    );
+                    
+                    if (currentDisplay.secondaryOption && "imageSecondary" in currentDisplay.body) { 
+                        drawImageFromData(secondary,
+                            currentDisplay.body.SecondaryPositionOver,
+                            currentDisplay.body.SecondaryPositionDown+currentDisplay.bodyDrop,
+                            hiddenCanvas,
+                            visibleContext,
+                            currentDisplay.secondaryColour,
+                            currentDisplay.lightColour,
+                            currentDisplay.darkColour
+                        );                    
+                    };
+
+                    if ( roofCheck ) {
+                        drawImageFromData(roof,
+                            currentDisplay.body.RoofRefOver + currentDisplay.roof.overAddition,
+                            currentDisplay.body.RoofRefDown + currentDisplay.bodyDrop + currentDisplay.roof.downAddition,
+                            hiddenCanvas,
+                            visibleContext,
+                            currentDisplay.secondaryColour,
+                            currentDisplay.lightColour,
+                            currentDisplay.darkColour
+                        );  
+                    };
+
+                    if ( rackItemCheck ) {
+                        drawImageFromData(rackItem,
+                            currentDisplay.body.RoofRefOver + currentDisplay.rackItem.overAddition + currentDisplay.rackItemOver + currentDisplay.rackOver,
+                            currentDisplay.body.RoofRefDown + currentDisplay.bodyDrop + currentDisplay.rackItem.downAddition,
+                            hiddenCanvas,
+                            visibleContext,
+                            wheelColourInput,
+                            currentDisplay.lightColour,
+                            currentDisplay.darkColour
+                        );  
+                    };
+
+                    if ( rackCheck ) {
+                        drawImageFromData(rack,
+                            currentDisplay.body.RoofRefOver + currentDisplay.rackOver,
+                            currentDisplay.body.RoofRefDown+currentDisplay.bodyDrop,
+                            hiddenCanvas,
+                            visibleContext,
+                            wheelColourInput,
+                            currentDisplay.lightColour,
+                            currentDisplay.darkColour
+                        ); 
+                    };
+
+                    drawImageFromData(logoImage,
+                        currentDisplay.logo.positionOver,
+                        90,
+                        hiddenCanvas,
+                        visibleContext,
+                        currentDisplay.baseColour,
+                        currentDisplay.lightColour,
+                        currentDisplay.darkColour
+                    );
+
+                    resolve("completed drawing");
+
+                    
+                
                 }
-                
-                drawImageFromData(arches,
-                    currentDisplay.body.ArchPositionOver,
-                    currentDisplay.body.ArchPositionDown+currentDisplay.bodyDrop,
-                    hiddenContext,
-                    visibleContext
-                );
-
-                drawImageFromData(frontTyre,
-                    currentDisplay.body.FrontWheelOver - currentDisplay.frontTyre.size/2,
-                    floorline - currentDisplay.frontTyre.size,
-                    hiddenContext,
-                    visibleContext
-                );
-
-                drawImageFromData(backTyre,
-                    currentDisplay.body.BackWheelOver - currentDisplay.backTyre.size/2 ,
-                    floorline - currentDisplay.backTyre.size,
-                    hiddenContext,
-                    visibleContext
-                ); 
-                
-                drawImageFromData(frontWheel,
-                    currentDisplay.body.FrontWheelOver - currentDisplay.wheels.size/2,
-                    floorline - currentDisplay.wheels.size - (currentDisplay.frontTyre.size - currentDisplay.wheels.size)/2,
-                    hiddenContext,
-                    visibleContext,
-                    wheelColourInput,
-                    currentDisplay.lightColour,
-                    currentDisplay.darkColour
-                );
-
-                drawImageFromData(backWheel,
-                    currentDisplay.body.BackWheelOver - currentDisplay.wheels.size/2 ,
-                    floorline - currentDisplay.wheels.size - (currentDisplay.backTyre.size - currentDisplay.wheels.size)/2,
-                    hiddenContext,
-                    visibleContext,
-                    wheelColourInput,
-                    currentDisplay.lightColour,
-                    currentDisplay.darkColour
-                );  
-
-                drawImageFromData(body,
-                    currentDisplay.body.CarPositionOver,
-                    currentDisplay.body.CarPositionDown+currentDisplay.bodyDrop,
-                    hiddenContext,
-                    visibleContext,
-                    currentDisplay.baseColour,
-                    currentDisplay.lightColour,
-                    currentDisplay.darkColour
-                );
-                
-                if (currentDisplay.secondaryOption && "imageSecondary" in currentDisplay.body) { 
-                    drawImageFromData(secondary,
-                        currentDisplay.body.SecondaryPositionOver,
-                        currentDisplay.body.SecondaryPositionDown+currentDisplay.bodyDrop,
-                        hiddenContext,
-                        visibleContext,
-                        currentDisplay.secondaryColour,
-                        currentDisplay.lightColour,
-                        currentDisplay.darkColour
-                    );                    
-                };
-
-                if ( roofCheck ) {
-                    drawImageFromData(roof,
-                        currentDisplay.body.RoofRefOver + currentDisplay.roof.overAddition,
-                        currentDisplay.body.RoofRefDown + currentDisplay.bodyDrop + currentDisplay.roof.downAddition,
-                        hiddenContext,
-                        visibleContext,
-                        currentDisplay.secondaryColour,
-                        currentDisplay.lightColour,
-                        currentDisplay.darkColour
-                    );  
-                };
-
-                if ( rackItemCheck ) {
-                    drawImageFromData(rackItem,
-                        currentDisplay.body.RoofRefOver + currentDisplay.rackItem.overAddition + currentDisplay.rackItemOver + currentDisplay.rackOver,
-                        currentDisplay.body.RoofRefDown + currentDisplay.bodyDrop + currentDisplay.rackItem.downAddition,
-                        hiddenContext,
-                        visibleContext,
-                        wheelColourInput,
-                        currentDisplay.lightColour,
-                        currentDisplay.darkColour
-                    );  
-                };
-
-                if ( rackCheck ) {
-                    drawImageFromData(rack,
-                        currentDisplay.body.RoofRefOver + currentDisplay.rackOver,
-                        currentDisplay.body.RoofRefDown+currentDisplay.bodyDrop,
-                        hiddenContext,
-                        visibleContext,
-                        wheelColourInput,
-                        currentDisplay.lightColour,
-                        currentDisplay.darkColour
-                    ); 
-                };
-
-                // draw the logo on:
-
-                // hiddenContext.clearRect(0,0,128*scaleFactor,canvasHeight*scaleFactor);
-                // hiddenContext.putImageData(imageName.data,0,0);
-                // visibleContext.imageSmoothingEnabled = false;
-                // visibleContext.drawImage(logoImage,globalScaleFactor*12,globalScaleFactor*104);
-                
-                drawImageFromData(logoImage,
-                    currentDisplay.logo.positionOver,
-                    90,
-                    hiddenContext,
-                    visibleContext,
-                    currentDisplay.baseColour,
-                    currentDisplay.lightColour,
-                    currentDisplay.darkColour
-                );
-
-                
-            
             }
-        }
 
 
 
-    })
+        })
+        console.log("from draw...");
+        console.log(visibleContext);
+
+        
+    });
+
 
     
 }
 
+function drawToMainCanvas() {
+
+    draw( document.getElementById("mainCanvas") );
+    // draw( document.getElementById("outputCanvas") );
+
+}
+
+async function drawToTempCanvas( scaleFactor, shape, format ) {
+
+    chestWidth = 4;
+    chestHeight = 2;
+
+    // const visibleCanvas = document.getElementById("mainCanvas")
+
+    // const squareCanvas = document.getElementById("squareCanvas");
+    const squareCanvas = document.createElement("canvas");
+    squareCanvas.width = scaleFactor*drawingPixels; 
+    squareCanvas.height = scaleFactor*drawingPixels;
+    console.log(squareCanvas.height);
+
+    outputContext = squareCanvas.getContext("2d");
+
+    console.log(outputContext);
+
+    const message = await draw( squareCanvas );
+
+    if (shape == "square") {
+        outputCanvas = squareCanvas;
+
+    } else if (shape == "chest") {
+        //do stuff
+        const wideCanvas = document.createElement("canvas");
+        wideCanvas.width = scaleFactor*drawingPixels*chestWidth; 
+        wideCanvas.height = scaleFactor*drawingPixels*chestHeight;
+
+        xPos = (chestWidth-1) * scaleFactor * drawingPixels;
+        yPos = (chestHeight-1) * scaleFactor * drawingPixels;
+        wideContext = wideCanvas.getContext("2d");
+
+        wideContext.drawImage(squareCanvas, xPos, yPos, scaleFactor*drawingPixels, scaleFactor*drawingPixels);
+
+        outputCanvas = wideCanvas;
+
+    };
+
+    return outputCanvas;
+
+}
 
 //-----------------------------------------------
 // Functions for shop
 //-----------------------------------------------
 
-function teemillShopAPI() {
+async function teemillShopAPI() {
 
-    const visibleCanvas = document.getElementById("mainCanvas")
+    // const visibleCanvas = document.getElementById("mainCanvas")
+    
+    const canvasToExport = await drawToTempCanvas(8, "chest" );
 
     // Export the base64 image from the canvas
-    const base64_image = visibleCanvas.toDataURL();
+    const base64_image = canvasToExport.toDataURL();
     
     // Set the API key - the line below will be prefilled with your unique key
     const apiKey = 'UUVJeABlhj7R6nkdMbuA1Sq2fk58s6dGgkkDo0Lz'; 
@@ -2169,7 +2282,7 @@ function teemillShopAPI() {
             item_code: "RNA1",
             name: "Pixel Cooled Classic Tee",
             colours: "White,Athletic Grey,Navy Blue,Black,Mustard,Red,Dark Grey,Bright Blue",
-            description: "Check out this awesome doodle tee, printed on an organic cotton t-shirt in a renewable energy powered factory, created via the Teemill API.",
+            description: "You are buying a custom design, created by yourself. Due to this, refunds are not available. If you would like to sample the size before buying, please test with a blank item from rapanuiclothing.com",
             price: 25.00,
             cross_sell: true,
         }),
@@ -2209,7 +2322,7 @@ window.addEventListener("load", ()=>{
     setupGeneralOptions ( currentDisplay.body.RackOptions , "rackDropdownList" ,  3, "rackChange" , "rack", true, 'blank');
     setupGeneralOptions ( rackItems , "rackItemDropdownList" ,  2, "rackItemChange" , "rackItem", true, 'blank');
     checkCheckbox();
-    draw();
+    drawToMainCanvas();
     console.log("running opener");
 
 });
