@@ -34,7 +34,23 @@ const logoWht = {
     height:9
 }
 
-const logos = [logoWhtPlate,logoBlkPlate,logoBlk,logoWht ]
+const logoGld = {
+    name:"logoGld",
+    image:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAJCAYAAABOpxCRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADjSURBVEhL7ZNREoMgDETRU/Qkvf93T9JbaNdJmLCTQIp+8maQZLNBQS0ex+d1SJhmpiciu1bG98RzZdfYZW7Y3t9NwsWP7HnsOHUdotU3wW+EPVz3YJ/X52nKv34Q1T1dNauz5tUkbb1csDPoacCrK6yN+ljL+i2s9TyZfhD5OXd/cws+cTTxpw6tp0t6m+g+M/Cz6d5GWgR7h4cJozaJdAENQ9JKpM/y1Hq6D15LNbs/T4tovLjokPql2Vlhj9fDeD72eh4Ju37WFVuzHtVtzeYg0iSsdRvXeg0Wtxn+5osspZydyog6jGHstQAAAABJRU5ErkJggg==',
+    positionOver:22.5,
+    width:83,
+    height:9
+}
+
+const logoGldTwo = {
+    name:"logoGldTwo",
+    image:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAARCAYAAACb8i8UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD3SURBVEhL7ZRrDsIwDIPZTsFJuP9vTrJbDHmqp2DcpmzjJfFJiNRxk3aKenLM1/Ncwm627KnRWwu+scR3DJdpKOHXM+IW/BVt/QJRA+rRvEN9bp/TSOqPSca9GnB5olq2T7Uevx2hCMYJRh0raC29LHdT60PSC3CzHgqaK1rTt5LW4w3jARnrodXj9ijOp17nKWHTv+ia/DXSEfrzixwxlh8d7Xc2P+y546Hx5CHm0xd1/IN4QfWBrEb0HoIWdA2otXKRml/XL3+F0DA25dfNtBrPeLvRYlxH3TVsaa6Ggtw6l3thI34hN6/MleWyxn9N0/zj/mm4AQnwbH7s/42pAAAAAElFTkSuQmCC',
+    positionOver:39,
+    width:48,
+    height:17
+}
+
+const logos = [logoWhtPlate,logoBlkPlate,logoBlk,logoWht, logoGld , logoGldTwo]
 
 // const logo = {
 //     imageLogo:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPkAAAAbCAYAAAC+wykZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVHhe7djRasMwDIXhrO//zlsN6dCNWp3KjtvD/8EolMiWOoREfo6e3/Nz6J412yfnNsuuGq+81+n/uKWW2/kJwBRNDpjrNvlYOR5/AJ7b0i9McsAcTQ6YG2tDfOOXydaL7G2h+hax8nyWp5qbqnNvpP4OUafGFflElXMyldw+uUY1dkUtL3NgkgPmaHLA3FgB1BWis37Mio0652fU2NV5qrG78qlQY1fcdWX+0ax8pOeZ5IA5mhwwN0Z9ZfRvWTPu4vOZTs7R6roq+cyKjd9n1LuiyjMZNVbNJ6PGqrlFlbviM5UaMy9zYJID5mhywNwY6ZVVobNmrIituDK2U8uK2MqZmU4+FWpsp8Yr84zUnDt3Zf7PZJID5mhywNxYDeKqkMlWiFnrR+X5LE81N1Xn3kj9HaJOjSvyiSrnZCq5dWqMsjMzs+6KOrW8nT+THDBHkwPmxkivrBAAvhSTHDBHkwPmaHLAHE0OmKPJAWvH8QfOXXo0hDC9DQAAAABJRU5ErkJggg==',
@@ -211,7 +227,7 @@ const bodykeegle = {
     RoofRefDown:46,
     RackOptions:[rackShort],
     RoofOptions:[],
-    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAAAeCAIAAACgx6cUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN8SURBVGhD3Zm/axRBFMcvqWKSSrDyD7AJmEJQ4aIoaGJhndbOQoQDtTgjouIPRK3Ewkpba4tEC8XkQO0UBPEPsBJS5aKFcH5vv8O7dzOzs7N7+yP44di8vZ19M++zcze7l6mNpbetRvm2ecpE41x99cdEDhvPPpqoUZp0R2sBRy6PV2dM5JxYv9DG3M3d39e//nvl0nHEJ1/+wLbb306O2DyY28/gw4VDDLRBoj3WJrEBd7CGLcRh3knN8QWLSnB+/bCJEpBt6+AXxsjPoDrqdjd7bWb30dCXiMs7TThhzU4CbcqsZEK3WenU6m725szunZG4Yh+usBR+CYg+bKszOG3+Vg8qmVxcJkxLg7CGFw1WQU3uZLJUKo5ofYD6qjBYh7s6xRF0gbVb66tiAlburn5x6AirB5cO0QdKn4BTla4VGOjn9jHGR3ufsG23209af/mOxcKJ9yYKIhdDgCwTJeAKmSjBvRkkkd0FKMedNXqNroQ3X0s/F7mbVpVgWSBIIhk03mySgUetXaGYx3zuIh0JMkQexXeQ3IVZpHl008YkwVlpCS28NiNVhty5pryCXPQ45JS0miOLFJCQqbwnel0UI9Og7S4wszQcYnh8WrQWV6AqnYpY+nSD+Pw4K6ZxmkTjLlIZcSsBaYNA48A0yUT6kgdVgO+7wrPYHXyugWmPQ3fLm2dk7fN6mZC0OvOCPAyQzZvTayFvRZkqRd/UYDDo9Xq4k6jCWs3oskssh2mZkDH1GXfeVd9FrjwpZTYVIDzpqp4E6OjKrYU3755OQ5x5Lws8EnT72/qFGiybLpkNyqWGT8/rc18f3t5BMG3do3uBNe+zlBg0+02TKY6FWC9zLBqZ8sPnWegL1J+ZHfrQZu8Y9BLQFDiUxuLSC2zNbwGof/D9CGNNvJE9NQEtYtSgDcbPl3krBWlg3C2fvoytPpMxjHA3hnr0oQvvQuF+YFlC/JySYjOr4I8x5t4Yt3jJmy1ZOm7cGx7O5Q5Y/zoA3lIDyHKZBr6qkdBqZomT4vOOH+j/JRF0N1idNztK0eiZTP+wRXGgmDsgvvK6yyQzoZ41pbgjd9fGFtVOpzNyB9Z2uwzmDzzHtkDHwHvdTDQxAXFaGSk2fpCmb+fXRRMljLkjK1tnGbiHYkjruH5Kdwd0To+7CfkP3Mns0biiynfn7bgRSi9tjFbrH97hSgObiLb4AAAAAElFTkSuQmCC',
+    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAAAeCAIAAACgx6cUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANrSURBVGhD3Zm/ixNBFMeTVMpdJVj5B9gceIWgQqIo6J2F9bV2FiIEtIlnoeAPBK3EwkpbawtPCw/vAmqnIIh/gJVw1UUthPhNvsO7l5nZ2dnN7uzhh7D3Njv7Zt5nJ5ndXHuj97bVKF+3zppolhsv/5jIYePpBxM1SpPuaC3gyOXR2gETOSemF9qYu4X7B0c3f69ePYX4zIvv2A5GO9MjNg8WDjF4f/koA22QaI/JJDbgDtawhTjMO6k5vmBRCS69PmaiKci2feQzY+RnUB+p3XG6IRBxRaeJZBBoU2YlE7rNKiepO0tcuQ9XWAq/BEQftvUZ7Ji/9VOJuFyYlgbRHV40WAeJ3KURR7Q+QH11GEzhLqU4gi6wdmt9dUzA2t2lF4eOsHpw6RB9oPIJ2K51rcBAP3VPMj4x/Ihtt9t93PrLdyyWTm+aKIhcDAGyTDQFV8hEU9ybQRLZXYBq3Fmj1+hKePPV+7HM3ayqBMsCQRLJoPFmkww8au0K5TwWcxfpSJAh8ii+g+QuzCLLo5s2JgnOykpo4bUZqTLkzjXlFeSixyGnZNUcWaSAhEzlPdHrohy5Bm13gZml4RDD49OitbgSVelUxNKnG8Tnx1kxjbMkGneRyohbCcgaBBoHpkku0pc8qAJ835Wexe7gCw1Me5y4W9k6L2uf18ucZNVZFORhgGzenF4LRSvKVSn62uPxeDgc4k6iDmuJ0WVXWA7TMiFj6jPuvKu+i1x5UslsKkF40tU9CdDR9dtLb9496UCceS8PPBIMRjv6hRosmy65Daolwafn1cUvD+/sIuhY9+heYM37LCUGzX7T5IpjIdbLHItGpvzkeRb6AvXnZoc+tNk/Br0ENAUOZbHce46t+S0A9Y+/HWesiTeyryagRYwatMH4+TJvZSANjLuVc9ew1WcyhhHuxpBGH7rwLhTuB5YlxM8pKTa3Cv4YY+6NcYs3fbMlS8ete5PDhdwB618HwFtqAFkus8BXNRJazSxxUnzR8QP9vySC7sZri2ZHKdp7JtM/bFEcKOcOiK+i7nLJTahnTSXuyN31mUW13+/vuQPrvwYMFg8/w7ZEx8B73Uw0NwFxWhkpN36QpW/35xUTTZlxR1a3LzBwD8WQ1XF6KncHdE6Puzn5D9zJ7NG4oqp35+24ESovbYZW6x+7NUn5VHdnEAAAAABJRU5ErkJggg==',
     imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAALCAIAAACMDSbNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADESURBVEhL3ZTBDoIwDIZZJxpjfBqvcjU+rwezcPWtIExLVrEBZR2JWPkSAiPd+L90zLiizBjn24menvQKFsPLfOjM+SP/tyLD/GSO1Ta3Td2Et59Q7j/ePITnB7zChKg2El36h0iy8RpD9xQUdj6hJSZzxzb/Esyn7UQyj8rw1TWbj2fr73ahiU751FRdPcgdQiWsAfIp/8j3WG0S+teVtWe7HJzmK+/rO411ANbK+4dQC8NATtI3ZmC7310OVxqIcUX5AD48T/z+vcpTAAAAAElFTkSuQmCC'
 };
 
@@ -229,7 +245,7 @@ const body3cube = {
     RoofRefDown:43,
     RackOptions:[rackShort, rackMed],
     RoofOptions:[],
-    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAgCAIAAACXXGGzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPkSURBVGhD7Zm9axRBGIf3rAzpbP0DRBAMaKFwFz9A4hViaWsvdmlMLKM2WsnV2lpbJFHwIwaCoKAgiH+A2InNEQvh/MXf8N6b2fncvd3bwofl8u7ezOzMs/O1l97W4EXRAb7sXDJRDqvPfpuoNg9vHDVRUZxafm2iZObsUfTN0Eh96DTL5tw8Lt5feN8/h6Bs8MLTbyY6zNubJ0zkITdjOD1sPh9+vjP+yYth5uMREsdr+1dvnWdLAnVFShMVxd17C2Lk3fFPDFAOAx8oITcjbzr4vhStnjAHj5SIAB63RntyGgUp0YXRf+EiMQsRlVkZkYsqUzweMX/bQkvklXSy3GmqZUQueIf9B4vHzCU/rXq0JKIz/rucTQUvHNfoXzxNRG4UVdmeR0uizFPtUPmZIaPMrQHa8AiDIpHIPGVd7zLhLtm4R5oSWbJGVwBFWUE6dfJyljQnHpr1aL2lUOLG+lRrm3B3jSkyVyVqy1ko0CUb9Ahr2KNgw4F64+C0SHjFnMRgYhyySkiZOHglQDkZNk8p2SUNk7FL+lT2au4fxY5+PxXkXcUay9c2T5vIBXM5h7+Mr/K31tAL1yf8LdFpdJWc28mIx5StkyZlaes4zuenQRvLq7/tUWY0vFri0+kleicNSkhPj8TsBVbXAJyh+v3+7u4uBrizQwnl7CSr5hprAKH8ydez268em3PtkQZ9NegCtBDo8mG5AtqIoviA5RPXoxetZwyV+KRN43Fl58qj4g/6IDP/JwrMDreuI1gaPMHn1CPGC9ZBxD6VyGkiF282z5ioKFAUA+s9DGMTA9OcxJBCNFkFOksAViHViHgUiZyP0vFVjiPCnHSDctM47UrMQHB2C7dHbJHCnbEyM/eISaoLkzhHJ1Qe8gi4xQm0GTmtZSuwpgtNeKwzj+u1KKX+PugRcDtpewTlcsWg818W4QfQEY+ir9yEaAdyYnmcvhf6fvWlRNze938fZMSBZFJ014BE1t/ZBKm/OU+gnNh4XLl8GwdjnYixz6CGj6EFlbmTIyWaEz/pXcGZxnjEZrJ38oP0bZbIDBSUgqh03mkuoCacBFNI6Qq+b6fjGu+M5UTpEomkb0ilXiWisA5ZTdBdQQ5+BXRMpPCDdQabR55wC8mY5HoE+qcNdHDce1brDCRyUEfL1A2u2QQnG+vm91NuNreXX/Ymkwkiaxd6cfgRnxVqQPTSP0OPQqBMbRBUa0LYo0jUHPRH/k4pjEajH79WEVT2CCyVjOsg4rTEaMn1u4IPbXO8tj/dP2pYSqc8VmAm9XdSLtntsT6oh7P/twYm+joec2nKI4gOjUZpU2JRFH8BSmCT1otiw74AAAAASUVORK5CYII=',
+    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAgCAIAAACXXGGzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPGSURBVGhD7Zk9axRRFIZnrQzpbP0BIgimsFDYjR8gyRZiaWsvdmlMLKM2WsnW2lqKRTYKinFBBAUFQfwBYic2SyyE9U3ey9njnfs5szs7iA/L5szsvXfvPHPux2w6w97zogV83rtoohw2nvwyUW3uXztqoqI4tfrKRMks2KPom6GR+tBpls2FeVy+u/SuexZB2eD5x19N9Devr58wkYfciuHysPms/+nW+AdPhlmMR0gcb+6v3zjHKwn0FSVNVBS37yyJkTfHPzJAOwx8oIXcivzS3reVaPeEBXikRATwOBy8lcMoKIkURv7CRWIVIiqzKqIWVaZ4PGL+NoWWyDPpZLnTVKuIWvAO+/eWj5lTfhr1aElEMh6ezqaCF45r5BcPE5EviqpszqMlUeapZqh8z1BR5tYATXiEQZFIZJ6yzreZcErO3SNNiSxZoyuApqwgnTp1OUuaAw/z9Wg9pVDi9tZUa5Nwd40pMlclestZKJCSc/QIa9ijYMOBfuPFaZHwjDmIwcJ4ySohbeLFMwHKxbB5SqkuZViMKelT2am5fxQ7+vlUkGcVayxf2TltIhes5Rz+Mr7Kn1pDL9yf8KdEl9Fdcm4nIx5Ttk6alKWt5TjvnwbXWF79bY8yo+HREu9OL9Fv0qCF9PIozCywUgNwhup2u6PRCAPcmVBCuTrJ6rnGGkBof/LlDILdlw95ZuqRBn09aAO0EEj5sFwB14imeIPlHeejJ617rFUaj2t7lx8Uv5GDrPyfKDDbH15FsNJ7hPepR4wXrIOIfSpR00QuJPPDGR1ImTYPhTIRjzPPR44Ic/APYXk0+0dJxvaTOAk2wM76UxPpdYZbnEDu4A5Yy1ZgTRdmno/wWGce17chpf8+cF0MuJ20PYJyu2LQ+S+L8A1oiUfRV76EaAI5sTxOnwt9v/pSIr7e938fVMQLxaTptgGJ7L/zEqT/5jiBcmHjce3STbwY60KMfQY1vA0NqMxd1inRHPhJTwVnGeMRm8nOyfeS22yRFSgoBVHp/KaFgJ5wEkwhJRV8n07HNZ4Zy4XSJRIpPyeVepWIwj5kXYJOBXnxI6BjIo0frDPYPPKgvPvJ9Qj0TxtIcHz3rNYZSOSgjrapL7jmJTjZ3jK/n+J5H++7qy86k8kEEQwenjcfXOh/wHuFHhC99M/QoxBoUxsE1S4h7FEkag7y0fo5czAYfP+5gaCyR2CpZFwHEaclRluunwo+tM3x5v50/6hhK63yWIGZ9N9JuWW3x/qgH878bwxM9HU85jIvjyA6NOZKkxKLovgDW250GcirjlwAAAAASUVORK5CYII=',
     imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAMCAIAAABp6O2CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC4SURBVEhL5ZbhCYAgEEa1QXKSxolmihaJxmmSNCXtlLxTqoveny4Q/e5pmJy7RUQMa++qgLGdXPUF4hau80MRSQUhzHUU52/ccyc7iwYz5i1q8nsR+A45u8CQzO9EUHtj6IIUKR58+jR+BXBhRJRtL6tDUR+m6kSwclFAmN9cn+E75nakjr8bsB/ZSMn8UillKw2+q2MubiKQeYA7jT8R1JaYuCiwYAFdp3+xkQCvjxkB61qqVhdiAzrQWGkpXv5LAAAAAElFTkSuQmCC'
 };
 
@@ -1810,8 +1826,9 @@ async function exportImage(element) {
 
     scaleFactor = idSplit[0]*1;
     shape = idSplit[1];
+    format = idSplit[2];
 
-    canvasToExport = await drawToTempCanvas(scaleFactor, shape );
+    canvasToExport = await drawToTempCanvas(scaleFactor, shape, format );
 
     console.log(canvasToExport);
     openCanvasURL(canvasToExport);
@@ -1956,7 +1973,7 @@ function drawImageFromData(
 
 }
 
-function draw( drawToCanvas ) {
+function draw( drawToCanvas , format = "none") {
 
     return new Promise((resolve) => {
 
@@ -2063,18 +2080,20 @@ function draw( drawToCanvas ) {
                     visibleContext.clearRect(0,0,drawToCanvas.width,drawToCanvas.height);
                     visibleContext.imageSmoothingEnabled = false;
 
-                    if ( backgroundCheck ) {
-                        drawImageFromData(backgroundImage,
-                            0,
-                            0,
-                            hiddenCanvas,
-                            visibleContext,
-                            currentDisplay.backgroundColour,
-                            currentDisplay.lightColour,
-                            currentDisplay.darkColour
-                        );
-                    }
-                    
+                    if ( !( format.includes( "no_background" ) ) ) {
+                        if ( backgroundCheck ) {
+                            drawImageFromData(backgroundImage,
+                                0,
+                                0,
+                                hiddenCanvas,
+                                visibleContext,
+                                currentDisplay.backgroundColour,
+                                currentDisplay.lightColour,
+                                currentDisplay.darkColour
+                            );
+                        }
+                    };
+
                     drawImageFromData(arches,
                         currentDisplay.body.ArchPositionOver,
                         currentDisplay.body.ArchPositionDown+currentDisplay.bodyDrop,
@@ -2174,15 +2193,17 @@ function draw( drawToCanvas ) {
                         ); 
                     };
 
-                    drawImageFromData(logoImage,
-                        currentDisplay.logo.positionOver,
-                        90,
-                        hiddenCanvas,
-                        visibleContext,
-                        currentDisplay.baseColour,
-                        currentDisplay.lightColour,
-                        currentDisplay.darkColour
-                    );
+                    if ( !( format.includes( "no_logo" ) ) ) {
+                        drawImageFromData(logoImage,
+                            currentDisplay.logo.positionOver,
+                            90,
+                            hiddenCanvas,
+                            visibleContext,
+                            currentDisplay.baseColour,
+                            currentDisplay.lightColour,
+                            currentDisplay.darkColour
+                        );
+                    }
 
                     resolve("completed drawing");
 
@@ -2228,7 +2249,7 @@ async function drawToTempCanvas( scaleFactor, shape, format ) {
 
     console.log(outputContext);
 
-    const message = await draw( squareCanvas );
+    const message = await draw( squareCanvas , format );
 
     if (shape == "square") {
         outputCanvas = squareCanvas;
