@@ -142,12 +142,9 @@
                         <div id="paint" class="tabContent">
                             <h3>paint</h3>
 
-                            <div id="bodyColourOption" class="colourOptions full">
-                                <p>pick body colour</p>
-                                <input id="bodyColourControl" type="button" class="coloris bodyColour" >
-                            </div>
+                            <!--  -->
 
-                            <div id="secondaryColourOption" class="colourOptions full">
+                            <!-- <div id="secondaryColourOption" class="colourOptions full">
                                 <p>pick secondary colour</p>
                                 <input type="checkbox" id="secondaryColourChoice" >
                                     <label for="secondaryColourChoice">secondary paint?</label><br>
@@ -159,12 +156,69 @@
                                 <input type="checkbox" id="wheelColourMatch" >
                                     <label for="wheelColourMatch">match wheels to body?</label><br>
                                 <input id="wheelColourControl" type="button" class="coloris wheelColour" >
+                            </div> -->
+
+
+
+                            <p></p>
+                            <button onclick="colourDropdownFunction(this)" 
+                                id=primaryColourOptionDropdownButton 
+                                class="dropdownButton"
+                                >primary body colour
+                            </button>
+                            <div id="primaryColourOptionDropdownList" class="dropdownContent">
+                                <a onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a> <p></p>
+                                <div id="primaryColourOption" class="colourOptions full">
+                                    <input id="primaryColourControl" type="button" class="coloris primaryColour" value="custom colour">
+                                </div>
+                                <a onclick="colourChange(this)" id=primaryColour|Black class="dropdownButton" style="background-color: #000000; color: #ffffff">black</a>
+                                <a onclick="colourChange(this)" id=primaryColour|White class="dropdownButton" style="background-color: #ffffff">white</a>
                             </div>
+
+                            <p></p>
+                            <button onclick="colourDropdownFunction(this)" 
+                                id=secondaryColourOptionDropdownButton 
+                                class="dropdownButton"
+                                >secondary body colour
+                            </button>
+                            <div id="secondaryColourOptionDropdownList" class="dropdownContent">
+                                <a onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a> <p></p>
+                                <div id="secondaryColourOption" class="colourOptions full">
+                                    <input id="secondaryColourControl" type="button" class="coloris secondaryColour" value="custom colour">
+                                </div>
+                                <a onclick="colourChange(this)" id=secondaryColour|Black class="dropdownButton" style="background-color: #000000; color: #ffffff">black</a>
+                                <a onclick="colourChange(this)" id=secondaryColour|White class="dropdownButton" style="background-color: #ffffff">white</a>
+                            </div>
+
+                            <p></p>
+                            <button onclick="colourDropdownFunction(this)" 
+                                id=wheelColourOptionDropdownButton 
+                                class="dropdownButton"
+                                >wheel body colour
+                            </button>
+                            <div id="wheelColourOptionDropdownList" class="dropdownContent">
+                                <a onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a> <p></p>
+                                <div id="wheelColourOption" class="colourOptions full">
+                                    <input id="wheelColourControl" type="button" class="coloris wheelColour" value="custom colour">
+                                </div>
+                                <a onclick="colourChange(this)" id=wheelColour|Black class="dropdownButton" style="background-color: #000000; color: #ffffff">black</a>
+                                <a onclick="colourChange(this)" id=wheelColour|White class="dropdownButton" style="background-color: #ffffff">white</a>
+                            </div>
+
+
+
+
+
+
 
                             <div id="backgroundColourOption" class="colourOptions full">
                                 <p>pick background colour</p>
                                 <input id="backgroundColourControl" type="button" class="coloris backgroundColour" >
                             </div>
+
+
+
+
 
                             
                         </div>

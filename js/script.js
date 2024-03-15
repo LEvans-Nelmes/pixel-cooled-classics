@@ -2,6 +2,183 @@
 const drawingPixels = 128
 const mainCanvasScaleFactor = document.getElementById("mainCanvas").width / drawingPixels;
 
+const otherColourList = [ "primaryColour", "secondaryColour", "wheelColour" ];
+
+const colourGroups = [
+    "Pinks", 
+    "Purples",
+    "Reds",
+    "Oranges",
+    "Yellows",
+    "Greens",
+    "Cyans",
+    "BLues",
+    "Browns",
+    "Whites",
+    "Greys"
+]
+
+const allColours = [
+    [ "Pink" , "#FFC0CB" , "Pinks" , "White" ] ,
+    [ "LightPink" , "#FFB6C1" , "Pinks" , "White" ] ,
+    [ "HotPink" , "#FF69B4" , "Pinks" , "White" ] ,
+    [ "DeepPink" , "#FF1493" , "Pinks" , "White" ] ,
+    [ "PaleVioletRed" , "#DB7093" , "Pinks" , "White" ] ,
+    [ "MediumVioletRed" , "#C71585" , "Pinks" , "White" ] ,
+
+    [ "Lavender" , "#E6E6FA" , "Purples" , "White" ] ,
+    [ "Thistle" , "#D8BFD8" , "Purples" , "White" ] ,
+    [ "Plum" , "#DDA0DD" , "Purples" , "White" ] ,
+    [ "Orchid" , "#DA70D6" , "Purples" , "White" ] ,
+    [ "Violet" , "#EE82EE" , "Purples" , "White" ] ,
+    [ "Fuchsia" , "#FF00FF" , "Purples" , "White" ] ,
+    [ "Magenta" , "#FF00FF" , "Purples" , "White" ] ,
+    [ "MediumOrchid" , "#BA55D3" , "Purples" , "White" ] ,
+    [ "DarkOrchid" , "#9932CC" , "Purples" , "White" ] ,
+    [ "DarkViolet" , "#9400D3" , "Purples" , "White" ] ,
+    [ "BlueViolet" , "#8A2BE2" , "Purples" , "White" ] ,
+    [ "DarkMagenta" , "#8B008B" , "Purples" , "White" ] ,
+    [ "Purple" , "#800080" , "Purples" , "White" ] ,
+    [ "MediumPurple" , "#9370DB" , "Purples" , "White" ] ,
+    [ "MediumSlateBlue" , "#7B68EE" , "Purples" , "White" ] ,
+    [ "SlateBlue" , "#6A5ACD" , "Purples" , "White" ] ,
+    [ "DarkSlateBlue" , "#483D8B" , "Purples" , "White" ] ,
+    [ "RebeccaPurple" , "#663399" , "Purples" , "White" ] ,
+    [ "Indigo" , "#4B0082" , "Purples" , "White" ] ,
+
+    [ "LightSalmon" , "#FFA07A" , "Reds" , "White" ] ,
+    [ "Salmon" , "#FA8072" , "Reds" , "White" ] ,
+    [ "DarkSalmon" , "#E9967A" , "Reds" , "White" ] ,
+    [ "LightCoral" , "#F08080" , "Reds" , "White" ] ,
+    [ "IndianRed" , "#CD5C5C" , "Reds" , "White" ] ,
+    [ "Crimson" , "#DC143C" , "Reds" , "White" ] ,
+    [ "Red" , "#FF0000" , "Reds" , "White" ] ,
+    [ "FireBrick" , "#B22222" , "Reds" , "White" ] ,
+    [ "DarkRed" , "#8B0000" , "Reds" , "White" ] ,
+
+    [ "Orange" , "#FFA500" , "Oranges" , "White" ] ,
+    [ "DarkOrange" , "#FF8C00" , "Oranges" , "White" ] ,
+    [ "Coral" , "#FF7F50" , "Oranges" , "White" ] ,
+    [ "Tomato" , "#FF6347" , "Oranges" , "White" ] ,
+    [ "OrangeRed" , "#FF4500" , "Oranges" , "White" ] ,
+
+    [ "Gold" , "#FFD700" , "Yellows" , "White" ] ,
+    [ "Yellow" , "#FFFF00" , "Yellows" , "White" ] ,
+    [ "LightYellow" , "#FFFFE0" , "Yellows" , "White" ] ,
+    [ "LemonChiffon" , "#FFFACD" , "Yellows" , "White" ] ,
+    [ "LightGoldenRodYellow" , "#FAFAD2" , "Yellows" , "White" ] ,
+    [ "PapayaWhip" , "#FFEFD5" , "Yellows" , "White" ] ,
+    [ "Moccasin" , "#FFE4B5" , "Yellows" , "White" ] ,
+    [ "PeachPuff" , "#FFDAB9" , "Yellows" , "White" ] ,
+    [ "PaleGoldenRod" , "#EEE8AA" , "Yellows" , "White" ] ,
+    [ "Khaki" , "#F0E68C" , "Yellows" , "White" ] ,
+    [ "DarkKhaki" , "#BDB76B" , "Yellows" , "White" ] ,
+
+    [ "GreenYellow" , "#ADFF2F" , "Greens" , "White" ] ,
+    [ "Chartreuse" , "#7FFF00" , "Greens" , "White" ] ,
+    [ "LawnGreen" , "#7CFC00" , "Greens" , "White" ] ,
+    [ "Lime" , "#00FF00" , "Greens" , "White" ] ,
+    [ "LimeGreen" , "#32CD32" , "Greens" , "White" ] ,
+    [ "PaleGreen" , "#98FB98" , "Greens" , "White" ] ,
+    [ "LightGreen" , "#90EE90" , "Greens" , "White" ] ,
+    [ "MediumSpringGreen" , "#00FA9A" , "Greens" , "White" ] ,
+    [ "SpringGreen" , "#00FF7F" , "Greens" , "White" ] ,
+    [ "MediumSeaGreen" , "#3CB371" , "Greens" , "White" ] ,
+    [ "SeaGreen" , "#2E8B57" , "Greens" , "White" ] ,
+    [ "ForestGreen" , "#228B22" , "Greens" , "White" ] ,
+    [ "Green" , "#008000" , "Greens" , "White" ] ,
+    [ "DarkGreen" , "#006400" , "Greens" , "White" ] ,
+    [ "YellowGreen" , "#9ACD32" , "Greens" , "White" ] ,
+    [ "OliveDrab" , "#6B8E23" , "Greens" , "White" ] ,
+    [ "DarkOliveGreen" , "#556B2F" , "Greens" , "White" ] ,
+    [ "MediumAquaMarine" , "#66CDAA" , "Greens" , "White" ] ,
+    [ "DarkSeaGreen" , "#8FBC8F" , "Greens" , "White" ] ,
+    [ "LightSeaGreen" , "#20B2AA" , "Greens" , "White" ] ,
+    [ "DarkCyan" , "#008B8B" , "Greens" , "White" ] ,
+    [ "Teal" , "#008080" , "Greens" , "White" ] ,
+
+    [ "Aqua" , "#00FFFF" , "Cyans" , "White" ] ,
+    [ "Cyan" , "#00FFFF" , "Cyans" , "White" ] ,
+    [ "LightCyan" , "#E0FFFF" , "Cyans" , "White" ] ,
+    [ "PaleTurquoise" , "#AFEEEE" , "Cyans" , "White" ] ,
+    [ "Aquamarine" , "#7FFFD4" , "Cyans" , "White" ] ,
+    [ "Turquoise" , "#40E0D0" , "Cyans" , "White" ] ,
+    [ "MediumTurquoise" , "#48D1CC" , "Cyans" , "White" ] ,
+    [ "DarkTurquoise" , "#00CED1" , "Cyans" , "White" ] ,
+
+    [ "CadetBlue" , "#5F9EA0" , "Blues" , "White" ] ,
+    [ "SteelBlue" , "#4682B4" , "Blues" , "White" ] ,
+    [ "LightSteelBlue" , "#B0C4DE" , "Blues" , "White" ] ,
+    [ "LightBlue" , "#ADD8E6" , "Blues" , "White" ] ,
+    [ "PowderBlue" , "#B0E0E6" , "Blues" , "White" ] ,
+    [ "LightSkyBlue" , "#87CEFA" , "Blues" , "White" ] ,
+    [ "SkyBlue" , "#87CEEB" , "Blues" , "White" ] ,
+    [ "CornflowerBlue" , "#6495ED" , "Blues" , "White" ] ,
+    [ "DeepSkyBlue" , "#00BFFF" , "Blues" , "White" ] ,
+    [ "DodgerBlue" , "#1E90FF" , "Blues" , "White" ] ,
+    [ "RoyalBlue" , "#4169E1" , "Blues" , "White" ] ,
+    [ "Blue" , "#0000FF" , "Blues" , "White" ] ,
+    [ "MediumBlue" , "#0000CD" , "Blues" , "White" ] ,
+    [ "DarkBlue" , "#00008B" , "Blues" , "White" ] ,
+    [ "Navy" , "#000080" , "Blues" , "White" ] ,
+    [ "MidnightBlue" , "#191970" , "Blues" , "White" ] ,
+
+    [ "Cornsilk" , "#FFF8DC" , "Browns" , "White" ] ,
+    [ "BlanchedAlmond" , "#FFEBCD" , "Browns" , "White" ] ,
+    [ "Bisque" , "#FFE4C4" , "Browns" , "White" ] ,
+    [ "NavajoWhite" , "#FFDEAD" , "Browns" , "White" ] ,
+    [ "Wheat" , "#F5DEB3" , "Browns" , "White" ] ,
+    [ "BurlyWood" , "#DEB887" , "Browns" , "White" ] ,
+    [ "Tan" , "#D2B48C" , "Browns" , "White" ] ,
+    [ "RosyBrown" , "#BC8F8F" , "Browns" , "White" ] ,
+    [ "SandyBrown" , "#F4A460" , "Browns" , "White" ] ,
+    [ "GoldenRod" , "#DAA520" , "Browns" , "White" ] ,
+    [ "DarkGoldenRod" , "#B8860B" , "Browns" , "White" ] ,
+    [ "Peru" , "#CD853F" , "Browns" , "White" ] ,
+    [ "Chocolate" , "#D2691E" , "Browns" , "White" ] ,
+    [ "Olive" , "#808000" , "Browns" , "White" ] ,
+    [ "SaddleBrown" , "#8B4513" , "Browns" , "White" ] ,
+    [ "Sienna" , "#A0522D" , "Browns" , "White" ] ,
+    [ "Brown" , "#A52A2A" , "Browns" , "White" ] ,
+    [ "Maroon" , "#800000" , "Browns" , "White" ] ,
+
+    [ "White" , "#FFFFFF" , "Whites" , "White" ] ,
+    [ "Snow" , "#FFFAFA" , "Whites" , "White" ] ,
+    [ "HoneyDew" , "#F0FFF0" , "Whites" , "White" ] ,
+    [ "MintCream" , "#F5FFFA" , "Whites" , "White" ] ,
+    [ "Azure" , "#F0FFFF" , "Whites" , "White" ] ,
+    [ "AliceBlue" , "#F0F8FF" , "Whites" , "White" ] ,
+    [ "GhostWhite" , "#F8F8FF" , "Whites" , "White" ] ,
+    [ "WhiteSmoke" , "#F5F5F5" , "Whites" , "White" ] ,
+    [ "SeaShell" , "#FFF5EE" , "Whites" , "White" ] ,
+    [ "Beige" , "#F5F5DC" , "Whites" , "White" ] ,
+    [ "OldLace" , "#FDF5E6" , "Whites" , "White" ] ,
+    [ "FloralWhite" , "#FFFAF0" , "Whites" , "White" ] ,
+    [ "Ivory" , "#FFFFF0" , "Whites" , "White" ] ,
+    [ "AntiqueWhite" , "#FAEBD7" , "Whites" , "White" ] ,
+    [ "Linen" , "#FAF0E6" , "Whites" , "White" ] ,
+    [ "LavenderBlush" , "#FFF0F5" , "Whites" , "White" ] ,
+    [ "MistyRose" , "#FFE4E1" , "Whites" , "White" ] ,
+
+    [ "Gainsboro" , "#DCDCDC" , "Greys" , "White" ] ,
+    [ "LightGray" , "#D3D3D3" , "Greys" , "White" ] ,
+    [ "Silver" , "#C0C0C0" , "Greys" , "White" ] ,
+    [ "DarkGray" , "#A9A9A9" , "Greys" , "White" ] ,
+    [ "DimGray" , "#696969" , "Greys" , "White" ] ,
+    [ "Gray" , "#808080" , "Greys" , "White" ] ,
+    [ "LightSlateGray" , "#778899" , "Greys" , "White" ] ,
+    [ "SlateGray" , "#708090" , "Greys" , "White" ] ,
+    [ "DarkSlateGray" , "#2F4F4F" , "Greys" , "White" ] ,
+    [ "Black" , "#000000" , "Greys" , "White" ] ,
+
+
+]
+
+const backgroundColours = [
+    [ "white","#ffffff", "backgrounds" ],
+    [ "black","#000000", "backgrounds" ],
+]
+
 const logoWhtPlate = {
     name:"logoWhtPlate",
     image:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFsAAAAPCAYAAACLKbN4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF7SURBVFhH7ZgxbsMwDEVtAwE65DjZO+cEuUiOkUN0TOYuXXOEjDlHOxTo4OY7+i7DULIky1P1AMPUF0nLlCBHaRvBof/pnZnN/vTtrHQOuxdn5TPn+TGkjnHfrsYaDwaLvPRA/yOcHBS9G6wbtdDLIOvaYVVPFbrfrZ0VT06Mj9hcMX4lxpWaY6jv8bMfV3aI9vTlrArIrcdTsTFrvAhtPaPaR/dbaD8rztJIqj/w9Vs6NalrzeojbEsNvL5dn4sNMHO4dIDUcOcM07ZiJNJPtxkXyjXlbxHqp27lor+lEZ075Au61A8jkjCpBFpIL4XvOTnosfHdpjQfU75Re7YEiZhUAg2XxqfnUiof30Pnoibfz9J8hHxbfCWdPaAfAjgw3olsM07HaCw/oPMCK1fIH0idyBgrF2Af8fkAK4cvnmDPNoutHSvzwMHmfXu5/c4ucESuxDEe1+sJchm4qs8fm7/jel3hZUE9WWjy8K+f3L+xoVfmgxV9t5rmF6YSSRdFYxCaAAAAAElFTkSuQmCC',
@@ -785,7 +962,7 @@ const tyres = [tyre14Normal, tyre16Normal, tyre18Normal, tyre14White , tyre16Whi
 
 var currentDisplay = {
     body:bodybrix,
-    baseColour:"#e6846b",
+    primaryColour:"#e6846b",
     wheelColour:"#404040",
     secondaryColour:"#f1f1d0",
     secondaryOption:1,
@@ -838,12 +1015,14 @@ Coloris(
     }
 );
 
-Coloris.setInstance('.bodyColour', 
+Coloris.setInstance('.primaryColour', 
     {
         onChange: (color) => {
-            currentDisplay.baseColour = color
+            currentDisplay.primaryColour = color
             setupBodyOptions();
-            setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, currentDisplay.baseColour );
+            setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, colourReturn(currentDisplay.primaryColour) );
+            document.getElementById("primaryColourControl").style.background = color;
+            document.getElementById("primaryColourOptionDropdownButton").style.background = colourReturn(currentDisplay.primaryColour);
             drawToMainCanvas();
         }
     }
@@ -852,6 +1031,7 @@ Coloris.setInstance('.secondaryColour',
     {
         onChange: (color) => {
             currentDisplay.secondaryColour = color
+            document.getElementById("secondaryColourOptionDropdownButton").style.background = colourReturn(currentDisplay.secondaryColour);
             drawToMainCanvas()
         }
     }
@@ -860,6 +1040,7 @@ Coloris.setInstance('.wheelColour',
     {
         onChange: (color) => {
             currentDisplay.wheelColour = color;
+            document.getElementById("wheelColourOptionDropdownButton").style.background = colourReturn(currentDisplay.wheelColour);
             setupWheelOptions();
             drawToMainCanvas();
         }
@@ -911,7 +1092,7 @@ function encodeCurrentToURL() {
 
     let returnString = "?" + 
     "body"+currentDisplay.body.name + "|" +
-    currentDisplay.baseColour +  "|" +
+    currentDisplay.primaryColour +  "|" +
     currentDisplay.wheelColour +  "|" +
     currentDisplay.secondaryColour + "|" +
     currentDisplay.secondaryOption + "|" +
@@ -969,7 +1150,7 @@ function pickoutFromURL() {
         properties = propertiesFromURL.split("|")
 
         currentDisplay.body = bodies.find(x => x.name === properties[0].replace("body",""));
-        currentDisplay.baseColour = properties[1];
+        currentDisplay.primaryColour = properties[1];
         currentDisplay.wheelColour = properties[2]; 
         currentDisplay.secondaryColour = properties[3]; 
         currentDisplay.secondaryOption = properties[4]; 
@@ -1013,26 +1194,35 @@ function pickoutFromURL() {
 }
 
 function startingValueSetter() {
-    document.getElementById("bodyColourControl").value = currentDisplay.baseColour;
-    document.getElementById("secondaryColourControl").value = currentDisplay.secondaryColour;
-    document.getElementById("wheelColourControl").value = currentDisplay.wheelColour;
+    document.getElementById("primaryColourControl").value = colourReturn(currentDisplay.primaryColour);
+    document.getElementById("secondaryColourControl").value = colourReturn(currentDisplay.secondaryColour);
+    document.getElementById("wheelColourControl").value = colourReturn(currentDisplay.wheelColour);
     document.getElementById("backgroundColourControl").value = currentDisplay.backgroundColour;
 
-    if (currentDisplay.secondaryOption == 1) {
-         document.getElementById("secondaryColourChoice").checked = true
-    } else {
-         document.getElementById("secondaryColourChoice").checked = false
-    }
-    if (currentDisplay.wheelColourMatch == 1) {
-        document.getElementById("wheelColourMatch").checked = true
-   } else {
-        document.getElementById("wheelColourMatch").checked = false
-   }
+    // if (currentDisplay.secondaryOption == 1) {
+    //      document.getElementById("secondaryColourChoice").checked = true
+    // } else {
+    //      document.getElementById("secondaryColourChoice").checked = false
+    // }
+//     if (currentDisplay.wheelColourMatch == 1) {
+//         document.getElementById("wheelColourMatch").checked = true
+//    } else {
+//         document.getElementById("wheelColourMatch").checked = false
+//    }
 
-    document.querySelector('.bodyColour').dispatchEvent(new Event('input', { bubbles: true }));
+    document.querySelector('.primaryColour').dispatchEvent(new Event('input', { bubbles: true }));
     document.querySelector('.secondaryColour').dispatchEvent(new Event('input', { bubbles: true }));
     document.querySelector('.wheelColour').dispatchEvent(new Event('input', { bubbles: true }));
     document.querySelector('.backgroundColour').dispatchEvent(new Event('input', { bubbles: true }));
+
+    document.getElementById("primaryColourControl").style.background = colourReturn(currentDisplay.primaryColour);
+    document.getElementById("secondaryColourControl").style.background = colourReturn(currentDisplay.secondaryColour);
+    document.getElementById("wheelColourControl").style.background = colourReturn(currentDisplay.wheelColour);
+
+    document.getElementById("primaryColourOptionDropdownButton").style.background = colourReturn(currentDisplay.primaryColour);
+    document.getElementById("secondaryColourOptionDropdownButton").style.background = colourReturn(currentDisplay.secondaryColour);
+    document.getElementById("wheelColourOptionDropdownButton").style.background = colourReturn(currentDisplay.wheelColour);
+
 }
 
 function addToURL() {
@@ -1057,23 +1247,6 @@ function addToURL() {
 // }
 
 function openCanvasURL( outputCanvas ) {
-    // const visibleCanvas = document.getElementById("mainCanvas")
-
-    // const outputCanvas = document.getElementById("outputCanvas");
-    // const outputCanvas = document.createElement("canvas");
-    // outputCanvas.width = scaleFactor*drawingPixels; 
-    // outputCanvas.height = scaleFactor*drawingPixels;
-    // console.log(outputCanvas.height);
-
-    // outputContext = outputCanvas.getContext("2d");
-
-    // console.log(outputContext);
-
-    // const message = await draw( outputCanvas );
-
-    // if (shape == "chest") {
-    //     //do stuff
-    // };
 
     pngUrl = outputCanvas.toDataURL();
     console.log(pngUrl);
@@ -1126,6 +1299,11 @@ function exportDropdownFunction() {
     document.getElementById("exportDropdownList").classList.toggle("show");
 }
 
+function colourDropdownFunction(element) {
+    idToShow = element.id.replace("Button","List");
+    document.getElementById(idToShow).classList.toggle("show");
+}
+
 
 function showByElementID(elementID) {
     if (document.getElementById(elementID).classList.contains('hide')) {
@@ -1139,28 +1317,28 @@ function hideByElementID(elementID) {
     }
 }
 
-function checkCheckbox() {
-    var wheelColourCheckbox = document.getElementById('wheelColourMatch');
-    if (wheelColourCheckbox.checked == true) {
-        currentDisplay.wheelColourMatch = 1
-        // drawToMainCanvas();
-    } else {
-        currentDisplay.wheelColourMatch = 0
-        // drawToMainCanvas();
-    }
+// function checkCheckbox() {
+//     var wheelColourCheckbox = document.getElementById('wheelColourMatch');
+//     if (wheelColourCheckbox.checked == true) {
+//         currentDisplay.wheelColourMatch = 1
+//         // drawToMainCanvas();
+//     } else {
+//         currentDisplay.wheelColourMatch = 0
+//         // drawToMainCanvas();
+//     }
 
-    var secondaryColourCheckbox = document.getElementById('secondaryColourChoice');
-    if (secondaryColourCheckbox.checked == true) {
-        currentDisplay.secondaryOption = 1
-        showByElementID("secondaryColourControl");
-        // drawToMainCanvas();
-    } else {
-        currentDisplay.secondaryOption = 0
-        hideByElementID("secondaryColourControl");
-        // drawToMainCanvas();
-    } 
-    drawToMainCanvas();
-}
+//     var secondaryColourCheckbox = document.getElementById('secondaryColourChoice');
+//     if (secondaryColourCheckbox.checked == true) {
+//         currentDisplay.secondaryOption = 1
+//         showByElementID("secondaryColourControl");
+//         // drawToMainCanvas();
+//     } else {
+//         currentDisplay.secondaryOption = 0
+//         hideByElementID("secondaryColourControl");
+//         // drawToMainCanvas();
+//     } 
+//     drawToMainCanvas();
+// }
 
 function checkForSecondaryColourOption() {
 
@@ -1207,10 +1385,15 @@ function closeDropdowns() {
   
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-    checkCheckbox();
-    // console.log(event.target);
+    // checkCheckbox();
 
-    if (!event.target.matches('.dropdownButton') && !event.target.matches('.dropdownButtonImage')) {
+    if (
+        !event.target.matches('.dropdownButton') 
+        && !event.target.matches('.dropdownButtonImage')  
+        && !event.target.matches('.dropdownContent')  
+        && !event.target.matches('.coloris') 
+        && !document.getElementById("clr-picker").classList.contains("clr-open") // so that if the colour picker is open, dont close a drop down
+    ) {
         var dropdowns = document.getElementsByClassName("dropdownContent");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -1270,8 +1453,13 @@ function setupBodyOptions () {
         bodyEl.image = new Image();
         bodyEl.imageArchesOption = new Image();
         
+        primaryColourInput = colourReturn(currentDisplay.primaryColour);
 
-        bodyColourInput = currentDisplay.baseColour;
+        // if (currentDisplay.primaryColour.includes("#")) {
+        //     primaryColourInput = currentDisplay.primaryColour;
+        // } else {
+        //     primaryColourInput = currentDisplay[currentDisplay.primaryColour];
+        // };
 
         bodyEl.image.src = bodyEl.imageBody;
         bodyEl.imageArchesOption.src = bodyEl.imageArches;
@@ -1308,8 +1496,8 @@ function setupBodyOptions () {
 
         
 
-                    bodyEl.data = setupImageFromData(bodyEl.image,bodyColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
-                    bodyEl.dataArches = setupImageFromData(bodyEl.imageArchesOption,bodyColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
+                    bodyEl.data = setupImageFromData(bodyEl.image,primaryColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
+                    bodyEl.dataArches = setupImageFromData(bodyEl.imageArchesOption,primaryColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
                     //bodyEl.data = loadImageToArray(wheel, canvasWidth=128,canvasHeight=128, scaleFactor);
 
                     setupButtonContext.clearRect(0,0,512,512);
@@ -1413,15 +1601,23 @@ function setupWheelOptions () {
 
         wheelEl.image = new Image();
 
-        
+        convertedWheelColour = colourReturn(currentDisplay.wheelColour);
+
+        // if (currentDisplay.wheelColour.includes("#")) {
+        //     convertedWheelColour = currentDisplay.wheelColour;
+        // } else {
+        //     convertedWheelColour = currentDisplay[currentDisplay.wheelColour];
+        // };
 
         if (currentDisplay.wheels.customColour == 1) {
     
-            if (currentDisplay.wheelColourMatch == 0) {
-                wheelColourInput = currentDisplay.wheelColour
-            } else {
-                wheelColourInput = currentDisplay.baseColour;
-            }
+            // if (currentDisplay.wheelColourMatch == 0) {
+            //     wheelColourInput = currentDisplay.wheelColour
+            // } else {
+            //     wheelColourInput = currentDisplay.primaryColour;
+            // }
+
+            wheelColourInput = convertedWheelColour;
     
         } else {
             wheelColourInput = 'blank';
@@ -1506,7 +1702,6 @@ function setupWheelOptions () {
 
 function setupTyreOptions () {
 
-    var outputHTML = ``;
     var frontSize14Options = ``;
     var frontSize16Options = ``;
     var frontSize18Options = ``;
@@ -1607,37 +1802,6 @@ function setupTyreOptions () {
     });    
 };
 
-
-// replace by general option change
-
-// function setupRackOptions () {
-//     // Always has a none option
-//     outputHTML =  `<a onclick="rackChange(this)" id=none class="dropdownButton">none</a> `;
-
-//     if ( 
-//         currentDisplay.rack == "" || 
-//         !(currentDisplay.body.RackOptions.includes(currentDisplay.rack))||
-//         currentDisplay.body.RackOptions.length == 0
-//     ) { 
-//         hideByElementID("rackItemDropdownButton") 
-//     } else {
-//         showByElementID("rackItemDropdownButton")
-//     };
-
-//     for (rackEl of currentDisplay.body.RackOptions) {
-//         text = `<a onclick="rackChange(this)" id=rack` + rackEl.name + ` class="dropdownButton">`+(rackEl.name).toLowerCase() +`</a>`
-//         outputHTML = outputHTML + text
-//     };
-
-
-    
-//     // <a href="#" onclick="rackChange(this)" id=rackShort class="dropdownButton">short</a>
-
-//     document.getElementById("rackDropdownList").innerHTML = outputHTML
-
-// };
-
-
 function setupGeneralOptions ( itemList , elementIDChangeStr, scaleFactor, fucntionChangeStr , idPrefix, allowNoneBool, colourConvert) {
 
     // always has a none option
@@ -1650,6 +1814,15 @@ function setupGeneralOptions ( itemList , elementIDChangeStr, scaleFactor, fucnt
     var imagesToLoad = [];
     var imagesData = [];
     var imagesCount = 0;
+
+    colourConvert = colourReturn(colourConvert);
+
+
+    // if (colourConvert.includes("#")) {
+    //     colourConvert = colourConvert;
+    // } else {
+    //     colourConvert = currentDisplay[colourConvert];
+    // };
 
     // var tyre = new Image(); 
 
@@ -1716,17 +1889,62 @@ function setupGeneralOptions ( itemList , elementIDChangeStr, scaleFactor, fucnt
     });    
 };
 
+function setupColourOptions(ElementID) {
+
+    var outputHTML=``
+
+    var customColourHTML=
+        `<div id="`+ElementID+`Option" class="colourOptions full">
+            <input id="`+ElementID+`Control" type="button" class="coloris `+ElementID+`" value="custom colour">
+        </div>  `  
+
+    var otherColoursHTML = ``;
+    // var otherColourList = [ "primaryColour", "secondaryColour", "wheelColour" ];
+
+    for (otherColour of otherColourList) {
+
+        if (ElementID != otherColour) {
+            buttonHTML = `<a onclick="colourChange(this)" id=`
+                +ElementID+`|`+ otherColour +` class="dropdownButton" style="background-color: `
+                +colourReturn(currentDisplay[otherColour])+`; color: #ffffff">`+otherColour+`</a>`;
+            
+            otherColoursHTML = otherColoursHTML + buttonHTML;
+        }
+    }
+
+    var colourListHTML=``
+    // this loops through all the colour options and adds them in
+    const iterator = allColours.keys();
+
+    for (const key of iterator){
+
+        buttonHTML = `<a onclick="colourChange(this)" id=`+ElementID+`|`
+            + allColours[key][0] + ` class="dropdownButton" style="background-color: `
+            + allColours[key][1] + `; color: `
+            + allColours[key][3] + `">`
+            + allColours[key][0] + `</a>`;
+
+            colourListHTML = colourListHTML + buttonHTML;
+
+    };
+
+    outputHTML = closeButtonHTML() 
+        + `<p> custom colour </p>`+ customColourHTML 
+        + `<p> match other colours </p>`+ otherColoursHTML
+        + `<p> colours </p>`  +colourListHTML;
+
+    document.getElementById( ElementID + "OptionDropdownList" ).innerHTML = outputHTML;
 
 
 
-
+}
 
 
 function bodyChange(element) {
     currentDisplay.body = bodies.find(x => x.name === (element.id).replace("body",""));
     checkForSecondaryColourOption();
     setupGeneralOptions ( currentDisplay.body.RackOptions , "rackDropdownList" ,  3, "rackChange" , "rack", true, 'blank');
-    setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, currentDisplay.secondaryColour);
+    setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, colourReturn(currentDisplay.secondaryColour));
     // setupRackOptions ();
 
     drawToMainCanvas();
@@ -1784,6 +2002,7 @@ function roofChange(element) {
     } else {
         currentDisplay.roof = roofs.find(x => x.name === (element.id).replace("roof",""));
     }
+    drawToMainCanvas();
 }
 
 function rackChange(element) {
@@ -1794,6 +2013,7 @@ function rackChange(element) {
         currentDisplay.rack = racks.find(x => x.name === (element.id).replace("rack",""));
         showByElementID("rackItemDropdownButton");
     }
+    drawToMainCanvas();
 }
 
 function rackItemChange(element) {
@@ -1802,22 +2022,110 @@ function rackItemChange(element) {
     } else {
         currentDisplay.rackItem = rackItems.find(x => x.name === (element.id).replace("rackItem",""));
     }
+    drawToMainCanvas();
 }
 
 function logoChange(element) {
-
     currentDisplay.logo = logos.find(x => x.name === (element.id).replace("Button",""));
-
+    drawToMainCanvas();
 }
 
 function backgroundChange(element) {
-
-    console.log(element.id);
     if (element.id == "none" ) {
         currentDisplay.background = '';
     } else {
         currentDisplay.background = backgrounds.find(x => x.name === (element.id).replace("Button",""));
     }
+    drawToMainCanvas();
+}
+
+function colourChange(element) {
+    idSplit = (element.id).split("|");
+    partName = idSplit[0];
+    colourName = idSplit[1];
+
+    // set this for saftey incase it's broke
+    colourHex = currentDisplay.primaryColour;
+
+    colourHex = "not in list";
+    // find where that name is in colour list
+    const iterator = allColours.keys();
+    for (const key of iterator){
+        if (allColours[key][0] == colourName) {
+            colourHex = allColours[key][1];
+        }
+    }
+
+    if (colourHex == "not in list"){
+        //then we are setting it to another colour
+        colourHex = currentDisplay[colourName];
+        if ( !(currentDisplay[colourName].includes("#")) ) {
+            // if no hash, then this other colour is also a pointer, so just use it's value
+            currentDisplay[partName] = currentDisplay[currentDisplay[colourName]];
+        } else {
+            currentDisplay[partName] = colourName;
+        }
+    } else {
+        currentDisplay[partName] = colourHex;   
+    }
+
+    
+    // do all drawing that may be needed for a colour change
+    setupBodyOptions();
+    setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, colourReturn(currentDisplay.primaryColour) );
+    setupWheelOptions();
+    drawToMainCanvas();
+
+
+    // document.getElementById(partName + "Control").value = colourHex;
+    // document.getElementById(partName + "Control").style.background = colourHex;
+    // document.getElementById(partName + "OptionDropdownButton").style.background = colourHex;
+
+    
+    // for (otherColour of otherColourList) {
+    //     if (partName != otherColour) {
+    //         console.log(otherColour+"|"+ partName);
+    //         document.getElementById( otherColour+"|"+ partName  ).style.background = colourHex;
+    //     }
+    // }
+
+    // loop through the other buttons, if they are set to this, then change those too
+    for (otherColour of otherColourList) {
+
+        document.getElementById(partName + "Control").value = colourHex;
+        document.getElementById(partName + "Control").style.background = colourHex;
+        document.getElementById(partName + "OptionDropdownButton").style.background = colourHex;
+
+        if (partName != otherColour) {
+            document.getElementById( otherColour+"|"+ partName  ).style.background = colourHex;
+        }
+
+        if ( currentDisplay[otherColour] == partName ) {
+            document.getElementById(otherColour + "Control").value = colourHex;
+            document.getElementById(otherColour + "Control").style.background = colourHex;
+            document.getElementById(otherColour + "OptionDropdownButton").style.background = colourHex;
+
+            for (menuColour of otherColourList) {
+                if (menuColour != otherColour) {
+                    document.getElementById( menuColour +"|"+ otherColour  ).style.background = colourHex;
+                }
+            }
+
+        }
+
+    }
+    
+
+}
+function colourReturn(currentColour) {
+
+    if (currentColour.includes("#")) {
+        output = currentColour;
+    } else {
+        output = currentDisplay[currentColour];
+    };
+
+    return output;
 }
 
 async function exportImage(element) {
@@ -2054,21 +2362,54 @@ function draw( drawToCanvas , format = "none") {
             imagesToLoad.push(backgroundImage);
         }
 
+        
+
+        // colour matching system
+        convertedPrimaryColour = colourReturn(currentDisplay.primaryColour);
+        convertedSecondaryColour = colourReturn(currentDisplay.secondaryColour);
+        convertedWheelColour = colourReturn(currentDisplay.wheelColour);
+
+        // if (currentDisplay.wheelColour.includes("#")) {
+        //     convertedWheelColour = currentDisplay.wheelColour;
+        // } else {
+        //     convertedWheelColour = currentDisplay[currentDisplay.wheelColour];
+        // };
+
+        // if (currentDisplay.secondaryColour.includes("#")) {
+        //     convertedSecondaryColour = currentDisplay.secondaryColour;
+        // } else {
+        //     convertedSecondaryColour = currentDisplay[currentDisplay.secondaryColour];
+        // };
+
+        // if (currentDisplay.primaryColour.includes("#")) {
+        //     convertedPrimaryColour = currentDisplay.primaryColour;
+        // } else {
+        //     convertedPrimaryColour = currentDisplay[currentDisplay.primaryColour];
+        // };
+
+
+
+
+
+
         if (currentDisplay.wheels.customColour == 1) {
             showByElementID("wheelColourOption");
 
-            if (currentDisplay.wheelColourMatch == 0) {
-                showByElementID("wheelColourControl");
-                wheelColourInput = currentDisplay.wheelColour
-            } else {
-                hideByElementID("wheelColourControl");
-                wheelColourInput = currentDisplay.baseColour;
-            }
+            // if (currentDisplay.wheelColourMatch == 0) {
+            //     showByElementID("wheelColourControl");
+            //     wheelColourInput = convertedWheelColour
+            // } else {
+            //     hideByElementID("wheelColourControl");
+            //     wheelColourInput = currentDisplay.primaryColour;
+            // }
+            
+            wheelColourInput = convertedWheelColour
 
         } else {
             wheelColourInput = 'blank'
             hideByElementID("wheelColourOption");
         }
+
 
         addToURL();
         
@@ -2140,18 +2481,18 @@ function draw( drawToCanvas , format = "none") {
                         currentDisplay.body.CarPositionDown+currentDisplay.bodyDrop,
                         hiddenCanvas,
                         visibleContext,
-                        currentDisplay.baseColour,
+                        convertedPrimaryColour,
                         currentDisplay.lightColour,
                         currentDisplay.darkColour
                     );
                     
-                    if (currentDisplay.secondaryOption && "imageSecondary" in currentDisplay.body) { 
+                    if ( "imageSecondary" in currentDisplay.body) {  //currentDisplay.secondaryOption &&
                         drawImageFromData(secondary,
                             currentDisplay.body.SecondaryPositionOver,
                             currentDisplay.body.SecondaryPositionDown+currentDisplay.bodyDrop,
                             hiddenCanvas,
                             visibleContext,
-                            currentDisplay.secondaryColour,
+                            convertedSecondaryColour,
                             currentDisplay.lightColour,
                             currentDisplay.darkColour
                         );                    
@@ -2163,7 +2504,7 @@ function draw( drawToCanvas , format = "none") {
                             currentDisplay.body.RoofRefDown + currentDisplay.bodyDrop + currentDisplay.roof.downAddition,
                             hiddenCanvas,
                             visibleContext,
-                            currentDisplay.secondaryColour,
+                            convertedSecondaryColour,
                             currentDisplay.lightColour,
                             currentDisplay.darkColour
                         );  
@@ -2199,7 +2540,7 @@ function draw( drawToCanvas , format = "none") {
                             90,
                             hiddenCanvas,
                             visibleContext,
-                            currentDisplay.baseColour,
+                            convertedPrimaryColour,
                             currentDisplay.lightColour,
                             currentDisplay.darkColour
                         );
@@ -2337,14 +2678,22 @@ window.addEventListener("load", ()=>{
     setupBodyOptions();
     setupWheelOptions ();
     setupTyreOptions ();
-    setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, currentDisplay.baseColour );
-    setupGeneralOptions ( backgrounds , "backgroundDropdownList" , 0.3, "backgroundChange" , "", true, currentDisplay.backgroundColour );
-    setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, currentDisplay.secondaryColour);
+    setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, colourReturn(currentDisplay.primaryColour) );
+    setupGeneralOptions ( backgrounds , "backgroundDropdownList" , 0.3, "backgroundChange" , "", true, colourReturn(currentDisplay.backgroundColour) );
+    setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, colourReturn(currentDisplay.secondaryColour));
     setupGeneralOptions ( currentDisplay.body.RackOptions , "rackDropdownList" ,  3, "rackChange" , "rack", true, 'blank');
     setupGeneralOptions ( rackItems , "rackItemDropdownList" ,  2, "rackItemChange" , "rackItem", true, 'blank');
-    checkCheckbox();
+    setupColourOptions("primaryColour");
+    setupColourOptions("secondaryColour");
+    setupColourOptions("wheelColour");
+
+    //rerun, test removing first set
+    startingValueSetter();
+
+    // checkCheckbox();
     drawToMainCanvas();
     console.log("running opener");
+    
 
 });
 
