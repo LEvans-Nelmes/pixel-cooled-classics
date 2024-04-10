@@ -175,8 +175,14 @@ const allColours = [
 ]
 
 const backgroundColours = [
-    [ "white","#ffffff", "backgrounds" ],
-    [ "black","#000000", "backgrounds" ],
+    [ "Peach",'#fe9ecc', "backgrounds" , "White" ],
+    [ "Pink",'#f74071', "backgrounds" , "White" ],
+    [ "Purple",'#a16fe2', "backgrounds" , "White" ],
+    [ "Blue",'#68c7d8', "backgrounds" , "White" ],
+    [ "Yellow",'#fbd321', "backgrounds" , "White" ],
+    [ "Orange",'#fa944c', "backgrounds" , "White" ],
+    [ "Beige",'#dcc4aa', "backgrounds" , "White" ],
+    [ "Teal",'#6dd1bb', "backgrounds" , "White" ],
 ]
 
 const logoWhtPlate = {
@@ -1197,7 +1203,7 @@ function startingValueSetter() {
     document.getElementById("primaryColourControl").value = colourReturn(currentDisplay.primaryColour);
     document.getElementById("secondaryColourControl").value = colourReturn(currentDisplay.secondaryColour);
     document.getElementById("wheelColourControl").value = colourReturn(currentDisplay.wheelColour);
-    document.getElementById("backgroundColourControl").value = currentDisplay.backgroundColour;
+    document.getElementById("backgroundColourControl").value = colourReturn(currentDisplay.backgroundColour);
 
     // if (currentDisplay.secondaryOption == 1) {
     //      document.getElementById("secondaryColourChoice").checked = true
@@ -1218,10 +1224,12 @@ function startingValueSetter() {
     document.getElementById("primaryColourControl").style.background = colourReturn(currentDisplay.primaryColour);
     document.getElementById("secondaryColourControl").style.background = colourReturn(currentDisplay.secondaryColour);
     document.getElementById("wheelColourControl").style.background = colourReturn(currentDisplay.wheelColour);
+    document.getElementById("backgroundColourControl").style.background = colourReturn(currentDisplay.backgroundColour);
 
     document.getElementById("primaryColourOptionDropdownButton").style.background = colourReturn(currentDisplay.primaryColour);
     document.getElementById("secondaryColourOptionDropdownButton").style.background = colourReturn(currentDisplay.secondaryColour);
     document.getElementById("wheelColourOptionDropdownButton").style.background = colourReturn(currentDisplay.wheelColour);
+    document.getElementById("backgroundColourOptionDropdownButton").style.background = colourReturn(currentDisplay.backgroundColour);
 
 }
 
@@ -1343,9 +1351,9 @@ function hideByElementID(elementID) {
 function checkForSecondaryColourOption() {
 
     if ("imageSecondary" in currentDisplay.body) {
-        showByElementID("secondaryColourOption");
+        showByElementID("secondaryColourOptionDropdownButton");
     } else {
-        hideByElementID("secondaryColourOption");
+        hideByElementID("secondaryColourOptionDropdownButton");
     }
 
 }
@@ -1597,40 +1605,11 @@ function setupWheelOptions () {
 
     // var wheel = new Image(); 
 
+    
+
     for (wheelEl of wheels) {
 
         wheelEl.image = new Image();
-
-        convertedWheelColour = colourReturn(currentDisplay.wheelColour);
-
-        // if (currentDisplay.wheelColour.includes("#")) {
-        //     convertedWheelColour = currentDisplay.wheelColour;
-        // } else {
-        //     convertedWheelColour = currentDisplay[currentDisplay.wheelColour];
-        // };
-
-        if (currentDisplay.wheels.customColour == 1) {
-    
-            // if (currentDisplay.wheelColourMatch == 0) {
-            //     wheelColourInput = currentDisplay.wheelColour
-            // } else {
-            //     wheelColourInput = currentDisplay.primaryColour;
-            // }
-
-            wheelColourInput = convertedWheelColour;
-    
-        } else {
-            wheelColourInput = 'blank';
-        }
-
-        // alterCanvas = `<canvas hidden id="hiddenButtonCanvas" width="`+wheelEl.size*scaleFactor+`" height="`+wheelEl.size*scaleFactor+`"></canvas>`;
-        // document.getElementById("hiddenButtonCanvas").innerHTML = alterCanvas;
-
-        
-        // const hiddenButtonCanvas = document.getElementById("hiddenButtonCanvas").getContext("2d");
-        
-        
-
         wheelEl.image.src = wheelEl.imageWheel;
 
         wheelsToLoad.push(wheelEl.image);
@@ -1653,9 +1632,9 @@ function setupWheelOptions () {
 
                     hiddenButtonCanvas.width = scaleFactor*wheelEl.size;
                     hiddenButtonCanvas.height = scaleFactor*wheelEl.size
-
-        
-                
+                            
+                    convertedWheelColour = colourReturn(currentDisplay.wheelColour);
+                    wheelColourInput = convertedWheelColour;
 
                     wheelEl.data = setupImageFromData(wheelEl.image,wheelColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
                     //wheelEl.data = loadImageToArray(wheel, canvasWidth=128,canvasHeight=128, scaleFactor);
@@ -1914,24 +1893,31 @@ function setupColourOptions(ElementID) {
 
     var colourListHTML=``
     // this loops through all the colour options and adds them in
-    const iterator = allColours.keys();
+    if (ElementID == "backgroundColour") {
+        colourList = backgroundColours;
+    } else {
+        colourList = allColours;
+    }
+
+    const iterator = colourList.keys();
 
     for (const key of iterator){
 
         buttonHTML = `<a onclick="colourChange(this)" id=`+ElementID+`|`
-            + allColours[key][0] + ` class="dropdownButton" style="background-color: `
-            + allColours[key][1] + `; color: `
-            + allColours[key][3] + `">`
-            + allColours[key][0] + `</a>`;
+            + colourList[key][0] + ` class="dropdownButton" style="background-color: `
+            + colourList[key][1] + `; color: `
+            + colourList[key][3] + `">`
+            + colourList[key][0] + `</a>`;
 
             colourListHTML = colourListHTML + buttonHTML;
 
     };
 
-    outputHTML = closeButtonHTML() 
-        + `<p> custom colour </p>`+ customColourHTML 
-        + `<p> match other colours </p>`+ otherColoursHTML
-        + `<p> colours </p>`  +colourListHTML;
+    outputHTML = closeButtonHTML() + `<p> custom colour </p>`+ customColourHTML ;
+    if (ElementID != "backgroundColour") {
+        outputHTML = outputHTML + `<p> match other colours </p>`+ otherColoursHTML  ;
+    }
+    outputHTML = outputHTML + `<p> colours </p>`  +colourListHTML;
 
     document.getElementById( ElementID + "OptionDropdownList" ).innerHTML = outputHTML;
 
@@ -2044,15 +2030,21 @@ function colourChange(element) {
     partName = idSplit[0];
     colourName = idSplit[1];
 
+    if (partName == "backgroundColour") {
+        colourList = backgroundColours;
+    } else {
+        colourList = allColours;
+    }
+
     // set this for saftey incase it's broke
     colourHex = currentDisplay.primaryColour;
 
     colourHex = "not in list";
     // find where that name is in colour list
-    const iterator = allColours.keys();
+    const iterator = colourList.keys();
     for (const key of iterator){
-        if (allColours[key][0] == colourName) {
-            colourHex = allColours[key][1];
+        if (colourList[key][0] == colourName) {
+            colourHex = colourList[key][1];
         }
     }
 
@@ -2084,35 +2076,36 @@ function colourChange(element) {
     
     // for (otherColour of otherColourList) {
     //     if (partName != otherColour) {
-    //         console.log(otherColour+"|"+ partName);
     //         document.getElementById( otherColour+"|"+ partName  ).style.background = colourHex;
     //     }
     // }
 
+    document.getElementById(partName + "Control").value = colourHex;
+    document.getElementById(partName + "Control").style.background = colourHex;
+    document.getElementById(partName + "OptionDropdownButton").style.background = colourHex;
+
     // loop through the other buttons, if they are set to this, then change those too
-    for (otherColour of otherColourList) {
+    if (partName != "backgroundColour") {
+        for (otherColour of otherColourList) {
 
-        document.getElementById(partName + "Control").value = colourHex;
-        document.getElementById(partName + "Control").style.background = colourHex;
-        document.getElementById(partName + "OptionDropdownButton").style.background = colourHex;
+            if (partName != otherColour) {
+                document.getElementById( otherColour+"|"+ partName  ).style.background = colourHex;
+            }
 
-        if (partName != otherColour) {
-            document.getElementById( otherColour+"|"+ partName  ).style.background = colourHex;
-        }
+            if ( currentDisplay[otherColour] == partName ) {
+                document.getElementById(otherColour + "Control").value = colourHex;
+                document.getElementById(otherColour + "Control").style.background = colourHex;
+                document.getElementById(otherColour + "OptionDropdownButton").style.background = colourHex;
 
-        if ( currentDisplay[otherColour] == partName ) {
-            document.getElementById(otherColour + "Control").value = colourHex;
-            document.getElementById(otherColour + "Control").style.background = colourHex;
-            document.getElementById(otherColour + "OptionDropdownButton").style.background = colourHex;
-
-            for (menuColour of otherColourList) {
-                if (menuColour != otherColour) {
-                    document.getElementById( menuColour +"|"+ otherColour  ).style.background = colourHex;
+                for (menuColour of otherColourList) {
+                    if (menuColour != otherColour) {
+                        document.getElementById( menuColour +"|"+ otherColour  ).style.background = colourHex;
+                    }
                 }
+
             }
 
         }
-
     }
     
 
@@ -2215,9 +2208,9 @@ function colourConvert(imageDataIn, oldRGB, newRGB) {
 
 }
 
-function setupImageFromData(imageName,colourConvertTo='blank',highlightRatio='blank',lowlightRatio='blank',scaleFactor) {
-
-    imageName.data = loadImageToArray(imageName, drawingPixels, drawingPixels, scaleFactor);
+function setupImageFromData(imageName,colourConvertTo='blank',highlightRatio='blank',lowlightRatio='blank',scaleFactor, numberOfPixels = drawingPixels) {
+    
+    imageName.data = loadImageToArray(imageName, numberOfPixels, numberOfPixels, scaleFactor);
 
     // if we have a colour to convert, we swap the shades:
     if ( colourConvertTo !='blank' ) {
@@ -2269,8 +2262,16 @@ function drawImageFromData(
     colourConvertTo='blank',highlightRatio='blank',lowlightRatio='blank'
     ) {
 
-        scaleFactor = hiddenCanvas.width / drawingPixels;
-        imageName.data = setupImageFromData(imageName,colourConvertTo,highlightRatio,lowlightRatio, scaleFactor);
+        if (imageName instanceof HTMLImageElement) {
+            scaleFactor = hiddenCanvas.width / drawingPixels;
+            numberOfPixels = drawingPixels;
+        } else {
+            scaleFactor = 1;
+            numberOfPixels = Math.min(hiddenCanvas.width, hiddenCanvas.height);
+        }
+        
+
+        imageName.data = setupImageFromData(imageName,colourConvertTo,highlightRatio,lowlightRatio, scaleFactor, numberOfPixels);
     
         hiddenContext = hiddenCanvas.getContext("2d");
 
@@ -2312,6 +2313,8 @@ function draw( drawToCanvas , format = "none") {
         const logoImage = new Image();
         const backgroundImage = new Image();
 
+        // const circle = new Image();
+
         var imagesToLoad = [];
         var imageCount = 0;
 
@@ -2333,6 +2336,9 @@ function draw( drawToCanvas , format = "none") {
         imagesToLoad.push(frontTyre);
         backTyre.src = currentDisplay.backTyre.imageTyre
         imagesToLoad.push(backTyre);
+
+        // circle.src = drawCircle( 5 );
+        // imagesToLoad.push(circle);
         
         // logoImage.src = logo.imageLogoWhtPlate;
         logoImage.src =  currentDisplay.logo.image;
@@ -2393,7 +2399,7 @@ function draw( drawToCanvas , format = "none") {
 
 
         if (currentDisplay.wheels.customColour == 1) {
-            showByElementID("wheelColourOption");
+            showByElementID("wheelColourOptionDropdownButton");
 
             // if (currentDisplay.wheelColourMatch == 0) {
             //     showByElementID("wheelColourControl");
@@ -2407,7 +2413,7 @@ function draw( drawToCanvas , format = "none") {
 
         } else {
             wheelColourInput = 'blank'
-            hideByElementID("wheelColourOption");
+            hideByElementID("wheelColourOptionDropdownButton");
         }
 
 
@@ -2423,15 +2429,32 @@ function draw( drawToCanvas , format = "none") {
 
                     if ( !( format.includes( "no_background" ) ) ) {
                         if ( backgroundCheck ) {
-                            drawImageFromData(backgroundImage,
-                                0,
-                                0,
-                                hiddenCanvas,
-                                visibleContext,
-                                currentDisplay.backgroundColour,
-                                currentDisplay.lightColour,
-                                currentDisplay.darkColour
-                            );
+                            if ( currentDisplay.background.name == 'backgroundCircle' && drawToCanvas != document.getElementById("mainCanvas") ){
+
+                                circleSize = Math.min(hiddenCanvas.width, hiddenCanvas.height);
+                                circlecanvas = drawCircle( circleSize );
+
+                                drawImageFromData( circlecanvas ,
+                                    0,
+                                    0,
+                                    hiddenCanvas,
+                                    visibleContext,
+                                    'blank',
+                                    'blank',
+                                    'blank'
+                                );
+
+                            } else {
+                                drawImageFromData(backgroundImage,
+                                    0,
+                                    0,
+                                    hiddenCanvas,
+                                    visibleContext,
+                                    currentDisplay.backgroundColour,
+                                    currentDisplay.lightColour,
+                                    currentDisplay.darkColour
+                                );
+                            }
                         }
                     };
 
@@ -2548,8 +2571,6 @@ function draw( drawToCanvas , format = "none") {
 
                     resolve("completed drawing");
 
-                    
-                
                 }
             }
 
@@ -2564,6 +2585,54 @@ function draw( drawToCanvas , format = "none") {
 
 
     
+}
+
+function drawCircle( diameter ) {
+
+    // diameter = 128;
+
+    const r = diameter/2;
+    const circleCanvas = document.createElement("canvas");
+    circleCanvas.width = diameter;
+    circleCanvas.height = diameter;
+    circleContext = circleCanvas.getContext("2d");
+
+    // set colour
+    circleContext.fillStyle = currentDisplay.backgroundColour ;
+
+    // centre compared to the grid:
+    
+    if ( diameter % 2) {
+        // if odd
+        modifier = 0;
+    } else {
+        // if even
+        modifier = 0.5;
+    }
+
+    // loop through each pixel in a quadrant
+    for (let x = 0; x < r+0; x++) {
+        for (let y = 0; y < r+0; y++) {
+            // if position is below certain radius from center, then draw it
+            // -0.5 as pixel
+            if ( ( x+modifier )*( x+modifier ) 
+                    + ( y+modifier )*( y+modifier )
+                    <= (r)*(r) ) {
+                // fill quadrants in clockwise fashion, starting bottom right
+                circleContext.fillRect( r+(x+0.5-modifier),                 r+(y+0.5-modifier),                 1, 1 );   // bottom right
+                circleContext.fillRect( r-(x+0.5-modifier+(2*modifier)),    r+(y+0.5-modifier),                 1, 1 );  // bottom left
+                circleContext.fillRect( r-(x+0.5-modifier+(2*modifier)),    r-(y+0.5-modifier+(2*modifier)),    1, 1 ); // top left
+                circleContext.fillRect( r+(x+0.5-modifier),                 r-(y+0.5-modifier+(2*modifier)),    1, 1 ); // top right
+            }
+        }
+    }
+
+    // circleContext.beginPath();
+    // circleContext.arc(r, r, r, 0, 2 * Math.PI);
+    // circleContext.fill();
+
+
+    return circleCanvas
 }
 
 function drawToMainCanvas() {
@@ -2584,11 +2653,9 @@ async function drawToTempCanvas( scaleFactor, shape, format ) {
     const squareCanvas = document.createElement("canvas");
     squareCanvas.width = scaleFactor*drawingPixels; 
     squareCanvas.height = scaleFactor*drawingPixels;
-    console.log(squareCanvas.height);
 
     outputContext = squareCanvas.getContext("2d");
 
-    console.log(outputContext);
 
     const message = await draw( squareCanvas , format );
 
@@ -2636,7 +2703,7 @@ async function teemillShopAPI() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${apiKey}`,
+            Authorization: `Bearer UUVJeABlhj7R6nkdMbuA1Sq2fk58s6dGgkkDo0Lz`,
         },
         body: JSON.stringify({
             image_url: base64_image,
@@ -2646,12 +2713,12 @@ async function teemillShopAPI() {
             colours: "White,Athletic Grey,Navy Blue,Black,Mustard,Red,Dark Grey,Bright Blue",
             description: "You are buying a custom design, created by yourself. Due to this, refunds are not available. If you would like to sample the size before buying, please test with a blank item from rapanuiclothing.com",
             price: 25.00,
-            cross_sell: true,
+            cross_sell: true
         }),
     };
 
     // Open a new tab, ready to receive the product URL
-    var newTab = window.open('about:blank', '_blank');
+    var newTab = window.open('loading pixel product', '_blank');
     newTab.document.write(
         "<body style='background-color:#faf9f9;width:100%;height:100%;margin:0;position:relative;'><img src='https://storage.googleapis.com/teemill-dev-image-bucket/what3words_loader.gif' style='position:absolute;top:calc(50% - 100px);left:calc(50% - 100px);'/></body>"
     );
@@ -2686,6 +2753,7 @@ window.addEventListener("load", ()=>{
     setupColourOptions("primaryColour");
     setupColourOptions("secondaryColour");
     setupColourOptions("wheelColour");
+    setupColourOptions("backgroundColour");
 
     //rerun, test removing first set
     startingValueSetter();
