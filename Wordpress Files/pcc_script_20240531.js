@@ -1,7 +1,8 @@
 
 const drawingPixels = 128
 // const mainCanvasScaleFactor = document.getElementById("mainCanvas").width / drawingPixels;
-const mainCanvasScaleFactor = 4;
+
+const mainCanvasScaleFactor = 512;
 
 const otherColourList = [ "primaryColour", "secondaryColour", "wheelColour" ];
 
@@ -185,31 +186,6 @@ const backgroundColours = [
     [ "Beige",'#dcc4aa', "backgrounds" , "White" ],
     [ "Teal",'#6dd1bb', "backgrounds" , "White" ],
 ]
-
-// Clothing
-
-const teeFront = {
-    name:"teeFront",
-    image:'https://pixelcooledclassics.com/wp-content/uploads/2024/06/Tee_front_raw.jpg',
-    width:2048,
-    height:2048,
-    // x:,
-    // y:,
-    // dx:,
-    // dy:
-}
-const teeBack = {
-    name:"teeBack",
-    image:'https://pixelcooledclassics.com/wp-content/uploads/2024/06/Tee_back_raw.jpg',
-    width:2048,
-    height:2048,
-    x:785,
-    y:640,
-    dx:482,
-    dy:482
-}
-
-const Clothes = [ teeFront,teeBack ];
 
 const logoWhtPlate = {
     name:"logoWhtPlate",
@@ -472,11 +448,8 @@ const body039 = {
     RoofRefDown:41,
     RackOptions:[rackShort],
     RoofOptions:[],
-    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAiCAIAAAD00eEqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASSSURBVGhDzZk9aBRBGIYvqdRYhQii4NnEIAZUtDBg/AELLQTRIk2KIEiKNCkCMcZKjBFMEZArQkBSpDCFNhZGC0UbsRSEIGlESCVaGbUQ9L17xy9fZvbmZv9u92GZzMzezs48++3s7KZjdfBlpdx8fHve5LYzsfLb5Lys1t6ZXNGU2vXFsYG5oR3IBGp1Obv0CenU5ncWi6W8rrvu7UQ6uHEMKZWl4c1IH9Ji1ZfUNURv3vo129WNPDSJa78m/t6FogW0Voju0rlmOItoSKH3xs7YTP+cmp+fr9VqIxvXUcSkxHqhnbN5p/lbDqhVi2Z9YiDa5BrArCW32a2QB2WJawlnpJboNHGNY8fHx2d2zZqyAiE/ePzI/IUai22YWErhWtvkbS7Rp69BXEKOXe1bFt0kP+kFu7Z0WKKBvgyBIGCRcvYIPHZi8+ahfXufDq+Ycj7Gi5yv6dEjOiXDw8P03pK5rvtIry4PsQiwdEF/3GdpGopxDctWwGJUfG0hS/sfYcNv3p8+Zapy5tufO9hMQZGh8QLmEKvrsna+/Pwo0v4zr2GZNWNjY+Ia9cz4kQkE6zxkHl9ZrE72LxxYbOyMQAJ/954FWYazS9aqHKS853J3LV8z/O/ZHB50P7v0QQ9SB7um5Vt7M1+x0GfHGdlm4nk8tmv3hpLAdIk7VP/XDxl54OcRdCyZa/+J2GyCGPe5xnR5e6a+TnB7nDjcQOSxciD2IrSZB4GyPHaadVUIvHIukB4rxpu6hmikcJ0sNPz4LxVvlLiWm5FYpQvOpVtjMTzAo11TtLUGSNZpy0WGI9foeSyP4BD0cDAW6g4M8AjXFM2PmSlNyeE5KRY4h5qCF/+IuFdX6hrkmw0kRHcL1x50KLmkCS5LB4h1qdzDXawGLVOzXd1W/602rcPleviNR7sOFO1p1+0uCLFAYsn10/LKNZtw+QlMRiHtuH3Tuzy6t7lG63en6+9ylmurLeZb3jJWX9sPusqzS8Yi5LGmgwYe/KKZ5zrK9bPlmmoA39+AtMsmWPRcNxfd0bIRvn4I0W1VMiItUXXXYpl8Xrtmcv8ZGKi/v6yvryON/BbsoZy6476JyCh0FDMDaJY/+Lt2slFnePHqoclVKp2jX25ArmymOore3l6Tiwm7UjjSjTT9cYMawHKkaIuOarVqspXKwcNPInX39PRQNP9rl4CsPpUlRode3KAm/pmE7Ys9mJQfVyf7kS4cWOzkNzDsw9bYFQ0nkJQUFeBadB59QJtoXOQCSIdibqzB/FGfr/V3RWYsfnwdRRp3ptZIULBbrGwPWjSL4c92DZ9qkZ2X6+efhOv/KxCJaEg21mSIjFl6ljc4EbachiNEDofzhJ4qMH+YNR9DW38v15x4cA5pmrgGer4T7yxmiB652z73JotroIcAIi3zBYVY/+3cWl+DZrdJJq5B4BMycgx+Ai8bWk4sGmg/0klOsISK+JED+FwDaY5+hfSiQeB/WvNAHkXpXQtiOVCO7Rq4RjIRDQpxbT3wU7p2ozicCNeCVpOJbisu2k8a0YBCEqvwuc6VNntPaTkDKpV/HOzLDudGyFgAAAAASUVORK5CYII=',
-    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAAAQCAIAAAAUF48YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVFhH7ZfRCoAgDEVn/9Vr9MnRaz+WNiFbaqbDlngIiojhPU4rtYwrtM68TfYKICVvUIpbiPAjj6EU8Qh+KREjiHwvjxE0oRRUSkotRLKXwhSDPR+k19K8ergm5SkuUjrIuXyyZ17UOspLQSL0TvFgpYjdID6hd4qB9ASDFDldxjUSnk5pbPUZKX1DQbQHPJS9UcznL2aWqcUU5jsFy2WkcschSkrhYIJ/yencp6iyIOa5AdgBsXZLrhfmXm8AAAAASUVORK5CYII=',
-    SecondaryPositionOver: 38,
-    SecondaryPositionDown: 71,
-    imageSecondary:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAADCAIAAACMK8G2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABsSURBVChTY7T3OHMwQZ2BgcF+wU0IAxPsmHrcI9sSmQ0XwWTA2UASwoWLowGgjUASbimQy7jDdheEgx/gsQnNVggXWZx4wALE7dxCyA4EkmiBBDEXzXS43ciOAAK4O9AUQEyGAMxIAMkyMAAAHDNKwbWI28UAAAAASUVORK5CYII='
+    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAiCAIAAAD00eEqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASYSURBVGhDzZk9aBRBGIbPVGqsJIIoeDYxiAEVLQwYf8BCC0G0SJNCBLG4JkXE30rUCKYIyBUhIBYWWmhjYbTwrxELC0EQSSNCKtHKqIWg7907fn6ZmZ2b3b293Ydjbnb2dnbm2W+//bkV86NPa9Xm/auDpracyfu/TC3IfPO1qZVNpV0fboxMj61EJVKry/47H1FeWPrGxXKpruv+66tQji7uQElleXh5cghlueor6hqily7+nOpfizo0ieuwJv7ehaIF9FaK7sq5ZjiLaEih9/bK1Fz6cWFmZqbZbJ5cPIVFJCW2C73M5n3muxpQqxbN9sxAtKm1gVlLbtKpUARViWsJZ5SW6DxxjW0nJiaurZ4yywqE/OjObTOHmlzsQWKphGttk6e5RJ8+BmmJ2XZ+6K7oJsVJL9m1pcMSDfRhiAQBi5LZI3LbyaXzWzasfzh+3ywXY7zMfE2PAdE5GR8fp/eOTPffQHn87hgXAW5dMB73WpqHclzDshWwmBUfW8idjbfxwW/e7N1jmgrm6+8r+JgFRReNl5BDrKHLvfPRx9tRDu97DstsaTQa4hrtrISRBIL7PFTuHZurnxue3TTXXulBAn/Nulm5DeeQrLtykPOcK9y1vM0IP2dzetD96Mg7PUkd7JqOT+1JvlKh9449ss/MeTy1a/eEksB0STvV8NsPmXnk6xEMLJvr8I7YbYYYD7lGurx8rXWf4I44c7gB77ayIdYitFkHkbICdpKGKkQeORdITxXjia4hGiVcZwuNMOFDxRMlreUkMqt0wb50b1yMD3C/a4q27gGyDdpy0cWZa3QeKyI4BD0dzIW6IwPc45qi+TIzpynZvCDFAnOoWQgSnhHX6kbdgnrSRGJ0d3AdQIeSS57gsnSAVIfK3dzF6tAyNdW/1hq/1ae1uRyPsHG/60jRgX7d4YIYCySV3DAdj1xSwuUrMJmF9OOOTa8K6F7mGr1fvdR6lrNcW32x3vGUscbaezBU7l0qFjGXNR008BAWzTrvo1w//11TDeDzG5B+2QUXA8fNRQ+0asTfP8TothoZkZaolmuxTD59OGFq/xgZaT2/LCwsoPS+Cw5QTd1pn0RkFjqKWQE0yx/8+bC73WZ48uyWqdVqfWc+n4Zc+ZhmH4ODg6aWEg6ldGQYecbjBjWAZa9oixX1et1Ua7XNWx94dQ8MDFA0/7XLAJ/sMcmyYlyHXtqgJuFMwv7FHkzKj+vnhlHObprr4zswrMOnvcoPE0hOsPs8MZUZLbqIAaBPdC5yAaRDMT9sQf5o5Wv9XpEVi+9fzqBMm6k1Oij0zItGzOq9x1/bNbyqeYctewknYXMfQt1vz75oN7aQ7UFXXKO0dJMuStfdCrp//iCba6AjRtA71TmEFWlB/ljmWr8v1+y6eQBlHtfAO9C0eG2CyJ6xeWbRQEdM0kj4gEKsfzuNa5J0mnTFNYj8MylpGhqeavFIeszv2kLnDV78+JIDhFwD0U2/Qn7RQC4MvcS6COV07c3Igf/YNLZr4BrpimjQRdf60mIROC3yiM6Px7Wg1XRFt/cc7CXVdV0ohXov16mfWu0vnAXPKhBr0ncAAAAASUVORK5CYII=',
+    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAAAQCAIAAAAUF48YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC1SURBVFhH7ZfRCoAgDEVn/9Vr9MnRaz+WtkFmauYkl3gIiojhPU4rtYwrtM68TXQFkJI3KMUu5PAjj6EU8Qh+KREjiHwvjxE0oRSulJRaiGQvzBQDnQ/Sa2lePfwl/BQXKR3kXD7ZMy9qHeWlcCL0TvFAUsRuEFXonWJweqKAFDldVmokZTqlsdVnpPQNBdEe8FB0g031F3ORqcUU5jsFy2WksschSgpzMMG/5HTuU1RdEAuAHdWbSK66D4G/AAAAAElFTkSuQmCC'
 };
 
 const body039Cd = {
@@ -565,11 +538,8 @@ const body039Tu = {
     RoofRefDown:body039.RoofRefDown,
     RackOptions:[rackShort],
     RoofOptions:[],
-    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAiCAIAAAD00eEqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATiSURBVGhDzZk7aBVBFIavVmqsJIIoGJsooqCihQHjAyy0EEQLmxQiSIo0KSIaYyW+QIuA3EIEsbDQQhsLo4WvRiwsBEEkjQhWopVRC0H/u//keDw7O3f2lb0fy2R29u48vjk7+8iimeEnrd7m3ct9Lvc/E/d+uVyQmfYrl2uannZ9YGzo2rElyERqTbPn9gekk3PfuNssveu679JSpMOftyKlsjK8OL4BabPqe9Q1RM+d/Xm5bwXy0CSuw5r4+zQUTRrU3XOuGc4iGlLoPTmYm6kfk9PT0+12+/jnE9jFosRysPDSF7u/vQG1atEsLwxEu1wC7pNyq2SwZ10KddArcS3hjNSILhPXOHd8fPzisstuX4GQH962aXp/m7sI87pjvCdca5u8zCX69BzkJebcmQ13RDeodWFp2LXRYUQDPQ2RIGCRcvWIPHdi7sz61asejNzjbk3Gm1yv6TEguiQjIyP03pVrfVeQHrlzjLtYyrFhKat2NW/GNSybgJXXFnJ7zS1s+M3rXTtdUc18/X0em9tJ0MbjvY9+OimbK5qngTVEP3gBXrDg0KMtSDfvfgbLLBkbGxPXKGcmjCwgeM5D5u7hmwOnN99YezM56EECf/nKG3wyAeyS2SVSSPShj++Putw8pt3aXcvXjPB7NjsN3Q8PvtXj0cGu6frWbnxVgjYLWDnmkrsa7+zmdm2iEpgeaPIONfz1Q7xHfh5Bx6p1DfRgTSAHrh4Sco3l8tzFznNCuseFww14z5UTcRShzTyIlBWYhqyuCpEzpzHhFfnEkukaopHCdeWhAcJTxZHktZxFAZVZoC1dG3YZFqVcU7R5BijWaeOiwpFrdKAVDg5UwvszyOqnHg5+k0u3xzVF82NmSVNyek2KBWgqdh2wY2ZNACKd8Gc4N2sgrCFsvIvrAOn+acqsPEYHyDVV6dPT6ArTmuRR2hgXTH/YIgpRVUC333Wk6EC96G5ad4wFkktumKyZk1jJGkWW8XTfpAnqRsZb53+uUfuFqc67nHGdrgsERBP2tUyAlwRdZevS5+9fRt+cei4lXYcAOIrAOq7lMJ+1gv97R2elePDALRHnSBWCNINaYnoZ85v6EL8ElrG5nYTI7vFn8hiapUVSbJxguSyETlyb0vS75tBQ5/1ldnYWqfdbcABU3mBoA0gXyxLUeePARDeQyAOcVw7zz/sdSZnj8dPrLoe4Hv10EnJlc8U+BgcHXS4nEmIm1haAdIt19AGWvaINiwYGBly21Vq38b5Xd39/P0Xzv3YF4Ju9nv+6YVscDvqflHU+MCEttriZ0NZxDXRzACZlmPxggjf4xXyLxzFsySE/XEBKwubriCwN6veK5gJSB2hOQpugaSjmxhKsH517I3ojtw5KN1vy4+JBDcRvrbrFMvBeoOWReyB3Bd10Fh3Xcrvj5Jgpqgrpiuju2rlIWJWpn0hQl0dWHu/qYTBhCrB+uOdrfjLX38s126/uRZr3CcTA9U7Xr3sZObvegQFTrQS1WUBwqNhiTfQQsnrCFxRi/ttp32WQpoddiWuA+mOcZg0jjVHMjHmOJrwrgvKuDbo5KuJHDhByDUQ3/QrlRYPI/7TWQR2uxXKkHOsapI1UIho04losk5Ku01Ecj8e1oNVUott7DS4kZUQDCimsIuS6VhbYe0nLFdBq/QVNjQumFTtD0AAAAABJRU5ErkJggg==',
-    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAAAQCAIAAAAUF48YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVFhH7ZfRCoAgDEVn/9Vr9MnRaz+WNiFbaqbDlngIiojhPU4rtYwrtM68TfYKICVvUIpbiPAjj6EU8Qh+KREjiHwvjxE0oRRUSkotRLKXwhSDPR+k19K8ergm5SkuUjrIuXyyZ17UOspLQSL0TvFgpYjdID6hd4qB9ASDFDldxjUSnk5pbPUZKX1DQbQHPJS9UcznL2aWqcUU5jsFy2WkcschSkrhYIJ/yencp6iyIOa5AdgBsXZLrhfmXm8AAAAASUVORK5CYII=',
-    SecondaryPositionOver: 38,
-    SecondaryPositionDown: 71,
-    imageSecondary:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAADCAIAAACMK8G2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB7SURBVChTY7T3OHMwQZ0BDOwX3ASScC4c7Jh63CPbEpkNF8FkwNlAEsIFsiEmA0Hl13cQBlbAApSuhGmDADQuLgCxDNlWCEDjAgGmCC7AuMN2Vzu3EJCFHCRwrwABUBxoHJpfISJANjIDYg4QAH2IzIYoAAK4CdgBAwMAPyxLp34FBmUAAAAASUVORK5CYII='
+    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAiCAIAAAD00eEqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATeSURBVGhDzZk7aBVBFIavVmqsJIIoGJsooqCihQHjAyy0EEQLmxQiSIo0KRSflfgCLQJyCxHEwkILbSyMFr4asbAQBJE0IliJVkYtBP3v/uPxeHZ27uwrux/LZHbu7uzMN2dnZzfzpkcfd9rN2xe7XO5/jt396XJBprsvXa5pWu16z8TI1UMLkInUmmbHrfdIT81+5W6ztNf1wMWFSEc/bURKZWV4fngN0mbVt9Q1RM+e/nFpYAny0CSuw5p4fBqKJg3qbp1rhrOIhhR6T37MzZnvp6amprrd7uFPR7CLSYnlYO6lz3d/2wG1atEsLwxEu1wCnpPyqGSwZ90KddCWuJZwRmpEl4lrnDs5OXlh0SW3r0DIj25aN7W7y12Eed0x3grX2iZvc4k+PQZ5iTl3es1t0Q1qnVgadm10GNFAD0MkCFiknD0izz02e3L18mX3x+5ytybjTc7X9BgQXZKxsTF678vVgctID9w+xF1M5dgwlVU7mzfjGpZNwMprC7m14iY2HPNq21ZXVDNffp3D5nYStPF47+Mfj8rmiv7SwByiF16ANyzY93AD0vXbn8IySyYmJsQ1ypkJIxMI1nnI3Nl/Y+jE+usrbyQ/epDAX7z0OlcmgE0yu0QKif7pw7uDLvcXc93aXcvXjPB7NhsN3Q/2vtH90cGu6fvWbnxVgjYLWDnGkrsa7+jmdm2iEpgWaPJ2Nfz1Q7xHfh5Bw6p1DXRnTSAH7h4Sco3p8uyF3joh3eLC4Qa858qJ+BWhzTyIlBUYhqymCpEjpzHhFbliyXQN0UjhuvLQAOGhYk/yWs6igMoscC1dG3YZFqVcU7RZAxRrtHFRYc81OtAKBwcq4fMZZLVTdwfH5NLtcU3R/JhZ0pScXpNiAZqK3QdsmJkTgEgnPAznZnWENYSN93EdIN0+TZmZx+gAuYYqfXoaXWFakyyljXHBtIdXRCGqCuj2u44UHagXzU3rjrFAcskNkzVyEitZvcgynm6bXIK6kfHW+Z9r1H7+TO9dzrhO1wUCognbWibAS4Km8urS5m+fx18ffyYlfbsA2IvAPK7lMJ81g/97R2elWHjgkYhzpApBLoNaYloZc0x9iF8Cy9jcTkJk83iYLEOztEiKjQMst4XQi2tTmn7XHBnpvb/MzMwg9X4LDoDKGwxtAOliWYI6bxyY6AYSeYDjym7+frclKXM8enLN5RDX4x+PQq5srtjH8PCwy+VEQszE2hyQvmIdbYBlr2jDvKGhIZftdFatvefVPTg4SNH8r10B+Gavx79ueC12B+1PynofmJAWm9xMaOu4BvpyACalm/xggjf4+XyLx2/Ykp/8cAIpCS9fR2RpUL9XNCeQOsDlJLQJLg3F3FiC+aP3bERr5NFB6WZLDi4e1ED81qpbLAPvDVoeeQZyV9CXzqLnWh53HBwzRFUhTRHdMe2LwVSlGy9BXR6Zebyzh8GEKcD84dbX/GSuv5drNl/ZiTTvCsRQyYIka2x0zThGgtpMIPip2GRNOGVLrCRlFr6gEPPfTvsugzRtpBLXIP3t20tWNzRmsdwXPhVBedcGPVnx4cePHCDkGohu+hXKiwaR/2mtFrFMSrr2Pgb6/peAWNcgbaQS0aBC14FFReC2KCO6PB7XglZTiW7vPTiXtNd1rdTqvVmnfjqdP609Al4CAQKnAAAAAElFTkSuQmCC',
+    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAAAQCAIAAAAUF48YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC1SURBVFhH7ZfRCoAgDEVn/9Vr9MnRaz+WtkFmauYkl3gIiojhPU4rtYwrtM68TXQFkJI3KMUu5PAjj6EU8Qh+KREjiHwvjxE0oRSulJRaiGQvzBQDnQ/Sa2lePfwl/BQXKR3kXD7ZMy9qHeWlcCL0TvFAUsRuEFXonWJweqKAFDldVmokZTqlsdVnpPQNBdEe8FB0g031F3ORqcUU5jsFy2WksschSgpzMMG/5HTuU1RdEAuAHdWbSK66D4G/AAAAAElFTkSuQmCC'
 };
 
 const body039TuCd = {
@@ -2670,66 +2640,9 @@ function drawCircle( diameter ) {
 function drawToMainCanvas() {
 
     draw( document.getElementById("mainCanvas") );
-    drawClothing("teeBack");
-}
-
-async function drawClothing( clothingName ) {
-
-    var imagesToLoad = [];
-    imageCount = 0;
-    clothingElement = Clothes.find(x => x.name === clothingName);
-
-    const clothingCanvas = document.createElement("canvas");
-    clothingContext = clothingCanvas.getContext("2d");
-    scale = 0.25;
-    clothingContext.scale(scale,scale);
-    clothingCanvas.width = clothingElement.width*scale; 
-    clothingCanvas.height = clothingElement.height*scale;
-
-    const clothingImage = new Image();
-    const pixelImage = new Image();
-
-    clothingImage.src = clothingElement.image;
-    imagesToLoad.push(clothingImage);
-
-    pixelImageCanvas = await drawToTempCanvas(1,"square");
-    pixelImage.src = pixelImageCanvas.toDataURL() ;
-    imagesToLoad.push(pixelImage);
-
-    imagesToLoad.forEach(image =>{
-        image.onload = ()=>{ 
-            imageCount +=1;
-            if(imageCount == imagesToLoad.length){
-
-                clothingContext.clearRect(0,0,clothingCanvas.width,clothingCanvas.height);
-                clothingContext.imageSmoothingEnabled = false;
-
-                clothingContext.drawImage(clothingImage, 0, 0);
-                clothingContext.drawImage(pixelImage,clothingElement.x,clothingElement.y,clothingElement.dx,clothingElement.dy);
-
-                clothingBase64 = clothingCanvas.toDataURL();
-                console.log(clothingBase64);
-                document.getElementById(clothingElement.name + "Image").src=clothingBase64; 
-
-
-            };
-        };
-    });
-
-       
+    // draw( document.getElementById("outputCanvas") );
 
 }
-
-// async function drawToMainCanvas() {
-
-//     // draw( document.getElementById("mainCanvas") );
-
-//     const canvasToPage = await drawToTempCanvas(4, "square" );
-//     const base64_image = canvasToPage.toDataURL();
-
-//     document.getElementById("mainImage").src=base64_image;
-
-// }
 
 async function drawToTempCanvas( scaleFactor, shape, format ) {
 

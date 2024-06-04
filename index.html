@@ -29,7 +29,10 @@
             <div class="wholeWrapper">
 
                 <div class="canvasWrapper">
+
                     <canvas id="mainCanvas" width="512" height="512"></canvas>
+                    <!-- <img id="mainImage" width="512" height="512"> -->
+
                     <!-- <canvas hidden id="outputCanvas" width="512" height="512"></canvas>  -->
                     <!-- <canvas hidden id="hiddenButtonCanvas" width="512" height="512"></canvas>         -->
                     <script src="js/script.js"></script>
@@ -328,11 +331,11 @@
                         <div id="shop" class="tabContent">
                             <h3>shop</h3>
 
-                            <button onclick="teemillShopAPI()" 
+                            <!-- <button onclick="teemillShopAPI()" 
                                 id=rackDropdownButton 
                                 class="dropdownButton"
                                 >tshirt
-                            </button>
+                            </button> -->
 
                             <h3>download</h3>
                             <!-- <button onclick="openCanvasURL(4)" class="editorButton">export</button>
@@ -392,8 +395,15 @@
                                 <a onclick="exportImage(this)" id=32|chest|no_background class="dropdownButton">x32-chest</a>
 
                             </div>
-                            
 
+                            <h3>clothing</h3>
+
+                            <img id="teeFrontImage" src="https://pixelcooledclassics.com/wp-content/uploads/2024/06/Tee_front_raw.jpg" width="128" height="128">
+                            <!-- <img id="teeFrontOverlay" src="https://pixelcooledclassics.com/wp-content/uploads/2024/06/Tee_front_raw.jpg" width="128" height="128"> -->
+                            <div class="teeBackParent">
+                                <img id="teeBackImage" class="teeBackImageClass" src="https://pixelcooledclassics.com/wp-content/uploads/2024/06/Tee_back_raw.jpg" width="128" height="128">
+                                <img id="teeBackOverlay" class="teeBackOverlayClass" src="https://pixelcooledclassics.com/wp-content/uploads/2024/04/cropped-Sample_still.png" width="64" height="64">
+                            </div>
 
                         </div>
                         
