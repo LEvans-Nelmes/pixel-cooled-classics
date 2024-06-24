@@ -259,7 +259,27 @@ const logoGldTwo = {
     height:17
 }
 
-const logos = [logoWhtPlate,logoBlkPlate,logoBlk,logoWht, logoGld , logoGldTwo]
+const logoBlkOnkelGunnar = {
+    name:"logoBlkOnkelGunnar",
+    // image:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAJCAYAAAB5ad+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACESURBVEhL3ZKBCoAgDES1///n4sCDQ66VpQt6EJvzzjmpDLC3eMVd3VK2Fn9HbZGv3K9BVAPOq/uk96uOea8BrgZYP9VpgfmsGnnijWqK1c34FXEgPn3NDNjXUUcHc0Mg/2KosC8Gw6a7sIOHQQvUG+F0d72ON95lpFwGk2egwyT0LOUAeds18fUB7YMAAAAASUVORK5CYII=',
+    // image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAJCAYAAAB5ad+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVEhL3ZLbCoAwDEM3//+fleAiYUS7Ipvgeammqb1gSbC3GDHqm8rW4u/gYriyXprvd9d33gj66NUa1dQDnAZCX5/UCHrN5YDLk8iX1RTry/6KKK7n4wU0p8+GfR01uxiG7z8G7YulHvtiMQ5LcwT9QGufcL7RWseb2mksGQabr0CXWdCzlAMCpUHa+MEktQAAAABJRU5ErkJggg==',
+    image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAZCAYAAABNcRIKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFeSURBVGhD7ZeBboMwDETZ/v+fN93KVeZkBzfxKJv8pDThfA6JCVW7BXzt/SvM5ERk58r4KtaVmuNz75WPvW8epOqBYqLqbIRjfSLq0biH+rw8TyOv+kEU93RqVlfNixFe/2gasD0YacCLE9XO8lTL+i2qjTyZfBD5D9fRa27BEUeSHnVoI72K6D4z6Nq4tzMt4uDNFBNGJlmgoSmRPkvVfNyHzkXN7s/TIg5efLARjq0G1OPlKJ5PvZ6HjPyqExuzHuo2Zq9BpBEb4/gZfw6aNTKvedM0in4F9VfSIixgF7KILmQRfTKL0AJ2QZtasifqT5+8/tFeCP6gr8LTxLns6RppwMv11qT51sexeoCnAepnvkuxi+C4SiMzuSPNkvWlePdrjoWjXX0aeF+P6bVcWUyvcBi/o5C/ct/VYmJBXpE8uAF4gc0d4fmyuR4ruf+KWxcAT+nu2ALeeL3b9g3vP72LcaH1OgAAAABJRU5ErkJggg==',
+    positionOver:22.5,  //37,
+    width: 83, //54,
+    height: 25 //9
+}
+
+const logoWhtOnkelGunnar = {
+    name:"logoWhtOnkelGunnar",
+    // image:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAJCAYAAAB5ad+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVEhL3ZJBDsMgDARJ/v/n1mN5pa2SICoKh84hmPWa2Ig2yiuosMuobzVnrX/HwUe3fAS+h54G0t3neSEfkHefYtY0BJ5LIZAG0h99Lij+lSZcUzyjOdI8Rzz9FDkEdHO7qN9eBgV6+WqwOutjCGKo7RbUA5R04SSZ3QY9I5AHvNpnYZCGB+58o7V3zNQuY1czW56QD8NtV7iQ1t6Z+9ej2fKFnQAAAABJRU5ErkJggg==',
+    // image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAJCAYAAAB5ad+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAClSURBVEhL3ZJLDsQgDEOZ3v/OndiyR2kLCFTBYt4Gx3HKRy2jnIFkl9Hcag6tfwcvhlcGdAKVRNaF7DMUqGyiGHHNRpA9w0agksgistq5nwise55XUNPZM9mzfuNl7OUe9NSviIFPoJLAA3d/Ndr2cVGAs0xdDAP3j8EDKreAM2jb5r4HmgiCXtA4nzVgs0EtNzpb483sMnYdZssvlC+D15ZcSClf8qgHU0yXiasAAAAASUVORK5CYII=',
+    image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAZCAYAAABNcRIKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGkSURBVGhD7ZjbUsMwDERD//+fwSt2M/I1JvaEwug81NJqrbrC6QBHi88Ew2nu7Okx22vGN9trxGyPF9eMjwTDIDE7jxemLqidPwmvAZ8jBky70DbcR6nZi6VpP2C5qlNu9gKUKk0rMDHBNPfaC1E8qwHFXhOl5nPFI00rGGmeUht5RjWPtLJW5s3H3IMrjk3lVYcGejrTZdiuep87sNV5NvSkNNR6lN7LYcKoTZQMaIDpCeXlDy7Ybssg2SrrRSn7fJSqz9yC1m8vXgTrpvlV+BwxYFp5hZkSTKscUGr2skKCqUHJoJTBktW0AhNJKwdMDUrNHj4GZ9GCYJnLxzwIgpLyKyi+khbRAGOQm4hBbkKDjIEuUg4wBhrsZfZG/fWbF7+0b2TLPxCw4o99n4ORBqR7n68L+QDq3qcYqxkSvmZCQhqQfuV7FH8Ixbs04TXFK5pHmq/5+Kf86mOOg4OnbwPftjm0lbM8NkyePxscYsD0EXQGQGkbS8PEgWxCiavDoQ7gVW4bE2bo0PLN7m2xsvdf8e4DePQRu4MfIG4VwzfkOL4A3ZD2CybHEuoAAAAASUVORK5CYII=',
+    positionOver:22.5,  //37,
+    width: 83, //54,
+    height: 25 //9
+}
+
+const logos = [logoWhtPlate,logoBlkPlate,logoBlk,logoWht, logoGld , logoGldTwo, logoBlkOnkelGunnar, logoWhtOnkelGunnar]
 
 // const logo = {
 //     imageLogo:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPkAAAAbCAYAAAC+wykZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVHhe7djRasMwDIXhrO//zlsN6dCNWp3KjtvD/8EolMiWOoREfo6e3/Nz6J412yfnNsuuGq+81+n/uKWW2/kJwBRNDpjrNvlYOR5/AJ7b0i9McsAcTQ6YG2tDfOOXydaL7G2h+hax8nyWp5qbqnNvpP4OUafGFflElXMyldw+uUY1dkUtL3NgkgPmaHLA3FgB1BWis37Mio0652fU2NV5qrG78qlQY1fcdWX+0ax8pOeZ5IA5mhwwN0Z9ZfRvWTPu4vOZTs7R6roq+cyKjd9n1LuiyjMZNVbNJ6PGqrlFlbviM5UaMy9zYJID5mhywNwY6ZVVobNmrIituDK2U8uK2MqZmU4+FWpsp8Yr84zUnDt3Zf7PZJID5mhywNxYDeKqkMlWiFnrR+X5LE81N1Xn3kj9HaJOjSvyiSrnZCq5dWqMsjMzs+6KOrW8nT+THDBHkwPmxkivrBAAvhSTHDBHkwPmaHLAHE0OmKPJAWvH8QfOXXo0hDC9DQAAAABJRU5ErkJggg==',
@@ -1271,7 +1291,29 @@ function addToURL() {
     //const url = new URL(window.location.href);
     //url.searchParams.set('param1', 'val1');
     //url.searchParams.delete('param2');
-    window.history.replaceState(null, null, encodeCurrentToURL())
+    window.history.replaceState(null, null, encodeCurrentToURL());
+
+    personaliseLink("https://pixelcooledclassics.com/product/personalised-t-shirt/");
+
+}
+
+function personaliseLink(rawLinkLookup) {
+    urlAddition = encodeCurrentToURL();
+    console.log(urlAddition);
+
+    links = document.querySelectorAll("a[href^='"+rawLinkLookup+"']");
+    console.log(links);
+    console.log(links);
+    for (link of links) {
+
+        preQuestion = (link.href+"?").split("?")[0];
+        console.log(preQuestion);
+        outputlink = preQuestion+urlAddition;
+
+        link.href = outputlink;
+    }
+
+
 
 }
 
@@ -1407,7 +1449,9 @@ function openTab(evt, tabName) {
     }
   
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "block";
+    if ( !!(document.getElementById(tabName)) ) {
+        document.getElementById(tabName).style.display = "block";
+    };
     evt.currentTarget.className += " active";
   }
 
@@ -2431,7 +2475,9 @@ function draw( drawToCanvas , format = "none") {
 
 
         if (currentDisplay.wheels.customColour == 1) {
-            showByElementID("wheelColourOptionDropdownButton");
+            if ( !!(document.getElementById("editorButtons")) ) {
+                showByElementID("wheelColourOptionDropdownButton");
+            }
 
             // if (currentDisplay.wheelColourMatch == 0) {
             //     showByElementID("wheelColourControl");
@@ -2445,7 +2491,9 @@ function draw( drawToCanvas , format = "none") {
 
         } else {
             wheelColourInput = 'blank'
-            hideByElementID("wheelColourOptionDropdownButton");
+            if ( !!(document.getElementById("editorButtons")) ) {
+                hideByElementID("wheelColourOptionDropdownButton");
+            }
         }
 
 
@@ -2601,6 +2649,10 @@ function draw( drawToCanvas , format = "none") {
                         );
                     }
 
+                    // uncomment to draw the URL when doing the canvas
+                    // canvas_image = drawToCanvas.toDataURL();
+                    // document.getElementById("personalised_product_image").src=canvas_image; 
+
                     resolve("completed drawing");
 
                 }
@@ -2670,7 +2722,7 @@ function drawCircle( diameter ) {
 function drawToMainCanvas() {
 
     draw( document.getElementById("mainCanvas") );
-    drawClothing("teeBack");
+    // drawClothing("teeBack");
 }
 
 async function drawClothing( clothingName ) {
@@ -2825,31 +2877,84 @@ async function teemillShopAPI() {
 // Run on open
 //-----------------------------------------------
 
-window.addEventListener("load", ()=>{
+function product_onload() {
     openTab(event, 'body')
     pickoutFromURL();
-    startingValueSetter();
-    checkForSecondaryColourOption();
-    // setupRackOptions ();
-    setupBodyOptions();
-    setupWheelOptions ();
-    setupTyreOptions ();
-    setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, colourReturn(currentDisplay.primaryColour) );
-    setupGeneralOptions ( backgrounds , "backgroundDropdownList" , 0.3, "backgroundChange" , "", true, colourReturn(currentDisplay.backgroundColour) );
-    setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, colourReturn(currentDisplay.secondaryColour));
-    setupGeneralOptions ( currentDisplay.body.RackOptions , "rackDropdownList" ,  3, "rackChange" , "rack", true, 'blank');
-    setupGeneralOptions ( rackItems , "rackItemDropdownList" ,  2, "rackItemChange" , "rackItem", true, 'blank');
-    setupColourOptions("primaryColour");
-    setupColourOptions("secondaryColour");
-    setupColourOptions("wheelColour");
-    setupColourOptions("backgroundColour");
+    drawToMainCanvas();
+    console.log("running opener");
 
-    //rerun, test removing first set
-    startingValueSetter();
+    canvas_image = drawToTempCanvas(32, "square" )
+
+    // canvas_image = document.getElementById("mainCanvas").toDataURL();
+    // console.log(canvas_image);
+    // document.getElementById("personalised_product_image").src=canvas_image; 
+
+
+}
+
+function designer_onload() {
+    openTab(event, 'body')
+    pickoutFromURL();
+    
+    if ( !!(document.getElementById("editorButtons")) ) {
+        startingValueSetter();
+
+        checkForSecondaryColourOption();
+        // setupRackOptions ();
+        setupBodyOptions();
+        setupWheelOptions ();
+        setupTyreOptions ();
+        setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, colourReturn(currentDisplay.primaryColour) );
+        setupGeneralOptions ( backgrounds , "backgroundDropdownList" , 0.3, "backgroundChange" , "", true, colourReturn(currentDisplay.backgroundColour) );
+        setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, colourReturn(currentDisplay.secondaryColour));
+        setupGeneralOptions ( currentDisplay.body.RackOptions , "rackDropdownList" ,  3, "rackChange" , "rack", true, 'blank');
+        setupGeneralOptions ( rackItems , "rackItemDropdownList" ,  2, "rackItemChange" , "rackItem", true, 'blank');
+        setupColourOptions("primaryColour");
+        setupColourOptions("secondaryColour");
+        setupColourOptions("wheelColour");
+        setupColourOptions("backgroundColour");
+
+        //rerun, test removing first set
+
+        startingValueSetter();
+    };
 
     // checkCheckbox();
     drawToMainCanvas();
     console.log("running opener");
+}
+
+window.addEventListener("load", ()=>{
+    // designer_onload()
+//     openTab(event, 'body')
+//     pickoutFromURL();
+    
+//     if ( !!(document.getElementById("editorButtons")) ) {
+//         startingValueSetter();
+
+//         checkForSecondaryColourOption();
+//         // setupRackOptions ();
+//         setupBodyOptions();
+//         setupWheelOptions ();
+//         setupTyreOptions ();
+//         setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, colourReturn(currentDisplay.primaryColour) );
+//         setupGeneralOptions ( backgrounds , "backgroundDropdownList" , 0.3, "backgroundChange" , "", true, colourReturn(currentDisplay.backgroundColour) );
+//         setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, colourReturn(currentDisplay.secondaryColour));
+//         setupGeneralOptions ( currentDisplay.body.RackOptions , "rackDropdownList" ,  3, "rackChange" , "rack", true, 'blank');
+//         setupGeneralOptions ( rackItems , "rackItemDropdownList" ,  2, "rackItemChange" , "rackItem", true, 'blank');
+//         setupColourOptions("primaryColour");
+//         setupColourOptions("secondaryColour");
+//         setupColourOptions("wheelColour");
+//         setupColourOptions("backgroundColour");
+
+//         //rerun, test removing first set
+
+//         startingValueSetter();
+//     };
+
+//     // checkCheckbox();
+//     drawToMainCanvas();
+//     console.log("running opener");
     
 
 });

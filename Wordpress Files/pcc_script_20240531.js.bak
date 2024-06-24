@@ -1293,7 +1293,7 @@ function addToURL() {
     //url.searchParams.delete('param2');
     window.history.replaceState(null, null, encodeCurrentToURL());
 
-    personaliseLink("https://pixelcooledclassics.com/product/personalised-t-shirt/");
+    personaliseLink("https://pixelcooledclassics.com/product/personalised-t-shirt/?");
 
 }
 
@@ -1306,7 +1306,7 @@ function personaliseLink(rawLinkLookup) {
     console.log(links);
     for (link of links) {
 
-        preQuestion = (link.href+"?").split("?")[0];
+        preQuestion = link.href.split("?")[0];
         console.log(preQuestion);
         outputlink = preQuestion+urlAddition;
 
