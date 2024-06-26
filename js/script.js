@@ -1,6 +1,216 @@
 
 const drawingPixels = 128
-const mainCanvasScaleFactor = document.getElementById("mainCanvas").width / drawingPixels;
+// const mainCanvasScaleFactor = document.getElementById("mainCanvas").width / drawingPixels;
+// test
+const mainCanvasScaleFactor = 4;
+
+const otherColourList = [ "primaryColour", "secondaryColour", "wheelColour" ];
+
+const colourGroups = [
+    "Pinks", 
+    "Purples",
+    "Reds",
+    "Oranges",
+    "Yellows",
+    "Greens",
+    "Cyans",
+    "BLues",
+    "Browns",
+    "Whites",
+    "Greys"
+]
+
+const allColours = [
+    [ "Pink" , "#FFC0CB" , "Pinks" , "White" ] ,
+    [ "LightPink" , "#FFB6C1" , "Pinks" , "White" ] ,
+    [ "HotPink" , "#FF69B4" , "Pinks" , "White" ] ,
+    [ "DeepPink" , "#FF1493" , "Pinks" , "White" ] ,
+    [ "PaleVioletRed" , "#DB7093" , "Pinks" , "White" ] ,
+    [ "MediumVioletRed" , "#C71585" , "Pinks" , "White" ] ,
+
+    [ "Lavender" , "#E6E6FA" , "Purples" , "White" ] ,
+    [ "Thistle" , "#D8BFD8" , "Purples" , "White" ] ,
+    [ "Plum" , "#DDA0DD" , "Purples" , "White" ] ,
+    [ "Orchid" , "#DA70D6" , "Purples" , "White" ] ,
+    [ "Violet" , "#EE82EE" , "Purples" , "White" ] ,
+    [ "Fuchsia" , "#FF00FF" , "Purples" , "White" ] ,
+    [ "Magenta" , "#FF00FF" , "Purples" , "White" ] ,
+    [ "MediumOrchid" , "#BA55D3" , "Purples" , "White" ] ,
+    [ "DarkOrchid" , "#9932CC" , "Purples" , "White" ] ,
+    [ "DarkViolet" , "#9400D3" , "Purples" , "White" ] ,
+    [ "BlueViolet" , "#8A2BE2" , "Purples" , "White" ] ,
+    [ "DarkMagenta" , "#8B008B" , "Purples" , "White" ] ,
+    [ "Purple" , "#800080" , "Purples" , "White" ] ,
+    [ "MediumPurple" , "#9370DB" , "Purples" , "White" ] ,
+    [ "MediumSlateBlue" , "#7B68EE" , "Purples" , "White" ] ,
+    [ "SlateBlue" , "#6A5ACD" , "Purples" , "White" ] ,
+    [ "DarkSlateBlue" , "#483D8B" , "Purples" , "White" ] ,
+    [ "RebeccaPurple" , "#663399" , "Purples" , "White" ] ,
+    [ "Indigo" , "#4B0082" , "Purples" , "White" ] ,
+
+    [ "LightSalmon" , "#FFA07A" , "Reds" , "White" ] ,
+    [ "Salmon" , "#FA8072" , "Reds" , "White" ] ,
+    [ "DarkSalmon" , "#E9967A" , "Reds" , "White" ] ,
+    [ "LightCoral" , "#F08080" , "Reds" , "White" ] ,
+    [ "IndianRed" , "#CD5C5C" , "Reds" , "White" ] ,
+    [ "Crimson" , "#DC143C" , "Reds" , "White" ] ,
+    [ "Red" , "#FF0000" , "Reds" , "White" ] ,
+    [ "FireBrick" , "#B22222" , "Reds" , "White" ] ,
+    [ "DarkRed" , "#8B0000" , "Reds" , "White" ] ,
+
+    [ "Orange" , "#FFA500" , "Oranges" , "White" ] ,
+    [ "DarkOrange" , "#FF8C00" , "Oranges" , "White" ] ,
+    [ "Coral" , "#FF7F50" , "Oranges" , "White" ] ,
+    [ "Tomato" , "#FF6347" , "Oranges" , "White" ] ,
+    [ "OrangeRed" , "#FF4500" , "Oranges" , "White" ] ,
+
+    [ "Gold" , "#FFD700" , "Yellows" , "White" ] ,
+    [ "Yellow" , "#FFFF00" , "Yellows" , "White" ] ,
+    [ "LightYellow" , "#FFFFE0" , "Yellows" , "White" ] ,
+    [ "LemonChiffon" , "#FFFACD" , "Yellows" , "White" ] ,
+    [ "LightGoldenRodYellow" , "#FAFAD2" , "Yellows" , "White" ] ,
+    [ "PapayaWhip" , "#FFEFD5" , "Yellows" , "White" ] ,
+    [ "Moccasin" , "#FFE4B5" , "Yellows" , "White" ] ,
+    [ "PeachPuff" , "#FFDAB9" , "Yellows" , "White" ] ,
+    [ "PaleGoldenRod" , "#EEE8AA" , "Yellows" , "White" ] ,
+    [ "Khaki" , "#F0E68C" , "Yellows" , "White" ] ,
+    [ "DarkKhaki" , "#BDB76B" , "Yellows" , "White" ] ,
+
+    [ "GreenYellow" , "#ADFF2F" , "Greens" , "White" ] ,
+    [ "Chartreuse" , "#7FFF00" , "Greens" , "White" ] ,
+    [ "LawnGreen" , "#7CFC00" , "Greens" , "White" ] ,
+    [ "Lime" , "#00FF00" , "Greens" , "White" ] ,
+    [ "LimeGreen" , "#32CD32" , "Greens" , "White" ] ,
+    [ "PaleGreen" , "#98FB98" , "Greens" , "White" ] ,
+    [ "LightGreen" , "#90EE90" , "Greens" , "White" ] ,
+    [ "MediumSpringGreen" , "#00FA9A" , "Greens" , "White" ] ,
+    [ "SpringGreen" , "#00FF7F" , "Greens" , "White" ] ,
+    [ "MediumSeaGreen" , "#3CB371" , "Greens" , "White" ] ,
+    [ "SeaGreen" , "#2E8B57" , "Greens" , "White" ] ,
+    [ "ForestGreen" , "#228B22" , "Greens" , "White" ] ,
+    [ "Green" , "#008000" , "Greens" , "White" ] ,
+    [ "DarkGreen" , "#006400" , "Greens" , "White" ] ,
+    [ "YellowGreen" , "#9ACD32" , "Greens" , "White" ] ,
+    [ "OliveDrab" , "#6B8E23" , "Greens" , "White" ] ,
+    [ "DarkOliveGreen" , "#556B2F" , "Greens" , "White" ] ,
+    [ "MediumAquaMarine" , "#66CDAA" , "Greens" , "White" ] ,
+    [ "DarkSeaGreen" , "#8FBC8F" , "Greens" , "White" ] ,
+    [ "LightSeaGreen" , "#20B2AA" , "Greens" , "White" ] ,
+    [ "DarkCyan" , "#008B8B" , "Greens" , "White" ] ,
+    [ "Teal" , "#008080" , "Greens" , "White" ] ,
+
+    [ "Aqua" , "#00FFFF" , "Cyans" , "White" ] ,
+    [ "Cyan" , "#00FFFF" , "Cyans" , "White" ] ,
+    [ "LightCyan" , "#E0FFFF" , "Cyans" , "White" ] ,
+    [ "PaleTurquoise" , "#AFEEEE" , "Cyans" , "White" ] ,
+    [ "Aquamarine" , "#7FFFD4" , "Cyans" , "White" ] ,
+    [ "Turquoise" , "#40E0D0" , "Cyans" , "White" ] ,
+    [ "MediumTurquoise" , "#48D1CC" , "Cyans" , "White" ] ,
+    [ "DarkTurquoise" , "#00CED1" , "Cyans" , "White" ] ,
+
+    [ "CadetBlue" , "#5F9EA0" , "Blues" , "White" ] ,
+    [ "SteelBlue" , "#4682B4" , "Blues" , "White" ] ,
+    [ "LightSteelBlue" , "#B0C4DE" , "Blues" , "White" ] ,
+    [ "LightBlue" , "#ADD8E6" , "Blues" , "White" ] ,
+    [ "PowderBlue" , "#B0E0E6" , "Blues" , "White" ] ,
+    [ "LightSkyBlue" , "#87CEFA" , "Blues" , "White" ] ,
+    [ "SkyBlue" , "#87CEEB" , "Blues" , "White" ] ,
+    [ "CornflowerBlue" , "#6495ED" , "Blues" , "White" ] ,
+    [ "DeepSkyBlue" , "#00BFFF" , "Blues" , "White" ] ,
+    [ "DodgerBlue" , "#1E90FF" , "Blues" , "White" ] ,
+    [ "RoyalBlue" , "#4169E1" , "Blues" , "White" ] ,
+    [ "Blue" , "#0000FF" , "Blues" , "White" ] ,
+    [ "MediumBlue" , "#0000CD" , "Blues" , "White" ] ,
+    [ "DarkBlue" , "#00008B" , "Blues" , "White" ] ,
+    [ "Navy" , "#000080" , "Blues" , "White" ] ,
+    [ "MidnightBlue" , "#191970" , "Blues" , "White" ] ,
+
+    [ "Cornsilk" , "#FFF8DC" , "Browns" , "White" ] ,
+    [ "BlanchedAlmond" , "#FFEBCD" , "Browns" , "White" ] ,
+    [ "Bisque" , "#FFE4C4" , "Browns" , "White" ] ,
+    [ "NavajoWhite" , "#FFDEAD" , "Browns" , "White" ] ,
+    [ "Wheat" , "#F5DEB3" , "Browns" , "White" ] ,
+    [ "BurlyWood" , "#DEB887" , "Browns" , "White" ] ,
+    [ "Tan" , "#D2B48C" , "Browns" , "White" ] ,
+    [ "RosyBrown" , "#BC8F8F" , "Browns" , "White" ] ,
+    [ "SandyBrown" , "#F4A460" , "Browns" , "White" ] ,
+    [ "GoldenRod" , "#DAA520" , "Browns" , "White" ] ,
+    [ "DarkGoldenRod" , "#B8860B" , "Browns" , "White" ] ,
+    [ "Peru" , "#CD853F" , "Browns" , "White" ] ,
+    [ "Chocolate" , "#D2691E" , "Browns" , "White" ] ,
+    [ "Olive" , "#808000" , "Browns" , "White" ] ,
+    [ "SaddleBrown" , "#8B4513" , "Browns" , "White" ] ,
+    [ "Sienna" , "#A0522D" , "Browns" , "White" ] ,
+    [ "Brown" , "#A52A2A" , "Browns" , "White" ] ,
+    [ "Maroon" , "#800000" , "Browns" , "White" ] ,
+
+    [ "White" , "#FFFFFF" , "Whites" , "White" ] ,
+    [ "Snow" , "#FFFAFA" , "Whites" , "White" ] ,
+    [ "HoneyDew" , "#F0FFF0" , "Whites" , "White" ] ,
+    [ "MintCream" , "#F5FFFA" , "Whites" , "White" ] ,
+    [ "Azure" , "#F0FFFF" , "Whites" , "White" ] ,
+    [ "AliceBlue" , "#F0F8FF" , "Whites" , "White" ] ,
+    [ "GhostWhite" , "#F8F8FF" , "Whites" , "White" ] ,
+    [ "WhiteSmoke" , "#F5F5F5" , "Whites" , "White" ] ,
+    [ "SeaShell" , "#FFF5EE" , "Whites" , "White" ] ,
+    [ "Beige" , "#F5F5DC" , "Whites" , "White" ] ,
+    [ "OldLace" , "#FDF5E6" , "Whites" , "White" ] ,
+    [ "FloralWhite" , "#FFFAF0" , "Whites" , "White" ] ,
+    [ "Ivory" , "#FFFFF0" , "Whites" , "White" ] ,
+    [ "AntiqueWhite" , "#FAEBD7" , "Whites" , "White" ] ,
+    [ "Linen" , "#FAF0E6" , "Whites" , "White" ] ,
+    [ "LavenderBlush" , "#FFF0F5" , "Whites" , "White" ] ,
+    [ "MistyRose" , "#FFE4E1" , "Whites" , "White" ] ,
+
+    [ "Gainsboro" , "#DCDCDC" , "Greys" , "White" ] ,
+    [ "LightGray" , "#D3D3D3" , "Greys" , "White" ] ,
+    [ "Silver" , "#C0C0C0" , "Greys" , "White" ] ,
+    [ "DarkGray" , "#A9A9A9" , "Greys" , "White" ] ,
+    [ "DimGray" , "#696969" , "Greys" , "White" ] ,
+    [ "Gray" , "#808080" , "Greys" , "White" ] ,
+    [ "LightSlateGray" , "#778899" , "Greys" , "White" ] ,
+    [ "SlateGray" , "#708090" , "Greys" , "White" ] ,
+    [ "DarkSlateGray" , "#2F4F4F" , "Greys" , "White" ] ,
+    [ "Black" , "#000000" , "Greys" , "White" ] ,
+
+
+]
+
+const backgroundColours = [
+    [ "Peach",'#fe9ecc', "backgrounds" , "White" ],
+    [ "Pink",'#f74071', "backgrounds" , "White" ],
+    [ "Purple",'#a16fe2', "backgrounds" , "White" ],
+    [ "Blue",'#68c7d8', "backgrounds" , "White" ],
+    [ "Yellow",'#fbd321', "backgrounds" , "White" ],
+    [ "Orange",'#fa944c', "backgrounds" , "White" ],
+    [ "Beige",'#dcc4aa', "backgrounds" , "White" ],
+    [ "Teal",'#6dd1bb', "backgrounds" , "White" ],
+]
+
+// Clothing
+
+const teeFront = {
+    name:"teeFront",
+    image:'https://pixelcooledclassics.com/wp-content/uploads/2024/06/Tee_front_raw.jpg',
+    width:2048,
+    height:2048,
+    // x:,
+    // y:,
+    // dx:,
+    // dy:
+}
+const teeBack = {
+    name:"teeBack",
+    image:'https://pixelcooledclassics.com/wp-content/uploads/2024/06/Tee_back_raw.jpg',
+    width:2048,
+    height:2048,
+    x:785,
+    y:640,
+    dx:482,
+    dy:482
+}
+
+const Clothes = [ teeFront,teeBack ];
 
 const logoWhtPlate = {
     name:"logoWhtPlate",
@@ -50,7 +260,27 @@ const logoGldTwo = {
     height:17
 }
 
-const logos = [logoWhtPlate,logoBlkPlate,logoBlk,logoWht, logoGld , logoGldTwo]
+const logoBlkOnkelGunnar = {
+    name:"logoBlkOnkelGunnar",
+    // image:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAJCAYAAAB5ad+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACESURBVEhL3ZKBCoAgDES1///n4sCDQ66VpQt6EJvzzjmpDLC3eMVd3VK2Fn9HbZGv3K9BVAPOq/uk96uOea8BrgZYP9VpgfmsGnnijWqK1c34FXEgPn3NDNjXUUcHc0Mg/2KosC8Gw6a7sIOHQQvUG+F0d72ON95lpFwGk2egwyT0LOUAeds18fUB7YMAAAAASUVORK5CYII=',
+    // image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAJCAYAAAB5ad+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVEhL3ZLbCoAwDEM3//+fleAiYUS7Ipvgeammqb1gSbC3GDHqm8rW4u/gYriyXprvd9d33gj66NUa1dQDnAZCX5/UCHrN5YDLk8iX1RTry/6KKK7n4wU0p8+GfR01uxiG7z8G7YulHvtiMQ5LcwT9QGufcL7RWseb2mksGQabr0CXWdCzlAMCpUHa+MEktQAAAABJRU5ErkJggg==',
+    image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAZCAYAAABNcRIKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFeSURBVGhD7ZeBboMwDETZ/v+fN93KVeZkBzfxKJv8pDThfA6JCVW7BXzt/SvM5ERk58r4KtaVmuNz75WPvW8epOqBYqLqbIRjfSLq0biH+rw8TyOv+kEU93RqVlfNixFe/2gasD0YacCLE9XO8lTL+i2qjTyZfBD5D9fRa27BEUeSHnVoI72K6D4z6Nq4tzMt4uDNFBNGJlmgoSmRPkvVfNyHzkXN7s/TIg5efLARjq0G1OPlKJ5PvZ6HjPyqExuzHuo2Zq9BpBEb4/gZfw6aNTKvedM0in4F9VfSIixgF7KILmQRfTKL0AJ2QZtasifqT5+8/tFeCP6gr8LTxLns6RppwMv11qT51sexeoCnAepnvkuxi+C4SiMzuSPNkvWlePdrjoWjXX0aeF+P6bVcWUyvcBi/o5C/ct/VYmJBXpE8uAF4gc0d4fmyuR4ruf+KWxcAT+nu2ALeeL3b9g3vP72LcaH1OgAAAABJRU5ErkJggg==',
+    positionOver:22.5,  //37,
+    width: 83, //54,
+    height: 25 //9
+}
+
+const logoWhtOnkelGunnar = {
+    name:"logoWhtOnkelGunnar",
+    // image:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAJCAYAAAB5ad+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVEhL3ZJBDsMgDARJ/v/n1mN5pa2SICoKh84hmPWa2Ig2yiuosMuobzVnrX/HwUe3fAS+h54G0t3neSEfkHefYtY0BJ5LIZAG0h99Lij+lSZcUzyjOdI8Rzz9FDkEdHO7qN9eBgV6+WqwOutjCGKo7RbUA5R04SSZ3QY9I5AHvNpnYZCGB+58o7V3zNQuY1czW56QD8NtV7iQ1t6Z+9ej2fKFnQAAAABJRU5ErkJggg==',
+    // image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAJCAYAAAB5ad+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAClSURBVEhL3ZJLDsQgDEOZ3v/OndiyR2kLCFTBYt4Gx3HKRy2jnIFkl9Hcag6tfwcvhlcGdAKVRNaF7DMUqGyiGHHNRpA9w0agksgistq5nwise55XUNPZM9mzfuNl7OUe9NSviIFPoJLAA3d/Ndr2cVGAs0xdDAP3j8EDKreAM2jb5r4HmgiCXtA4nzVgs0EtNzpb483sMnYdZssvlC+D15ZcSClf8qgHU0yXiasAAAAASUVORK5CYII=',
+    image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAZCAYAAABNcRIKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGkSURBVGhD7ZjbUsMwDERD//+fwSt2M/I1JvaEwug81NJqrbrC6QBHi88Ew2nu7Okx22vGN9trxGyPF9eMjwTDIDE7jxemLqidPwmvAZ8jBky70DbcR6nZi6VpP2C5qlNu9gKUKk0rMDHBNPfaC1E8qwHFXhOl5nPFI00rGGmeUht5RjWPtLJW5s3H3IMrjk3lVYcGejrTZdiuep87sNV5NvSkNNR6lN7LYcKoTZQMaIDpCeXlDy7Ybssg2SrrRSn7fJSqz9yC1m8vXgTrpvlV+BwxYFp5hZkSTKscUGr2skKCqUHJoJTBktW0AhNJKwdMDUrNHj4GZ9GCYJnLxzwIgpLyKyi+khbRAGOQm4hBbkKDjIEuUg4wBhrsZfZG/fWbF7+0b2TLPxCw4o99n4ORBqR7n68L+QDq3qcYqxkSvmZCQhqQfuV7FH8Ixbs04TXFK5pHmq/5+Kf86mOOg4OnbwPftjm0lbM8NkyePxscYsD0EXQGQGkbS8PEgWxCiavDoQ7gVW4bE2bo0PLN7m2xsvdf8e4DePQRu4MfIG4VwzfkOL4A3ZD2CybHEuoAAAAASUVORK5CYII=',
+    positionOver:22.5,  //37,
+    width: 83, //54,
+    height: 25 //9
+}
+
+const logos = [logoWhtPlate,logoBlkPlate,logoBlk,logoWht, logoGld , logoGldTwo, logoBlkOnkelGunnar, logoWhtOnkelGunnar]
 
 // const logo = {
 //     imageLogo:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPkAAAAbCAYAAAC+wykZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFzSURBVHhe7djRasMwDIXhrO//zlsN6dCNWp3KjtvD/8EolMiWOoREfo6e3/Nz6J412yfnNsuuGq+81+n/uKWW2/kJwBRNDpjrNvlYOR5/AJ7b0i9McsAcTQ6YG2tDfOOXydaL7G2h+hax8nyWp5qbqnNvpP4OUafGFflElXMyldw+uUY1dkUtL3NgkgPmaHLA3FgB1BWis37Mio0652fU2NV5qrG78qlQY1fcdWX+0ax8pOeZ5IA5mhwwN0Z9ZfRvWTPu4vOZTs7R6roq+cyKjd9n1LuiyjMZNVbNJ6PGqrlFlbviM5UaMy9zYJID5mhywNwY6ZVVobNmrIituDK2U8uK2MqZmU4+FWpsp8Yr84zUnDt3Zf7PZJID5mhywNxYDeKqkMlWiFnrR+X5LE81N1Xn3kj9HaJOjSvyiSrnZCq5dWqMsjMzs+6KOrW8nT+THDBHkwPmxkivrBAAvhSTHDBHkwPmaHLAHE0OmKPJAWvH8QfOXXo0hDC9DQAAAABJRU5ErkJggg==',
@@ -263,8 +493,11 @@ const body039 = {
     RoofRefDown:41,
     RackOptions:[rackShort],
     RoofOptions:[],
-    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAiCAIAAAD00eEqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASYSURBVGhDzZk9aBRBGIbPVGqsJIIoeDYxiAEVLQwYf8BCC0G0SJNCBLG4JkXE30rUCKYIyBUhIBYWWmhjYbTwrxELC0EQSSNCKtHKqIWg7907fn6ZmZ2b3b293Ydjbnb2dnbm2W+//bkV86NPa9Xm/auDpracyfu/TC3IfPO1qZVNpV0fboxMj61EJVKry/47H1FeWPrGxXKpruv+66tQji7uQElleXh5cghlueor6hqily7+nOpfizo0ieuwJv7ehaIF9FaK7sq5ZjiLaEih9/bK1Fz6cWFmZqbZbJ5cPIVFJCW2C73M5n3muxpQqxbN9sxAtKm1gVlLbtKpUARViWsJZ5SW6DxxjW0nJiaurZ4yywqE/OjObTOHmlzsQWKphGttk6e5RJ8+BmmJ2XZ+6K7oJsVJL9m1pcMSDfRhiAQBi5LZI3LbyaXzWzasfzh+3ywXY7zMfE2PAdE5GR8fp/eOTPffQHn87hgXAW5dMB73WpqHclzDshWwmBUfW8idjbfxwW/e7N1jmgrm6+8r+JgFRReNl5BDrKHLvfPRx9tRDu97DstsaTQa4hrtrISRBIL7PFTuHZurnxue3TTXXulBAn/Nulm5DeeQrLtykPOcK9y1vM0IP2dzetD96Mg7PUkd7JqOT+1JvlKh9449ss/MeTy1a/eEksB0STvV8NsPmXnk6xEMLJvr8I7YbYYYD7lGurx8rXWf4I44c7gB77ayIdYitFkHkbICdpKGKkQeORdITxXjia4hGiVcZwuNMOFDxRMlreUkMqt0wb50b1yMD3C/a4q27gGyDdpy0cWZa3QeKyI4BD0dzIW6IwPc45qi+TIzpynZvCDFAnOoWQgSnhHX6kbdgnrSRGJ0d3AdQIeSS57gsnSAVIfK3dzF6tAyNdW/1hq/1ae1uRyPsHG/60jRgX7d4YIYCySV3DAdj1xSwuUrMJmF9OOOTa8K6F7mGr1fvdR6lrNcW32x3vGUscbaezBU7l0qFjGXNR008BAWzTrvo1w//11TDeDzG5B+2QUXA8fNRQ+0asTfP8TothoZkZaolmuxTD59OGFq/xgZaT2/LCwsoPS+Cw5QTd1pn0RkFjqKWQE0yx/8+bC73WZ48uyWqdVqfWc+n4Zc+ZhmH4ODg6aWEg6ldGQYecbjBjWAZa9oixX1et1Ua7XNWx94dQ8MDFA0/7XLAJ/sMcmyYlyHXtqgJuFMwv7FHkzKj+vnhlHObprr4zswrMOnvcoPE0hOsPs8MZUZLbqIAaBPdC5yAaRDMT9sQf5o5Wv9XpEVi+9fzqBMm6k1Oij0zItGzOq9x1/bNbyqeYctewknYXMfQt1vz75oN7aQ7UFXXKO0dJMuStfdCrp//iCba6AjRtA71TmEFWlB/ljmWr8v1+y6eQBlHtfAO9C0eG2CyJ6xeWbRQEdM0kj4gEKsfzuNa5J0mnTFNYj8MylpGhqeavFIeszv2kLnDV78+JIDhFwD0U2/Qn7RQC4MvcS6COV07c3Igf/YNLZr4BrpimjQRdf60mIROC3yiM6Px7Wg1XRFt/cc7CXVdV0ohXov16mfWu0vnAXPKhBr0ncAAAAASUVORK5CYII=',
-    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAAAQCAIAAAAUF48YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC1SURBVFhH7ZfRCoAgDEVn/9Vr9MnRaz+WtkFmauYkl3gIiojhPU4rtYwrtM68TXQFkJI3KMUu5PAjj6EU8Qh+KREjiHwvjxE0oRSulJRaiGQvzBQDnQ/Sa2lePfwl/BQXKR3kXD7ZMy9qHeWlcCL0TvFAUsRuEFXonWJweqKAFDldVmokZTqlsdVnpPQNBdEe8FB0g031F3ORqcUU5jsFy2WksschSgpzMMG/5HTuU1RdEAuAHdWbSK66D4G/AAAAAElFTkSuQmCC'
+    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAiCAIAAAD00eEqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASSSURBVGhDzZk9aBRBGIYvqdRYhQii4NnEIAZUtDBg/AELLQTRIk2KIEiKNCkCMcZKjBFMEZArQkBSpDCFNhZGC0UbsRSEIGlESCVaGbUQ9L17xy9fZvbmZv9u92GZzMzezs48++3s7KZjdfBlpdx8fHve5LYzsfLb5Lys1t6ZXNGU2vXFsYG5oR3IBGp1Obv0CenU5ncWi6W8rrvu7UQ6uHEMKZWl4c1IH9Ji1ZfUNURv3vo129WNPDSJa78m/t6FogW0Voju0rlmOItoSKH3xs7YTP+cmp+fr9VqIxvXUcSkxHqhnbN5p/lbDqhVi2Z9YiDa5BrArCW32a2QB2WJawlnpJboNHGNY8fHx2d2zZqyAiE/ePzI/IUai22YWErhWtvkbS7Rp69BXEKOXe1bFt0kP+kFu7Z0WKKBvgyBIGCRcvYIPHZi8+ahfXufDq+Ycj7Gi5yv6dEjOiXDw8P03pK5rvtIry4PsQiwdEF/3GdpGopxDctWwGJUfG0hS/sfYcNv3p8+Zapy5tufO9hMQZGh8QLmEKvrsna+/Pwo0v4zr2GZNWNjY+Ia9cz4kQkE6zxkHl9ZrE72LxxYbOyMQAJ/954FWYazS9aqHKS853J3LV8z/O/ZHB50P7v0QQ9SB7um5Vt7M1+x0GfHGdlm4nk8tmv3hpLAdIk7VP/XDxl54OcRdCyZa/+J2GyCGPe5xnR5e6a+TnB7nDjcQOSxciD2IrSZB4GyPHaadVUIvHIukB4rxpu6hmikcJ0sNPz4LxVvlLiWm5FYpQvOpVtjMTzAo11TtLUGSNZpy0WGI9foeSyP4BD0cDAW6g4M8AjXFM2PmSlNyeE5KRY4h5qCF/+IuFdX6hrkmw0kRHcL1x50KLmkCS5LB4h1qdzDXawGLVOzXd1W/602rcPleviNR7sOFO1p1+0uCLFAYsn10/LKNZtw+QlMRiHtuH3Tuzy6t7lG63en6+9ylmurLeZb3jJWX9sPusqzS8Yi5LGmgwYe/KKZ5zrK9bPlmmoA39+AtMsmWPRcNxfd0bIRvn4I0W1VMiItUXXXYpl8Xrtmcv8ZGKi/v6yvryON/BbsoZy6476JyCh0FDMDaJY/+Lt2slFnePHqoclVKp2jX25ArmymOore3l6Tiwm7UjjSjTT9cYMawHKkaIuOarVqspXKwcNPInX39PRQNP9rl4CsPpUlRode3KAm/pmE7Ys9mJQfVyf7kS4cWOzkNzDsw9bYFQ0nkJQUFeBadB59QJtoXOQCSIdibqzB/FGfr/V3RWYsfnwdRRp3ptZIULBbrGwPWjSL4c92DZ9qkZ2X6+efhOv/KxCJaEg21mSIjFl6ljc4EbachiNEDofzhJ4qMH+YNR9DW38v15x4cA5pmrgGer4T7yxmiB652z73JotroIcAIi3zBYVY/+3cWl+DZrdJJq5B4BMycgx+Ai8bWk4sGmg/0klOsISK+JED+FwDaY5+hfSiQeB/WvNAHkXpXQtiOVCO7Rq4RjIRDQpxbT3wU7p2ozicCNeCVpOJbisu2k8a0YBCEqvwuc6VNntPaTkDKpV/HOzLDudGyFgAAAAASUVORK5CYII=',
+    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAAAQCAIAAAAUF48YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVFhH7ZfRCoAgDEVn/9Vr9MnRaz+WNiFbaqbDlngIiojhPU4rtYwrtM68TfYKICVvUIpbiPAjj6EU8Qh+KREjiHwvjxE0oRRUSkotRLKXwhSDPR+k19K8ergm5SkuUjrIuXyyZ17UOspLQSL0TvFgpYjdID6hd4qB9ASDFDldxjUSnk5pbPUZKX1DQbQHPJS9UcznL2aWqcUU5jsFy2WkcschSkrhYIJ/yencp6iyIOa5AdgBsXZLrhfmXm8AAAAASUVORK5CYII=',
+    SecondaryPositionOver: 38,
+    SecondaryPositionDown: 71,
+    imageSecondary:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAADCAIAAACMK8G2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABsSURBVChTY7T3OHMwQZ2BgcF+wU0IAxPsmHrcI9sSmQ0XwWTA2UASwoWLowGgjUASbimQy7jDdheEgx/gsQnNVggXWZx4wALE7dxCyA4EkmiBBDEXzXS43ciOAAK4O9AUQEyGAMxIAMkyMAAAHDNKwbWI28UAAAAASUVORK5CYII='
 };
 
 const body039Cd = {
@@ -353,8 +586,11 @@ const body039Tu = {
     RoofRefDown:body039.RoofRefDown,
     RackOptions:[rackShort],
     RoofOptions:[],
-    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAiCAIAAAD00eEqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATeSURBVGhDzZk7aBVBFIavVmqsJIIoGJsooqCihQHjAyy0EEQLmxQiSIo0KRSflfgCLQJyCxHEwkILbSyMFr4asbAQBJE0IliJVkYtBP3v/uPxeHZ27uwrux/LZHbu7uzMN2dnZzfzpkcfd9rN2xe7XO5/jt396XJBprsvXa5pWu16z8TI1UMLkInUmmbHrfdIT81+5W6ztNf1wMWFSEc/bURKZWV4fngN0mbVt9Q1RM+e/nFpYAny0CSuw5p4fBqKJg3qbp1rhrOIhhR6T37MzZnvp6amprrd7uFPR7CLSYnlYO6lz3d/2wG1atEsLwxEu1wCnpPyqGSwZ90KddCWuJZwRmpEl4lrnDs5OXlh0SW3r0DIj25aN7W7y12Eed0x3grX2iZvc4k+PQZ5iTl3es1t0Q1qnVgadm10GNFAD0MkCFiknD0izz02e3L18mX3x+5ytybjTc7X9BgQXZKxsTF678vVgctID9w+xF1M5dgwlVU7mzfjGpZNwMprC7m14iY2HPNq21ZXVDNffp3D5nYStPF47+Mfj8rmiv7SwByiF16ANyzY93AD0vXbn8IySyYmJsQ1ypkJIxMI1nnI3Nl/Y+jE+usrbyQ/epDAX7z0OlcmgE0yu0QKif7pw7uDLvcXc93aXcvXjPB7NhsN3Q/2vtH90cGu6fvWbnxVgjYLWDnGkrsa7+jmdm2iEpgWaPJ2Nfz1Q7xHfh5Bw6p1DXRnTSAH7h4Sco3p8uyF3joh3eLC4Qa858qJ+BWhzTyIlBUYhqymCpEjpzHhFbliyXQN0UjhuvLQAOGhYk/yWs6igMoscC1dG3YZFqVcU7RZAxRrtHFRYc81OtAKBwcq4fMZZLVTdwfH5NLtcU3R/JhZ0pScXpNiAZqK3QdsmJkTgEgnPAznZnWENYSN93EdIN0+TZmZx+gAuYYqfXoaXWFakyyljXHBtIdXRCGqCuj2u44UHagXzU3rjrFAcskNkzVyEitZvcgynm6bXIK6kfHW+Z9r1H7+TO9dzrhO1wUCognbWibAS4Km8urS5m+fx18ffyYlfbsA2IvAPK7lMJ81g/97R2elWHjgkYhzpApBLoNaYloZc0x9iF8Cy9jcTkJk83iYLEOztEiKjQMst4XQi2tTmn7XHBnpvb/MzMwg9X4LDoDKGwxtAOliWYI6bxyY6AYSeYDjym7+frclKXM8enLN5RDX4x+PQq5srtjH8PCwy+VEQszE2hyQvmIdbYBlr2jDvKGhIZftdFatvefVPTg4SNH8r10B+Gavx79ueC12B+1PynofmJAWm9xMaOu4BvpyACalm/xggjf4+XyLx2/Ykp/8cAIpCS9fR2RpUL9XNCeQOsDlJLQJLg3F3FiC+aP3bERr5NFB6WZLDi4e1ED81qpbLAPvDVoeeQZyV9CXzqLnWh53HBwzRFUhTRHdMe2LwVSlGy9BXR6Zebyzh8GEKcD84dbX/GSuv5drNl/ZiTTvCsRQyYIka2x0zThGgtpMIPip2GRNOGVLrCRlFr6gEPPfTvsugzRtpBLXIP3t20tWNzRmsdwXPhVBedcGPVnx4cePHCDkGohu+hXKiwaR/2mtFrFMSrr2Pgb6/peAWNcgbaQS0aBC14FFReC2KCO6PB7XglZTiW7vPTiXtNd1rdTqvVmnfjqdP609Al4CAQKnAAAAAElFTkSuQmCC',
-    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAAAQCAIAAAAUF48YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC1SURBVFhH7ZfRCoAgDEVn/9Vr9MnRaz+WtkFmauYkl3gIiojhPU4rtYwrtM68TXQFkJI3KMUu5PAjj6EU8Qh+KREjiHwvjxE0oRSulJRaiGQvzBQDnQ/Sa2lePfwl/BQXKR3kXD7ZMy9qHeWlcCL0TvFAUsRuEFXonWJweqKAFDldVmokZTqlsdVnpPQNBdEe8FB0g031F3ORqcUU5jsFy2WksschSgpzMMG/5HTuU1RdEAuAHdWbSK66D4G/AAAAAElFTkSuQmCC'
+    imageBody:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAiCAIAAAD00eEqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATiSURBVGhDzZk7aBVBFIavVmqsJIIoGJsooqCihQHjAyy0EEQLmxQiSIo0KSIaYyW+QIuA3EIEsbDQQhsLo4WvRiwsBEEkjQhWopVRC0H/u//keDw7O3f2lb0fy2R29u48vjk7+8iimeEnrd7m3ct9Lvc/E/d+uVyQmfYrl2uannZ9YGzo2rElyERqTbPn9gekk3PfuNssveu679JSpMOftyKlsjK8OL4BabPqe9Q1RM+d/Xm5bwXy0CSuw5r4+zQUTRrU3XOuGc4iGlLoPTmYm6kfk9PT0+12+/jnE9jFosRysPDSF7u/vQG1atEsLwxEu1wC7pNyq2SwZ10KddArcS3hjNSILhPXOHd8fPzisstuX4GQH962aXp/m7sI87pjvCdca5u8zCX69BzkJebcmQ13RDeodWFp2LXRYUQDPQ2RIGCRcvWIPHdi7sz61asejNzjbk3Gm1yv6TEguiQjIyP03pVrfVeQHrlzjLtYyrFhKat2NW/GNSybgJXXFnJ7zS1s+M3rXTtdUc18/X0em9tJ0MbjvY9+OimbK5qngTVEP3gBXrDg0KMtSDfvfgbLLBkbGxPXKGcmjCwgeM5D5u7hmwOnN99YezM56EECf/nKG3wyAeyS2SVSSPShj++Putw8pt3aXcvXjPB7NjsN3Q8PvtXj0cGu6frWbnxVgjYLWDnmkrsa7+zmdm2iEpgeaPIONfz1Q7xHfh5Bx6p1DfRgTSAHrh4Sco3l8tzFznNCuseFww14z5UTcRShzTyIlBWYhqyuCpEzpzHhFfnEkukaopHCdeWhAcJTxZHktZxFAZVZoC1dG3YZFqVcU7R5BijWaeOiwpFrdKAVDg5UwvszyOqnHg5+k0u3xzVF82NmSVNyek2KBWgqdh2wY2ZNACKd8Gc4N2sgrCFsvIvrAOn+acqsPEYHyDVV6dPT6ArTmuRR2hgXTH/YIgpRVUC333Wk6EC96G5ad4wFkktumKyZk1jJGkWW8XTfpAnqRsZb53+uUfuFqc67nHGdrgsERBP2tUyAlwRdZevS5+9fRt+cei4lXYcAOIrAOq7lMJ+1gv97R2elePDALRHnSBWCNINaYnoZ85v6EL8ElrG5nYTI7vFn8hiapUVSbJxguSyETlyb0vS75tBQ5/1ldnYWqfdbcABU3mBoA0gXyxLUeePARDeQyAOcVw7zz/sdSZnj8dPrLoe4Hv10EnJlc8U+BgcHXS4nEmIm1haAdIt19AGWvaINiwYGBly21Vq38b5Xd39/P0Xzv3YF4Ju9nv+6YVscDvqflHU+MCEttriZ0NZxDXRzACZlmPxggjf4xXyLxzFsySE/XEBKwubriCwN6veK5gJSB2hOQpugaSjmxhKsH517I3ojtw5KN1vy4+JBDcRvrbrFMvBeoOWReyB3Bd10Fh3Xcrvj5Jgpqgrpiuju2rlIWJWpn0hQl0dWHu/qYTBhCrB+uOdrfjLX38s126/uRZr3CcTA9U7Xr3sZObvegQFTrQS1WUBwqNhiTfQQsnrCFxRi/ttp32WQpoddiWuA+mOcZg0jjVHMjHmOJrwrgvKuDbo5KuJHDhByDUQ3/QrlRYPI/7TWQR2uxXKkHOsapI1UIho04losk5Ku01Ecj8e1oNVUott7DS4kZUQDCimsIuS6VhbYe0nLFdBq/QVNjQumFTtD0AAAAABJRU5ErkJggg==',
+    imageArches:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAAAQCAIAAAAUF48YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVFhH7ZfRCoAgDEVn/9Vr9MnRaz+WNiFbaqbDlngIiojhPU4rtYwrtM68TfYKICVvUIpbiPAjj6EU8Qh+KREjiHwvjxE0oRRUSkotRLKXwhSDPR+k19K8ergm5SkuUjrIuXyyZ17UOspLQSL0TvFgpYjdID6hd4qB9ASDFDldxjUSnk5pbPUZKX1DQbQHPJS9UcznL2aWqcUU5jsFy2WkcschSkrhYIJ/yencp6iyIOa5AdgBsXZLrhfmXm8AAAAASUVORK5CYII=',
+    SecondaryPositionOver: 38,
+    SecondaryPositionDown: 71,
+    imageSecondary:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAADCAIAAACMK8G2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB7SURBVChTY7T3OHMwQZ0BDOwX3ASScC4c7Jh63CPbEpkNF8FkwNlAEsIFsiEmA0Hl13cQBlbAApSuhGmDADQuLgCxDNlWCEDjAgGmCC7AuMN2Vzu3EJCFHCRwrwABUBxoHJpfISJANjIDYg4QAH2IzIYoAAK4CdgBAwMAPyxLp34FBmUAAAAASUVORK5CYII='
 };
 
 const body039TuCd = {
@@ -776,8 +1012,8 @@ const tyre16White = {
 const tyre18White = {
     name:"18White",
     size:18,
-    imageTyre:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAIAAADZrBkAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACCSURBVDhPY9xhu4sBFVR/q4SyYKCVqx3KggEUbRANZ86cgXDhwMTEBEgia0ZoA+rB1IAMgJrhOpkgFEE9QABUgHA/0DZjY+P/RAOgYqAWqG0kA5KsggCgFjJtG87a6BtvIG3AlAZJrAQBPFlCbSNGJ3JSpjjjwAEimcMAsgYQYGAAAIbZvbcI8ovDAAAAAElFTkSuQmCC'
-}
+    imageTyre:'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAIAAADZrBkAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACFSURBVDhPY9xhu4sBFVR/q4SyYKCVqx3KggEUbRAN+/duhHDhwNHZH0gia0ZoA+rB1IAMgJrhOpkgFEE9QABUAHc/SBsxeiAArhNqG6mA0djYmEir4ADoSTJtG9bagBEPSTtEAkhaocCRxFsIT5ZQ24jRCdcDBBRnHDiAJ3M4QNYAAgwMAHrHP/W7PcLYAAAAAElFTkSuQmCC'
+    }
 
 const tyres = [tyre14Normal, tyre16Normal, tyre18Normal, tyre14White , tyre16White, tyre18White];
 
@@ -785,7 +1021,7 @@ const tyres = [tyre14Normal, tyre16Normal, tyre18Normal, tyre14White , tyre16Whi
 
 var currentDisplay = {
     body:bodybrix,
-    baseColour:"#e6846b",
+    primaryColour:"#e6846b",
     wheelColour:"#404040",
     secondaryColour:"#f1f1d0",
     secondaryOption:1,
@@ -838,12 +1074,14 @@ Coloris(
     }
 );
 
-Coloris.setInstance('.bodyColour', 
+Coloris.setInstance('.primaryColour', 
     {
         onChange: (color) => {
-            currentDisplay.baseColour = color
+            currentDisplay.primaryColour = color
             setupBodyOptions();
-            setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, currentDisplay.baseColour );
+            setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, colourReturn(currentDisplay.primaryColour) );
+            document.getElementById("primaryColourControl").style.background = color;
+            document.getElementById("primaryColourOptionDropdownButton").style.background = colourReturn(currentDisplay.primaryColour);
             drawToMainCanvas();
         }
     }
@@ -852,6 +1090,7 @@ Coloris.setInstance('.secondaryColour',
     {
         onChange: (color) => {
             currentDisplay.secondaryColour = color
+            document.getElementById("secondaryColourOptionDropdownButton").style.background = colourReturn(currentDisplay.secondaryColour);
             drawToMainCanvas()
         }
     }
@@ -860,6 +1099,7 @@ Coloris.setInstance('.wheelColour',
     {
         onChange: (color) => {
             currentDisplay.wheelColour = color;
+            document.getElementById("wheelColourOptionDropdownButton").style.background = colourReturn(currentDisplay.wheelColour);
             setupWheelOptions();
             drawToMainCanvas();
         }
@@ -911,7 +1151,7 @@ function encodeCurrentToURL() {
 
     let returnString = "?" + 
     "body"+currentDisplay.body.name + "|" +
-    currentDisplay.baseColour +  "|" +
+    currentDisplay.primaryColour +  "|" +
     currentDisplay.wheelColour +  "|" +
     currentDisplay.secondaryColour + "|" +
     currentDisplay.secondaryOption + "|" +
@@ -969,7 +1209,7 @@ function pickoutFromURL() {
         properties = propertiesFromURL.split("|")
 
         currentDisplay.body = bodies.find(x => x.name === properties[0].replace("body",""));
-        currentDisplay.baseColour = properties[1];
+        currentDisplay.primaryColour = properties[1];
         currentDisplay.wheelColour = properties[2]; 
         currentDisplay.secondaryColour = properties[3]; 
         currentDisplay.secondaryOption = properties[4]; 
@@ -1013,26 +1253,37 @@ function pickoutFromURL() {
 }
 
 function startingValueSetter() {
-    document.getElementById("bodyColourControl").value = currentDisplay.baseColour;
-    document.getElementById("secondaryColourControl").value = currentDisplay.secondaryColour;
-    document.getElementById("wheelColourControl").value = currentDisplay.wheelColour;
-    document.getElementById("backgroundColourControl").value = currentDisplay.backgroundColour;
+    document.getElementById("primaryColourControl").value = colourReturn(currentDisplay.primaryColour);
+    document.getElementById("secondaryColourControl").value = colourReturn(currentDisplay.secondaryColour);
+    document.getElementById("wheelColourControl").value = colourReturn(currentDisplay.wheelColour);
+    document.getElementById("backgroundColourControl").value = colourReturn(currentDisplay.backgroundColour);
 
-    if (currentDisplay.secondaryOption == 1) {
-         document.getElementById("secondaryColourChoice").checked = true
-    } else {
-         document.getElementById("secondaryColourChoice").checked = false
-    }
-    if (currentDisplay.wheelColourMatch == 1) {
-        document.getElementById("wheelColourMatch").checked = true
-   } else {
-        document.getElementById("wheelColourMatch").checked = false
-   }
+    // if (currentDisplay.secondaryOption == 1) {
+    //      document.getElementById("secondaryColourChoice").checked = true
+    // } else {
+    //      document.getElementById("secondaryColourChoice").checked = false
+    // }
+//     if (currentDisplay.wheelColourMatch == 1) {
+//         document.getElementById("wheelColourMatch").checked = true
+//    } else {
+//         document.getElementById("wheelColourMatch").checked = false
+//    }
 
-    document.querySelector('.bodyColour').dispatchEvent(new Event('input', { bubbles: true }));
+    document.querySelector('.primaryColour').dispatchEvent(new Event('input', { bubbles: true }));
     document.querySelector('.secondaryColour').dispatchEvent(new Event('input', { bubbles: true }));
     document.querySelector('.wheelColour').dispatchEvent(new Event('input', { bubbles: true }));
     document.querySelector('.backgroundColour').dispatchEvent(new Event('input', { bubbles: true }));
+
+    document.getElementById("primaryColourControl").style.background = colourReturn(currentDisplay.primaryColour);
+    document.getElementById("secondaryColourControl").style.background = colourReturn(currentDisplay.secondaryColour);
+    document.getElementById("wheelColourControl").style.background = colourReturn(currentDisplay.wheelColour);
+    document.getElementById("backgroundColourControl").style.background = colourReturn(currentDisplay.backgroundColour);
+
+    document.getElementById("primaryColourOptionDropdownButton").style.background = colourReturn(currentDisplay.primaryColour);
+    document.getElementById("secondaryColourOptionDropdownButton").style.background = colourReturn(currentDisplay.secondaryColour);
+    document.getElementById("wheelColourOptionDropdownButton").style.background = colourReturn(currentDisplay.wheelColour);
+    document.getElementById("backgroundColourOptionDropdownButton").style.background = colourReturn(currentDisplay.backgroundColour);
+
 }
 
 function addToURL() {
@@ -1041,7 +1292,29 @@ function addToURL() {
     //const url = new URL(window.location.href);
     //url.searchParams.set('param1', 'val1');
     //url.searchParams.delete('param2');
-    window.history.replaceState(null, null, encodeCurrentToURL())
+    window.history.replaceState(null, null, encodeCurrentToURL());
+
+    personaliseLink("https://pixelcooledclassics.com/product/personalised-t-shirt/");
+
+}
+
+function personaliseLink(rawLinkLookup) {
+    urlAddition = encodeCurrentToURL();
+    console.log(urlAddition);
+
+    links = document.querySelectorAll("a[href^='"+rawLinkLookup+"']");
+    console.log(links);
+    console.log(links);
+    for (link of links) {
+
+        preQuestion = (link.href+"?").split("?")[0];
+        console.log(preQuestion);
+        outputlink = preQuestion+urlAddition;
+
+        link.href = outputlink;
+    }
+
+
 
 }
 
@@ -1057,23 +1330,6 @@ function addToURL() {
 // }
 
 function openCanvasURL( outputCanvas ) {
-    // const visibleCanvas = document.getElementById("mainCanvas")
-
-    // const outputCanvas = document.getElementById("outputCanvas");
-    // const outputCanvas = document.createElement("canvas");
-    // outputCanvas.width = scaleFactor*drawingPixels; 
-    // outputCanvas.height = scaleFactor*drawingPixels;
-    // console.log(outputCanvas.height);
-
-    // outputContext = outputCanvas.getContext("2d");
-
-    // console.log(outputContext);
-
-    // const message = await draw( outputCanvas );
-
-    // if (shape == "chest") {
-    //     //do stuff
-    // };
 
     pngUrl = outputCanvas.toDataURL();
     console.log(pngUrl);
@@ -1126,6 +1382,11 @@ function exportDropdownFunction() {
     document.getElementById("exportDropdownList").classList.toggle("show");
 }
 
+function colourDropdownFunction(element) {
+    idToShow = element.id.replace("Button","List");
+    document.getElementById(idToShow).classList.toggle("show");
+}
+
 
 function showByElementID(elementID) {
     if (document.getElementById(elementID).classList.contains('hide')) {
@@ -1139,35 +1400,35 @@ function hideByElementID(elementID) {
     }
 }
 
-function checkCheckbox() {
-    var wheelColourCheckbox = document.getElementById('wheelColourMatch');
-    if (wheelColourCheckbox.checked == true) {
-        currentDisplay.wheelColourMatch = 1
-        // drawToMainCanvas();
-    } else {
-        currentDisplay.wheelColourMatch = 0
-        // drawToMainCanvas();
-    }
+// function checkCheckbox() {
+//     var wheelColourCheckbox = document.getElementById('wheelColourMatch');
+//     if (wheelColourCheckbox.checked == true) {
+//         currentDisplay.wheelColourMatch = 1
+//         // drawToMainCanvas();
+//     } else {
+//         currentDisplay.wheelColourMatch = 0
+//         // drawToMainCanvas();
+//     }
 
-    var secondaryColourCheckbox = document.getElementById('secondaryColourChoice');
-    if (secondaryColourCheckbox.checked == true) {
-        currentDisplay.secondaryOption = 1
-        showByElementID("secondaryColourControl");
-        // drawToMainCanvas();
-    } else {
-        currentDisplay.secondaryOption = 0
-        hideByElementID("secondaryColourControl");
-        // drawToMainCanvas();
-    } 
-    drawToMainCanvas();
-}
+//     var secondaryColourCheckbox = document.getElementById('secondaryColourChoice');
+//     if (secondaryColourCheckbox.checked == true) {
+//         currentDisplay.secondaryOption = 1
+//         showByElementID("secondaryColourControl");
+//         // drawToMainCanvas();
+//     } else {
+//         currentDisplay.secondaryOption = 0
+//         hideByElementID("secondaryColourControl");
+//         // drawToMainCanvas();
+//     } 
+//     drawToMainCanvas();
+// }
 
 function checkForSecondaryColourOption() {
 
     if ("imageSecondary" in currentDisplay.body) {
-        showByElementID("secondaryColourOption");
+        showByElementID("secondaryColourOptionDropdownButton");
     } else {
-        hideByElementID("secondaryColourOption");
+        hideByElementID("secondaryColourOptionDropdownButton");
     }
 
 }
@@ -1189,7 +1450,9 @@ function openTab(evt, tabName) {
     }
   
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "block";
+    if ( !!(document.getElementById(tabName)) ) {
+        document.getElementById(tabName).style.display = "block";
+    };
     evt.currentTarget.className += " active";
   }
 
@@ -1207,10 +1470,15 @@ function closeDropdowns() {
   
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-    checkCheckbox();
-    // console.log(event.target);
+    // checkCheckbox();
 
-    if (!event.target.matches('.dropdownButton') && !event.target.matches('.dropdownButtonImage')) {
+    if (
+        !event.target.matches('.dropdownButton') 
+        && !event.target.matches('.dropdownButtonImage')  
+        && !event.target.matches('.dropdownContent')  
+        && !event.target.matches('.coloris') 
+        && !document.getElementById("clr-picker").classList.contains("clr-open") // so that if the colour picker is open, dont close a drop down
+    ) {
         var dropdowns = document.getElementsByClassName("dropdownContent");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -1270,8 +1538,13 @@ function setupBodyOptions () {
         bodyEl.image = new Image();
         bodyEl.imageArchesOption = new Image();
         
+        primaryColourInput = colourReturn(currentDisplay.primaryColour);
 
-        bodyColourInput = currentDisplay.baseColour;
+        // if (currentDisplay.primaryColour.includes("#")) {
+        //     primaryColourInput = currentDisplay.primaryColour;
+        // } else {
+        //     primaryColourInput = currentDisplay[currentDisplay.primaryColour];
+        // };
 
         bodyEl.image.src = bodyEl.imageBody;
         bodyEl.imageArchesOption.src = bodyEl.imageArches;
@@ -1308,8 +1581,8 @@ function setupBodyOptions () {
 
         
 
-                    bodyEl.data = setupImageFromData(bodyEl.image,bodyColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
-                    bodyEl.dataArches = setupImageFromData(bodyEl.imageArchesOption,bodyColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
+                    bodyEl.data = setupImageFromData(bodyEl.image,primaryColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
+                    bodyEl.dataArches = setupImageFromData(bodyEl.imageArchesOption,primaryColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
                     //bodyEl.data = loadImageToArray(wheel, canvasWidth=128,canvasHeight=128, scaleFactor);
 
                     setupButtonContext.clearRect(0,0,512,512);
@@ -1409,32 +1682,11 @@ function setupWheelOptions () {
 
     // var wheel = new Image(); 
 
+    
+
     for (wheelEl of wheels) {
 
         wheelEl.image = new Image();
-
-        
-
-        if (currentDisplay.wheels.customColour == 1) {
-    
-            if (currentDisplay.wheelColourMatch == 0) {
-                wheelColourInput = currentDisplay.wheelColour
-            } else {
-                wheelColourInput = currentDisplay.baseColour;
-            }
-    
-        } else {
-            wheelColourInput = 'blank';
-        }
-
-        // alterCanvas = `<canvas hidden id="hiddenButtonCanvas" width="`+wheelEl.size*scaleFactor+`" height="`+wheelEl.size*scaleFactor+`"></canvas>`;
-        // document.getElementById("hiddenButtonCanvas").innerHTML = alterCanvas;
-
-        
-        // const hiddenButtonCanvas = document.getElementById("hiddenButtonCanvas").getContext("2d");
-        
-        
-
         wheelEl.image.src = wheelEl.imageWheel;
 
         wheelsToLoad.push(wheelEl.image);
@@ -1457,9 +1709,9 @@ function setupWheelOptions () {
 
                     hiddenButtonCanvas.width = scaleFactor*wheelEl.size;
                     hiddenButtonCanvas.height = scaleFactor*wheelEl.size
-
-        
-                
+                            
+                    convertedWheelColour = colourReturn(currentDisplay.wheelColour);
+                    wheelColourInput = convertedWheelColour;
 
                     wheelEl.data = setupImageFromData(wheelEl.image,wheelColourInput,currentDisplay.lightColour,currentDisplay.darkColour, scaleFactor);
                     //wheelEl.data = loadImageToArray(wheel, canvasWidth=128,canvasHeight=128, scaleFactor);
@@ -1506,7 +1758,6 @@ function setupWheelOptions () {
 
 function setupTyreOptions () {
 
-    var outputHTML = ``;
     var frontSize14Options = ``;
     var frontSize16Options = ``;
     var frontSize18Options = ``;
@@ -1607,37 +1858,6 @@ function setupTyreOptions () {
     });    
 };
 
-
-// replace by general option change
-
-// function setupRackOptions () {
-//     // Always has a none option
-//     outputHTML =  `<a onclick="rackChange(this)" id=none class="dropdownButton">none</a> `;
-
-//     if ( 
-//         currentDisplay.rack == "" || 
-//         !(currentDisplay.body.RackOptions.includes(currentDisplay.rack))||
-//         currentDisplay.body.RackOptions.length == 0
-//     ) { 
-//         hideByElementID("rackItemDropdownButton") 
-//     } else {
-//         showByElementID("rackItemDropdownButton")
-//     };
-
-//     for (rackEl of currentDisplay.body.RackOptions) {
-//         text = `<a onclick="rackChange(this)" id=rack` + rackEl.name + ` class="dropdownButton">`+(rackEl.name).toLowerCase() +`</a>`
-//         outputHTML = outputHTML + text
-//     };
-
-
-    
-//     // <a href="#" onclick="rackChange(this)" id=rackShort class="dropdownButton">short</a>
-
-//     document.getElementById("rackDropdownList").innerHTML = outputHTML
-
-// };
-
-
 function setupGeneralOptions ( itemList , elementIDChangeStr, scaleFactor, fucntionChangeStr , idPrefix, allowNoneBool, colourConvert) {
 
     // always has a none option
@@ -1650,6 +1870,15 @@ function setupGeneralOptions ( itemList , elementIDChangeStr, scaleFactor, fucnt
     var imagesToLoad = [];
     var imagesData = [];
     var imagesCount = 0;
+
+    colourConvert = colourReturn(colourConvert);
+
+
+    // if (colourConvert.includes("#")) {
+    //     colourConvert = colourConvert;
+    // } else {
+    //     colourConvert = currentDisplay[colourConvert];
+    // };
 
     // var tyre = new Image(); 
 
@@ -1716,17 +1945,69 @@ function setupGeneralOptions ( itemList , elementIDChangeStr, scaleFactor, fucnt
     });    
 };
 
+function setupColourOptions(ElementID) {
+
+    var outputHTML=``
+
+    var customColourHTML=
+        `<div id="`+ElementID+`Option" class="colourOptions full">
+            <input id="`+ElementID+`Control" type="button" class="coloris `+ElementID+`" value="custom colour">
+        </div>  `  
+
+    var otherColoursHTML = ``;
+    // var otherColourList = [ "primaryColour", "secondaryColour", "wheelColour" ];
+
+    for (otherColour of otherColourList) {
+
+        if (ElementID != otherColour) {
+            buttonHTML = `<a onclick="colourChange(this)" id=`
+                +ElementID+`|`+ otherColour +` class="dropdownButton" style="background-color: `
+                +colourReturn(currentDisplay[otherColour])+`; color: #ffffff">`+otherColour+`</a>`;
+            
+            otherColoursHTML = otherColoursHTML + buttonHTML;
+        }
+    }
+
+    var colourListHTML=``
+    // this loops through all the colour options and adds them in
+    if (ElementID == "backgroundColour") {
+        colourList = backgroundColours;
+    } else {
+        colourList = allColours;
+    }
+
+    const iterator = colourList.keys();
+
+    for (const key of iterator){
+
+        buttonHTML = `<a onclick="colourChange(this)" id=`+ElementID+`|`
+            + colourList[key][0] + ` class="dropdownButton" style="background-color: `
+            + colourList[key][1] + `; color: `
+            + colourList[key][3] + `">`
+            + colourList[key][0] + `</a>`;
+
+            colourListHTML = colourListHTML + buttonHTML;
+
+    };
+
+    outputHTML = closeButtonHTML() + `<p> custom colour </p>`+ customColourHTML ;
+    if (ElementID != "backgroundColour") {
+        outputHTML = outputHTML + `<p> match other colours </p>`+ otherColoursHTML  ;
+    }
+    outputHTML = outputHTML + `<p> colours </p>`  +colourListHTML;
+
+    document.getElementById( ElementID + "OptionDropdownList" ).innerHTML = outputHTML;
 
 
 
-
+}
 
 
 function bodyChange(element) {
     currentDisplay.body = bodies.find(x => x.name === (element.id).replace("body",""));
     checkForSecondaryColourOption();
     setupGeneralOptions ( currentDisplay.body.RackOptions , "rackDropdownList" ,  3, "rackChange" , "rack", true, 'blank');
-    setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, currentDisplay.secondaryColour);
+    setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, colourReturn(currentDisplay.secondaryColour));
     // setupRackOptions ();
 
     drawToMainCanvas();
@@ -1784,6 +2065,7 @@ function roofChange(element) {
     } else {
         currentDisplay.roof = roofs.find(x => x.name === (element.id).replace("roof",""));
     }
+    drawToMainCanvas();
 }
 
 function rackChange(element) {
@@ -1794,6 +2076,7 @@ function rackChange(element) {
         currentDisplay.rack = racks.find(x => x.name === (element.id).replace("rack",""));
         showByElementID("rackItemDropdownButton");
     }
+    drawToMainCanvas();
 }
 
 function rackItemChange(element) {
@@ -1802,22 +2085,117 @@ function rackItemChange(element) {
     } else {
         currentDisplay.rackItem = rackItems.find(x => x.name === (element.id).replace("rackItem",""));
     }
+    drawToMainCanvas();
 }
 
 function logoChange(element) {
-
     currentDisplay.logo = logos.find(x => x.name === (element.id).replace("Button",""));
-
+    drawToMainCanvas();
 }
 
 function backgroundChange(element) {
-
-    console.log(element.id);
     if (element.id == "none" ) {
         currentDisplay.background = '';
     } else {
         currentDisplay.background = backgrounds.find(x => x.name === (element.id).replace("Button",""));
     }
+    drawToMainCanvas();
+}
+
+function colourChange(element) {
+    idSplit = (element.id).split("|");
+    partName = idSplit[0];
+    colourName = idSplit[1];
+
+    if (partName == "backgroundColour") {
+        colourList = backgroundColours;
+    } else {
+        colourList = allColours;
+    }
+
+    // set this for saftey incase it's broke
+    colourHex = currentDisplay.primaryColour;
+
+    colourHex = "not in list";
+    // find where that name is in colour list
+    const iterator = colourList.keys();
+    for (const key of iterator){
+        if (colourList[key][0] == colourName) {
+            colourHex = colourList[key][1];
+        }
+    }
+
+    if (colourHex == "not in list"){
+        //then we are setting it to another colour
+        colourHex = currentDisplay[colourName];
+        if ( !(currentDisplay[colourName].includes("#")) ) {
+            // if no hash, then this other colour is also a pointer, so just use it's value
+            currentDisplay[partName] = currentDisplay[currentDisplay[colourName]];
+        } else {
+            currentDisplay[partName] = colourName;
+        }
+    } else {
+        currentDisplay[partName] = colourHex;   
+    }
+
+    
+    // do all drawing that may be needed for a colour change
+    setupBodyOptions();
+    setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, colourReturn(currentDisplay.primaryColour) );
+    setupWheelOptions();
+    drawToMainCanvas();
+
+
+    // document.getElementById(partName + "Control").value = colourHex;
+    // document.getElementById(partName + "Control").style.background = colourHex;
+    // document.getElementById(partName + "OptionDropdownButton").style.background = colourHex;
+
+    
+    // for (otherColour of otherColourList) {
+    //     if (partName != otherColour) {
+    //         document.getElementById( otherColour+"|"+ partName  ).style.background = colourHex;
+    //     }
+    // }
+
+    document.getElementById(partName + "Control").value = colourHex;
+    document.getElementById(partName + "Control").style.background = colourHex;
+    document.getElementById(partName + "OptionDropdownButton").style.background = colourHex;
+
+    // loop through the other buttons, if they are set to this, then change those too
+    if (partName != "backgroundColour") {
+        for (otherColour of otherColourList) {
+
+            if (partName != otherColour) {
+                document.getElementById( otherColour+"|"+ partName  ).style.background = colourHex;
+            }
+
+            if ( currentDisplay[otherColour] == partName ) {
+                document.getElementById(otherColour + "Control").value = colourHex;
+                document.getElementById(otherColour + "Control").style.background = colourHex;
+                document.getElementById(otherColour + "OptionDropdownButton").style.background = colourHex;
+
+                for (menuColour of otherColourList) {
+                    if (menuColour != otherColour) {
+                        document.getElementById( menuColour +"|"+ otherColour  ).style.background = colourHex;
+                    }
+                }
+
+            }
+
+        }
+    }
+    
+
+}
+function colourReturn(currentColour) {
+
+    if (currentColour.includes("#")) {
+        output = currentColour;
+    } else {
+        output = currentDisplay[currentColour];
+    };
+
+    return output;
 }
 
 async function exportImage(element) {
@@ -1907,9 +2285,9 @@ function colourConvert(imageDataIn, oldRGB, newRGB) {
 
 }
 
-function setupImageFromData(imageName,colourConvertTo='blank',highlightRatio='blank',lowlightRatio='blank',scaleFactor) {
-
-    imageName.data = loadImageToArray(imageName, drawingPixels, drawingPixels, scaleFactor);
+function setupImageFromData(imageName,colourConvertTo='blank',highlightRatio='blank',lowlightRatio='blank',scaleFactor, numberOfPixels = drawingPixels) {
+    
+    imageName.data = loadImageToArray(imageName, numberOfPixels, numberOfPixels, scaleFactor);
 
     // if we have a colour to convert, we swap the shades:
     if ( colourConvertTo !='blank' ) {
@@ -1961,8 +2339,16 @@ function drawImageFromData(
     colourConvertTo='blank',highlightRatio='blank',lowlightRatio='blank'
     ) {
 
-        scaleFactor = hiddenCanvas.width / drawingPixels;
-        imageName.data = setupImageFromData(imageName,colourConvertTo,highlightRatio,lowlightRatio, scaleFactor);
+        if (imageName instanceof HTMLImageElement) {
+            scaleFactor = hiddenCanvas.width / drawingPixels;
+            numberOfPixels = drawingPixels;
+        } else {
+            scaleFactor = 1;
+            numberOfPixels = Math.min(hiddenCanvas.width, hiddenCanvas.height);
+        }
+        
+
+        imageName.data = setupImageFromData(imageName,colourConvertTo,highlightRatio,lowlightRatio, scaleFactor, numberOfPixels);
     
         hiddenContext = hiddenCanvas.getContext("2d");
 
@@ -2004,6 +2390,8 @@ function draw( drawToCanvas , format = "none") {
         const logoImage = new Image();
         const backgroundImage = new Image();
 
+        // const circle = new Image();
+
         var imagesToLoad = [];
         var imageCount = 0;
 
@@ -2025,6 +2413,9 @@ function draw( drawToCanvas , format = "none") {
         imagesToLoad.push(frontTyre);
         backTyre.src = currentDisplay.backTyre.imageTyre
         imagesToLoad.push(backTyre);
+
+        // circle.src = drawCircle( 5 );
+        // imagesToLoad.push(circle);
         
         // logoImage.src = logo.imageLogoWhtPlate;
         logoImage.src =  currentDisplay.logo.image;
@@ -2054,21 +2445,58 @@ function draw( drawToCanvas , format = "none") {
             imagesToLoad.push(backgroundImage);
         }
 
-        if (currentDisplay.wheels.customColour == 1) {
-            showByElementID("wheelColourOption");
+        
 
-            if (currentDisplay.wheelColourMatch == 0) {
-                showByElementID("wheelColourControl");
-                wheelColourInput = currentDisplay.wheelColour
-            } else {
-                hideByElementID("wheelColourControl");
-                wheelColourInput = currentDisplay.baseColour;
+        // colour matching system
+        convertedPrimaryColour = colourReturn(currentDisplay.primaryColour);
+        convertedSecondaryColour = colourReturn(currentDisplay.secondaryColour);
+        convertedWheelColour = colourReturn(currentDisplay.wheelColour);
+
+        // if (currentDisplay.wheelColour.includes("#")) {
+        //     convertedWheelColour = currentDisplay.wheelColour;
+        // } else {
+        //     convertedWheelColour = currentDisplay[currentDisplay.wheelColour];
+        // };
+
+        // if (currentDisplay.secondaryColour.includes("#")) {
+        //     convertedSecondaryColour = currentDisplay.secondaryColour;
+        // } else {
+        //     convertedSecondaryColour = currentDisplay[currentDisplay.secondaryColour];
+        // };
+
+        // if (currentDisplay.primaryColour.includes("#")) {
+        //     convertedPrimaryColour = currentDisplay.primaryColour;
+        // } else {
+        //     convertedPrimaryColour = currentDisplay[currentDisplay.primaryColour];
+        // };
+
+
+
+
+
+
+        if (currentDisplay.wheels.customColour == 1) {
+            if ( !!(document.getElementById("editorButtons")) ) {
+                showByElementID("wheelColourOptionDropdownButton");
             }
+
+            // if (currentDisplay.wheelColourMatch == 0) {
+            //     showByElementID("wheelColourControl");
+            //     wheelColourInput = convertedWheelColour
+            // } else {
+            //     hideByElementID("wheelColourControl");
+            //     wheelColourInput = currentDisplay.primaryColour;
+            // }
+            
+            wheelColourInput = convertedWheelColour
 
         } else {
             wheelColourInput = 'blank'
-            hideByElementID("wheelColourOption");
+            if ( !!(document.getElementById("editorButtons")) ) {
+                hideByElementID("wheelColourOptionDropdownButton");
+            }
         }
+
 
         addToURL();
         
@@ -2082,15 +2510,32 @@ function draw( drawToCanvas , format = "none") {
 
                     if ( !( format.includes( "no_background" ) ) ) {
                         if ( backgroundCheck ) {
-                            drawImageFromData(backgroundImage,
-                                0,
-                                0,
-                                hiddenCanvas,
-                                visibleContext,
-                                currentDisplay.backgroundColour,
-                                currentDisplay.lightColour,
-                                currentDisplay.darkColour
-                            );
+                            if ( currentDisplay.background.name == 'backgroundCircle' && drawToCanvas != document.getElementById("mainCanvas") ){
+
+                                circleSize = Math.min(hiddenCanvas.width, hiddenCanvas.height);
+                                circlecanvas = drawCircle( circleSize );
+
+                                drawImageFromData( circlecanvas ,
+                                    0,
+                                    0,
+                                    hiddenCanvas,
+                                    visibleContext,
+                                    'blank',
+                                    'blank',
+                                    'blank'
+                                );
+
+                            } else {
+                                drawImageFromData(backgroundImage,
+                                    0,
+                                    0,
+                                    hiddenCanvas,
+                                    visibleContext,
+                                    currentDisplay.backgroundColour,
+                                    currentDisplay.lightColour,
+                                    currentDisplay.darkColour
+                                );
+                            }
                         }
                     };
 
@@ -2140,18 +2585,18 @@ function draw( drawToCanvas , format = "none") {
                         currentDisplay.body.CarPositionDown+currentDisplay.bodyDrop,
                         hiddenCanvas,
                         visibleContext,
-                        currentDisplay.baseColour,
+                        convertedPrimaryColour,
                         currentDisplay.lightColour,
                         currentDisplay.darkColour
                     );
                     
-                    if (currentDisplay.secondaryOption && "imageSecondary" in currentDisplay.body) { 
+                    if ( "imageSecondary" in currentDisplay.body) {  //currentDisplay.secondaryOption &&
                         drawImageFromData(secondary,
                             currentDisplay.body.SecondaryPositionOver,
                             currentDisplay.body.SecondaryPositionDown+currentDisplay.bodyDrop,
                             hiddenCanvas,
                             visibleContext,
-                            currentDisplay.secondaryColour,
+                            convertedSecondaryColour,
                             currentDisplay.lightColour,
                             currentDisplay.darkColour
                         );                    
@@ -2163,7 +2608,7 @@ function draw( drawToCanvas , format = "none") {
                             currentDisplay.body.RoofRefDown + currentDisplay.bodyDrop + currentDisplay.roof.downAddition,
                             hiddenCanvas,
                             visibleContext,
-                            currentDisplay.secondaryColour,
+                            convertedSecondaryColour,
                             currentDisplay.lightColour,
                             currentDisplay.darkColour
                         );  
@@ -2199,16 +2644,18 @@ function draw( drawToCanvas , format = "none") {
                             90,
                             hiddenCanvas,
                             visibleContext,
-                            currentDisplay.baseColour,
+                            convertedPrimaryColour,
                             currentDisplay.lightColour,
                             currentDisplay.darkColour
                         );
                     }
 
+                    // uncomment to draw the URL when doing the canvas
+                    // canvas_image = drawToCanvas.toDataURL();
+                    // document.getElementById("personalised_product_image").src=canvas_image; 
+
                     resolve("completed drawing");
 
-                    
-                
                 }
             }
 
@@ -2225,12 +2672,117 @@ function draw( drawToCanvas , format = "none") {
     
 }
 
+function drawCircle( diameter ) {
+
+    // diameter = 128;
+
+    const r = diameter/2;
+    const circleCanvas = document.createElement("canvas");
+    circleCanvas.width = diameter;
+    circleCanvas.height = diameter;
+    circleContext = circleCanvas.getContext("2d");
+
+    // set colour
+    circleContext.fillStyle = currentDisplay.backgroundColour ;
+
+    // centre compared to the grid:
+    
+    if ( diameter % 2) {
+        // if odd
+        modifier = 0;
+    } else {
+        // if even
+        modifier = 0.5;
+    }
+
+    // loop through each pixel in a quadrant
+    for (let x = 0; x < r+0; x++) {
+        for (let y = 0; y < r+0; y++) {
+            // if position is below certain radius from center, then draw it
+            // -0.5 as pixel
+            if ( ( x+modifier )*( x+modifier ) 
+                    + ( y+modifier )*( y+modifier )
+                    <= (r)*(r) ) {
+                // fill quadrants in clockwise fashion, starting bottom right
+                circleContext.fillRect( r+(x+0.5-modifier),                 r+(y+0.5-modifier),                 1, 1 );   // bottom right
+                circleContext.fillRect( r-(x+0.5-modifier+(2*modifier)),    r+(y+0.5-modifier),                 1, 1 );  // bottom left
+                circleContext.fillRect( r-(x+0.5-modifier+(2*modifier)),    r-(y+0.5-modifier+(2*modifier)),    1, 1 ); // top left
+                circleContext.fillRect( r+(x+0.5-modifier),                 r-(y+0.5-modifier+(2*modifier)),    1, 1 ); // top right
+            }
+        }
+    }
+
+    // circleContext.beginPath();
+    // circleContext.arc(r, r, r, 0, 2 * Math.PI);
+    // circleContext.fill();
+
+
+    return circleCanvas
+}
+
 function drawToMainCanvas() {
 
     draw( document.getElementById("mainCanvas") );
-    // draw( document.getElementById("outputCanvas") );
+    // drawClothing("teeBack");
+}
+
+async function drawClothing( clothingName ) {
+
+    var imagesToLoad = [];
+    imageCount = 0;
+    clothingElement = Clothes.find(x => x.name === clothingName);
+
+    const clothingCanvas = document.createElement("canvas");
+    clothingContext = clothingCanvas.getContext("2d");
+    scale = 0.25;
+    clothingContext.scale(scale,scale);
+    clothingCanvas.width = clothingElement.width*scale; 
+    clothingCanvas.height = clothingElement.height*scale;
+
+    const clothingImage = new Image();
+    const pixelImage = new Image();
+
+    clothingImage.src = clothingElement.image;
+    imagesToLoad.push(clothingImage);
+
+    pixelImageCanvas = await drawToTempCanvas(1,"square");
+    pixelImage.src = pixelImageCanvas.toDataURL() ;
+    imagesToLoad.push(pixelImage);
+
+    imagesToLoad.forEach(image =>{
+        image.onload = ()=>{ 
+            imageCount +=1;
+            if(imageCount == imagesToLoad.length){
+
+                clothingContext.clearRect(0,0,clothingCanvas.width,clothingCanvas.height);
+                clothingContext.imageSmoothingEnabled = false;
+
+                clothingContext.drawImage(clothingImage, 0, 0);
+                clothingContext.drawImage(pixelImage,clothingElement.x,clothingElement.y,clothingElement.dx,clothingElement.dy);
+
+                clothingBase64 = clothingCanvas.toDataURL();
+                console.log(clothingBase64);
+                document.getElementById(clothingElement.name + "Image").src=clothingBase64; 
+
+
+            };
+        };
+    });
+
+       
 
 }
+
+// async function drawToMainCanvas() {
+
+//     // draw( document.getElementById("mainCanvas") );
+
+//     const canvasToPage = await drawToTempCanvas(4, "square" );
+//     const base64_image = canvasToPage.toDataURL();
+
+//     document.getElementById("mainImage").src=base64_image;
+
+// }
 
 async function drawToTempCanvas( scaleFactor, shape, format ) {
 
@@ -2243,11 +2795,9 @@ async function drawToTempCanvas( scaleFactor, shape, format ) {
     const squareCanvas = document.createElement("canvas");
     squareCanvas.width = scaleFactor*drawingPixels; 
     squareCanvas.height = scaleFactor*drawingPixels;
-    console.log(squareCanvas.height);
 
     outputContext = squareCanvas.getContext("2d");
 
-    console.log(outputContext);
 
     const message = await draw( squareCanvas , format );
 
@@ -2295,7 +2845,7 @@ async function teemillShopAPI() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${apiKey}`,
+            Authorization: `Bearer UUVJeABlhj7R6nkdMbuA1Sq2fk58s6dGgkkDo0Lz`,
         },
         body: JSON.stringify({
             image_url: base64_image,
@@ -2305,12 +2855,12 @@ async function teemillShopAPI() {
             colours: "White,Athletic Grey,Navy Blue,Black,Mustard,Red,Dark Grey,Bright Blue",
             description: "You are buying a custom design, created by yourself. Due to this, refunds are not available. If you would like to sample the size before buying, please test with a blank item from rapanuiclothing.com",
             price: 25.00,
-            cross_sell: true,
+            cross_sell: true
         }),
     };
 
     // Open a new tab, ready to receive the product URL
-    var newTab = window.open('about:blank', '_blank');
+    var newTab = window.open('loading pixel product', '_blank');
     newTab.document.write(
         "<body style='background-color:#faf9f9;width:100%;height:100%;margin:0;position:relative;'><img src='https://storage.googleapis.com/teemill-dev-image-bucket/what3words_loader.gif' style='position:absolute;top:calc(50% - 100px);left:calc(50% - 100px);'/></body>"
     );
@@ -2328,23 +2878,85 @@ async function teemillShopAPI() {
 // Run on open
 //-----------------------------------------------
 
-window.addEventListener("load", ()=>{
+function product_onload() {
     openTab(event, 'body')
     pickoutFromURL();
-    startingValueSetter();
-    checkForSecondaryColourOption();
-    // setupRackOptions ();
-    setupBodyOptions();
-    setupWheelOptions ();
-    setupTyreOptions ();
-    setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, currentDisplay.baseColour );
-    setupGeneralOptions ( backgrounds , "backgroundDropdownList" , 0.3, "backgroundChange" , "", true, currentDisplay.backgroundColour );
-    setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, currentDisplay.secondaryColour);
-    setupGeneralOptions ( currentDisplay.body.RackOptions , "rackDropdownList" ,  3, "rackChange" , "rack", true, 'blank');
-    setupGeneralOptions ( rackItems , "rackItemDropdownList" ,  2, "rackItemChange" , "rackItem", true, 'blank');
-    checkCheckbox();
     drawToMainCanvas();
     console.log("running opener");
+
+    canvas_image = drawToTempCanvas(32, "square" )
+
+    // canvas_image = document.getElementById("mainCanvas").toDataURL();
+    // console.log(canvas_image);
+    // document.getElementById("personalised_product_image").src=canvas_image; 
+
+
+}
+
+function designer_onload() {
+    openTab(event, 'body')
+    pickoutFromURL();
+    
+    if ( !!(document.getElementById("editorButtons")) ) {
+        startingValueSetter();
+
+        checkForSecondaryColourOption();
+        // setupRackOptions ();
+        setupBodyOptions();
+        setupWheelOptions ();
+        setupTyreOptions ();
+        setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, colourReturn(currentDisplay.primaryColour) );
+        setupGeneralOptions ( backgrounds , "backgroundDropdownList" , 0.3, "backgroundChange" , "", true, colourReturn(currentDisplay.backgroundColour) );
+        setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, colourReturn(currentDisplay.secondaryColour));
+        setupGeneralOptions ( currentDisplay.body.RackOptions , "rackDropdownList" ,  3, "rackChange" , "rack", true, 'blank');
+        setupGeneralOptions ( rackItems , "rackItemDropdownList" ,  2, "rackItemChange" , "rackItem", true, 'blank');
+        setupColourOptions("primaryColour");
+        setupColourOptions("secondaryColour");
+        setupColourOptions("wheelColour");
+        setupColourOptions("backgroundColour");
+
+        //rerun, test removing first set
+
+        startingValueSetter();
+    };
+
+    // checkCheckbox();
+    drawToMainCanvas();
+    console.log("running opener");
+}
+
+window.addEventListener("load", ()=>{
+    // designer_onload()
+//     openTab(event, 'body')
+//     pickoutFromURL();
+    
+//     if ( !!(document.getElementById("editorButtons")) ) {
+//         startingValueSetter();
+
+//         checkForSecondaryColourOption();
+//         // setupRackOptions ();
+//         setupBodyOptions();
+//         setupWheelOptions ();
+//         setupTyreOptions ();
+//         setupGeneralOptions ( logos , "logoDropdownList" , 2, "logoChange" , "", false, colourReturn(currentDisplay.primaryColour) );
+//         setupGeneralOptions ( backgrounds , "backgroundDropdownList" , 0.3, "backgroundChange" , "", true, colourReturn(currentDisplay.backgroundColour) );
+//         setupGeneralOptions ( currentDisplay.body.RoofOptions , "roofDropdownList" ,  3, "roofChange" , "roof", true, colourReturn(currentDisplay.secondaryColour));
+//         setupGeneralOptions ( currentDisplay.body.RackOptions , "rackDropdownList" ,  3, "rackChange" , "rack", true, 'blank');
+//         setupGeneralOptions ( rackItems , "rackItemDropdownList" ,  2, "rackItemChange" , "rackItem", true, 'blank');
+//         setupColourOptions("primaryColour");
+//         setupColourOptions("secondaryColour");
+//         setupColourOptions("wheelColour");
+//         setupColourOptions("backgroundColour");
+
+//         //rerun, test removing first set
+
+//         startingValueSetter();
+//     };
+
+//     // checkCheckbox();
+//     drawToMainCanvas();
+//     console.log("running opener");
+    
 
 });
 

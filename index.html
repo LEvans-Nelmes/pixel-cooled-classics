@@ -17,7 +17,7 @@
         <!-- <meta property="og:image" itemprop="image" content="https://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/5.3.0/bbc_news_logo.png"> -->
     </head>
 
-    <body>
+    <body onload="designer_onload()">
         <div class="container">
             <h2>
                 <!-- <a href="index.html"> -->
@@ -29,7 +29,10 @@
             <div class="wholeWrapper">
 
                 <div class="canvasWrapper">
+
                     <canvas id="mainCanvas" width="512" height="512"></canvas>
+                    <!-- <img id="mainImage" width="512" height="512"> -->
+
                     <!-- <canvas hidden id="outputCanvas" width="512" height="512"></canvas>  -->
                     <!-- <canvas hidden id="hiddenButtonCanvas" width="512" height="512"></canvas>         -->
                     <script src="js/script.js"></script>
@@ -42,7 +45,7 @@
 
                         <div class="tab">
                             <button class="tablinks" onclick="openTab(event, 'body')">body</button>
-                            <button class="tablinks" onclick="openTab(event, 'paint')">paint</button>
+                            <!-- <button class="tablinks" onclick="openTab(event, 'paint')">paint</button> -->
                             <button class="tablinks" onclick="openTab(event, 'accessories')">accessories</button>
                             <button class="tablinks" onclick="openTab(event, 'shop')">shop</button>
                         </div> 
@@ -66,6 +69,38 @@
                                 <a onclick="bodyChange(this)" id=bodybrix class="dropdownButton">brix</a>
                                 <a onclick="bodyChange(this)" id=bodytwofer class="dropdownButton">twofer</a>
                             </div>
+
+                            <!-- <p></p> -->
+                            <button onclick="colourDropdownFunction(this)" 
+                                id=primaryColourOptionDropdownButton 
+                                class="dropdownButton"
+                                >
+                            </button>
+                            <div id="primaryColourOptionDropdownList" class="dropdownContent">
+                                <a onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a> <p></p>
+                                <div id="primaryColourOption" class="colourOptions full">
+                                    <input id="primaryColourControl" type="button" class="coloris primaryColour" value="custom colour">
+                                </div>
+                                <a onclick="colourChange(this)" id=primaryColour|Black class="dropdownButton" style="background-color: #000000; color: #ffffff">black</a>
+                                <a onclick="colourChange(this)" id=primaryColour|White class="dropdownButton" style="background-color: #ffffff">white</a>
+                            </div>
+
+                            <!-- <p></p> -->
+                            <button onclick="colourDropdownFunction(this)" 
+                                id=secondaryColourOptionDropdownButton 
+                                class="dropdownButton"
+                                >
+                            </button>
+                            <div id="secondaryColourOptionDropdownList" class="dropdownContent">
+                                <a onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a> <p></p>
+                                <div id="secondaryColourOption" class="colourOptions full">
+                                    <input id="secondaryColourControl" type="button" class="coloris secondaryColour" value="custom colour">
+                                </div>
+                                <a onclick="colourChange(this)" id=secondaryColour|Black class="dropdownButton" style="background-color: #000000; color: #ffffff">black</a>
+                                <a onclick="colourChange(this)" id=secondaryColour|White class="dropdownButton" style="background-color: #ffffff">white</a>
+                            </div>
+
+                            
 
                             <p></p>
                             
@@ -92,6 +127,21 @@
                                 <a onclick="wheelChange(this)" id=wheelChromeSteels12 class="dropdownButton">chrome steels</a>
                                 <a onclick="wheelChange(this)" id=wheelColouredSteels12 class="dropdownButton">coloured steels</a>
 
+                            </div>
+
+                            <!-- <p></p> -->
+                            <button onclick="colourDropdownFunction(this)" 
+                                id=wheelColourOptionDropdownButton 
+                                class="dropdownButton"
+                                >
+                            </button>
+                            <div id="wheelColourOptionDropdownList" class="dropdownContent">
+                                <a onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a> <p></p>
+                                <div id="wheelColourOption" class="colourOptions full">
+                                    <input id="wheelColourControl" type="button" class="coloris wheelColour" value="custom colour">
+                                </div>
+                                <a onclick="colourChange(this)" id=wheelColour|Black class="dropdownButton" style="background-color: #000000; color: #ffffff">black</a>
+                                <a onclick="colourChange(this)" id=wheelColour|White class="dropdownButton" style="background-color: #ffffff">white</a>
                             </div>
                         
                             <p></p>
@@ -139,15 +189,11 @@
 
 
                         <!-- NEW TAB - PAINT -->
-                        <div id="paint" class="tabContent">
+                        <!-- <div id="paint" class="tabContent">
                             <h3>paint</h3>
 
-                            <div id="bodyColourOption" class="colourOptions full">
-                                <p>pick body colour</p>
-                                <input id="bodyColourControl" type="button" class="coloris bodyColour" >
-                            </div>
 
-                            <div id="secondaryColourOption" class="colourOptions full">
+                             <div id="secondaryColourOption" class="colourOptions full">
                                 <p>pick secondary colour</p>
                                 <input type="checkbox" id="secondaryColourChoice" >
                                     <label for="secondaryColourChoice">secondary paint?</label><br>
@@ -159,15 +205,9 @@
                                 <input type="checkbox" id="wheelColourMatch" >
                                     <label for="wheelColourMatch">match wheels to body?</label><br>
                                 <input id="wheelColourControl" type="button" class="coloris wheelColour" >
-                            </div>
-
-                            <div id="backgroundColourOption" class="colourOptions full">
-                                <p>pick background colour</p>
-                                <input id="backgroundColourControl" type="button" class="coloris backgroundColour" >
-                            </div>
-
+                            </div> -->
                             
-                        </div>
+                        <!-- </div> -->
     
                         <!-- NEW TAB - ACC -->
                         <div id="accessories" class="tabContent">
@@ -257,17 +297,45 @@
                                 <a onclick="backgroundChange(this)" id=backgroundButtonCircle class="dropdownButton">circle</a>
                             </div>
 
+                            <button onclick="colourDropdownFunction(this)" 
+                                id=backgroundColourOptionDropdownButton 
+                                class="dropdownButton"
+                                >
+                            </button>
+                            <div id="backgroundColourOptionDropdownList" class="dropdownContent">
+                                <a onclick="closeDropdowns(this)" id=none class="dropdownButton closeButton">close</a> <p></p>
+                                <div id="backgroundColourOption" class="colourOptions full">
+                                    <input id="backgroundColourControl" type="button" class="coloris backgroundColour" value="custom colour">
+                                </div>
+                                <a onclick="colourChange(this)" id=backgroundColour|Black class="dropdownButton" style="background-color: #000000; color: #ffffff">black</a>
+                                <a onclick="colourChange(this)" id=backgroundColour|White class="dropdownButton" style="background-color: #ffffff">white</a>
+                            </div>
+
+
+
+
+
+                            <!-- <div id="backgroundColourOption" class="colourOptions full">
+                                <p>pick background colour</p>
+                                <input id="backgroundColourControl" type="button" class="coloris backgroundColour" >
+                            </div> -->
+
+
+
+
+
+
 
                         </div>
 
                         <div id="shop" class="tabContent">
                             <h3>shop</h3>
 
-                            <button onclick="teemillShopAPI()" 
+                            <!-- <button onclick="teemillShopAPI()" 
                                 id=rackDropdownButton 
                                 class="dropdownButton"
                                 >tshirt
-                            </button>
+                            </button> -->
 
                             <h3>download</h3>
                             <!-- <button onclick="openCanvasURL(4)" class="editorButton">export</button>
@@ -327,8 +395,33 @@
                                 <a onclick="exportImage(this)" id=32|chest|no_background class="dropdownButton">x32-chest</a>
 
                             </div>
-                            
 
+                            <h3>clothing</h3>
+
+                            <li class="wc-block-grid__product wc-block-layout" aria-hidden="false">
+                                <div class="wc-block-components-product-image wc-block-grid__product-image">
+                                    <a href="https://pixelcooledclassics.com/product/personalised-t-shirt/?" aria-label="Link to Personalised T-Shirt">
+                                        <img width="128" height="128" src="https://pixelcooledclassics.com/wp-content/uploads/2024/06/prodigi-tshirt-uk-xl-white-300x300.png" alt="" style="object-fit: cover;">
+                                    </a>
+                                </div>
+                                <h2 class="wc-block-components-product-title wc-block-grid__product-title">
+                                        <a class="wc-block-components-product-name" href="https://pixelcooledclassics.com/product/personalised-t-shirt/?">Personalised T-Shirt</a>
+                                </h2>
+                                <div class="wp-block-woocommerce-product-price">
+                                    <span class="wc-block-components-product-price wc-block-grid__product-price price wc-block-components-product-price">
+                                    <span class="wc-block-formatted-money-amount wc-block-components-formatted-money-amount wc-block-components-product-price__value wc-block-grid__product-price__value">£30.00</span></span>
+                                </div>
+                                <div class="wp-block-button wc-block-components-product-button wc-block-grid__product-add-to-cart">
+                                    <a href="https://pixelcooledclassics.com/product/personalised-t-shirt/?" rel="nofollow" aria-label="Select options for “Personalised T-Shirt”" class="wp-block-button__link wp-element-button add_to_cart_button wc-block-components-product-button__button">Select options</a>
+                                </div>
+                            </li>
+
+                            <!-- <img id="teeFrontImage" src="https://pixelcooledclassics.com/wp-content/uploads/2024/06/Tee_front_raw.jpg" width="128" height="128"> -->
+                            <!-- <img id="teeFrontOverlay" src="https://pixelcooledclassics.com/wp-content/uploads/2024/06/Tee_front_raw.jpg" width="128" height="128"> -->
+                            <div class="teeBackParent">
+                                <img id="teeBackImage" class="teeBackImageClass" src="https://pixelcooledclassics.com/wp-content/uploads/2024/06/Tee_back_raw.jpg" width="128" height="128">
+                                <img id="teeBackOverlay" class="teeBackOverlayClass" src="https://pixelcooledclassics.com/wp-content/uploads/2024/04/cropped-Sample_still.png" width="64" height="64">
+                            </div>
 
                         </div>
                         
@@ -346,8 +439,11 @@
         
 
         </div> 
-          
+         
+    
 
+
+    
     </body>
     
 </html>
