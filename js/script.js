@@ -1,6 +1,7 @@
 
 const drawingPixels = 128
 // const mainCanvasScaleFactor = document.getElementById("mainCanvas").width / drawingPixels;
+// test
 const mainCanvasScaleFactor = 4;
 
 const otherColourList = [ "primaryColour", "secondaryColour", "wheelColour" ];
