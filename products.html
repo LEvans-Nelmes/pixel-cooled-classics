@@ -18,17 +18,29 @@
         <script src="js/script.js"></script>
     </head>
 
-    <body onload="product_onload()">
+    <body >
 
 
         <div class="canvasWrapper">
-            <canvas id="mainCanvas" width="512" height="512"></canvas>
+            <!-- <canvas id="mainCanvas" width="512" height="512"></canvas> -->
+            <img width="512" height="512" id="personalised_product_custom_image" src="https://pixelcooledclassics.com/wp-content/uploads/2024/06/prodigi-tshirt-uk-xl-white-300x300.png" alt="" style="object-fit: cover;">
         </div>
 
         <div class="">
             <!-- <a href="https://pixelcooledclassics.com/product/personalised-t-shirt/?" aria-label="Link to Personalised T-Shirt"> -->
-                <img width="128" height="128" id="personalised_product_image" src="https://pixelcooledclassics.com/wp-content/uploads/2024/06/prodigi-tshirt-uk-xl-white-300x300.png" alt="" style="object-fit: cover;">
+                <img onload="product_onload()" width="128" height="128" id="personalised_product_image" src="https://pixelcooledclassics.com/wp-content/uploads/2024/06/prodigi-tshirt-uk-xl-white-300x300.png" alt="" style="object-fit: cover;">
+                
             <!-- </a> -->
+        </div>
+        <p></p>
+        <div>
+            <input type="text" id="changeText" placeholder="loading..." readonly>
+            <p></p>
+            return to editor:
+            <a href="pixelcooledclassics.com" id="returnLink">pixelcooledclassics.com</a>
+
+    
+            <!-- hello world -->
         </div>
     
     </body>

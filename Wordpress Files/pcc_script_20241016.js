@@ -2878,29 +2878,13 @@ async function teemillShopAPI() {
 // Run on open
 //-----------------------------------------------
 
-async function product_onload() {
-    console.log("running product opener");
+function product_onload() {
     openTab(event, 'body')
-
     pickoutFromURL();
-    // Fill out the return to editor link:
-    var currentURL = window.location.href;
-    if ( currentURL.includes("?") ) {
-        propertiesFromURL = currentURL.split("?")[1];
-        returnURL = "pixelcooledclassics.com/?"+propertiesFromURL;
-        console.log(returnURL);
-        document.getElementById("returnLink").href=returnURL;
-        document.getElementById("returnLink").textContent=returnURL;
-    }
+    drawToMainCanvas();
+    console.log("running opener");
 
-    // drawToMainCanvas();
-
-    canvas_image = await drawToTempCanvas(32, "square" )
-    
-    pngUrl = canvas_image.toDataURL();
-    // console.log(pngUrl);
-    document.getElementById("personalised_product_custom_image").src=pngUrl;
-    document.getElementById("changeText").value=pngUrl;
+    canvas_image = drawToTempCanvas(32, "square" )
 
     // canvas_image = document.getElementById("mainCanvas").toDataURL();
     // console.log(canvas_image);
